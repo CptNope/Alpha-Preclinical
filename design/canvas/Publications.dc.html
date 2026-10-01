@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Alpha Preclinical publications</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+.ap{--navy:#1F2858;--abyss:#0F3360;--tide:#1E58A0;--current:#4B98D2;--shallows:#88C6EE;--mist:#EEF5FB;--paper:#FFFFFF;--muted:#4A5878;--on-abyss:#B9CCE3;--line:#D3E0EE;
+  font-family:"Figtree","Helvetica Neue",Arial,sans-serif;color:var(--navy);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.ap *{box-sizing:border-box}
+.ap h1,.ap h2,.ap h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;font-weight:600;margin:0;text-wrap:balance}
+.ap p{margin:0}
+.ap a{color:var(--tide)}
+.ap a:hover{color:var(--navy)}
+.ap a:focus-visible,.ap button:focus-visible{outline:3px solid var(--current);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;line-height:1}
+.ap .btn-light{background:var(--shallows);color:var(--abyss)}
+.ap .btn-light:hover{background:#fff;color:var(--abyss)}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:32px;padding-top:24px;padding-bottom:24px}
+.nav{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+.ap .nav a{color:#fff;text-decoration:none;font-weight:500}
+.ap .nav a[aria-current]{color:var(--shallows)}
+.top{position:relative;background:var(--abyss);color:#fff;overflow:hidden}
+.top-body{position:relative;z-index:2;padding-top:40px;padding-bottom:170px;max-width:860px}
+.crumbs{display:flex;gap:10px;list-style:none;margin:0 0 28px;padding:0;font-size:15px;color:var(--on-abyss)}
+.ap .crumbs a{color:var(--on-abyss);text-decoration:none}
+.crumbs li+li::before{content:"/";margin-right:10px;color:rgba(185,204,227,.5)}
+.top h1{font-size:clamp(42px,5.4vw,72px);line-height:1;letter-spacing:-.035em}
+.top p{color:var(--on-abyss);font-size:20px;line-height:1.55;max-width:36em;margin-top:24px}
+.strata{position:absolute;left:0;right:0;bottom:-1px;height:200px;z-index:1}
+.strata svg{width:100%;height:100%;display:block}
+.body{padding:72px 0 128px}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:48px}
+.filters button{min-height:48px;padding:0 20px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font:500 15px/1 "Figtree",sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:10px}
+.filters button:hover{border-color:var(--tide);color:var(--tide)}
+.filters button[aria-pressed="true"]{background:var(--abyss);border-color:var(--abyss);color:#fff}
+.filters small{font-size:13px;opacity:.75}
+.group{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:56px;padding:48px 0;border-top:1.5px solid var(--navy)}
+.group h2{font-size:28px;line-height:1.15;letter-spacing:-.015em}
+.group .count{color:var(--muted);font-size:15px;margin-top:8px}
+.list{list-style:none;margin:0;padding:0}
+.paper{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 32px;padding:26px 0;border-bottom:1.5px solid var(--line)}
+.paper:first-child{padding-top:0}
+.paper h3{font-size:21px;line-height:1.3;letter-spacing:-.01em;grid-column:1}
+.paper .by{color:var(--muted);font-size:15px;line-height:1.5;grid-column:1}
+.paper .meta{grid-column:1;display:flex;flex-wrap:wrap;gap:8px 16px;font-size:14px;color:var(--navy)}
+.paper .meta i{font-style:italic}
+.paper .alpha{font-weight:600}
+.pdf{grid-column:2;grid-row:1 / span 3;align-self:start;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);font-weight:600;font-size:14px;text-decoration:none;white-space:nowrap}
+.ap .pdf:hover{border-color:var(--tide)}
+@media (max-width:1080px){.nav,.hdr .btn{display:none}.group{grid-template-columns:minmax(0,1fr);gap:24px}}
+@media (max-width:680px){.wrap{padding:0 16px}.top-body{padding-bottom:110px}.strata{height:110px}.paper{grid-template-columns:minmax(0,1fr)}.pdf{grid-column:1;grid-row:auto;justify-self:start}}
+</style>
+</helmet>
+<div class="ap">
+<header class="top">
+  <div class="wrap hdr">
+    <a href="Main.dc.html" aria-label="Alpha Preclinical home"><img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
+    <nav aria-label="Main"><ul class="nav"><li><a href="Main.dc.html#expertise">Expertise</a></li><li><a href="Main.dc.html#capabilities">Services</a></li><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="#" aria-current="page">Publications</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li></ul></nav>
+    <a class="btn btn-light" href="Contact.dc.html">Request a study quote</a>
+  </div>
+  <div class="wrap top-body">
+    <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="Main.dc.html">Home</a></li><li aria-current="page">Publications</li></ol></nav>
+    <h1>Peer-reviewed research from the Alpha team</h1>
+    <p>Sixteen papers from Alpha scientists and their collaborators on rodent disease models, mRNA delivery, anesthesia and gene regulation.</p>
+  </div>
+  <div class="strata" aria-hidden="true">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0 70 C180 30 540 110 720 70 S1260 30 1440 70 L1440 200 L0 200 Z" fill="#1E58A0"></path>
+      <path d="M0 110 C180 76 540 144 720 110 S1260 76 1440 110 L1440 200 L0 200 Z" fill="#4B98D2"></path>
+      <path d="M0 144 C180 118 540 170 720 144 S1260 118 1440 144 L1440 200 L0 200 Z" fill="#88C6EE"></path>
+      <path d="M0 174 C180 156 540 192 720 174 S1260 156 1440 174 L1440 200 L0 200 Z" fill="#FFFFFF"></path>
+    </svg>
+  </div>
+</header>
+<main class="body">
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Filter by research area">
+      <sc-for list="{{filters}}" as="f" hint-placeholder-count="6">
+        <button type="button" aria-pressed="{{f.pressed}}" onClick="{{f.pick}}">{{f.label}} <small>{{f.count}}</small></button>
+      </sc-for>
+    </div>
+    <sc-for list="{{groups}}" as="g" hint-placeholder-count="5">
+      <section class="group">
+        <div><h2>{{g.name}}</h2><p class="count">{{g.countLabel}}</p></div>
+        <ol class="list">
+          <sc-for list="{{g.papers}}" as="p" hint-placeholder-count="3">
+            <li class="paper">
+              <h3>{{p.title}}</h3>
+              <p class="by">{{p.others}}</p>
+              <p class="meta"><span class="alpha">Alpha authors: {{p.alpha}}</span><sc-if value="{{p.journal}}" hint-placeholder-val="{{false}}"><i>{{p.journal}}</i></sc-if></p>
+              <a class="pdf" href="#pdf">Read PDF</a>
+            </li>
+          </sc-for>
+        </ol>
+      </section>
+    </sc-for>
+  </div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4800}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { area: 'All' }; }
+  renderVals() {
+    const P = [
+      ['Type 1 diabetes', 'Prevention of Type 1 Diabetes in the Rat With an Allele-Specific Anti–T-Cell Receptor Antibody: Vβ13 as a Therapeutic Target and Biomarker', 'Zhijun Liu, Laura Cort, Ryan Eberwine, Thomas Herrmann, Jean H. Leif, Dale L. Greiner, Barak Yahalom, Elizabeth P. Blankenhorn, John P. Mordes', 'Barak Yahalom', ''],
+      ['Type 1 diabetes', 'Development of Standardized Insulin Treatment Protocols for Spontaneous Rodent Models of Type 1 Diabetes', 'Christian W. Grant, Shane K. Duclos, Catherine M. Moran-Paul, Barak Yahalom, Rebecca S. Tirabassi, Guillermo Arreaza-Rubin, Lisa M. Spain, Dennis L. Guberski', 'Barak Yahalom', ''],
+      ['Type 1 diabetes', 'LEW.1WR1 Rats Develop Autoimmune Diabetes Spontaneously and in Response to Environmental Perturbation', 'John P. Mordes, Dennis L. Guberski, Jean H. Leif, Bruce A. Woda, Joan F. Flanagan, Dale L. Greiner, Edward H. Kislauskis, Rebecca S. Tirabassi', 'Joan F. Flanagan', ''],
+      ['Type 2 diabetes and metabolic syndrome', 'The C57BL/6NCrl-lb Mouse: A New Model for Metabolic Syndrome', 'Dwight R. Owens, Richard G. Peterson, Wu-Kuang Yeh, Yiyun Wang, Kathleen R. Pritchett-Corning, Bruce Elder, Charles B. Clifford, Joan Flanagan', 'Joan Flanagan', ''],
+      ['Type 2 diabetes and metabolic syndrome', 'Antidiabetic effect of novel modulating peptides of G-protein-coupled kinase in experimental models of diabetes', 'Leshem O, Reuveni H, Wexler I, Ben Sasson R, Yahalom B, Laster M, Raz I, Ben Sasson S, Shafrir E, Ziv E', 'Barak Yahalom', ''],
+      ['Type 2 diabetes and metabolic syndrome', 'The BBZDR/Wor Rat Model for Investigating the Complications of Type 2 Diabetes Mellitus', 'Rebecca S. Tirabassi, Joan F. Flanagan, Tiangen Wu, Edward H. Kislauskis, Paul J. Birckbichler, Dennis L. Guberski', 'Joan F. Flanagan', ''],
+      ['Gene therapy', 'Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy', 'DeRosa F, Smith L, Shen Y, Huang Y, Pan J, Xie H, Yahalom B, Heartlein MW', 'Barak Yahalom', 'Molecular Therapy'],
+      ['Gene therapy', 'Analytical Characterization of Heterogeneities in mRNA-Lipid Nanoparticles Using Sucrose Density Gradient Ultracentrifugation', 'Amita Vaidya, Dipen Parande, Nikita Khadse, Natalia Vargas-Montoya, Vikram Agarwal, Christian Ortiz, Gordon Ellis, Neha Kaushal, Ashish Sarode, Shrirang Karve, Frank DeRosa', '[Confirm]', ''],
+      ['Gene therapy', 'Therapeutic Efficacy in a Hemophilia B Model Using a Biosynthetic mRNA Liver Depot System', 'DeRosa F, Guild B, Karve S, Smith L, Love K, Dorkin JR, Kauffman KJ, Zhang J, Yahalom B, Anderson DG, Heartlein MW', 'Barak Yahalom', 'Gene Therapy'],
+      ['Gene therapy', 'Mechanistic model for improved performance of mRNA–LNPs formulated under turbulent mixing conditions', 'Richard Mosesso, Katie Randall, Amita Vaidya, Jackie Tang, Trent Northen, Aurélie Deliot, Mengwei Sun, Rebecca Goldman, Adam Lyons, Lingyun Liu, Shrirang Karve, Frank DeRosa', '[Confirm]', ''],
+      ['Gene therapy', 'Understanding structure activity relationships of Good HEPES lipids for lipid nanoparticle mRNA vaccine applications', 'Rebecca L. Goldman, Namratha Turuvekere Vittala Murthy, Trent P. Northen, Anuranjani Balakrishnan, Sudha Chivukula, Hillary Danz, Timothy Tibbitts, Anusha Dias, Jorel Vargas, Dustin Cooper, Hardip Gopani, Angela Beaulieu, Kirill V. Kalnin, Timothy Plitnik, Saswata Karmakar, Ramesh Dasari, Ryan Landis, Shrirang Karve, Frank DeRosa', '[Confirm]', ''],
+      ['Anesthesia and analgesia', 'Antinociceptive Effect of Vapocoolant Medium Stream Spray on Hotplate Latency in Rat Pups', 'Navil F. Sethna, Brenden Fish, Barak Yahalom, Birgitta Schmidt, David Zurakowski', 'Barak Yahalom', ''],
+      ['Anesthesia and analgesia', 'Tetrodotoxin-Bupivacaine-Epinephrine Combinations for Prolonged Local Anesthesia', 'Charles B. Berde, Umeshkumar Athiraman, Barak Yahalom, David Zurakowski, Gabriel Corfas, Christina Bognet', 'Barak Yahalom', ''],
+      ['Anesthesia and analgesia', 'Spinal Anesthesia in Infant Rats: Development of a Model, Preliminary Observations, and Assessment of Neurologic Outcomes', 'Yahalom B, Athiraman UK, Soriano S, Zurakowski D, Corfas G, Carpino E, Berde CB', 'Barak Yahalom', ''],
+      ['Gene regulation', 'Structural analysis of the yeast SWI/SNF chromatin remodeling complex', 'Corey L. Smith, Rachel Horowitz-Scherer, Joan F. Flanagan, Christopher L. Woodcock, Craig L. Peterson', 'Joan F. Flanagan', ''],
+      ['Gene regulation', 'A role for the yeast SWI/SNF complex in DNA replication', 'Joan F. Flanagan, Craig L. Peterson', 'Joan F. Flanagan', '']
+    ].map(([area, title, others, alpha, journal]) => ({ area, title, others, alpha, journal }));
+    const order = ['Gene therapy', 'Type 1 diabetes', 'Type 2 diabetes and metabolic syndrome', 'Anesthesia and analgesia', 'Gene regulation'];
+    const area = this.state.area;
+    const filters = ['All'].concat(order).map((label) => ({
+      label, count: label === 'All' ? P.length : P.filter((p) => p.area === label).length,
+      pressed: area === label ? 'true' : 'false', pick: () => this.setState({ area: label })
+    }));
+    const groups = order.filter((n) => area === 'All' || area === n).map((name) => {
+      const papers = P.filter((p) => p.area === name);
+      return { name, papers, countLabel: papers.length + (papers.length === 1 ? ' paper' : ' papers') };
+    });
+    return { filters, groups };
+  }
+}
+</script>
+</body>
+</html>

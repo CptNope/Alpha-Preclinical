@@ -1,0 +1,39 @@
+/* Shared behaviour for every page: skip link, mobile menu, filter states, hidden attribute.
+   Page-specific styles stay inline in each page, exactly as designed on the canvas. */
+
+[hidden] { display: none !important; }
+
+.skip {
+  position: absolute; left: 16px; top: -60px; z-index: 100;
+  background: #fff; color: #1F2858; padding: 12px 18px; border-radius: 6px;
+  font: 600 15px/1 "Figtree", sans-serif; text-decoration: none;
+}
+.skip:focus { top: 16px; outline: 3px solid #4B98D2; outline-offset: 2px; }
+
+.menu-toggle {
+  display: none; width: 48px; height: 48px; flex: none;
+  border-radius: 999px; border: 1.5px solid rgba(185, 204, 227, .55);
+  background: transparent; color: #fff; cursor: pointer;
+  align-items: center; justify-content: center;
+}
+.menu-toggle:hover { border-color: #fff; }
+.menu-toggle:focus-visible { outline: 3px solid #4B98D2; outline-offset: 3px; }
+
+@media (max-width: 1080px) {
+  .menu-toggle { display: inline-flex; }
+  .hdr { position: relative; flex-wrap: wrap; }
+  .hdr nav { order: 3; width: 100%; }
+  .hdr .nav.is-open {
+    display: flex !important; flex-direction: column; gap: 0;
+    padding: 8px 0 16px; border-top: 1px solid rgba(185, 204, 227, .25); margin-top: 16px;
+  }
+  .hdr .nav.is-open a { display: block; padding: 12px 0; font-size: 18px; }
+}
+
+/* Filter buttons keep their pressed look when toggled by script */
+.filters button[aria-pressed="true"] { background: #0F3360; border-color: #0F3360; color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+html { scroll-behavior: smooth; }

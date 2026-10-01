@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Alpha Preclinical homepage</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+.ap{--navy:#1F2858;--abyss:#0F3360;--tide:#1E58A0;--current:#4B98D2;--shallows:#88C6EE;--mist:#EEF5FB;--paper:#FFFFFF;--muted:#4A5878;--on-abyss:#B9CCE3;--line:#D3E0EE;
+  font-family:"Figtree","Helvetica Neue",Arial,sans-serif;color:var(--navy);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.ap *{box-sizing:border-box}
+.ap h1,.ap h2,.ap h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;font-weight:600;margin:0;text-wrap:balance}
+.ap p{margin:0}
+.ap a{color:var(--tide)}
+.ap a:hover{color:var(--navy)}
+.ap a:focus-visible,.ap button:focus-visible,.ap summary:focus-visible{outline:3px solid var(--current);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;line-height:1;transition:background-color .2s ease,color .2s ease}
+.ap .btn-primary{background:var(--tide);color:#fff}
+.ap .btn-primary:hover{background:var(--navy);color:#fff}
+.ap .btn-light{background:var(--shallows);color:var(--abyss)}
+.ap .btn-light:hover{background:#fff;color:var(--abyss)}
+.ap .btn-ghost-dark{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(185,204,227,.55)}
+.ap .btn-ghost-dark:hover{color:#fff;box-shadow:inset 0 0 0 1.5px #fff}
+
+/* header */
+.hdr{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:32px;padding-top:24px;padding-bottom:24px}
+.nav{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+.ap .nav a{color:#fff;text-decoration:none;font-weight:500;font-size:16px}
+.ap .nav a:hover{color:var(--shallows)}
+.menu-btn{display:none;width:48px;height:48px;border-radius:999px;border:1.5px solid rgba(185,204,227,.55);background:transparent;color:#fff;align-items:center;justify-content:center}
+
+/* hero */
+.hero{position:relative;background:var(--abyss);color:#fff;overflow:hidden}
+.hero-body{position:relative;z-index:2;padding-top:72px;padding-bottom:300px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:end}
+.hero h1{font-size:clamp(44px,6.2vw,84px);line-height:.98;letter-spacing:-.035em;color:#fff;max-width:13ch}
+.hero .lead{font-size:20px;line-height:1.55;color:var(--on-abyss);max-width:34em;margin-top:28px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.hero-aside{border-top:1.5px solid rgba(136,198,238,.35);padding-top:22px;display:grid;gap:18px;margin-bottom:8px}
+.hero-aside div{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline}
+.hero-aside dt{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:34px;letter-spacing:-.02em;color:var(--shallows);margin:0}
+.hero-aside dd{margin:0;color:var(--on-abyss);font-size:15px;line-height:1.45}
+.strata{position:absolute;left:0;right:0;bottom:-1px;height:420px;z-index:1;pointer-events:none}
+.strata svg{width:100%;height:100%;display:block}
+.band{animation:drift linear infinite}
+.b1{fill:var(--tide);animation-duration:90s}
+.b2{fill:var(--current);animation-duration:70s;animation-direction:reverse}
+.b3{fill:var(--shallows);animation-duration:56s}
+.b4{fill:var(--mist);animation-duration:46s;animation-direction:reverse}
+.b5{fill:var(--paper);animation-duration:120s}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-1440px)}}
+@media (prefers-reduced-motion:reduce){.band{animation:none}}
+
+/* sections */
+.sec{padding:128px 0}
+.sec-mist{background:var(--mist)}
+.sec-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:end;margin-bottom:72px}
+.sec-head h2{font-size:clamp(34px,4vw,52px);line-height:1.04;letter-spacing:-.025em}
+.sec-head p{color:var(--muted);font-size:19px;max-width:34em}
+.contour{display:block;width:100%;height:28px;margin-bottom:56px}
+.contour path{fill:none;stroke:var(--current);stroke-width:1.5}
+
+/* expertise index */
+.models{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--line)}
+.models li{border-bottom:1.5px solid var(--line)}
+.ap .model{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr) 150px;gap:40px;align-items:center;padding:30px 8px;text-decoration:none;color:var(--navy);transition:background-color .25s ease,padding .25s ease}
+.ap .model:hover{background:var(--mist);padding-left:24px;padding-right:24px;color:var(--navy)}
+.model h3{font-size:30px;letter-spacing:-.02em;line-height:1.1}
+.model p{color:var(--muted);font-size:16px;line-height:1.55}
+.model span{justify-self:end;font-weight:600;color:var(--tide);font-size:15px;white-space:nowrap}
+.lead{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:14px;font-weight:600;color:var(--navy)}
+.lead img{width:30px;height:30px;border-radius:999px;object-fit:cover;object-position:50% 18%;flex:none}
+.lead img+img{margin-left:-16px;box-shadow:0 0 0 2px var(--mist)}
+.ap .lead a{color:var(--navy);text-decoration:none}
+.ap .lead a:hover{color:var(--tide)}
+
+/* capabilities */
+.caps{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
+.photo{position:relative;border-radius:14px;overflow:hidden;background:#D9E8F5;min-height:560px;display:flex;align-items:flex-end}
+.photo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:35% 50%}
+.photo svg{position:absolute;inset:auto 0 0 0;width:100%;height:46%}
+.photo-label{position:relative;margin:24px;padding:10px 14px;border-radius:6px;background:rgba(255,255,255,.92);font-size:14px;font-weight:500;color:var(--navy);max-width:28em}
+.cap-list{display:grid;gap:0}
+.cap{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;padding:30px 0;border-top:1.5px solid var(--line)}
+.cap:first-child{border-top:none;padding-top:0}
+.cap h3{font-size:26px;letter-spacing:-.015em;line-height:1.15}
+.cap p{color:var(--muted)}
+.cap ul{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.cap li{font-size:14px;font-weight:500;line-height:1.3;padding:8px 12px;border-radius:6px;background:#fff;color:var(--navy);border:1px solid var(--line)}
+
+/* process */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px;counter-reset:s}
+.step{position:relative;padding-top:64px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;width:44px;height:44px;border-radius:999px;background:var(--abyss);color:var(--shallows);font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:20px;display:flex;align-items:center;justify-content:center}
+.step::after{content:"";position:absolute;top:22px;left:60px;right:-24px;height:1.5px;background:var(--line)}
+.step:last-child::after{display:none}
+.step h3{font-size:23px;line-height:1.2;margin-bottom:10px}
+.step p{color:var(--muted);font-size:16px}
+
+/* publications */
+.pubs{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
+.pubs h2{font-size:clamp(34px,4vw,52px);line-height:1.04;letter-spacing:-.025em}
+.pubs .intro{color:var(--muted);font-size:19px;margin-top:24px;max-width:30em}
+.areas{list-style:none;margin:36px 0 0;padding:0;border-top:1.5px solid var(--line)}
+.areas li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1.5px solid var(--line);font-size:16px}
+.areas b{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;color:var(--tide)}
+.paper-list{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--navy)}
+.paper{padding:28px 0;border-bottom:1.5px solid var(--line);display:grid;gap:8px}
+.area-tag{justify-self:start;font-size:13px;font-weight:600;line-height:1;padding:7px 10px;border-radius:6px;background:var(--mist);color:var(--tide)}
+.paper h3{font-size:22px;line-height:1.28;letter-spacing:-.01em}
+.ap .paper h3 a{color:var(--navy);text-decoration:none}
+.ap .paper h3 a:hover{color:var(--tide);text-decoration:underline;text-underline-offset:3px}
+.paper .by{color:var(--muted);font-size:15px;line-height:1.5}
+.paper .by b{color:var(--navy);font-weight:600}
+.paper .journal{font-size:15px;font-style:italic;color:var(--navy)}
+
+/* people */
+.people{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
+.people h2{font-size:clamp(34px,4vw,52px);line-height:1.04;letter-spacing:-.025em}
+.people .intro{color:var(--muted);font-size:19px;margin-top:24px;max-width:30em}
+.values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 40px;margin-top:48px}
+.values h3{font-size:21px;margin-bottom:6px}
+.values p{color:var(--muted);font-size:15.5px}
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.ap .member{text-decoration:none;color:var(--navy);display:grid;gap:12px}
+.member .face{aspect-ratio:4/5;border-radius:14px;background:var(--mist);position:relative;overflow:hidden}
+.face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.face .alt{opacity:0;transition:opacity .25s ease}
+.ap .member:hover .face .alt,.ap .member:focus-visible .face .alt{opacity:1}
+@media (prefers-reduced-motion:reduce){.face .alt{transition:none}}
+.member b{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:20px;line-height:1.2;display:block}
+.member small{color:var(--muted);font-size:14px}
+.ap .member:hover b{color:var(--tide)}
+.team-cta{border-radius:14px;background:var(--abyss);color:#fff;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;aspect-ratio:4/5}
+.team-cta p{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:24px;line-height:1.15}
+.ap .team-cta a{color:var(--shallows);font-weight:600;text-decoration:none}
+
+/* faq */
+.faq{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
+.faq h2{font-size:clamp(34px,4vw,52px);line-height:1.04;letter-spacing:-.025em}
+.faq-list{border-top:1.5px solid var(--line)}
+.q{border-bottom:1.5px solid var(--line)}
+.q button{all:unset;box-sizing:border-box;width:100%;min-height:72px;padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;cursor:pointer;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:21px;line-height:1.3;color:var(--navy)}
+.q button:hover{color:var(--tide)}
+.q .ico{flex:none;width:36px;height:36px;border-radius:999px;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--tide)}
+.q .ans{padding:0 64px 28px 0;color:var(--muted)}
+
+/* cta + footer */
+.cta{position:relative;background:var(--abyss);color:#fff;overflow:hidden;text-align:center;padding:136px 0 128px}
+.cta h2{font-size:clamp(38px,5vw,64px);line-height:1;letter-spacing:-.03em;max-width:15ch;margin:0 auto}
+.cta p{color:var(--on-abyss);font-size:19px;margin:24px auto 0;max-width:34em}
+.cta .hero-ctas{justify-content:center}
+.cta svg{position:absolute;left:0;right:0;width:100%;height:120px}
+.cta .top{top:0}.cta .bot{bottom:0;transform:scaleY(-1)}
+.cta svg path{fill:none;stroke:rgba(136,198,238,.35);stroke-width:1.5}
+.ftr{background:#0B2747;color:var(--on-abyss);padding:80px 0 40px;font-size:15px}
+.ftr-grid{display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,2fr));gap:40px}
+.ftr h3{font-family:"Figtree",sans-serif;font-size:15px;font-weight:600;color:#fff;margin-bottom:14px}
+.ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ap .ftr a{color:var(--on-abyss);text-decoration:none}
+.ap .ftr a:hover{color:#fff}
+.ftr address{font-style:normal;line-height:1.6;margin-top:24px}
+.ftr-base{margin-top:64px;padding-top:24px;border-top:1px solid rgba(185,204,227,.2);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+
+@media (max-width:1240px){.nav{gap:20px}.ap .nav a{font-size:15px}}
+@media (max-width:1080px){
+  .nav,.hdr .btn{display:none}
+  .menu-btn{display:inline-flex}
+  .hero-body,.sec-head,.caps,.people,.faq,.pubs{grid-template-columns:minmax(0,1fr)}
+  .hero-body{padding-bottom:260px}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .step::after{display:none}
+  .ftr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:680px){
+  .wrap{padding:0 16px}
+  .sec{padding:72px 0}
+  .sec-head{margin-bottom:40px}
+  .hero-body{padding-top:40px;padding-bottom:200px}
+  .strata{height:240px}
+  .hero .lead{font-size:18px}
+  .hero-aside div{grid-template-columns:96px 1fr}
+  .hero-aside dt{font-size:28px}
+  .ap .model{grid-template-columns:minmax(0,1fr);gap:8px;padding:24px 0}
+  .ap .model:hover{padding-left:0;padding-right:0;background:transparent}
+  .model span{justify-self:start}
+  .photo{min-height:320px}
+  .steps,.values{grid-template-columns:minmax(0,1fr)}
+  .team{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .q .ans{padding-right:0}
+  .cta{padding:96px 0}
+  .ftr-grid{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+</helmet>
+<div class="ap">
+
+<header class="hero">
+  <div class="wrap hdr">
+    <a href="#top" aria-label="Alpha Preclinical home"><img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:84px;height:auto;display:block"></a>
+    <nav aria-label="Main">
+      <ul class="nav">
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#capabilities">Services</a></li>
+        <li><a href="About.dc.html">About</a></li>
+        <li><a href="Team.dc.html">Team</a></li>
+        <li><a href="Publications.dc.html">Publications</a></li>
+        <li><a href="Blog.dc.html">Blog</a></li>
+        <li><a href="Careers.dc.html">Careers</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-light" href="Contact.dc.html">Request a study quote</a>
+    <button class="menu-btn" type="button" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"></path></svg></button>
+  </div>
+
+  <div class="wrap hero-body" id="top">
+    <div>
+      <h1>Preclinical in vivo research, designed around your program</h1>
+      <p class="lead">Alpha Preclinical is a Worcester, Massachusetts contract research organization for PK/PD, efficacy and proof-of-concept studies. Senior scientists work with your team to design each study, then deliver it on time and on budget.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-light" href="Contact.dc.html">Request a study quote</a>
+        <a class="btn btn-ghost-dark" href="#expertise">Browse disease models</a>
+      </div>
+    </div>
+    <dl class="hero-aside">
+      <div><dt>20+ yrs</dt><dd>Average research experience of our scientists, from academia to large pharma</dd></div>
+      <div><dt>15+ yrs</dt><dd>Average industry experience of our technical staff</dd></div>
+      <div><dt>USDA</dt><dd>Compliant surgical suite with a staff veterinarian (DVM)</dd></div>
+    </dl>
+  </div>
+
+  <div class="strata" aria-hidden="true">
+    <svg viewBox="0 0 1440 420" preserveAspectRatio="none">
+      <path class="band b1" d="M0 150 C180 98 540 202 720 150 S1260 202 1440 150 S1980 202 2160 150 S2700 202 2880 150 L2880 420 L0 420 Z"></path>
+      <path class="band b2" d="M0 214 C180 168 540 260 720 214 S1260 260 1440 214 S1980 260 2160 214 S2700 260 2880 214 L2880 420 L0 420 Z"></path>
+      <path class="band b3" d="M0 272 C180 234 540 310 720 272 S1260 310 1440 272 S1980 310 2160 272 S2700 310 2880 272 L2880 420 L0 420 Z"></path>
+      <path class="band b4" d="M0 326 C180 296 540 356 720 326 S1260 356 1440 326 S1980 356 2160 326 S2700 356 2880 326 L2880 420 L0 420 Z"></path>
+      <path class="band b5" d="M0 372 C180 350 540 394 720 372 S1260 394 1440 372 S1980 394 2160 372 S2700 394 2880 372 L2880 420 L0 420 Z"></path>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+<section class="sec" id="expertise" aria-labelledby="exp-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="exp-h">Disease models and study expertise</h2>
+      <p>Validated rodent models and study designs across six therapeutic areas. Need a model from the literature or a custom variation? We build it with you.</p>
+    </div>
+    <ul class="models">
+      <li><a class="model" href="#pk-pd"><h3>PK/PD</h3><div><p>Pharmacokinetic and pharmacodynamic studies for lead optimization, dose selection and exposure-response.</p><small class="lead"><img src="/_blob/c9d31a9dcb31363d7c0a0ba388f59670" alt="">Led by Barak Yahalom, DVM</small></div><span>View studies</span></a></li>
+      <li><a class="model" href="#gene-therapy"><h3>Gene therapy</h3><div><p>In vivo delivery, expression and efficacy studies for viral and non-viral gene therapy programs.</p><small class="lead"><img src="/_blob/c9d31a9dcb31363d7c0a0ba388f59670" alt="">Led by Barak Yahalom, DVM</small></div><span>View studies</span></a></li>
+      <li><a class="model" href="#autoimmune"><h3>Autoimmune disease</h3><div><p>Induced and spontaneous models with flow cytometry immunophenotyping and cytokine readouts.</p><small class="lead"><img src="/_blob/590caa59917513c5891b761a02b75807" alt="">Led by Joan Flanagan, PhD</small></div><span>View models</span></a></li>
+      <li><a class="model" href="#metabolic"><h3>Metabolic disease</h3><div><p>Diet-induced and genetic models of obesity, diabetes and liver disease, with serum chemistry in house.</p><small class="lead"><img src="/_blob/590caa59917513c5891b761a02b75807" alt="">Led by Joan Flanagan, PhD</small></div><span>View models</span></a></li>
+      <li><a class="model" href="#fibrosis"><h3>Inflammation and fibrosis</h3><div><p>Acute inflammation and organ fibrosis models, with histology and immunohistochemistry endpoints.</p><small class="lead"><img src="/_blob/c9d31a9dcb31363d7c0a0ba388f59670" alt="">Led by Barak Yahalom, DVM</small></div><span>View models</span></a></li>
+      <li><a class="model" href="#tumor"><h3>Tumor models</h3><div><p>Syngeneic and xenograft efficacy studies, tracked by caliper and by bioluminescent IVIS imaging.</p><small class="lead"><img src="/_blob/c9d31a9dcb31363d7c0a0ba388f59670" alt="">Led by Barak Yahalom, DVM</small></div><span>View models</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec sec-mist" id="capabilities" aria-labelledby="cap-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="cap-h">Services that support every study</h2>
+      <p>Formulation, dosing, surgery, imaging and lab analysis happen under one roof, so your data come back consistent and your timeline stays intact.</p>
+    </div>
+    <div class="caps">
+      <div class="photo">
+        <img class="photo-img" src="/_blob/4b5391a4eda08ec8242ae09059e6a7e3" alt="Alpha scientist preparing samples in a biosafety cabinet">
+        <svg viewBox="0 0 600 260" preserveAspectRatio="none" aria-hidden="true"><path d="M0 206 C140 176 300 240 430 206 S560 186 600 196 L600 260 L0 260 Z" fill="#EEF5FB"></path></svg>
+      </div>
+      <div class="cap-list">
+        <div class="cap">
+          <h3>IVIS imaging</h3>
+          <p>Our Spectrum IVIS imager captures bioluminescence and fluorescence in live, whole-body images or ex vivo tissue.</p>
+          <ul><li>Bioluminescence</li><li>Fluorescence</li><li>Longitudinal tumor burden</li></ul>
+          <p class="lead"><img src="/_blob/c9d31a9dcb31363d7c0a0ba388f59670" alt=""><a href="Team.dc.html#barak-yahalom">Led by Barak Yahalom, DVM</a></p>
+        </div>
+        <div class="cap">
+          <h3>Surgical services</h3>
+          <p>Aseptic surgery in small and large animal species, performed by a trained team led by a staff DVM for smoother recovery.</p>
+          <ul><li>USDA-compliant suite</li><li>Alzet continuous SC dosing</li><li>Intracerebroventricular (ICV)</li></ul>
+          <p class="lead"><img src="/_blob/c9d31a9dcb31363d7c0a0ba388f59670" alt=""><img src="/_blob/96ff2bcfb76710fba07fe859fbc51e0d" alt=""><span><a href="Team.dc.html#barak-yahalom">Barak Yahalom, DVM</a> and <a href="Team.dc.html#gil-chacon">Gil Chacon</a></span></p>
+        </div>
+        <div class="cap">
+          <h3>Colony management</h3>
+          <p>Custom breeding programs run by staff skilled in rodent reproduction, with a dedicated project manager for data and colony records.</p>
+          <ul><li>Innovive racks</li><li>Breeding strategy design</li><li>Dedicated project manager</li></ul>
+          <p class="lead"><img src="/_blob/4902e50d4f6db0edc079f4555cedece8" alt=""><a href="Team.dc.html#ashley-kolofsky">Led by Ashley Kolofsky</a></p>
+        </div>
+        <div class="cap">
+          <h3>In vitro laboratory</h3>
+          <p>Biomarker and cellular analysis on the samples your study generates, without shipping them out.</p>
+          <ul><li>Multicolor flow cytometry</li><li>ELISA and cytokine assays</li><li>CBC and serum chemistry</li><li>Primary cell isolation</li><li>Histology and IHC</li></ul>
+          <p class="lead"><img src="/_blob/22a259045205d87350a7c4a2d4743305" alt=""><a href="Team.dc.html#cindy-hopper">Led by Cindy Hopper</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="proc-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="proc-h">How a study runs with Alpha</h2>
+      <p>One scientific point of contact from first call to final report, and clear communication at every step.</p>
+    </div>
+    <ol class="steps">
+      <li class="step"><h3>Scope the question</h3><p>We talk through your compound, target and decision point, and recommend the model and endpoints that answer it.</p></li>
+      <li class="step"><h3>Design the protocol</h3><p>You receive a study design, timeline and quote. We prepare formulations, vehicles and induction reagents.</p></li>
+      <li class="step"><h3>Run the study</h3><p>Dosing, imaging, sampling and in-life observations, with progress updates on the schedule you choose.</p></li>
+      <li class="step"><h3>Report the data</h3><p>Analyzed results, raw data and a review call with the scientist who ran your study.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec pubs-sec" id="publications" aria-labelledby="pub-h">
+  <div class="wrap pubs">
+    <div>
+      <h2 id="pub-h">Our scientists publish the models they run</h2>
+      <p class="intro">Alpha's scientists and their collaborators have published 16 peer-reviewed papers on the disease models, delivery systems and methods behind your studies.</p>
+      <ul class="areas">
+        <li><span>Gene therapy</span><b>5</b></li>
+        <li><span>Type 2 diabetes and metabolic syndrome</span><b>3</b></li>
+        <li><span>Type 1 diabetes</span><b>3</b></li>
+        <li><span>Anesthesia and analgesia</span><b>3</b></li>
+        <li><span>Gene regulation</span><b>2</b></li>
+      </ul>
+      <a class="btn btn-primary" href="Publications.dc.html" style="margin-top:36px">Browse all publications</a>
+    </div>
+    <ol class="paper-list">
+      <li class="paper"><span class="area-tag">Gene therapy</span><h3><a href="Publications.dc.html">Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy</a></h3><p class="by">DeRosa F, Smith L, Shen Y, Huang Y, Pan J, Xie H, <b>Yahalom B</b>, Heartlein MW</p><p class="journal">Molecular Therapy</p></li>
+      <li class="paper"><span class="area-tag">Gene therapy</span><h3><a href="Publications.dc.html">Therapeutic Efficacy in a Hemophilia B Model Using a Biosynthetic mRNA Liver Depot System</a></h3><p class="by">DeRosa F, Guild B, Karve S, Smith L, Love K, Dorkin JR, Kauffman KJ, Zhang J, <b>Yahalom B</b>, Anderson DG, Heartlein MW</p><p class="journal">Gene Therapy</p></li>
+      <li class="paper"><span class="area-tag">Type 1 diabetes</span><h3><a href="Publications.dc.html">LEW.1WR1 Rats Develop Autoimmune Diabetes Spontaneously and in Response to Environmental Perturbation</a></h3><p class="by">Mordes JP, Guberski DL, Leif JH, Woda BA, <b>Flanagan JF</b>, Greiner DL, Kislauskis EH, Tirabassi RS</p></li>
+      <li class="paper"><span class="area-tag">Type 2 diabetes</span><h3><a href="Publications.dc.html">The BBZDR/Wor Rat Model for Investigating the Complications of Type 2 Diabetes Mellitus</a></h3><p class="by">Tirabassi RS, <b>Flanagan JF</b>, Wu T, Kislauskis EH, Birckbichler PJ, Guberski DL</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec sec-mist" id="about" aria-labelledby="ppl-h">
+  <div class="wrap people">
+    <div>
+      <h2 id="ppl-h">Senior scientists who treat your program as their own</h2>
+      <p class="intro">Founded in 2020 and US owned, Alpha was built to give biotech and pharma teams the attention of a partner with the capacity of a CRO.</p>
+      <div class="values">
+        <div><h3>Trust</h3><p>Honest, open discussion toward a shared goal: your program's success.</p></div>
+        <div><h3>Innovation</h3><p>Decades of preclinical expertise, applied to new questions.</p></div>
+        <div><h3>Transparency</h3><p>Every operational and study detail communicated clearly and promptly.</p></div>
+        <div><h3>Client first</h3><p>A seamless experience and long-term value for your research.</p></div>
+      </div>
+    </div>
+    <div class="team">
+      <a class="member" href="Team.dc.html#ashley-kolofsky"><div class="face"><img src="/_blob/4902e50d4f6db0edc079f4555cedece8" alt="Ashley Kolofsky"><img class="alt" src="/_blob/d2a6749285f43cca6b8e2205d889e9d9" alt=""></div><div><b>Ashley Kolofsky</b><small>Study Team Supervisor</small></div></a>
+      <a class="member" href="Team.dc.html#barak-yahalom"><div class="face"><img src="/_blob/c9d31a9dcb31363d7c0a0ba388f59670" alt="Barak Yahalom"><img class="alt" src="/_blob/90d2010c3308d1f32d45b081d74dee0b" alt=""></div><div><b>Barak Yahalom, DVM</b><small>CEO and Chief Scientific Officer</small></div></a>
+      <a class="member" href="Team.dc.html#cindy-hopper"><div class="face"><img src="/_blob/22a259045205d87350a7c4a2d4743305" alt="Cindy Hopper"><img class="alt" src="/_blob/7ef4fed6780a103583e1f7c2db5e78b4" alt=""></div><div><b>Cindy Hopper</b><small>Founding Scientist, In Vitro</small></div></a>
+      <a class="member" href="Team.dc.html#gil-chacon"><div class="face"><img src="/_blob/96ff2bcfb76710fba07fe859fbc51e0d" alt="Gil Chacon"><img class="alt" src="/_blob/7fa90d189bc6591ba8d59455844bd6db" alt=""></div><div><b>Gil Chacon</b><small>In Vivo and Surgical Support</small></div></a>
+      <a class="member" href="Team.dc.html#joan-flanagan"><div class="face"><img src="/_blob/590caa59917513c5891b761a02b75807" alt="Joan Flanagan"><img class="alt" src="/_blob/1aa762b21513362591f4458523ce3c40" alt=""></div><div><b>Joan Flanagan, PhD</b><small>President and COO</small></div></a>
+      <div class="team-cta" id="careers"><p>We're growing. Bring your research experience to Worcester.</p><a href="Careers.dc.html">See open roles</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="faq-h">
+  <div class="wrap faq">
+    <div>
+      <h2 id="faq-h">Questions from research teams</h2>
+      <p style="color:var(--muted);font-size:19px;margin-top:24px;max-width:26em">Don't see yours? <a href="Contact.dc.html">Ask a scientist</a> and a member of our team will follow up.</p>
+    </div>
+    <div class="faq-list">
+      <sc-for list="{{faqs}}" as="f" hint-placeholder-count="5">
+        <div class="q">
+          <button type="button" aria-expanded="{{f.expanded}}" onClick="{{f.toggle}}"><span>{{f.q}}</span><span class="ico" aria-hidden="true">{{f.icon}}</span></button>
+          <sc-if value="{{f.open}}" hint-placeholder-val="{{false}}"><p class="ans">{{f.a}}</p></sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact" aria-labelledby="cta-h">
+  <svg class="top" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C180 0 540 80 720 40 S1260 0 1440 40"></path><path d="M0 70 C200 36 520 104 720 70 S1240 36 1440 70"></path></svg>
+  <div class="wrap" style="position:relative">
+    <h2 id="cta-h">Tell us what your program needs to prove next</h2>
+    <p>Share your compound, target and timeline. A senior scientist will reply with a recommended study design and quote.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-light" href="Contact.dc.html#form">Request a study quote</a>
+      <a class="btn btn-ghost-dark" href="mailto:info@alphapreclinical.com">Email info@alphapreclinical.com</a>
+    </div>
+  </div>
+  <svg class="bot" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C180 0 540 80 720 40 S1260 0 1440 40"></path></svg>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:96px;height:auto;display:block">
+        <address>Alpha Preclinical LLC<br>722 Plantation Street<br>Worcester, MA 01605<br><a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a></address>
+      </div>
+      <div><h3>Expertise</h3><ul><li><a href="#pk-pd">PK/PD</a></li><li><a href="#gene-therapy">Gene therapy</a></li><li><a href="#autoimmune">Autoimmune disease</a></li><li><a href="#metabolic">Metabolic disease</a></li><li><a href="#fibrosis">Inflammation and fibrosis</a></li><li><a href="#tumor">Tumor models</a></li></ul></div>
+      <div><h3>Services</h3><ul><li><a href="#ivis">IVIS imaging</a></li><li><a href="#surgery">Surgical services</a></li><li><a href="#colony">Colony management</a></li><li><a href="#in-vitro">In vitro laboratory</a></li></ul></div>
+      <div><h3>Company</h3><ul><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></div>
+    </div>
+    <div class="ftr-base"><span>© 2026 Alpha Preclinical LLC</span><span><a href="#privacy">Privacy policy</a></span></div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7300}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { open: 0 }; }
+  renderVals() {
+    const items = [
+      { q: 'What kinds of studies does Alpha Preclinical run?', a: 'We specialize in early preclinical in vivo research: PK/PD and lead optimization, feasibility and proof-of-concept, efficacy, and iterative testing, supported by imaging, surgery and in vitro analysis.' },
+      { q: 'Can you run a custom or literature-based model?', a: 'Yes. Our scientists regularly adapt existing models or set up a model from a published paper, and we confirm the design with you before any animals are enrolled.' },
+      { q: 'Which in vitro readouts can you add to an in vivo study?', a: 'Flow cytometry (including T and B cell immunophenotyping and stimulation assays), ELISA and cytokine panels, CBC differentials, serum chemistry, primary cell isolation, cell culture and immunohistochemistry.' },
+      { q: 'Where is Alpha Preclinical located?', a: 'Our vivarium and laboratories are at 722 Plantation Street in Worcester, Massachusetts, within easy reach of the Boston and Cambridge biotech community.' },
+      { q: 'How do I get a study quote?', a: 'Send us your compound, target and timeline through the quote form. A senior scientist will follow up to scope the study and send a design and quote.' }
+    ];
+    const faqs = items.map((it, i) => {
+      const open = this.state.open === i;
+      return { ...it, open, expanded: open ? 'true' : 'false', icon: open ? '−' : '+', toggle: () => this.setState({ open: open ? -1 : i }) };
+    });
+    return { faqs };
+  }
+}
+</script>
+</body>
+</html>

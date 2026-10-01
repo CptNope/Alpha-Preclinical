@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Careers at Alpha Preclinical</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+.ap{--navy:#1F2858;--abyss:#0F3360;--tide:#1E58A0;--current:#4B98D2;--shallows:#88C6EE;--mist:#EEF5FB;--paper:#FFFFFF;--muted:#4A5878;--on-abyss:#B9CCE3;--line:#D3E0EE;--error:#B3261E;
+  font-family:"Figtree","Helvetica Neue",Arial,sans-serif;color:var(--navy);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.ap *{box-sizing:border-box}
+.ap h1,.ap h2,.ap h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;font-weight:600;margin:0;text-wrap:balance}
+.ap p{margin:0}
+.ap a{color:var(--tide)}
+.ap a:hover{color:var(--navy)}
+.ap a:focus-visible,.ap button:focus-visible{outline:3px solid var(--current);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;line-height:1;border:0;cursor:pointer;font-family:inherit}
+.ap .btn-primary{background:var(--tide);color:#fff}
+.ap .btn-primary:hover{background:var(--navy);color:#fff}
+.ap .btn-light{background:var(--shallows);color:var(--abyss)}
+.ap .btn-light:hover{background:#fff;color:var(--abyss)}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:32px;padding-top:24px;padding-bottom:24px}
+.nav{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.ap .nav a{color:#fff;text-decoration:none;font-weight:500}
+.ap .nav a:hover,.ap .nav a[aria-current]{color:var(--shallows)}
+.top{position:relative;background:var(--abyss);color:#fff;overflow:hidden}
+.top-body{position:relative;z-index:2;padding-top:40px;padding-bottom:190px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:end}
+.crumbs{display:flex;gap:10px;list-style:none;margin:0 0 28px;padding:0;font-size:15px;color:var(--on-abyss)}
+.ap .crumbs a{color:var(--on-abyss);text-decoration:none}
+.crumbs li+li::before{content:"/";margin-right:10px;color:rgba(185,204,227,.5)}
+.top h1{font-size:clamp(42px,5.6vw,76px);line-height:.99;letter-spacing:-.035em}
+.top p{color:var(--on-abyss);font-size:20px;line-height:1.55;max-width:34em;margin-top:24px}
+.top .btn{margin-top:36px}
+.top-photo{border-radius:14px;overflow:hidden;aspect-ratio:4/3;margin-bottom:-40px;position:relative;z-index:2}
+.top-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
+.strata{position:absolute;left:0;right:0;bottom:-1px;height:200px;z-index:1}
+.strata svg{width:100%;height:100%;display:block}
+
+.sec{padding:112px 0}
+.sec-mist{background:var(--mist)}
+.h2{font-size:clamp(32px,3.8vw,48px);line-height:1.05;letter-spacing:-.025em}
+.why{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:72px;align-items:start}
+.why .intro{color:var(--muted);font-size:19px;margin-top:20px;max-width:28em}
+.perks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px}
+.perk{padding:30px 0;border-top:1.5px solid var(--line)}
+.perk h3{font-size:24px;margin-bottom:8px}
+.perk p{color:var(--muted)}
+
+.roles-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:40px}
+.filters{display:flex;flex-wrap:wrap;gap:10px}
+.filters button{min-height:48px;padding:0 20px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font:500 15px/1 "Figtree",sans-serif;cursor:pointer}
+.filters button:hover{border-color:var(--tide);color:var(--tide)}
+.filters button[aria-pressed="true"]{background:var(--abyss);border-color:var(--abyss);color:#fff}
+.roles{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--navy)}
+.role{border-bottom:1.5px solid var(--line)}
+.role-btn{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto 44px;gap:32px;align-items:center;padding:28px 0}
+.role-btn h3{font-size:26px;line-height:1.15;letter-spacing:-.015em}
+.role-btn:hover h3{color:var(--tide)}
+.role-meta{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:14px;font-weight:500;line-height:1.3;padding:7px 11px;border-radius:6px;background:var(--mist);color:var(--navy)}
+.ico{width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--tide);font-size:22px;line-height:1}
+.role-body{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;padding:0 0 40px}
+.role-body p{color:var(--muted);max-width:36em}
+.role-body h4{font-family:"Figtree",sans-serif;font-size:14px;font-weight:600;color:var(--muted);margin:0 0 10px}
+.role-body ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.role-body .apply{margin-top:24px}
+.none{margin-top:32px;color:var(--muted)}
+
+.apply-sec{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
+.apply-sec .intro{color:var(--muted);font-size:19px;margin-top:20px;max-width:28em}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 24px}
+.field{display:grid;gap:8px}
+.field.full{grid-column:1 / -1}
+.field label{font-size:15px;font-weight:600}
+.field label small{font-weight:500;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;min-height:52px;padding:12px 16px;border-radius:6px;border:1.5px solid #B4C6DC;background:#fff;color:var(--navy);font:400 17px/1.4 "Figtree",sans-serif}
+.field input[type="file"]{padding:12px;min-height:auto;background:var(--paper)}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--tide);box-shadow:0 0 0 3px rgba(75,152,210,.35)}
+.field input[aria-invalid="true"]{border-color:var(--error)}
+.err{font-size:14px;font-weight:500;color:var(--error)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:28px}
+.actions p{font-size:14px;color:var(--muted)}
+.done{padding:36px;border-radius:14px;background:#fff}
+.done h3{font-size:26px}
+.done p{color:var(--muted);margin-top:10px}
+.done button{all:unset;cursor:pointer;color:var(--tide);font-weight:600;margin-top:18px;display:inline-block}
+@media (max-width:1080px){.nav,.hdr .btn{display:none}.top-body,.why,.apply-sec{grid-template-columns:minmax(0,1fr);gap:40px}.top-photo{margin-bottom:0}.role-body{grid-template-columns:minmax(0,1fr);gap:28px}}
+@media (max-width:680px){.wrap{padding:0 16px}.sec{padding:72px 0}.top-body{padding-bottom:110px}.strata{height:110px}.perks,.fields{grid-template-columns:minmax(0,1fr)}.role-btn{grid-template-columns:minmax(0,1fr) 44px;gap:12px 16px}.role-meta{grid-column:1;grid-row:2}.ico{grid-column:2;grid-row:1}}
+</style>
+</helmet>
+<div class="ap">
+<header class="top">
+  <div class="wrap hdr">
+    <a href="Main.dc.html" aria-label="Alpha Preclinical home"><img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
+    <nav aria-label="Main"><ul class="nav"><li><a href="Main.dc.html#expertise">Expertise</a></li><li><a href="Main.dc.html#capabilities">Services</a></li><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="#" aria-current="page">Careers</a></li></ul></nav>
+    <a class="btn btn-light" href="Contact.dc.html">Request a study quote</a>
+  </div>
+  <div class="wrap top-body">
+    <div>
+      <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="Main.dc.html">Home</a></li><li aria-current="page">Careers</li></ol></nav>
+      <h1>Do research that helps new therapies reach the clinic</h1>
+      <p>Join a small, experienced team where your work shapes real drug development programs, and where you learn from scientists with decades in the field.</p>
+      <a class="btn btn-light" href="#roles">See open roles</a>
+    </div>
+    <div class="top-photo"><img src="/_blob/35e49d3be0586d13613489ae4711ffcd" alt="The Alpha Preclinical team outside the Worcester facility"></div>
+  </div>
+  <div class="strata" aria-hidden="true">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0 70 C180 30 540 110 720 70 S1260 30 1440 70 L1440 200 L0 200 Z" fill="#1E58A0"></path>
+      <path d="M0 110 C180 76 540 144 720 110 S1260 76 1440 110 L1440 200 L0 200 Z" fill="#4B98D2"></path>
+      <path d="M0 144 C180 118 540 170 720 144 S1260 118 1440 144 L1440 200 L0 200 Z" fill="#88C6EE"></path>
+      <path d="M0 174 C180 156 540 192 720 174 S1260 156 1440 174 L1440 200 L0 200 Z" fill="#FFFFFF"></path>
+    </svg>
+  </div>
+</header>
+
+<main>
+<section class="sec" aria-labelledby="why-h">
+  <div class="wrap why">
+    <div>
+      <h2 class="h2" id="why-h">Why people work here</h2>
+      <p class="intro">At a small CRO, you see every study from protocol to report, and the people leading the company work alongside you.</p>
+    </div>
+    <div class="perks">
+      <div class="perk"><h3>Work-life balance</h3><p>Schedules planned around studies and around your life, with a team that covers for each other.</p></div>
+      <div class="perk"><h3>Professional development</h3><p>Hands-on training from colleagues with 15 to 20+ years in preclinical research, across in vivo, surgical and in vitro work.</p></div>
+      <div class="perk"><h3>Collaboration</h3><p>Scientists and technicians work side by side, and you'll talk with clients about the science, not just run protocols.</p></div>
+      <div class="perk"><h3>Community service</h3><p>Our leaders serve on local science education and industry boards, and we encourage the team to get involved too.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-mist" id="roles" aria-labelledby="roles-h">
+  <div class="wrap">
+    <div class="roles-head">
+      <h2 class="h2" id="roles-h">Open roles</h2>
+      <div class="filters" role="group" aria-label="Filter roles">
+        <sc-for list="{{filters}}" as="f" hint-placeholder-count="3">
+          <button type="button" aria-pressed="{{f.pressed}}" onClick="{{f.pick}}">{{f.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+    <ul class="roles">
+      <sc-for list="{{roles}}" as="r" hint-placeholder-count="4">
+        <li class="role">
+          <button class="role-btn" type="button" aria-expanded="{{r.expanded}}" onClick="{{r.toggle}}">
+            <h3>{{r.title}}</h3>
+            <span class="role-meta"><span class="chip">{{r.team}}</span><span class="chip">Full-time, on-site</span><span class="chip">{{r.location}}</span></span>
+            <span class="ico" aria-hidden="true">{{r.icon}}</span>
+          </button>
+          <sc-if value="{{r.open}}" hint-placeholder-val="{{false}}">
+            <div class="role-body">
+              <div>
+                <p>{{r.summary}}</p>
+                <a class="btn btn-primary apply" href="#apply" onClick="{{r.applyFor}}">Apply for this role</a>
+              </div>
+              <div>
+                <h4>What we're looking for</h4>
+                <ul><sc-for list="{{r.reqs}}" as="q" hint-placeholder-count="2"><li>{{q}}</li></sc-for></ul>
+              </div>
+            </div>
+          </sc-if>
+        </li>
+      </sc-for>
+    </ul>
+    <p class="none">Don't see your role? Send your resume to <a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a> and tell us what you'd like to do.</p>
+  </div>
+</section>
+
+<section class="sec" id="apply" aria-labelledby="apply-h">
+  <div class="wrap apply-sec">
+    <div>
+      <h2 class="h2" id="apply-h">Apply</h2>
+      <p class="intro">Send your resume and a few lines about your experience. We read every application and will contact you if there's a fit.</p>
+    </div>
+    <div>
+      <sc-if value="{{notSent}}" hint-placeholder-val="{{true}}">
+        <form onSubmit="{{submit}}" novalidate="">
+          <div class="fields">
+            <div class="field"><label for="a-fn">First name</label><input id="a-fn" autocomplete="given-name"></div>
+            <div class="field"><label for="a-ln">Last name</label><input id="a-ln" autocomplete="family-name"></div>
+            <div class="field"><label for="a-em">Email</label><input id="a-em" type="email" autocomplete="email" value="{{email}}" onChange="{{setEmail}}" aria-invalid="{{emailInvalid}}" aria-describedby="a-em-err"><sc-if value="{{showEmailErr}}" hint-placeholder-val="{{false}}"><span class="err" id="a-em-err">Enter an email address so we can reply.</span></sc-if></div>
+            <div class="field"><label for="a-ph">Phone <small>(optional)</small></label><input id="a-ph" type="tel" autocomplete="tel"></div>
+            <div class="field full"><label for="a-role">Role</label>
+              <select id="a-role" value="{{applyRole}}" onChange="{{setRole}}">
+                <sc-for list="{{roleOptions}}" as="o" hint-placeholder-count="5"><option value="{{o}}">{{o}}</option></sc-for>
+              </select>
+            </div>
+            <div class="field full"><label for="a-cv">Resume <small>(PDF or Word)</small></label><input id="a-cv" type="file" accept=".pdf,.doc,.docx"></div>
+            <div class="field full"><label for="a-note">Tell us about your experience <small>(optional)</small></label><textarea id="a-note" placeholder="Species, techniques, CRO or lab experience, and what you'd like to do next"></textarea></div>
+          </div>
+          <div class="actions"><button class="btn btn-primary" type="submit">Submit application</button><p>[Link to privacy policy]</p></div>
+        </form>
+      </sc-if>
+      <sc-if value="{{sent}}" hint-placeholder-val="{{false}}">
+        <div class="done" role="status"><h3>Application submitted</h3><p>Thanks for applying for {{applyRole}}. We'll reply to {{email}} if there's a fit.</p><button type="button" onClick="{{reset}}">Submit another application</button></div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3600}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { team: 'All', open: 0, sent: false, email: '', tried: false, applyRole: 'Senior Research Technician, In Vivo' }; }
+  renderVals() {
+    const loc = 'Worcester, MA';
+    const all = [
+      { title: 'Senior Research Technician, In Vivo', team: 'In vivo', summary: 'Contribute across the full lifecycle of contracted studies: execute client projects, perform in vivo procedures and support in vitro work alongside our scientists.', reqs: ['Experience at a contract research organization', 'Strong in vivo technical skills', 'Self-motivated, organized and detail oriented'] },
+      { title: 'Scientist, In Vivo Study Director', team: 'In vivo', summary: 'Lead contract research projects from start to finish: coordinate and manage studies, ensure effective execution, and interpret and report study data to clients.', reqs: ['Experience at a contract research organization', 'Study design, data interpretation and reporting experience', 'Self-motivated, with clear client communication'] },
+      { title: 'Research Associate, In Vivo', team: 'In vivo', summary: 'Perform in vivo animal procedures, some in vitro laboratory work and facility operations, under the direct supervision of our study team.', reqs: ['CRO or other relevant animal research experience', 'Willingness to learn new techniques', 'Self-motivated and dependable'] },
+      { title: 'Research Associate, In Vitro', team: 'In vitro', summary: 'Perform in vitro laboratory procedures and support facility operations, under the supervision of our in vitro lead.', reqs: ['CRO or other relevant laboratory experience', 'Familiarity with assays such as ELISA, flow cytometry or cell culture', 'Self-motivated and detail oriented'] }
+    ];
+    const t = this.state.team;
+    const list = all.map((r, i) => ({ ...r, i })).filter((r) => t === 'All' || r.team === t);
+    const roles = list.map((r) => {
+      const open = this.state.open === r.i;
+      return { ...r, location: loc, open, expanded: open ? 'true' : 'false', icon: open ? '−' : '+',
+        toggle: () => this.setState({ open: open ? -1 : r.i }),
+        applyFor: () => this.setState({ applyRole: r.title }) };
+    });
+    const filters = ['All', 'In vivo', 'In vitro'].map((label) => ({ label, pressed: t === label ? 'true' : 'false', pick: () => this.setState({ team: label }) }));
+    const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.state.email);
+    const showEmailErr = this.state.tried && !ok;
+    return {
+      filters, roles,
+      roleOptions: all.map((r) => r.title).concat(['General application']),
+      applyRole: this.state.applyRole,
+      setRole: (e) => this.setState({ applyRole: e.target.value }),
+      sent: this.state.sent, notSent: !this.state.sent, email: this.state.email,
+      showEmailErr, emailInvalid: showEmailErr ? 'true' : 'false',
+      setEmail: (e) => this.setState({ email: e.target.value }),
+      submit: (e) => { e.preventDefault(); if (ok) this.setState({ sent: true }); else this.setState({ tried: true }); },
+      reset: () => this.setState({ sent: false, email: '', tried: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

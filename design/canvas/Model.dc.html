@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tumor models page template</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+.ap{--navy:#1F2858;--abyss:#0F3360;--tide:#1E58A0;--current:#4B98D2;--shallows:#88C6EE;--mist:#EEF5FB;--paper:#FFFFFF;--muted:#4A5878;--on-abyss:#B9CCE3;--line:#D3E0EE;
+  font-family:"Figtree","Helvetica Neue",Arial,sans-serif;color:var(--navy);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.ap *{box-sizing:border-box}
+.ap h1,.ap h2,.ap h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;font-weight:600;margin:0;text-wrap:balance}
+.ap p{margin:0}
+.ap a{color:var(--tide)}
+.ap a:hover{color:var(--navy)}
+.ap a:focus-visible{outline:3px solid var(--current);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;line-height:1}
+.ap .btn-primary{background:var(--tide);color:#fff}
+.ap .btn-primary:hover{background:var(--navy);color:#fff}
+.ap .btn-light{background:var(--shallows);color:var(--abyss)}
+.ap .btn-light:hover{background:#fff;color:var(--abyss)}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:32px;padding-top:24px;padding-bottom:24px}
+.nav{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+.ap .nav a{color:#fff;text-decoration:none;font-weight:500}
+.ap .nav a[aria-current]{color:var(--shallows)}
+.top{position:relative;background:var(--abyss);color:#fff;overflow:hidden}
+.top-body{position:relative;z-index:2;padding-top:40px;padding-bottom:180px;max-width:860px}
+.crumbs{display:flex;gap:10px;list-style:none;margin:0 0 28px;padding:0;font-size:15px;color:var(--on-abyss)}
+.ap .crumbs a{color:var(--on-abyss);text-decoration:none}
+.ap .crumbs a:hover{color:#fff}
+.crumbs li+li::before{content:"/";margin-right:10px;color:rgba(185,204,227,.5)}
+.top h1{font-size:clamp(42px,5.4vw,72px);line-height:1;letter-spacing:-.035em}
+.top p{color:var(--on-abyss);font-size:20px;line-height:1.55;max-width:36em;margin-top:24px}
+.strata{position:absolute;left:0;right:0;bottom:-1px;height:200px;z-index:1}
+.strata svg{width:100%;height:100%;display:block}
+.sec{padding:112px 0}
+.sec-mist{background:var(--mist)}
+.split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:72px;align-items:start}
+.split h2{font-size:clamp(30px,3.4vw,44px);line-height:1.06;letter-spacing:-.025em}
+.split .note{color:var(--muted);margin-top:18px}
+table{width:100%;border-collapse:collapse;font-size:16px}
+th{text-align:left;font-weight:600;font-size:14px;color:var(--muted);padding:0 16px 14px 0;border-bottom:1.5px solid var(--navy)}
+td{padding:22px 16px 22px 0;border-bottom:1.5px solid var(--line);vertical-align:top}
+td:first-child{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:20px;line-height:1.25;width:34%}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:14px;font-weight:500;line-height:1.3;padding:7px 11px;border-radius:6px;background:var(--mist);color:var(--navy)}
+.crew{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ap .crew a{display:flex;gap:16px;align-items:center;padding:16px;border-radius:14px;border:1.5px solid var(--line);text-decoration:none;color:var(--navy);min-height:96px}
+.ap .crew a:hover{border-color:var(--tide)}
+.ap .crew a:hover b{color:var(--tide)}
+.crew img{width:64px;height:64px;border-radius:999px;object-fit:cover;object-position:50% 18%;flex:none}
+.crew b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:19px;line-height:1.2}
+.crew small{display:block;color:var(--muted);font-size:14.5px;line-height:1.4;margin-top:4px}
+.ends{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.end{border-top:1.5px solid var(--current);padding-top:22px}
+.end h3{font-size:22px;margin-bottom:8px}
+.end p{color:var(--muted);font-size:16px}
+.ap .end a{font-weight:600;text-decoration:none;font-size:15px;display:inline-block;margin-top:12px}
+.related{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.ap .related a{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:999px;background:#fff;border:1.5px solid var(--line);color:var(--navy);text-decoration:none;font-weight:500}
+.ap .related a:hover{border-color:var(--tide);color:var(--tide)}
+.band{background:var(--abyss);color:#fff;border-radius:14px;padding:56px;display:flex;justify-content:space-between;align-items:center;gap:40px}
+.band h2{font-size:36px;line-height:1.08;letter-spacing:-.02em;max-width:18ch}
+.band p{color:var(--on-abyss);margin-top:12px;max-width:30em}
+@media (max-width:1080px){.nav,.hdr .btn{display:none}.split{grid-template-columns:minmax(0,1fr);gap:32px}.ends{grid-template-columns:minmax(0,1fr)}.band{flex-direction:column;align-items:flex-start;padding:40px}}
+@media (max-width:680px){.wrap{padding:0 16px}.sec{padding:72px 0}.top-body{padding-bottom:120px}.strata{height:120px}td:first-child{width:auto}thead{display:none}.crew{grid-template-columns:minmax(0,1fr)}tr{display:grid;gap:10px;padding:20px 0;border-bottom:1.5px solid var(--line)}td{padding:0;border:none}}
+</style>
+</helmet>
+<div class="ap">
+<header class="top">
+  <div class="wrap hdr">
+    <a href="Main.dc.html" aria-label="Alpha Preclinical home"><img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
+    <nav aria-label="Main"><ul class="nav"><li><a href="#" aria-current="page">Expertise</a></li><li><a href="#">Services</a></li><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li></ul></nav>
+    <a class="btn btn-light" href="Contact.dc.html">Request a study quote</a>
+  </div>
+  <div class="wrap top-body">
+    <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="Main.dc.html">Home</a></li><li><a href="#">Expertise</a></li><li aria-current="page">Tumor models</li></ol></nav>
+    <h1>Tumor models for in vivo oncology efficacy studies</h1>
+    <p>Syngeneic and xenograft models run by scientists who have designed oncology studies for decades, with tumor burden tracked by caliper and by bioluminescent IVIS imaging.</p>
+  </div>
+  <div class="strata" aria-hidden="true">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0 70 C180 30 540 110 720 70 S1260 30 1440 70 L1440 200 L0 200 Z" fill="#1E58A0"></path>
+      <path d="M0 110 C180 76 540 144 720 110 S1260 76 1440 110 L1440 200 L0 200 Z" fill="#4B98D2"></path>
+      <path d="M0 144 C180 118 540 170 720 144 S1260 118 1440 144 L1440 200 L0 200 Z" fill="#88C6EE"></path>
+      <path d="M0 174 C180 156 540 192 720 174 S1260 156 1440 174 L1440 200 L0 200 Z" fill="#FFFFFF"></path>
+    </svg>
+  </div>
+</header>
+<main>
+<section class="sec" aria-labelledby="m-h">
+  <div class="wrap split">
+    <div>
+      <h2 id="m-h">Models we run</h2>
+      <p class="note">Don't see your model? We can adapt one of these or set up a model from the literature.</p>
+    </div>
+    <table>
+      <thead><tr><th scope="col">Model</th><th scope="col">Species and strain</th><th scope="col">Typical readouts</th></tr></thead>
+      <tbody>
+        <tr><td>[Model name, e.g. subcutaneous syngeneic]</td><td>[Mouse strain]</td><td><div class="chips"><span class="chip">Caliper volume</span><span class="chip">Body weight</span><span class="chip">Survival</span></div></td></tr>
+        <tr><td>[Model name, e.g. luciferase xenograft]</td><td>[Mouse strain]</td><td><div class="chips"><span class="chip">IVIS bioluminescence</span><span class="chip">Ex vivo imaging</span></div></td></tr>
+        <tr><td>[Model name, e.g. orthotopic]</td><td>[Mouse strain]</td><td><div class="chips"><span class="chip">IVIS bioluminescence</span><span class="chip">Histology and IHC</span></div></td></tr>
+        <tr><td>[Model name]</td><td>[Mouse strain]</td><td><div class="chips"><span class="chip">Flow cytometry (TILs)</span><span class="chip">Cytokines</span></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="sec sec-mist" aria-labelledby="e-h">
+  <div class="wrap">
+    <h2 id="e-h" style="font-size:clamp(30px,3.4vw,44px);line-height:1.06;letter-spacing:-.025em;margin-bottom:56px;max-width:20ch">Endpoints measured in house</h2>
+    <div class="ends">
+      <div class="end"><h3>Live imaging</h3><p>Whole-body bioluminescence and fluorescence on our Spectrum IVIS, plus ex vivo tissue imaging at termination.</p><a href="#">IVIS imaging</a></div>
+      <div class="end"><h3>Immune profiling</h3><p>Multicolor flow cytometry on tumor, blood and spleen, analyzed in FlowJo, with ELISA and cytokine panels.</p><a href="#">In vitro laboratory</a></div>
+      <div class="end"><h3>Tissue analysis</h3><p>Histology and immunohistochemistry on tumors and organs, plus CBC and serum chemistry for tolerability.</p><a href="#">In vitro laboratory</a></div>
+    </div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="t-h">
+  <div class="wrap split">
+    <div>
+      <h2 id="t-h">Your study team</h2>
+      <p class="note">The scientists and technicians who design, run and report oncology studies at Alpha.</p>
+    </div>
+    <ul class="crew">
+      <li><a href="Team.dc.html#barak-yahalom"><img src="/_blob/c9d31a9dcb31363d7c0a0ba388f59670" alt=""><span><b>Barak Yahalom, DVM</b><small>Lead scientist. Study design, in vivo pharmacology and reporting</small></span></a></li>
+      <li><a href="Team.dc.html#gil-chacon"><img src="/_blob/96ff2bcfb76710fba07fe859fbc51e0d" alt=""><span><b>Gil Chacon</b><small>Tumor implantation, dosing, surgery and imaging</small></span></a></li>
+      <li><a href="Team.dc.html#cindy-hopper"><img src="/_blob/22a259045205d87350a7c4a2d4743305" alt=""><span><b>Cindy Hopper</b><small>Flow cytometry, cytokines and histology endpoints</small></span></a></li>
+      <li><a href="Team.dc.html#ashley-kolofsky"><img src="/_blob/4902e50d4f6db0edc079f4555cedece8" alt=""><span><b>Ashley Kolofsky</b><small>Study scheduling and vivarium operations</small></span></a></li>
+    </ul>
+  </div>
+</section>
+<section class="sec sec-mist" aria-labelledby="r-h">
+  <div class="wrap">
+    <h2 id="r-h" style="font-size:28px;margin-bottom:20px">Related expertise</h2>
+    <div class="related"><a href="#">PK/PD</a><a href="#">Gene therapy</a><a href="#">Autoimmune disease</a><a href="#">Metabolic disease</a><a href="#">Inflammation and fibrosis</a></div>
+    <div class="band" id="quote" style="margin-top:96px">
+      <div><h2>Plan your next oncology study with us</h2><p>Send your compound, model and timeline. A senior scientist will reply with a study design and quote.</p></div>
+      <a class="btn btn-light" href="Contact.dc.html">Request a study quote</a>
+    </div>
+  </div>
+</section>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

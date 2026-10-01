@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog | Alpha Preclinical</title>
+<meta name="description" content="Practical guidance on preclinical study design, model selection and in vivo readouts from the scientists who run Alpha Preclinical&#x27;s studies.">
+<meta property="og:title" content="Blog | Alpha Preclinical">
+<meta property="og:description" content="Practical guidance on preclinical study design, model selection and in vivo readouts from the scientists who run Alpha Preclinical&#x27;s studies.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/building-sign.jpg">
+<link rel="icon" href="assets/img/logo-color.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+.ap{--navy:#1F2858;--abyss:#0F3360;--tide:#1E58A0;--current:#4B98D2;--shallows:#88C6EE;--mist:#EEF5FB;--paper:#FFFFFF;--muted:#4A5878;--on-abyss:#B9CCE3;--line:#D3E0EE;
+  font-family:"Figtree","Helvetica Neue",Arial,sans-serif;color:var(--navy);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.ap *{box-sizing:border-box}
+.ap h1,.ap h2,.ap h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;font-weight:600;margin:0;text-wrap:balance}
+.ap p{margin:0}
+.ap a{color:var(--tide)}
+.ap a:hover{color:var(--navy)}
+.ap a:focus-visible,.ap button:focus-visible{outline:3px solid var(--current);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;line-height:1}
+.ap .btn-light{background:var(--shallows);color:var(--abyss)}
+.ap .btn-light:hover{background:#fff;color:var(--abyss)}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:32px;padding-top:24px;padding-bottom:24px}
+.nav{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.ap .nav a{color:#fff;text-decoration:none;font-weight:500}
+.ap .nav a:hover,.ap .nav a[aria-current]{color:var(--shallows)}
+.top{position:relative;background:var(--abyss);color:#fff;overflow:hidden}
+.top-body{position:relative;z-index:2;padding-top:40px;padding-bottom:170px;max-width:900px}
+.crumbs{display:flex;gap:10px;list-style:none;margin:0 0 28px;padding:0;font-size:15px;color:var(--on-abyss)}
+.ap .crumbs a{color:var(--on-abyss);text-decoration:none}
+.crumbs li+li::before{content:"/";margin-right:10px;color:rgba(185,204,227,.5)}
+.top h1{font-size:clamp(42px,5.6vw,76px);line-height:.99;letter-spacing:-.035em}
+.top p{color:var(--on-abyss);font-size:20px;line-height:1.55;max-width:36em;margin-top:24px}
+.strata{position:absolute;left:0;right:0;bottom:-1px;height:200px;z-index:1}
+.strata svg{width:100%;height:100%;display:block}
+.body{padding:64px 0 128px}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:56px}
+.filters button{min-height:48px;padding:0 20px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font:500 15px/1 "Figtree",sans-serif;cursor:pointer}
+.filters button:hover{border-color:var(--tide);color:var(--tide)}
+.filters button[aria-pressed="true"]{background:var(--abyss);border-color:var(--abyss);color:#fff}
+.ap .feature{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:center;text-decoration:none;color:var(--navy);margin-bottom:88px}
+.art{position:relative;border-radius:14px;overflow:hidden;background:#DCEAF6;aspect-ratio:16/10}
+.art svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:55%}
+.art span{position:absolute;top:14px;left:14px;font-size:13px;font-weight:500;color:var(--muted)}
+.tag{display:inline-block;font-size:13px;font-weight:600;line-height:1;padding:7px 10px;border-radius:6px;background:var(--mist);color:var(--tide)}
+.feature h2{font-size:clamp(30px,3.4vw,44px);line-height:1.08;letter-spacing:-.025em;margin-top:18px}
+.ap .feature:hover h2{color:var(--tide)}
+.feature p{color:var(--muted);font-size:18px;margin-top:16px}
+.meta{font-size:14px;color:var(--muted);margin-top:18px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px 40px}
+.ap .post{display:grid;gap:14px;align-content:start;text-decoration:none;color:var(--navy)}
+.post .art{aspect-ratio:3/2}
+.post h3{font-size:23px;line-height:1.22;letter-spacing:-.01em}
+.ap .post:hover h3{color:var(--tide)}
+.post p{color:var(--muted);font-size:16px}
+.draft{font-size:13px;font-weight:600;color:var(--muted)}
+.empty{padding:64px 0;color:var(--muted);font-size:18px}
+@media (max-width:1080px){.nav,.hdr .btn{display:none}.ap .feature{grid-template-columns:minmax(0,1fr);gap:28px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:680px){.wrap{padding:0 16px}.top-body{padding-bottom:110px}.strata{height:110px}.grid{grid-template-columns:minmax(0,1fr);gap:44px}}
+</style>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="ap">
+<header class="top">
+  <div class="wrap hdr">
+    <a href="index.html" aria-label="Alpha Preclinical home"><img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
+    <nav aria-label="Main"><ul class="nav"><li><a href="index.html#expertise">Expertise</a></li><li><a href="index.html#capabilities">Services</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="#" aria-current="page">Blog</a></li><li><a href="careers.html">Careers</a></li></ul></nav>
+    <a class="btn btn-light" href="contact.html">Request a study quote</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg></button>
+  </div>
+  <div class="wrap top-body">
+    <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="index.html">Home</a></li><li aria-current="page">Blog</li></ol></nav>
+    <h1>Notes from the vivarium</h1>
+    <p>Practical guidance on study design, model selection and preclinical readouts, written by the scientists who run Alpha's studies.</p>
+  </div>
+  <div class="strata" aria-hidden="true">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0 70 C180 30 540 110 720 70 S1260 30 1440 70 L1440 200 L0 200 Z" fill="#1E58A0"></path>
+      <path d="M0 110 C180 76 540 144 720 110 S1260 76 1440 110 L1440 200 L0 200 Z" fill="#4B98D2"></path>
+      <path d="M0 144 C180 118 540 170 720 144 S1260 118 1440 144 L1440 200 L0 200 Z" fill="#88C6EE"></path>
+      <path d="M0 174 C180 156 540 192 720 174 S1260 156 1440 174 L1440 200 L0 200 Z" fill="#FFFFFF"></path>
+    </svg>
+  </div>
+</header>
+<main id="main" class="body">
+  <div class="wrap">
+    <div class="filters" data-filter-group="posts" role="group" aria-label="Filter by topic">
+      <button type="button" data-filter="All" aria-pressed="true">All</button>
+        <button type="button" data-filter="Study design" aria-pressed="false">Study design</button>
+        <button type="button" data-filter="Tumor models" aria-pressed="false">Tumor models</button>
+        <button type="button" data-filter="Metabolic disease" aria-pressed="false">Metabolic disease</button>
+        <button type="button" data-filter="Gene therapy" aria-pressed="false">Gene therapy</button>
+        <button type="button" data-filter="Autoimmune disease" aria-pressed="false">Autoimmune disease</button>
+        <button type="button" data-filter="Lab services" aria-pressed="false">Lab services</button>
+    </div>
+
+    
+      <a class="feature" data-item="posts" data-topic="Study design" href="blog-mrna-liver-depot-study-design.html">
+        <div class="art"><span>Featured image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C120 20 300 110 420 60 S560 30 600 46 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 116 C130 84 290 156 420 116 S560 92 600 104 L600 200 L0 200 Z" fill="#4B98D2"></path><path d="M0 166 C140 142 300 194 430 166 S560 152 600 158 L600 200 L0 200 Z" fill="#1E58A0"></path></svg></div>
+        <div>
+          <span class="tag">Study design</span>
+          <h2>How to scope your first in vivo efficacy study</h2>
+          <p>The questions to answer before choosing a model, group size or endpoint, and how they change your timeline and budget.</p>
+          <p class="meta">Barak Yahalom, DVM, 6 min read</p>
+        </div>
+      </a>
+    
+
+    <div class="grid">
+      
+        <a class="post" data-item="posts" data-topic="Tumor models" href="blog-mrna-liver-depot-study-design.html">
+          <div class="art"><span>Image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z" fill="#4B98D2"></path></svg></div>
+          <span class="tag" style="justify-self:start">Tumor models</span>
+          <h3>Caliper or IVIS? Choosing how to measure tumor burden</h3>
+          <p>When bioluminescent imaging earns its cost, and when caliper measurements are enough.</p>
+          <p class="draft">Barak Yahalom, DVM, 6 min read</p>
+        </a>
+      
+        <a class="post" data-item="posts" data-topic="Metabolic disease" href="blog-mrna-liver-depot-study-design.html">
+          <div class="art"><span>Image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z" fill="#4B98D2"></path></svg></div>
+          <span class="tag" style="justify-self:start">Metabolic disease</span>
+          <h3>Diet-induced versus genetic models of type 2 diabetes</h3>
+          <p>What each model can and cannot tell you about a metabolic drug candidate.</p>
+          <p class="draft">Joan Flanagan, PhD, 6 min read</p>
+        </a>
+      
+        <a class="post" data-item="posts" data-topic="Gene therapy" href="blog-mrna-liver-depot-study-design.html">
+          <div class="art"><span>Image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z" fill="#4B98D2"></path></svg></div>
+          <span class="tag" style="justify-self:start">Gene therapy</span>
+          <h3>What an mRNA liver depot study looks like in practice</h3>
+          <p>Lessons from published Fabry disease and hemophilia B studies our scientists co-authored.</p>
+          <p class="draft">Barak Yahalom, DVM, 6 min read</p>
+        </a>
+      
+        <a class="post" data-item="posts" data-topic="Lab services" href="blog-mrna-liver-depot-study-design.html">
+          <div class="art"><span>Image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z" fill="#4B98D2"></path></svg></div>
+          <span class="tag" style="justify-self:start">Lab services</span>
+          <h3>Getting more from every animal with in-house flow cytometry</h3>
+          <p>Adding immunophenotyping to an in vivo study without shipping samples.</p>
+          <p class="draft">Cindy Hopper, 6 min read</p>
+        </a>
+      
+        <a class="post" data-item="posts" data-topic="Study design" href="blog-mrna-liver-depot-study-design.html">
+          <div class="art"><span>Image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z" fill="#4B98D2"></path></svg></div>
+          <span class="tag" style="justify-self:start">Study design</span>
+          <h3>Continuous dosing with Alzet pumps: when and why</h3>
+          <p>Choosing between bolus dosing and continuous subcutaneous or ICV delivery.</p>
+          <p class="draft">Gil Chacon, 5 min read</p>
+        </a>
+      
+        <a class="post" data-item="posts" data-topic="Autoimmune disease" href="blog-mrna-liver-depot-study-design.html">
+          <div class="art"><span>Image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z" fill="#4B98D2"></path></svg></div>
+          <span class="tag" style="justify-self:start">Autoimmune disease</span>
+          <h3>Spontaneous rat models of type 1 diabetes, explained</h3>
+          <p>How the LEW.1WR1 and related models are used to test prevention strategies.</p>
+          <p class="draft">Joan Flanagan, PhD, 5 min read</p>
+        </a>
+      
+    </div>
+    <p class="empty" data-empty="posts" hidden>No posts in this topic yet. <a href="contact.html">Ask us a question</a> and it may become the next one.</p>
+  </div>
+</main>
+</div>
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
