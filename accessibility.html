@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility Statement | Alpha Preclinical</title>
+<meta name="description" content="Alpha Preclinical&#x27;s commitment to WCAG 2.1 AA accessibility, how the site was tested, known limitations and how to request help.">
+<meta property="og:title" content="Accessibility Statement | Alpha Preclinical">
+<meta property="og:description" content="Alpha Preclinical&#x27;s commitment to WCAG 2.1 AA accessibility, how the site was tested, known limitations and how to request help.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/building-sign.jpg">
+<link rel="icon" href="assets/img/logo-color.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+.ap{--navy:#1F2858;--abyss:#0F3360;--tide:#1E58A0;--current:#4B98D2;--shallows:#88C6EE;--mist:#EEF5FB;--paper:#FFFFFF;--muted:#4A5878;--on-abyss:#B9CCE3;--line:#D3E0EE;
+  font-family:"Figtree","Helvetica Neue",Arial,sans-serif;color:var(--navy);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.ap *{box-sizing:border-box}
+.ap h1,.ap h2,.ap h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;font-weight:600;margin:0;text-wrap:balance}
+.ap p{margin:0}
+.ap a{color:var(--tide)}
+.ap a:hover{color:var(--navy)}
+.ap a:focus-visible{outline:3px solid var(--current);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;line-height:1}
+.ap .btn-primary{background:var(--tide);color:#fff}
+.ap .btn-primary:hover{background:var(--navy);color:#fff}
+.ap .btn-light{background:var(--shallows);color:var(--abyss)}
+.ap .btn-light:hover{background:#fff;color:var(--abyss)}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:32px;padding-top:24px;padding-bottom:24px}
+.nav{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.ap .nav a{color:#fff;text-decoration:none;font-weight:500}
+.ap .nav a:hover,.ap .nav a[aria-current]{color:var(--shallows)}
+.top{position:relative;background:var(--abyss);color:#fff;overflow:hidden}
+.top-body{position:relative;z-index:2;padding-top:40px;padding-bottom:190px;max-width:900px}
+.crumbs{display:flex;gap:10px;list-style:none;margin:0 0 28px;padding:0;font-size:15px;color:var(--on-abyss)}
+.ap .crumbs a{color:var(--on-abyss);text-decoration:none}
+.crumbs li+li::before{content:"/";margin-right:10px;color:rgba(185,204,227,.5)}
+.top h1{font-size:clamp(42px,5.6vw,76px);line-height:.99;letter-spacing:-.035em}
+.top p{color:var(--on-abyss);font-size:20px;line-height:1.55;max-width:36em;margin-top:24px}
+.strata{position:absolute;left:0;right:0;bottom:-1px;height:200px;z-index:1}
+.strata svg{width:100%;height:100%;display:block}
+.sec{padding:120px 0}
+.sec-mist{background:var(--mist)}
+
+/* shared footer */
+.ftr{background:#0B2747;color:var(--on-abyss);padding:80px 0 40px;font-size:15px}
+.ftr-grid{display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,2fr));gap:40px}
+.ap .ftr h2{font-family:"Figtree",sans-serif;font-size:15px;font-weight:600;color:#fff;margin:0 0 14px}
+.ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ap .ftr a{color:var(--on-abyss);text-decoration:none}
+.ap .ftr a:hover{color:#fff}
+.ftr address{font-style:normal;line-height:1.6;margin-top:24px}
+.ftr-base{margin-top:64px;padding-top:24px;border-top:1px solid rgba(185,204,227,.2);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+@media (max-width:1240px){.nav{gap:18px}.ap .nav a{font-size:15px}}
+@media (max-width:1080px){.ftr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:680px){.ftr-grid{grid-template-columns:minmax(0,1fr)}.ftr{padding:56px 0 32px}}
+
+/* accessibility (WCAG 2.1 AA audit) */
+.ap a[href^="mailto:"]{overflow-wrap:anywhere}
+.ap .lead a,.ap .side a,.ap .member,.ap .who a{display:inline-block;padding:3px 0}
+.ftr-base .legal-links{display:flex;flex-wrap:wrap;gap:8px 24px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ap .nav a{display:inline-block;padding:10px 0}
+.ap .ftr li a,.ap .ftr-base a,.ap .crumbs a{display:inline-block;padding:4px 0}
+.ap .btn{max-width:100%;text-align:center;line-height:1.2}
+.top-body{padding-bottom:204px}
+@media (max-width:680px){.top-body{padding-bottom:132px}.strata{height:110px}}
+
+.doc{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,7fr) minmax(0,2fr);gap:48px;padding-top:64px;padding-bottom:112px}
+.toc{position:sticky;top:24px;align-self:start;font-size:15px}
+.ap .toc h2{font-family:"Figtree",sans-serif;font-size:14px;font-weight:600;color:var(--muted);margin:0 0 12px}
+.toc ol{list-style:none;margin:0;padding:0;border-left:1.5px solid var(--line)}
+.ap .toc li a{display:block;padding:7px 0 7px 16px;margin-left:-1.5px;border-left:1.5px solid transparent;color:var(--navy);text-decoration:none;line-height:1.35}
+.ap .toc li a:hover{color:var(--tide);border-left-color:var(--tide)}
+.legal{max-width:68ch}
+.draft-note{background:var(--mist);border-radius:14px;padding:18px 22px;font-size:15px;color:var(--navy);margin-bottom:40px}
+.ap .legal h2{font-size:28px;line-height:1.15;letter-spacing:-.015em;margin:48px 0 14px;scroll-margin-top:24px}
+.ap .legal h2:first-of-type{margin-top:0}
+.ap .legal h3{font-size:20px;margin:28px 0 8px}
+.ap .legal p{font-size:17.5px;line-height:1.7;margin-top:14px}
+.legal ul{margin:14px 0 0;padding-left:22px;display:grid;gap:8px;font-size:17.5px;line-height:1.6}
+.legal table{width:100%;border-collapse:collapse;margin-top:18px;font-size:16px}
+.legal th{text-align:left;font-weight:600;font-size:14px;color:var(--muted);padding:0 16px 10px 0;border-bottom:1.5px solid var(--navy)}
+.legal td{padding:14px 16px 14px 0;border-bottom:1.5px solid var(--line);vertical-align:top}
+.updated{font-size:15px;color:var(--on-abyss);margin-top:18px}
+@media (max-width:1080px){.nav,.hdr .btn{display:none}.doc{grid-template-columns:minmax(0,1fr);gap:32px}.toc{position:static}}
+@media (max-width:680px){.wrap{padding:0 16px}.doc{padding-top:40px;padding-bottom:72px}}
+.ap a[href^="mailto:"]{overflow-wrap:anywhere}
+</style>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="ap">
+<header class="top">
+  <div class="wrap hdr">
+    <a href="index.html" aria-label="Alpha Preclinical home"><img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
+    <nav aria-label="Main"><ul class="nav"><li><a href="index.html#expertise">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    <a class="btn btn-light" href="contact.html">Request a study quote</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg></button>
+  </div>
+  <div class="wrap top-body">
+    <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="index.html">Home</a></li><li aria-current="page">Accessibility</li></ol></nav>
+    <h1>Accessibility statement</h1>
+    <p>Alpha Preclinical wants everyone who visits this website, including people with disabilities, to find the information they need and contact us easily.</p>
+    <p class="updated">Last updated: [Date]</p>
+  </div>
+  <div class="strata" aria-hidden="true">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0 70 C180 30 540 110 720 70 S1260 30 1440 70 L1440 200 L0 200 Z" fill="#1E58A0"></path>
+      <path d="M0 110 C180 76 540 144 720 110 S1260 76 1440 110 L1440 200 L0 200 Z" fill="#4B98D2"></path>
+      <path d="M0 144 C180 118 540 170 720 144 S1260 118 1440 144 L1440 200 L0 200 Z" fill="#88C6EE"></path>
+      <path d="M0 174 C180 156 540 192 720 174 S1260 156 1440 174 L1440 200 L0 200 Z" fill="#FFFFFF"></path>
+    </svg>
+  </div>
+</header>
+<main id="main">
+<div class="wrap doc">
+  <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#commitment">Our commitment</a></li><li><a href="#measures">What we have done</a></li><li><a href="#testing">How we tested</a></li><li><a href="#limitations">Known limitations</a></li><li><a href="#feedback">Feedback and alternative formats</a></li><li><a href="#technical">Technical details</a></li></ol></nav>
+  <article class="legal">
+
+<h2 id="commitment">Our commitment</h2>
+<p>We aim for this website to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA, published by the World Wide Web Consortium (W3C). These guidelines explain how to make web content usable by people with a wide range of disabilities, including visual, auditory, motor and cognitive disabilities.</p>
+<h2 id="measures">What we have done</h2>
+<p>Accessibility was part of the design of this website from the start. Specifically, the site:</p>
+<ul>
+<li>Uses text and background colors that meet WCAG AA contrast ratios</li>
+<li>Can be used with a keyboard alone, with a visible focus indicator and a "Skip to content" link on every page</li>
+<li>Uses semantic headings, landmarks and labeled form fields so screen readers can navigate it</li>
+<li>Describes meaningful images with alternative text</li>
+<li>Explains form errors in text and moves focus to the field that needs attention</li>
+<li>Announces filter results to screen readers</li>
+<li>Reflows to a single column down to 320 pixels wide without horizontal scrolling</li>
+<li>Lets you pause the homepage animation, and starts it paused if your device is set to reduce motion</li>
+</ul>
+<h2 id="testing">How we tested</h2>
+<p>The site was evaluated against WCAG 2.1 AA using automated testing with axe-core on every page, plus manual checks of keyboard navigation, focus visibility, color contrast, text spacing, reflow at 320 pixels, touch target sizes and heading structure.</p>
+<p>We plan to repeat this review whenever we make significant changes to the site, and at least once a year.</p>
+<h2 id="limitations">Known limitations</h2>
+<ul>
+<li><b>Publication PDFs.</b> Some research papers we link to are hosted by journals or provided as PDFs we did not create, and may not be fully accessible. Email us and we will help you get the information in another format.</li>
+<li><b>Map image.</b> The map on our contact page is an image. Our full street address is always provided as text beside it.</li>
+</ul>
+<h2 id="feedback">Feedback and alternative formats</h2>
+<p>If you have trouble using any part of this website, or need information in a different format, please contact us:</p>
+<ul>
+<li>Email: <a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a></li>
+<li>Mail: Alpha Preclinical LLC, 722 Plantation Street, Worcester, MA 01605</li>
+</ul>
+<p>Please tell us the page address and the problem you found. We aim to respond within [number] business days.</p>
+<h2 id="technical">Technical details</h2>
+<p>This website relies on HTML, CSS, WAI-ARIA and JavaScript to work with your browser and any assistive technology you use. Core content remains readable if JavaScript is turned off.</p>
+
+  </article>
+  <div></div>
+</div>
+</main>
+<footer class="ftr">
+  <div class="wrap">
+    <nav class="ftr-grid" aria-label="Footer">
+      <div>
+        <img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:96px;height:auto;display:block">
+        <address>Alpha Preclinical LLC<br>722 Plantation Street<br>Worcester, MA 01605<br><a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a></address>
+      </div>
+      <div><h2>Expertise</h2><ul><li><a href="index.html#expertise">PK/PD</a></li><li><a href="index.html#expertise">Gene therapy</a></li><li><a href="index.html#expertise">Autoimmune disease</a></li><li><a href="index.html#expertise">Metabolic disease</a></li><li><a href="index.html#expertise">Inflammation and fibrosis</a></li><li><a href="tumor-models.html">Tumor models</a></li></ul></div>
+      <div><h2>Services</h2><ul><li><a href="services.html#ivis">IVIS imaging</a></li><li><a href="services.html#surgery">Surgical services</a></li><li><a href="services.html#colony">Colony management</a></li><li><a href="services.html#in-vitro">In vitro laboratory</a></li><li><a href="services.html#support">Study support</a></li></ul></div>
+      <div><h2>Company</h2><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </nav>
+    <div class="ftr-base"><span>© 2026 Alpha Preclinical LLC</span><span class="legal-links"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a><a href="accessibility.html">Accessibility</a></span></div>
+  </div>
+</footer>
+</div>
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

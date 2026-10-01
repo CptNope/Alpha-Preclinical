@@ -27,6 +27,7 @@ This repo holds three things:
 - [How the preview site is built](#how-the-preview-site-is-built)
 - [Deploying to GitHub Pages](#deploying-to-github-pages)
 - [Moving to WordPress FSE](#moving-to-wordpress-fse)
+- [Accessibility](#accessibility)
 - [Open items before launch](#open-items-before-launch)
 - [Asset ownership](#asset-ownership)
 
@@ -52,7 +53,7 @@ flowchart LR
     C["Melior Discovery<br/>SEO page structure"] --> E
     D --> E
     F["Old site content<br/>bios, services, 16 papers"] --> E
-    E --> G["Design canvas<br/>10 artboards"]
+    E --> G["Design canvas<br/>13 artboards"]
     E --> H["Design system<br/>tokens + rules"]
     E --> I["7 blog drafts<br/>SEO-optimized"]
 ```
@@ -72,6 +73,7 @@ flowchart TD
     H --> BL["Blog<br/>blog.html"]
     H --> CA["Careers<br/>careers.html"]
     H --> CO["Contact / quote<br/>contact.html"]
+    H --> LG["Footer: Privacy, Terms,<br/>Accessibility"]
 
     EX --> TU["Tumor models<br/>tumor-models.html<br/>(template for all 6)"]
     EX -.-> X1["PK/PD"]
@@ -90,7 +92,7 @@ flowchart TD
 
     classDef built fill:#1E58A0,color:#fff,stroke:#0F3360
     classDef todo fill:#EEF5FB,color:#1F2858,stroke:#4B98D2,stroke-dasharray:4 3
-    class H,SV,AB,TM,PB,BL,CA,CO,TU,BP built
+    class H,SV,AB,TM,PB,BL,CA,CO,TU,BP,LG built
     class X1,X2,X3,X4,X5 todo
 ```
 
@@ -111,6 +113,9 @@ Solid boxes are designed and built. Dashed boxes reuse the tumor-models template
 | Blog | `blog.html` | Filter by topic | Index of the seven launch posts |
 | Blog post | `blog-mrna-liver-depot-study-design.html` | — | Single-post template built for E-E-A-T (see below) |
 | Contact | `contact.html` | Demo form with validation | Quote form with study-type picker, contact details, building photo, branded map |
+| Privacy policy | `privacy.html` | — | **Draft for legal review.** What the forms collect, how it is used and shared, retention, rights |
+| Terms of use | `terms.html` | — | **Draft for legal review.** Site use, studies governed by separate agreements, IP, disclaimers, Massachusetts law |
+| Accessibility statement | `accessibility.html` | — | WCAG 2.1 AA commitment, what was done, how it was tested, known limitations, how to get help |
 | Careers | `careers.html` | Role filter, accordion, demo application form | Culture, four open roles, application form with resume upload |
 
 ---
@@ -119,25 +124,27 @@ Solid boxes are designed and built. Dashed boxes reuse the tumor-models template
 
 ```mermaid
 flowchart LR
-    R(("repo root")) --> P["*.html<br/>10 static pages"]
+    R(("repo root")) --> P["*.html<br/>13 static pages"]
     R --> AS["assets/"]
     AS --> CSS["css/site.css<br/>shared: menu, skip link, filters"]
     AS --> JS["js/site.js<br/>filters, accordions, demo forms"]
     AS --> IMG["img/<br/>logos, photos, map"]
     IMG --> TEAM["team/<br/>10 headshots"]
     R --> DS["design/"]
-    DS --> CV["canvas/<br/>10 .dc.html artboards + canvas.json"]
+    DS --> CV["canvas/<br/>13 .dc.html artboards + canvas.json"]
     DS --> SYS["design-system/<br/>tokens.json, README.md, cover"]
     R --> CT["content/blog-posts.md<br/>7 SEO blog drafts"]
     R --> WP["wordpress/theme.json<br/>FSE starter"]
     R --> TL["tools/convert.py<br/>canvas → static HTML"]
+    R --> DC["docs/<br/>accessibility audit + script"]
 ```
 
 ```text
 .
 ├── index.html, about.html, team.html, publications.html, blog.html,
 │   blog-mrna-liver-depot-study-design.html, services.html, tumor-models.html,
-│   contact.html, careers.html          # generated preview pages
+│   contact.html, careers.html,
+│   privacy.html, terms.html, accessibility.html   # generated preview pages
 ├── assets/
 │   ├── css/site.css                     # shared styles (each page also keeps its own inline styles)
 │   ├── js/site.js                       # no-dependency behavior
@@ -148,6 +155,8 @@ flowchart LR
 ├── content/blog-posts.md                # all 7 blog drafts with SEO fields and sources
 ├── wordpress/theme.json                 # token mapping for the FSE block theme
 ├── tools/convert.py                     # regenerates the HTML pages from design/canvas
+├── docs/accessibility-audit.md          # WCAG 2.1 AA audit report
+├── docs/a11y-audit.py                   # re-runnable audit (axe-core + custom checks)
 ├── .nojekyll                            # serve files as-is on GitHub Pages
 └── LICENSE
 ```
@@ -347,6 +356,28 @@ flowchart TD
 
 ---
 
+## Accessibility
+
+The site was audited against **WCAG 2.1 AA** (plus the WCAG 2.2 target-size rule). Full report: [`docs/accessibility-audit.md`](docs/accessibility-audit.md).
+
+| Check | Result |
+| --- | --- |
+| axe-core (wcag2a, wcag2aa, wcag21a, wcag21aa) | 0 violations on all 13 pages |
+| Reflow at 320 px and text spacing (1.4.10, 1.4.12) | Pass on all pages |
+| Visible focus on every focusable element (2.4.7) | Pass |
+| Hero animation can be paused (2.2.2) | Pause button; starts paused under reduced motion |
+| Filter results announced (4.1.3) | `role="status"` live region |
+| Targets at least 24 px (2.5.8) | Pass, except links inside sentences (exempt) |
+
+Re-run after changes:
+
+```bash
+python3 -m http.server 8766 &
+AXE_PATH=path/to/axe.min.js python3 docs/a11y-audit.py http://localhost:8766 audit.json
+```
+
+---
+
 ## Open items before launch
 
 ### Confirm with the client
@@ -372,7 +403,9 @@ flowchart TD
 
 ### Build tasks
 
-- [ ] Privacy policy page (forms collect work emails)
+- [ ] Attorney review of the draft Privacy Policy and Terms of Use (bracketed items depend on the final analytics, form and hosting tools)
+- [ ] Response time for accessibility requests (Accessibility Statement)
+- [ ] Screen-reader pass with VoiceOver and NVDA on staging
 - [ ] Five remaining expertise pages from the tumor-models template
 - [ ] Real form handling and spam protection
 - [ ] `JobPosting`, `Person` and `ScholarlyArticle` schema

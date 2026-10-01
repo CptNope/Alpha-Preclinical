@@ -35,26 +35,54 @@
     });
   });
 
-  // Filters (publications, blog topics, careers): buttons filter [data-item] by [data-topic]
+  // Filters (publications, blog topics, careers): buttons filter [data-item] by [data-topic].
+  // A visually hidden status line announces the result count to screen readers (WCAG 4.1.3).
   document.querySelectorAll('[data-filter-group]').forEach(function (group) {
     var name = group.getAttribute('data-filter-group');
+    var noun = group.getAttribute('data-noun') || 'item';
     var items = document.querySelectorAll('[data-item="' + name + '"]');
     var empty = document.querySelector('[data-empty="' + name + '"]');
+    var status = document.createElement('p');
+    status.className = 'sr-only';
+    status.setAttribute('role', 'status');
+    group.parentNode.insertBefore(status, group.nextSibling);
     group.querySelectorAll('[data-filter]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var value = btn.getAttribute('data-filter');
         group.querySelectorAll('[data-filter]').forEach(function (b) {
           b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
         });
-        var shown = 0;
+        var shown = 0, count = 0;
         items.forEach(function (el) {
           var match = value === 'All' || el.getAttribute('data-topic') === value;
           el.hidden = !match;
-          if (match) shown++;
+          if (match) {
+            shown++;
+            // publication groups contain several papers; count the papers
+            var inner = el.querySelectorAll('.paper').length;
+            count += inner || 1;
+          }
         });
         if (empty) empty.hidden = shown > 0;
+        var label = value === 'All' ? 'all topics' : value;
+        status.textContent = 'Showing ' + count + ' ' + noun + (count === 1 ? '' : 's') + ' in ' + label + '.';
       });
     });
+  });
+
+  // Pause / play the hero wave animation (WCAG 2.2.2). Starts paused when the
+  // visitor's system asks for reduced motion.
+  document.querySelectorAll('[data-motion]').forEach(function (btn) {
+    var strata = btn.parentNode.querySelector('.strata');
+    if (!strata) return;
+    function set(paused) {
+      strata.classList.toggle('is-paused', paused);
+      btn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+      btn.textContent = paused ? 'Play animation' : 'Pause animation';
+    }
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    set(!!reduce);
+    btn.addEventListener('click', function () { set(!strata.classList.contains('is-paused')); });
   });
 
   // "Apply for this role" pre-selects the role in the application form

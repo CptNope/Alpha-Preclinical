@@ -47,7 +47,7 @@ body{margin:0}
 .field.full{grid-column:1 / -1}
 .field label{font-size:15px;font-weight:600}
 .field label small{font-weight:500;color:var(--muted)}
-.field input,.field select,.field textarea{width:100%;min-height:52px;padding:12px 16px;border-radius:6px;border:1.5px solid #B4C6DC;background:#fff;color:var(--navy);font:400 17px/1.4 "Figtree",sans-serif}
+.field input,.field select,.field textarea{width:100%;min-height:52px;padding:12px 16px;border-radius:6px;border:1.5px solid #7D8FAE;background:#fff;color:var(--navy);font:400 17px/1.4 "Figtree",sans-serif}
 .field textarea{min-height:160px;resize:vertical}
 .field input:hover,.field select:hover,.field textarea:hover{border-color:var(--current)}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--tide);box-shadow:0 0 0 3px rgba(75,152,210,.35)}
@@ -63,7 +63,7 @@ body{margin:0}
 .info{display:grid;gap:28px}
 .card{border-radius:14px;background:var(--mist);padding:32px;display:grid;gap:22px}
 .card h3{font-size:14px;font-family:"Figtree",sans-serif;font-weight:600;color:var(--muted);margin-bottom:4px}
-.card .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:22px;line-height:1.3}
+.card .big{overflow-wrap:anywhere;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:22px;line-height:1.3}
 .ap .card a.big{text-decoration:none;color:var(--tide)}
 .ap .card a.big:hover{text-decoration:underline;text-underline-offset:3px}
 .card address{font-style:normal}
@@ -89,7 +89,7 @@ body{margin:0}
 /* shared footer */
 .ftr{background:#0B2747;color:var(--on-abyss);padding:80px 0 40px;font-size:15px}
 .ftr-grid{display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,2fr));gap:40px}
-.ap .ftr h3{font-family:"Figtree",sans-serif;font-size:15px;font-weight:600;color:#fff;margin:0 0 14px}
+.ap .ftr h2{font-family:"Figtree",sans-serif;font-size:15px;font-weight:600;color:#fff;margin:0 0 14px}
 .ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .ap .ftr a{color:var(--on-abyss);text-decoration:none}
 .ap .ftr a:hover{color:#fff}
@@ -98,6 +98,17 @@ body{margin:0}
 @media (max-width:1240px){.nav{gap:18px}.ap .nav a{font-size:15px}}
 @media (max-width:1080px){.ftr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:680px){.ftr-grid{grid-template-columns:minmax(0,1fr)}.ftr{padding:56px 0 32px}}
+
+/* accessibility (WCAG 2.1 AA audit) */
+.ap a[href^="mailto:"]{overflow-wrap:anywhere}
+.ap .lead a,.ap .side a,.ap .member,.ap .who a{display:inline-block;padding:3px 0}
+.ftr-base .legal-links{display:flex;flex-wrap:wrap;gap:8px 24px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ap .nav a{display:inline-block;padding:10px 0}
+.ap .ftr li a,.ap .ftr-base a,.ap .crumbs a{display:inline-block;padding:4px 0}
+.ap .btn{max-width:100%;text-align:center;line-height:1.2}
+.top-body{padding-bottom:204px}
+@media (max-width:680px){.top-body{padding-bottom:132px}.strata{height:110px}}
 </style>
 </helmet>
 <div class="ap">
@@ -154,7 +165,7 @@ body{margin:0}
         </div>
         <div class="actions">
           <button class="btn btn-primary" type="submit">Send message</button>
-          <p>We use your details only to respond to this inquiry. [Link to privacy policy]</p>
+          <p>We use your details only to respond to this inquiry. See our <a href="Privacy.dc.html">privacy policy</a>.</p>
         </div>
       </form>
     </sc-if>
@@ -167,7 +178,8 @@ body{margin:0}
     </sc-if>
   </section>
 
-  <aside class="info" aria-label="Contact details">
+  <aside class="info" aria-labelledby="info-h">
+    <h2 class="sr-only" id="info-h">Contact details</h2>
     <div class="card">
       <div><h3>Email</h3><a class="big" href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a></div>
       <div><h3>Visit</h3><address class="big">722 Plantation Street<br>Worcester, MA 01605</address></div>
@@ -197,21 +209,21 @@ body{margin:0}
 </main>
 <footer class="ftr">
   <div class="wrap">
-    <div class="ftr-grid">
+    <nav class="ftr-grid" aria-label="Footer">
       <div>
         <img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:96px;height:auto;display:block">
         <address>Alpha Preclinical LLC<br>722 Plantation Street<br>Worcester, MA 01605<br><a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a></address>
       </div>
-      <div><h3>Expertise</h3><ul><li><a href="Main.dc.html#expertise">PK/PD</a></li><li><a href="Main.dc.html#expertise">Gene therapy</a></li><li><a href="Main.dc.html#expertise">Autoimmune disease</a></li><li><a href="Main.dc.html#expertise">Metabolic disease</a></li><li><a href="Main.dc.html#expertise">Inflammation and fibrosis</a></li><li><a href="Model.dc.html">Tumor models</a></li></ul></div>
-      <div><h3>Services</h3><ul><li><a href="Services.dc.html#ivis">IVIS imaging</a></li><li><a href="Services.dc.html#surgery">Surgical services</a></li><li><a href="Services.dc.html#colony">Colony management</a></li><li><a href="Services.dc.html#in-vitro">In vitro laboratory</a></li><li><a href="Services.dc.html#support">Study support</a></li></ul></div>
-      <div><h3>Company</h3><ul><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></div>
-    </div>
-    <div class="ftr-base"><span>© 2026 Alpha Preclinical LLC</span><span><a href="#privacy">Privacy policy</a></span></div>
+      <div><h2>Expertise</h2><ul><li><a href="Main.dc.html#expertise">PK/PD</a></li><li><a href="Main.dc.html#expertise">Gene therapy</a></li><li><a href="Main.dc.html#expertise">Autoimmune disease</a></li><li><a href="Main.dc.html#expertise">Metabolic disease</a></li><li><a href="Main.dc.html#expertise">Inflammation and fibrosis</a></li><li><a href="Model.dc.html">Tumor models</a></li></ul></div>
+      <div><h2>Services</h2><ul><li><a href="Services.dc.html#ivis">IVIS imaging</a></li><li><a href="Services.dc.html#surgery">Surgical services</a></li><li><a href="Services.dc.html#colony">Colony management</a></li><li><a href="Services.dc.html#in-vitro">In vitro laboratory</a></li><li><a href="Services.dc.html#support">Study support</a></li></ul></div>
+      <div><h2>Company</h2><ul><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></div>
+    </nav>
+    <div class="ftr-base"><span>© 2026 Alpha Preclinical LLC</span><span class="legal-links"><a href="Privacy.dc.html">Privacy policy</a><a href="Terms.dc.html">Terms of use</a><a href="Accessibility.dc.html">Accessibility</a></span></div>
   </div>
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2759}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2847}}'>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { sent: false, email: '', tried: false }; }
   renderVals() {

@@ -1,101 +1,134 @@
 {
   "v": 3,
-  "createdOnFiles": {
-    "v": 1,
-    "at": "2026-10-01T20:30:00Z"
-  },
-  "title": "Alpha Preclinical Website",
-  "launch": {
-    "view": "canvas"
-  },
-  "pages": [],
+  "attachments": {},
   "boards": {
-    "Main.dc.html": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 8587,
-      "title": "Homepage",
-      "expand": "fill",
-      "is_interactive": true
-    },
-    "Model.dc.html": {
-      "x": 1520,
-      "y": 0,
-      "w": 1440,
-      "h": 3517,
-      "title": "Disease model page template",
-      "expand": "fill"
-    },
-    "Publications.dc.html": {
-      "x": 3040,
-      "y": 0,
-      "w": 1440,
-      "h": 4763,
-      "title": "Publications",
-      "expand": "fill",
-      "is_interactive": true
-    },
     "About.dc.html": {
-      "x": 4560,
-      "y": 0,
-      "w": 1440,
-      "h": 4949,
+      "expand": "fill",
+      "h": 5027,
       "title": "About",
-      "expand": "fill"
-    },
-    "Team.dc.html": {
-      "x": 6080,
-      "y": 0,
       "w": 1440,
-      "h": 5644,
-      "title": "Team",
-      "expand": "fill"
+      "x": 4560,
+      "y": 0
     },
     "Blog.dc.html": {
-      "x": 7600,
-      "y": 0,
-      "w": 1440,
-      "h": 2860,
+      "expand": "fill",
+      "h": 2958,
+      "is_interactive": true,
       "title": "Blog",
-      "expand": "fill",
-      "is_interactive": true
-    },
-    "Contact.dc.html": {
-      "x": 9120,
-      "y": 0,
       "w": 1440,
-      "h": 2759,
-      "title": "Contact",
-      "expand": "fill",
-      "is_interactive": true
-    },
-    "Careers.dc.html": {
-      "x": 10640,
-      "y": 0,
-      "w": 1440,
-      "h": 3823,
-      "title": "Careers",
-      "expand": "fill",
-      "is_interactive": true
+      "x": 7600,
+      "y": 0
     },
     "BlogPost.dc.html": {
-      "x": 12160,
-      "y": 0,
-      "w": 1440,
-      "h": 7270,
+      "expand": "fill",
+      "h": 7334,
       "title": "Blog post",
-      "expand": "fill"
+      "w": 1440,
+      "x": 12160,
+      "y": 0
+    },
+    "Careers.dc.html": {
+      "expand": "fill",
+      "h": 3944,
+      "is_interactive": true,
+      "title": "Careers",
+      "w": 1440,
+      "x": 10640,
+      "y": 0
+    },
+    "Contact.dc.html": {
+      "expand": "fill",
+      "h": 2847,
+      "is_interactive": true,
+      "title": "Contact",
+      "w": 1440,
+      "x": 9120,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 8000,
+      "is_interactive": true,
+      "title": "Homepage",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Model.dc.html": {
+      "expand": "fill",
+      "h": 3605,
+      "title": "Disease model page template",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "Publications.dc.html": {
+      "expand": "fill",
+      "h": 4861,
+      "is_interactive": true,
+      "title": "Publications",
+      "w": 1440,
+      "x": 3040,
+      "y": 0
     },
     "Services.dc.html": {
+      "expand": "fill",
+      "h": 5780,
+      "title": "Services",
+      "w": 1440,
       "x": 13680,
+      "y": 0
+    },
+    "Team.dc.html": {
+      "expand": "fill",
+      "h": 5658,
+      "title": "Team",
+      "w": 1440,
+      "x": 6080,
+      "y": 0
+    },
+    "Privacy.dc.html": {
+      "x": 15200,
       "y": 0,
       "w": 1440,
-      "h": 5712,
-      "title": "Services",
+      "h": 3871,
+      "title": "Privacy policy",
+      "expand": "fill"
+    },
+    "Terms.dc.html": {
+      "x": 16720,
+      "y": 0,
+      "w": 1440,
+      "h": 4073,
+      "title": "Terms of use",
+      "expand": "fill"
+    },
+    "Accessibility.dc.html": {
+      "x": 18240,
+      "y": 0,
+      "w": 1440,
+      "h": 3159,
+      "title": "Accessibility statement",
       "expand": "fill"
     }
   },
+  "createdOnFiles": {
+    "at": "2026-10-01T20:30:00Z",
+    "v": 1
+  },
+  "designSystems": [
+    {
+      "artifact": "https://claude.ai/artifact/KxNT5ot3543zsqUDDMt54A",
+      "copiedAt": "2026-10-01T20:30:00Z",
+      "namespace": "alphapreclinical",
+      "title": "Alpha Preclinical",
+      "version": "1790885815-5a61"
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {},
   "order": [
     "Main.dc.html",
     "Model.dc.html",
@@ -106,16 +139,11 @@
     "Contact.dc.html",
     "Careers.dc.html",
     "BlogPost.dc.html",
-    "Services.dc.html"
+    "Services.dc.html",
+    "Privacy.dc.html",
+    "Terms.dc.html",
+    "Accessibility.dc.html"
   ],
-  "notes": {},
-  "designSystems": [
-    {
-      "title": "Alpha Preclinical",
-      "namespace": "alphapreclinical",
-      "artifact": "https://claude.ai/artifact/KxNT5ot3543zsqUDDMt54A",
-      "version": "1790885815-5a61",
-      "copiedAt": "2026-10-01T20:30:00Z"
-    }
-  ]
+  "pages": [],
+  "title": "Alpha Preclinical Website"
 }

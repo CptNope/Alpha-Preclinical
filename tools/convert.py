@@ -24,6 +24,9 @@ PAGES = {
     "BlogPost.dc.html": "blog-mrna-liver-depot-study-design.html",
     "Model.dc.html": "tumor-models.html",
     "Services.dc.html": "services.html",
+    "Privacy.dc.html": "privacy.html",
+    "Terms.dc.html": "terms.html",
+    "Accessibility.dc.html": "accessibility.html",
     "Contact.dc.html": "contact.html",
     "Careers.dc.html": "careers.html",
 }
@@ -56,6 +59,9 @@ TITLES = {
     "blog-mrna-liver-depot-study-design.html": "Designing In Vivo mRNA-LNP Studies | Alpha Preclinical",
     "tumor-models.html": "Tumor Models for In Vivo Oncology Studies | Alpha Preclinical",
     "contact.html": "Contact and Study Quotes | Alpha Preclinical",
+    "privacy.html": "Privacy Policy | Alpha Preclinical",
+    "terms.html": "Terms of Use | Alpha Preclinical",
+    "accessibility.html": "Accessibility Statement | Alpha Preclinical",
     "services.html": "Preclinical CRO Services: IVIS, Surgery, In Vitro Lab | Alpha Preclinical",
     "careers.html": "Careers | Alpha Preclinical",
 }
@@ -69,6 +75,9 @@ META = {
     "blog-mrna-liver-depot-study-design.html": "How preclinical studies of mRNA-LNP protein replacement are designed, using published Fabry disease and hemophilia B studies as worked examples.",
     "tumor-models.html": "Syngeneic and xenograft tumor models for in vivo oncology efficacy studies, with caliper and bioluminescent IVIS imaging readouts. Worcester, MA.",
     "contact.html": "Request a preclinical study quote from Alpha Preclinical. Email info@alphapreclinical.com or visit us at 722 Plantation Street, Worcester, MA 01605.",
+    "privacy.html": "How Alpha Preclinical collects, uses and protects information submitted through its website contact, quote and job application forms.",
+    "terms.html": "Terms governing use of the Alpha Preclinical website, including intellectual property, acceptable use and limitations of liability.",
+    "accessibility.html": "Alpha Preclinical's commitment to WCAG 2.1 AA accessibility, how the site was tested, known limitations and how to request help.",
     "services.html": "In vivo PK/PD, proof-of-concept and efficacy studies, plus IVIS imaging, USDA-compliant surgery, colony management and in vitro lab services in Worcester, MA.",
     "careers.html": "Join Alpha Preclinical in Worcester, MA. Open roles for in vivo and in vitro research associates, technicians and study directors.",
 }
@@ -137,6 +146,7 @@ def replace_region(s, start, end, new, last=False):
 
 
 def filter_buttons(labels, counts=None):
+    """Toggle buttons for a filter group; a visually hidden status line announces results."""
     out = []
     for i, label in enumerate(labels):
         small = f" <small>{counts[label]}</small>" if counts else ""
@@ -168,7 +178,7 @@ def page_publications(s, src):
              "Anesthesia and analgesia", "Gene regulation"]
     counts = {"All": len(P), **{a: sum(1 for p in P if p[0] == a) for a in order}}
     s = replace_region(s, '<sc-for list="{{filters}}"', "</sc-for>", filter_buttons(["All"] + order, counts))
-    s = s.replace('<div class="filters" role="group"', '<div class="filters" data-filter-group="pubs" role="group"')
+    s = s.replace('<div class="filters" role="group"', '<div class="filters" data-filter-group="pubs" role="group"').replace('data-filter-group="pubs" role="group"', 'data-filter-group="pubs" data-noun="paper" role="group"', 1)
     groups = []
     for name in order:
         papers = [p for p in P if p[0] == name]
@@ -191,7 +201,7 @@ def page_blog(s, src):
     topics = ["All", "Study design", "Tumor models", "Metabolic disease", "Gene therapy",
               "Autoimmune disease", "Lab services"]
     s = replace_region(s, '<sc-for list="{{filters}}"', "</sc-for>", filter_buttons(topics))
-    s = s.replace('<div class="filters" role="group"', '<div class="filters" data-filter-group="posts" role="group"')
+    s = s.replace('<div class="filters" role="group"', '<div class="filters" data-filter-group="posts" role="group"').replace('data-filter-group="posts" role="group"', 'data-filter-group="posts" data-noun="post" role="group"', 1)
     f = posts[0]
     before, feat, after = cut(s, '<sc-if value="{{showFeature}}"', "</sc-if>")
     feat = feat.split(">", 1)[1].rsplit("</sc-if>", 1)[0]
@@ -244,17 +254,17 @@ def page_contact(s, src):
 def page_careers(s, src):
     roles = js_array(src, "const all")
     s = replace_region(s, '<sc-for list="{{filters}}"', "</sc-for>", filter_buttons(["All", "In vivo", "In vitro"]))
-    s = s.replace('<div class="filters" role="group"', '<div class="filters" data-filter-group="roles" role="group"')
+    s = s.replace('<div class="filters" role="group"', '<div class="filters" data-filter-group="roles" role="group"').replace('data-filter-group="roles" role="group"', 'data-filter-group="roles" data-noun="role" role="group"', 1)
     lis = []
     for i, r in enumerate(roles):
         open_ = i == 0
         reqs = "".join(f"<li>{E(q)}</li>" for q in r["reqs"])
         lis.append(
             f'<li class="role" data-item="roles" data-topic="{E(r["team"])}">'
-            f'<button class="role-btn" type="button" data-accordion aria-expanded="{"true" if open_ else "false"}" aria-controls="role-{i}">'
-            f'<h3>{E(r["title"])}</h3><span class="role-meta"><span class="chip">{E(r["team"])}</span>'
+            f'<h3 class="role-h"><button class="role-btn" type="button" data-accordion aria-expanded="{"true" if open_ else "false"}" aria-controls="role-{i}">'
+            f'<span class="role-title">{E(r["title"])}</span><span class="role-meta"><span class="chip">{E(r["team"])}</span>'
             f'<span class="chip">Full-time, on-site</span><span class="chip">Worcester, MA</span></span>'
-            f'<span class="ico" aria-hidden="true">{"−" if open_ else "+"}</span></button>'
+            f'<span class="ico" aria-hidden="true">{"−" if open_ else "+"}</span></button></h3>'
             f'<div class="role-body" id="role-{i}"{"" if open_ else " hidden"}><div><p>{E(r["summary"])}</p>'
             f'<a class="btn btn-primary apply" href="#apply" data-apply-role="{E(r["title"])}">Apply for this role</a></div>'
             f'<div><h4>What we\'re looking for</h4><ul>{reqs}</ul></div></div></li>')
