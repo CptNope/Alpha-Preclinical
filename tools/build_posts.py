@@ -27,6 +27,7 @@ PEOPLE = {
     'Barak Yahalom, DVM': {
         'img': 'assets/img/team/barak-yahalom.jpg', 'anchor': 'barak-yahalom',
         'linkedin': 'https://www.linkedin.com/in/barak-yahalom-dvm-8631089/',
+        'pubmed': ['22368175', '23114041', '15235770', '30879951', '27356951', '33274557', '22363247', '21555934'],
         'role': 'CEO and Chief Scientific Officer',
         'bio': "Barak has more than 20 years of scientific and veterinary experience in biotechnology and preclinical research. Before co-founding Alpha, he directed in vivo pharmacology at several biotech companies and held senior roles at Boston Children's Hospital and Biomere.",
         'creds': ['DVM, Hebrew University of Jerusalem', '20+ years in preclinical research', '8 peer-reviewed publications', 'Sideromics Scientific Advisory Board'],
@@ -34,6 +35,7 @@ PEOPLE = {
     'Joan Flanagan, PhD': {
         'img': 'assets/img/team/joan-flanagan.jpg', 'anchor': 'joan-flanagan',
         'linkedin': 'https://www.linkedin.com/in/joan-flanagan-phd-62368911/',
+        'pubmed': ['16123363', '15229376', '12524530', '10198436'],
         'role': 'President and Chief Operating Officer',
         'bio': 'Joan brings more than 20 years of operating experience in in vivo preclinical contract research, with roles of increasing responsibility at Biomedical Research Models and Charles River Laboratories before co-founding Alpha.',
         'creds': ['PhD, Molecular Biology and Biochemistry, UMass Medical School', '20+ years in preclinical CROs', '5 peer-reviewed publications', 'Massachusetts Society for Medical Research'],
@@ -66,14 +68,14 @@ POSTS = {
         'summary': ['Diet-induced obesity models mirror early, diet-driven disease; genetic models give fast, severe disease.', 'Substrain, diet and starting age change DIO results, so fix them in the protocol.', 'Many programs use one of each to cover early and advanced disease.'],
         'papers': [('The BBZDR/Wor Rat Model for Investigating the Complications of Type 2 Diabetes Mellitus', 'Tirabassi RS, Flanagan JF, Wu T, Kislauskis EH, Birckbichler PJ, Guberski DL', 'Flanagan JF'),
                    ('The C57BL/6NCrl-lb Mouse: A New Model for Metabolic Syndrome', 'Owens DR, Peterson RG, Yeh W-K, Wang Y, Pritchett-Corning KR, Elder B, Clifford CB, Flanagan J', 'Flanagan J'),
-                   ('Antidiabetic effect of novel modulating peptides of G-protein-coupled kinase in experimental models of diabetes', 'Leshem O, Reuveni H, Wexler I, Ben Sasson R, Yahalom B, et al.', 'Yahalom B')],
+                   ('Antidiabetic effect of novel modulating peptides of G-protein-coupled kinase in experimental models of diabetes', 'Anis Y, Leshem O, Reuveni H, Wexler I, Ben Sasson R, Yahalom B, et al.', 'Yahalom B')],
         'cta': 'Developing a metabolic therapy?'},
     5: {'topic': 'Lab services', 'img': ('assets/img/lab-biosafety-cabinet.jpg', 'Alpha scientist preparing samples in a biosafety cabinet', 'Fresh sample processing in the Alpha laboratory, steps from the vivarium.'),
         'summary': ['Flow cytometry shows how a drug worked, not just whether it did.', 'Process samples fresh, on site, to protect viability and consistency.', 'Design the panel around one question, with viability dye, Fc block and FMO controls.'],
         'papers': [], 'cta': 'Planning an immunology readout?'},
     6: {'topic': 'Study design', 'img': ('assets/img/team-group.jpg', 'The Alpha Preclinical team outside the Worcester facility', 'The Alpha in vivo and surgical team.'),
         'summary': ['Osmotic pumps give steady exposure for days to weeks without repeated handling.', 'Choose them for short half-life compounds, steady-state questions, long studies and brain delivery.', 'Check stability at 37 °C, solubility, priming and fill volume before you implant.'],
-        'papers': [('Spinal Anesthesia in Infant Rats: Development of a Model, Preliminary Observations, and Assessment of Neurologic Outcomes', 'Yahalom B, Athiraman UK, Soriano S, Zurakowski D, Corfas G, Carpino E, Berde CB', 'Yahalom B'),
+        'papers': [('Spinal Anesthesia in Infant Rats: Development of a Model and Assessment of Neurologic Outcomes', 'Yahalom B, Athiraman UK, Soriano S, Zurakowski D, Corfas G, Carpino E, Berde CB', 'Yahalom B'),
                    ('Tetrodotoxin-Bupivacaine-Epinephrine Combinations for Prolonged Local Anesthesia', 'Berde CB, Athiraman U, Yahalom B, Zurakowski D, Corfas G, Bognet C', 'Yahalom B')],
         'cta': 'Need continuous or brain-targeted dosing?'},
     7: {'topic': 'Autoimmune disease', 'img': ('assets/img/lab-biosafety-cabinet.jpg', 'Alpha scientist preparing samples in a biosafety cabinet', 'Sample preparation in the Alpha laboratory, Worcester, Massachusetts.'),
@@ -202,6 +204,7 @@ def main():
                       f'        <p>{E(a["bio"])}</p>\n        <div class="creds">' + ''.join(f'<span>{E(c)}</span>' for c in a['creds']) + '</div>\n'
                       f'        <p class="author-links"><a class="more" href="team.html#{a["anchor"]}">Full profile</a>'
                       + (f'<a class="li" href="{a["linkedin"]}" target="_blank" rel="noopener" aria-label="{E(author.split(",")[0])} on LinkedIn (opens in new tab)">LinkedIn</a>' if a.get('linkedin') else '')
+                      + (f'<a class="li" href="https://pubmed.ncbi.nlm.nih.gov/?term={quote(" OR ".join(i + "[pmid]" for i in a["pubmed"]), safe="")}&amp;sort=date" target="_blank" rel="noopener" aria-label="{E(author.split(",")[0])}\'s {len(a["pubmed"])} papers on PubMed (opens in new tab)">PubMed</a>' if a.get('pubmed') else '')
                       + '</p>\n      </div>\n    </section>')
         # mid-article CTA before the third section heading (or the last one in short posts)
         STUDY = {'Tumor models': 'Tumor models', 'Metabolic disease': 'Metabolic disease',

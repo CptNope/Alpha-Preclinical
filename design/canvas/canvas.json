@@ -21,7 +21,7 @@
     },
     "BlogPost.dc.html": {
       "expand": "fill",
-      "h": 7555,
+      "h": 7603,
       "title": "Blog post",
       "w": 1440,
       "x": 12160,
@@ -64,7 +64,7 @@
     },
     "Publications.dc.html": {
       "expand": "fill",
-      "h": 5444,
+      "h": 6480,
       "is_interactive": true,
       "title": "Publications",
       "w": 1440,

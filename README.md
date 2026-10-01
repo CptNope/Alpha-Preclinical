@@ -146,12 +146,12 @@ Every page is designed and built. The six expertise areas are sections of `exper
 | Expertise | `expertise.html` | Jump links to each area | All six therapeutic areas: overview, the models from the old site in a table, the lead scientist, related papers and blog posts | "Plan your … study" under each area (study type preset); closing band | Lead named on every area |
 | Services | `services.html` | Jump links to each service | Study types, then IVIS imaging, surgical services, colony management, in vitro laboratory and study support, each with its lead | "Add … to your study" under each service (study type preset); closing band | Lead named on every service |
 | Tumor models | `tumor-models.html` | — | Deep-dive template for one area: models table, in-house endpoints, study team, related expertise | Closing quote band | Study team named |
-| Publications | `publications.html` | Filter by research area | All 16 papers grouped by area, Alpha authors called out, journal and year; **Read PDF**, **PubMed** (15 of 16) and **Free full text** on PubMed Central (5) for each paper | "Want the authors on your study?" band | `ScholarlyArticle` list with PMID, PubMed, PMC and DOI links |
+| Publications | `publications.html` | Filter by research area | All 16 papers grouped by area with a full NLM-style citation (journal, issue date, volume, issue, pages, epub date), DOI link, PMID and PMCID, Alpha authors called out; **Read PDF**, **PubMed** (15 of 16) and **Free full text** on PubMed Central (8) | "Want the authors on your study?" band | `ScholarlyArticle` list with authors, volume, issue, pagination, date, and DOI / PMID / PMCID identifiers |
 | About | `about.html` | — | Company story, key facts, values, facility, leadership | Closing quote band | Founding date, leadership |
-| Team | `team.html` | Photo swap on hover | Group photo, leadership and founding team profiles with education, prior roles, affiliations, the areas each person leads, and **LinkedIn** for Barak, Joan and Ashley | "Put this team on your program" band; careers link | `Person` list with job titles and LinkedIn `sameAs` |
+| Team | `team.html` | Photo swap on hover | Group photo, leadership and founding team profiles with education, prior roles, affiliations, the areas each person leads, **LinkedIn** for Barak, Joan and Ashley, and **PubMed** for Barak (8 papers) and Joan (4) | "Put this team on your program" band; careers link | `Person` list with job titles and LinkedIn `sameAs` |
 | Blog | `blog.html` | Filter by topic | Index of the seven launch posts, all linked | "Ask a scientist" band | — |
-| Blog post (designed) | `blog-mrna-liver-depot-study-design.html` | — | Single-post template built for E-E-A-T (see below) | Mid-article "Talk to a scientist" box; closing band | `Article`; author and reviewer; author LinkedIn; related papers link to PDFs |
-| Blog posts (generated) | `blog-how-to-scope-in-vivo-efficacy-study.html`, `blog-caliper-vs-ivis-tumor-burden.html`, `blog-diet-induced-vs-genetic-type-2-diabetes-models.html`, `blog-flow-cytometry-immunophenotyping-in-vivo-studies.html`, `blog-alzet-osmotic-pump-continuous-dosing.html`, `blog-rat-models-type-1-diabetes.html` | — | The other six drafts on the same template: author and reviewer, contents, key takeaways, sources, related Alpha papers | Mid-article box (topic preset) and closing band | Same as the designed post; LinkedIn where the author has one |
+| Blog post (designed) | `blog-mrna-liver-depot-study-design.html` | — | Single-post template built for E-E-A-T (see below) | Mid-article "Talk to a scientist" box; closing band | `Article`; author and reviewer; author LinkedIn and PubMed; related papers link to PDFs |
+| Blog posts (generated) | `blog-how-to-scope-in-vivo-efficacy-study.html`, `blog-caliper-vs-ivis-tumor-burden.html`, `blog-diet-induced-vs-genetic-type-2-diabetes-models.html`, `blog-flow-cytometry-immunophenotyping-in-vivo-studies.html`, `blog-alzet-osmotic-pump-continuous-dosing.html`, `blog-rat-models-type-1-diabetes.html` | — | The other six drafts on the same template: author and reviewer, contents, key takeaways, sources, related Alpha papers | Mid-article box (topic preset) and closing band | Same as the designed post; LinkedIn and PubMed where the author has them |
 | Careers | `careers.html` | Role filter, accordion, demo application form | Culture, four open roles, application form with resume upload | "Apply for this role" preselects the role | — |
 | Contact | `contact.html` | Demo form with validation; study type preset from `?study=` | Quote form with study-type picker, contact details, building photo, branded map | Destination of every study CTA | `Organization` address |
 | Privacy policy | `privacy.html` | — | **Draft for legal review.** What the forms collect, how it is used and shared, retention, rights | — | — |
@@ -288,6 +288,14 @@ The seven launch posts in [`content/blog-posts.md`](content/blog-posts.md) each 
 | 7 | Spontaneous rat models of type 1 diabetes, explained | Joan Flanagan, PhD | type 1 diabetes rat model |
 
 ---
+
+### Publication metadata
+
+Each paper's row in `design/canvas/Publications.dc.html` holds: area, title, authors, Alpha authors, journal, PDF, PMID, PMCID, DOI, volume, issue, pages, issue date and epub date. The page renders an NLM-style citation from them (for example *Gene Therapy*. 2016 Oct;23(10):699–707. Epub 2016 Jun 30.), plus DOI, PMID and PMCID, and the same fields go into `ScholarlyArticle` schema.
+
+Values came from Crossref and OpenAlex, with PMIDs and PMCIDs cross-checked against the NCBI ID converter; PubMed itself blocked automated reads, so open items list the few dates to confirm there.
+
+PubMed has no author profile pages, so each scientist's **PubMed** button runs a PubMed search for exactly the PMIDs of their papers on this site (a name search like "Flanagan J" would mix in other researchers). When papers are added, add the PMID to the person's list in `Team.dc.html`, `BlogPost.dc.html` and `PEOPLE` in `tools/build_posts.py`.
 
 ## Who leads what
 
@@ -437,7 +445,7 @@ AXE_PATH=path/to/axe.min.js python3 docs/a11y-audit.py http://localhost:8766 aud
 - [ ] Cindy's bio edit (homeopathy reference changed to "preventive approaches to medicine")
 - [ ] Joan's Becker College advisory board line (Becker College closed in 2021)
 - [ ] Leads for inflammation & fibrosis, tumor models and IVIS (defaulted to Barak)
-- [ ] Alpha's role on three LNP papers with no confirmed Alpha author
+- [ ] Alpha's role on the three Sanofi / Translate Bio LNP papers (Analytical Chemistry 2024, Biomaterials 2023, J Mater Chem B 2026): no Alpha scientist is an author; the site shows "None listed". Keep them (e.g. as collaborator work) or remove
 - [ ] Location for job postings: old posts say **North Grafton, MA**; site says Worcester
 - [ ] Whether the four open roles are still open
 - [ ] Editorial policy on the blog post (claims a second PhD/DVM review)
@@ -446,11 +454,11 @@ AXE_PATH=path/to/axe.min.js python3 docs/a11y-audit.py http://localhost:8766 aud
 ### Content to collect
 
 - [ ] Original full-resolution photos (current images were pulled from Wix at 1,000 px)
-- [ ] Volume and pages for each publication (journal, year, PMID and DOI are now in `Publications.dc.html`; the C57BL/6NCrl-lb paper is a FASEB meeting abstract with no PubMed record)
 - [ ] Copy the 16 PDFs into the theme or media library before the old site goes offline (links currently point at `alphapreclinical.com/_files/ugd/…`), and confirm the client may host publisher versions; link the DOI where it can't
 - [ ] ORCID / Google Scholar links for Barak and Joan
 - [ ] LinkedIn profiles for Cindy Hopper and Gil Chacon (their old bio pages show a LinkedIn icon with no link; a "Cindy Hopper, UMass Chan" profile exists but isn't confirmed as her)
-- [ ] Confirm the author list on the Diabetologia 2004 paper (PubMed may list Anis Y first)
+- [ ] Check three epub dates against PubMed, where Crossref and OpenAlex disagree: Diabetes 2012 (Crossref Apr 13, OpenAlex Feb 25), Pediatric Anesthesia 2021 (Jan 4 vs Dec 4, 2020), Anesthesiology 2011 (none vs May 7). The site shows the Crossref value or none
+- [ ] ILAR Journal 2004: OpenAlex lists "John F. Flanagan"; the site keeps Joan F. Flanagan, as on the old site
 - [ ] Real lab photos for each therapeutic area
 - [ ] Confirm the model lists on the Expertise page are current (copied from the old site)
 - [ ] Author review of each blog post, plus one first-hand detail per post

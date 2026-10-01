@@ -16,7 +16,7 @@ def norm(t):
 
 
 PAPERS = {}
-for m in re.finditer(r"^\s*\['[^']*', '((?:[^'\\]|\\.)*)'.*?'(https://[^']+\.pdf)'\]", SRC, re.M):
+for m in re.finditer(r"^\s*\['[^']*', '((?:[^'\\]|\\.)*)'.*?'(https://[^']+\.pdf)'", SRC, re.M):
     PAPERS[norm(m.group(1))] = m.group(2)
 
 

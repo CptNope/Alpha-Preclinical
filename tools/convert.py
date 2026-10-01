@@ -176,47 +176,86 @@ def page_main(s, src):
     return s, [ORG_LD, faq_ld]
 
 
+def citation(date, volume, issue, pages, epub):
+    """NLM-style source line: 2012 May;61(5):1160–1168. Epub 2012 Apr 13."""
+    c = date + (f";{volume}" if volume else "") + (f"({issue})" if issue else "") + (f":{pages}" if pages else "") + "."
+    return c + (f" Epub {epub}." if epub else "")
+
+
+MONTHS = {m: i for i, m in enumerate("Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(), 1)}
+
+
+def iso(d):
+    """'2012 Apr 13' -> '2012-04-13', '2012 May' -> '2012-05', '2004' -> '2004'."""
+    parts = d.split()
+    out = parts[0]
+    if len(parts) > 1 and parts[1][:3] in MONTHS:
+        out += f"-{MONTHS[parts[1][:3]]:02d}"
+        if len(parts) > 2:
+            out += f"-{int(parts[2]):02d}"
+    return out
+
+
 def page_publications(s, src):
     P = js_array(src, "const P")
     order = ["Gene therapy", "Type 1 diabetes", "Type 2 diabetes and metabolic syndrome",
              "Anesthesia and analgesia", "Gene regulation"]
     counts = {"All": len(P), **{a: sum(1 for p in P if p[0] == a) for a in order}}
     s = replace_region(s, '<sc-for list="{{filters}}"', "</sc-for>", filter_buttons(["All"] + order, counts))
-    s = s.replace('<div class="filters" role="group"', '<div class="filters" data-filter-group="pubs" role="group"').replace('data-filter-group="pubs" role="group"', 'data-filter-group="pubs" data-noun="paper" role="group"', 1)
+    s = s.replace('<div class="filters" role="group"', '<div class="filters" data-filter-group="pubs" data-noun="paper" role="group"', 1)
     groups = []
     for name in order:
         papers = [p for p in P if p[0] == name]
         lis = []
-        for area, title, others, alpha, journal, pdf, pmid, pmcid, doi in papers:
-            j = f"<i>{E(journal)}</i>" if journal else ""
-            links = (f'<a class="pdf" href="{E(pdf)}" target="_blank" rel="noopener" aria-label="Read PDF: {E(title)} (opens in new tab)">Read PDF</a>')
+        for (area, title, others, alpha, journal, pdf, pmid, pmcid, doi,
+             volume, issue, pages, date, epub) in papers:
+            links = f'<a class="pdf" href="{E(pdf)}" target="_blank" rel="noopener" aria-label="Read PDF: {E(title)} (opens in new tab)">Read PDF</a>'
             if pmid:
                 links += (f'<a class="pdf nih" href="https://pubmed.ncbi.nlm.nih.gov/{pmid}/" target="_blank" rel="noopener" '
                           f'aria-label="PubMed record: {E(title)} (opens in new tab)">PubMed</a>')
             if pmcid:
                 links += (f'<a class="pdf nih" href="https://pmc.ncbi.nlm.nih.gov/articles/{pmcid}/" target="_blank" rel="noopener" '
                           f'aria-label="Free full text on PubMed Central: {E(title)} (opens in new tab)">Free full text</a>')
+            ids = ""
+            if doi:
+                ids += f'<div><dt>DOI</dt><dd><a href="https://doi.org/{E(doi)}" target="_blank" rel="noopener">{E(doi)}</a></dd></div>'
+            if pmid:
+                ids += f'<div><dt>PMID</dt><dd>{pmid}</dd></div>'
+            if pmcid:
+                ids += f'<div><dt>PMCID</dt><dd>{pmcid}</dd></div>'
             lis.append(f'<li class="paper"><h3>{E(title)}</h3><p class="by">{E(others)}</p>'
-                       f'<p class="meta"><span class="alpha">Alpha authors: {E(alpha)}</span>{j}</p>'
+                       f'<p class="cite"><i>{E(journal)}</i>. {E(citation(date, volume, issue, pages, epub))}</p>'
+                       f'<dl class="ids">{ids}</dl>'
+                       f'<p class="meta"><span class="alpha">Alpha authors: {E(alpha)}</span></p>'
                        f'<div class="links">{links}</div></li>')
         n = len(papers)
         groups.append(f'<section class="group" data-item="pubs" data-topic="{E(name)}"><div><h2>{E(name)}</h2>'
                       f'<p class="count">{n} paper{"s" if n != 1 else ""}</p></div>'
                       f'<ol class="list">{"".join(lis)}</ol></section>')
     s = replace_region(s, '<sc-for list="{{groups}}"', "</sc-for>", "\n    ".join(groups), last=True)
-    # Scholarly articles, each tied to its PubMed / DOI record
+
     def article(p):
-        area, title, others, alpha, journal, pdf, pmid, pmcid, doi = p
-        jname, _, year = journal.rpartition(", ")
-        a = {"@type": "ScholarlyArticle", "headline": title, "author": [x.strip() for x in others.split(",")][:10],
-             "isPartOf": {"@type": "Periodical", "name": jname or journal}, "datePublished": year, "url": pdf,
-             "about": area}
+        (area, title, others, alpha, journal, pdf, pmid, pmcid, doi,
+         volume, issue, pages, date, epub) = p
+        periodical = {"@type": "Periodical", "name": journal}
+        part = periodical
+        if volume:
+            part = {"@type": "PublicationVolume", "volumeNumber": volume, "isPartOf": periodical}
+        if issue:
+            part = {"@type": "PublicationIssue", "issueNumber": issue, "isPartOf": part}
+        a = {"@type": "ScholarlyArticle", "headline": title, "name": title,
+             "author": [{"@type": "Person", "name": x.strip()} for x in others.split(",") if x.strip() and x.strip() != "et al."],
+             "isPartOf": part, "datePublished": iso(epub or date), "url": pdf, "about": area}
+        if pages:
+            a["pagination"] = pages
         same = []
         if pmid: same.append(f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/")
         if pmcid: same.append(f"https://pmc.ncbi.nlm.nih.gov/articles/{pmcid}/")
         if doi: same.append(f"https://doi.org/{doi}")
         if same: a["sameAs"] = same
-        if pmid: a["identifier"] = {"@type": "PropertyValue", "propertyID": "PMID", "value": pmid}
+        ident = [{"@type": "PropertyValue", "propertyID": k, "value": v}
+                 for k, v in (("DOI", doi), ("PMID", pmid), ("PMCID", pmcid)) if v]
+        if ident: a["identifier"] = ident
         return a
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "Alpha Preclinical publications",
           "itemListElement": [{"@type": "ListItem", "position": i + 1, "item": article(p)} for i, p in enumerate(P)]}
