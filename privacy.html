@@ -90,6 +90,7 @@ body{margin:0}
 @media (max-width:1080px){.nav,.hdr .btn{display:none}.doc{grid-template-columns:minmax(0,1fr);gap:32px}.toc{position:static}}
 @media (max-width:680px){.wrap{padding:0 16px}.doc{padding-top:40px;padding-bottom:72px}}
 .ap a[href^="mailto:"]{overflow-wrap:anywhere}
+.wv{animation:drift linear infinite}.wv1{animation-duration:90s}.wv2{animation-duration:70s;animation-direction:reverse}.wv3{animation-duration:56s}.wv4{animation-duration:120s;animation-direction:reverse}@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-1440px)}}.strata.is-paused .wv{animation-play-state:paused}@media (prefers-reduced-motion:reduce){.wv{animation:none}}.motion-toggle{position:absolute;right:16px;bottom:16px;z-index:3;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font:600 14px/1 "Figtree",sans-serif;cursor:pointer}.motion-toggle:hover{border-color:var(--tide);color:var(--tide)}.motion-toggle:focus-visible{outline:3px solid var(--current);outline-offset:3px}
 </style>
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
@@ -110,12 +111,13 @@ body{margin:0}
   </div>
   <div class="strata" aria-hidden="true">
     <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
-      <path d="M0 70 C180 30 540 110 720 70 S1260 30 1440 70 L1440 200 L0 200 Z" fill="#1E58A0"></path>
-      <path d="M0 110 C180 76 540 144 720 110 S1260 76 1440 110 L1440 200 L0 200 Z" fill="#4B98D2"></path>
-      <path d="M0 144 C180 118 540 170 720 144 S1260 118 1440 144 L1440 200 L0 200 Z" fill="#88C6EE"></path>
-      <path d="M0 174 C180 156 540 192 720 174 S1260 156 1440 174 L1440 200 L0 200 Z" fill="#FFFFFF"></path>
+      <path class="wv wv1" d="M0 70 C180 30 540 110 720 70 S1260 110 1440 70 S1980 110 2160 70 S2700 110 2880 70 L2880 200 L0 200 Z" fill="#1E58A0"></path>
+      <path class="wv wv2" d="M0 110 C180 76 540 144 720 110 S1260 144 1440 110 S1980 144 2160 110 S2700 144 2880 110 L2880 200 L0 200 Z" fill="#4B98D2"></path>
+      <path class="wv wv3" d="M0 144 C180 118 540 170 720 144 S1260 170 1440 144 S1980 170 2160 144 S2700 170 2880 144 L2880 200 L0 200 Z" fill="#88C6EE"></path>
+      <path class="wv wv4" d="M0 174 C180 156 540 192 720 174 S1260 192 1440 174 S1980 192 2160 174 S2700 192 2880 174 L2880 200 L0 200 Z" fill="#FFFFFF"></path>
     </svg>
   </div>
+  <button class="motion-toggle" type="button" aria-pressed="false" data-motion>Pause animation</button>
 </header>
 <main id="main">
 <div class="wrap doc">

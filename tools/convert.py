@@ -186,11 +186,11 @@ def page_publications(s, src):
     for name in order:
         papers = [p for p in P if p[0] == name]
         lis = []
-        for area, title, others, alpha, journal in papers:
+        for area, title, others, alpha, journal, pdf in papers:
             j = f"<i>{E(journal)}</i>" if journal else ""
             lis.append(f'<li class="paper"><h3>{E(title)}</h3><p class="by">{E(others)}</p>'
                        f'<p class="meta"><span class="alpha">Alpha authors: {E(alpha)}</span>{j}</p>'
-                       f'<a class="pdf" href="#pdf">Read PDF</a></li>')
+                       f'<a class="pdf" href="{E(pdf)}" target="_blank" rel="noopener" aria-label="Read PDF: {E(title)} (opens in new tab)">Read PDF</a></li>')
         n = len(papers)
         groups.append(f'<section class="group" data-item="pubs" data-topic="{E(name)}"><div><h2>{E(name)}</h2>'
                       f'<p class="count">{n} paper{"s" if n != 1 else ""}</p></div>'

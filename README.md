@@ -11,7 +11,7 @@ This repo holds three things:
 **Live preview:** https://cptnope.github.io/Alpha-Preclinical/ (once GitHub Pages is serving `main`)
 
 > [!IMPORTANT]
-> This is a **review build**, not the production site. Forms validate and confirm on screen but send nothing, PDF and share links are placeholders, and several items still need client confirmation (see [Open items](#open-items-before-launch)).
+> This is a **review build**, not the production site. Forms validate and confirm on screen but send nothing, blog share links are placeholders, publication PDFs are still served from the old site, and several items still need client confirmation (see [Open items](#open-items-before-launch)).
 
 ---
 
@@ -37,7 +37,7 @@ This repo holds three things:
 
 The brand's colors are kept exactly. They were sampled from the existing logo and the layered-wave hero art, which also appears on the building signage.
 
-**The signature idea is "strata".** The alpha in the logo is filled with stacked bands of blue. On the site that becomes five flowing wave bands in the brand blues: drifting slowly in the homepage hero and dissolving into the page, then reduced to a single contour line or a wave-cut photo edge everywhere else. The site visually matches the sign visitors see at the entrance.
+**The signature idea is "strata".** The alpha in the logo is filled with stacked bands of blue. On the site that becomes five flowing wave bands in the brand blues: drifting slowly in the homepage hero and dissolving into the page. Every inner page carries a shorter band of the same waves that also drifts (and blog posts a thin one under the header), each with its own pause button. The site visually matches the sign visitors see at the entrance.
 
 The client's two reference sites shaped different parts of the work:
 
@@ -156,6 +156,7 @@ flowchart LR
 ├── wordpress/theme.json                 # token mapping for the FSE block theme
 ├── tools/convert.py                     # regenerates the HTML pages from design/canvas
 ├── tools/build_posts.py                 # builds the six other posts from content/blog-posts.md
+├── tools/pdf_links.py                   # links paper titles to their PDFs
 ├── docs/accessibility-audit.md          # WCAG 2.1 AA audit report
 ├── docs/a11y-audit.py                   # re-runnable audit (axe-core + custom checks)
 ├── .nojekyll                            # serve files as-is on GitHub Pages
@@ -311,7 +312,7 @@ python3 tools/convert.py design/canvas .
 python3 tools/build_posts.py
 ```
 
-`build_posts.py` fills the designed post with each draft (the SEO table at the top of each draft becomes the title, meta and slug), sets read times from real word counts on every page, and points matching links across the site at the new posts.
+`build_posts.py` also runs `tools/pdf_links.py`, which points every paper title on the site at that paper's PDF (URLs live in the `P` list in `design/canvas/Publications.dc.html`). It fills the designed post with each draft (the SEO table at the top of each draft becomes the title, meta and slug), sets read times from real word counts on every page, and points matching links across the site at the new posts.
 
 The script stops with an error if any template syntax (`{{ }}`, `<sc-for>`, `<sc-if>`) is left unconverted.
 
@@ -373,7 +374,7 @@ The site was audited against **WCAG 2.1 AA** (plus the WCAG 2.2 target-size rule
 | axe-core (wcag2a, wcag2aa, wcag21a, wcag21aa) | 0 violations on all 20 pages |
 | Reflow at 320 px and text spacing (1.4.10, 1.4.12) | Pass on all pages |
 | Visible focus on every focusable element (2.4.7) | Pass |
-| Hero animation can be paused (2.2.2) | Pause button; starts paused under reduced motion |
+| Wave animation can be paused (2.2.2) | Pause button on every page; starts paused under reduced motion |
 | Filter results announced (4.1.3) | `role="status"` live region |
 | Targets at least 24 px (2.5.8) | Pass, except links inside sentences (exempt) |
 
@@ -403,7 +404,8 @@ AXE_PATH=path/to/axe.min.js python3 docs/a11y-audit.py http://localhost:8766 aud
 ### Content to collect
 
 - [ ] Original full-resolution photos (current images were pulled from Wix at 1,000 px)
-- [ ] Journal, year, volume and DOI for each publication, plus PDFs
+- [ ] Journal, year, volume and DOI for each publication
+- [ ] Copy the 16 PDFs into the theme or media library before the old site goes offline (links currently point at `alphapreclinical.com/_files/ugd/…`), and confirm the client may host publisher versions; link the DOI where it can't
 - [ ] ORCID / Google Scholar links for Barak and Joan
 - [ ] Real lab photos for each therapeutic area
 - [ ] Confirm the model lists on the Expertise page are current (copied from the old site)
@@ -414,7 +416,7 @@ AXE_PATH=path/to/axe.min.js python3 docs/a11y-audit.py http://localhost:8766 aud
 - [ ] Attorney review of the draft Privacy Policy and Terms of Use (bracketed items depend on the final analytics, form and hosting tools)
 - [ ] Response time for accessibility requests (Accessibility Statement)
 - [ ] Screen-reader pass with VoiceOver and NVDA on staging
-- [ ] PDF download and share links on blog posts (placeholders)
+- [ ] Share links on blog posts (placeholders)
 - [ ] Real form handling and spam protection
 - [ ] `JobPosting`, `Person` and `ScholarlyArticle` schema
 - [ ] XML sitemap and redirects from old Wix URLs (`/experetise`, `/services`, `/about-us`, `/pk-pd`, …)

@@ -45,7 +45,7 @@ flowchart LR
 
 | # | Issue | WCAG | Severity | Fix |
 | --- | --- | --- | --- | --- |
-| 5 | Homepage wave animation loops indefinitely with no way to pause it | 2.2.2 Pause, Stop, Hide | 🟡 Major | Added a "Pause animation" button (keyboard reachable, `aria-pressed`); starts paused when the device requests reduced motion |
+| 5 | Wave animation loops indefinitely with no way to pause it (homepage at audit time; every page now animates and has the same control) | 2.2.2 Pause, Stop, Hide | 🟡 Major | Added a "Pause animation" button (keyboard reachable, `aria-pressed`); starts paused when the device requests reduced motion |
 | 6 | Nav, footer, breadcrumb and "Led by" links were 17–22 px tall | 2.5.8 Target Size (WCAG 2.2 AA) | 🟢 Minor | Padded to at least 24 px; remaining small links are inline within sentences (exempt) |
 
 ### Robust

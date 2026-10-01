@@ -243,6 +243,16 @@ def main():
         if s2 != s:
             Path(f).write_text(s2)
 
+    # Paper titles link to the paper's PDF (see tools/pdf_links.py)
+    import sys
+    sys.path.insert(0, str(ROOT / 'tools'))
+    from pdf_links import rewrite as pdf_rewrite
+    for f in glob.glob(str(ROOT / '*.html')):
+        s = Path(f).read_text()
+        s2 = pdf_rewrite(s)
+        if s2 != s:
+            Path(f).write_text(s2)
+
 
 if __name__ == '__main__':
     main()

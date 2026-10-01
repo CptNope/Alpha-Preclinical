@@ -82,6 +82,7 @@ body{margin:0}
 .ap .btn{max-width:100%;text-align:center;line-height:1.2}
 .top-body{padding-bottom:204px}
 @media (max-width:680px){.top-body{padding-bottom:132px}.strata{height:110px}}
+.wv{animation:drift linear infinite}.wv1{animation-duration:90s}.wv2{animation-duration:70s;animation-direction:reverse}.wv3{animation-duration:56s}.wv4{animation-duration:120s;animation-direction:reverse}@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-1440px)}}.strata.is-paused .wv{animation-play-state:paused}@media (prefers-reduced-motion:reduce){.wv{animation:none}}.motion-toggle{position:absolute;right:16px;bottom:16px;z-index:3;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font:600 14px/1 "Figtree",sans-serif;cursor:pointer}.motion-toggle:hover{border-color:var(--tide);color:var(--tide)}.motion-toggle:focus-visible{outline:3px solid var(--current);outline-offset:3px}
 </style>
 </helmet>
 <div class="ap">
@@ -98,12 +99,13 @@ body{margin:0}
   </div>
   <div class="strata" aria-hidden="true">
     <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
-      <path d="M0 70 C180 30 540 110 720 70 S1260 30 1440 70 L1440 200 L0 200 Z" fill="#1E58A0"></path>
-      <path d="M0 110 C180 76 540 144 720 110 S1260 76 1440 110 L1440 200 L0 200 Z" fill="#4B98D2"></path>
-      <path d="M0 144 C180 118 540 170 720 144 S1260 118 1440 144 L1440 200 L0 200 Z" fill="#88C6EE"></path>
-      <path d="M0 174 C180 156 540 192 720 174 S1260 156 1440 174 L1440 200 L0 200 Z" fill="#FFFFFF"></path>
+      <path class="wv wv1" d="M0 70 C180 30 540 110 720 70 S1260 110 1440 70 S1980 110 2160 70 S2700 110 2880 70 L2880 200 L0 200 Z" fill="#1E58A0"></path>
+      <path class="wv wv2" d="M0 110 C180 76 540 144 720 110 S1260 144 1440 110 S1980 144 2160 110 S2700 144 2880 110 L2880 200 L0 200 Z" fill="#4B98D2"></path>
+      <path class="wv wv3" d="M0 144 C180 118 540 170 720 144 S1260 170 1440 144 S1980 170 2160 144 S2700 170 2880 144 L2880 200 L0 200 Z" fill="#88C6EE"></path>
+      <path class="wv wv4" d="M0 174 C180 156 540 192 720 174 S1260 192 1440 174 S1980 192 2160 174 S2700 192 2880 174 L2880 200 L0 200 Z" fill="#FFFFFF"></path>
     </svg>
   </div>
+  <button class="motion-toggle" type="button" aria-pressed="false" data-motion>Pause animation</button>
 </header>
 <main class="body">
   <div class="wrap">
@@ -121,7 +123,7 @@ body{margin:0}
               <h3>{{p.title}}</h3>
               <p class="by">{{p.others}}</p>
               <p class="meta"><span class="alpha">Alpha authors: {{p.alpha}}</span><sc-if value="{{p.journal}}" hint-placeholder-val="{{false}}"><i>{{p.journal}}</i></sc-if></p>
-              <a class="pdf" href="#pdf">Read PDF</a>
+              <a class="pdf" href="{{p.pdf}}" target="_blank" rel="noopener" aria-label="{{p.pdfLabel}}">Read PDF</a>
             </li>
           </sc-for>
         </ol>
@@ -150,23 +152,23 @@ class Component extends DCLogic {
   constructor(props) { super(props); this.state = { area: 'All' }; }
   renderVals() {
     const P = [
-      ['Type 1 diabetes', 'Prevention of Type 1 Diabetes in the Rat With an Allele-Specific Anti–T-Cell Receptor Antibody: Vβ13 as a Therapeutic Target and Biomarker', 'Zhijun Liu, Laura Cort, Ryan Eberwine, Thomas Herrmann, Jean H. Leif, Dale L. Greiner, Barak Yahalom, Elizabeth P. Blankenhorn, John P. Mordes', 'Barak Yahalom', ''],
-      ['Type 1 diabetes', 'Development of Standardized Insulin Treatment Protocols for Spontaneous Rodent Models of Type 1 Diabetes', 'Christian W. Grant, Shane K. Duclos, Catherine M. Moran-Paul, Barak Yahalom, Rebecca S. Tirabassi, Guillermo Arreaza-Rubin, Lisa M. Spain, Dennis L. Guberski', 'Barak Yahalom', ''],
-      ['Type 1 diabetes', 'LEW.1WR1 Rats Develop Autoimmune Diabetes Spontaneously and in Response to Environmental Perturbation', 'John P. Mordes, Dennis L. Guberski, Jean H. Leif, Bruce A. Woda, Joan F. Flanagan, Dale L. Greiner, Edward H. Kislauskis, Rebecca S. Tirabassi', 'Joan F. Flanagan', ''],
-      ['Type 2 diabetes and metabolic syndrome', 'The C57BL/6NCrl-lb Mouse: A New Model for Metabolic Syndrome', 'Dwight R. Owens, Richard G. Peterson, Wu-Kuang Yeh, Yiyun Wang, Kathleen R. Pritchett-Corning, Bruce Elder, Charles B. Clifford, Joan Flanagan', 'Joan Flanagan', ''],
-      ['Type 2 diabetes and metabolic syndrome', 'Antidiabetic effect of novel modulating peptides of G-protein-coupled kinase in experimental models of diabetes', 'Leshem O, Reuveni H, Wexler I, Ben Sasson R, Yahalom B, Laster M, Raz I, Ben Sasson S, Shafrir E, Ziv E', 'Barak Yahalom', ''],
-      ['Type 2 diabetes and metabolic syndrome', 'The BBZDR/Wor Rat Model for Investigating the Complications of Type 2 Diabetes Mellitus', 'Rebecca S. Tirabassi, Joan F. Flanagan, Tiangen Wu, Edward H. Kislauskis, Paul J. Birckbichler, Dennis L. Guberski', 'Joan F. Flanagan', ''],
-      ['Gene therapy', 'Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy', 'DeRosa F, Smith L, Shen Y, Huang Y, Pan J, Xie H, Yahalom B, Heartlein MW', 'Barak Yahalom', 'Molecular Therapy'],
-      ['Gene therapy', 'Analytical Characterization of Heterogeneities in mRNA-Lipid Nanoparticles Using Sucrose Density Gradient Ultracentrifugation', 'Amita Vaidya, Dipen Parande, Nikita Khadse, Natalia Vargas-Montoya, Vikram Agarwal, Christian Ortiz, Gordon Ellis, Neha Kaushal, Ashish Sarode, Shrirang Karve, Frank DeRosa', '[Confirm]', ''],
-      ['Gene therapy', 'Therapeutic Efficacy in a Hemophilia B Model Using a Biosynthetic mRNA Liver Depot System', 'DeRosa F, Guild B, Karve S, Smith L, Love K, Dorkin JR, Kauffman KJ, Zhang J, Yahalom B, Anderson DG, Heartlein MW', 'Barak Yahalom', 'Gene Therapy'],
-      ['Gene therapy', 'Mechanistic model for improved performance of mRNA–LNPs formulated under turbulent mixing conditions', 'Richard Mosesso, Katie Randall, Amita Vaidya, Jackie Tang, Trent Northen, Aurélie Deliot, Mengwei Sun, Rebecca Goldman, Adam Lyons, Lingyun Liu, Shrirang Karve, Frank DeRosa', '[Confirm]', ''],
-      ['Gene therapy', 'Understanding structure activity relationships of Good HEPES lipids for lipid nanoparticle mRNA vaccine applications', 'Rebecca L. Goldman, Namratha Turuvekere Vittala Murthy, Trent P. Northen, Anuranjani Balakrishnan, Sudha Chivukula, Hillary Danz, Timothy Tibbitts, Anusha Dias, Jorel Vargas, Dustin Cooper, Hardip Gopani, Angela Beaulieu, Kirill V. Kalnin, Timothy Plitnik, Saswata Karmakar, Ramesh Dasari, Ryan Landis, Shrirang Karve, Frank DeRosa', '[Confirm]', ''],
-      ['Anesthesia and analgesia', 'Antinociceptive Effect of Vapocoolant Medium Stream Spray on Hotplate Latency in Rat Pups', 'Navil F. Sethna, Brenden Fish, Barak Yahalom, Birgitta Schmidt, David Zurakowski', 'Barak Yahalom', ''],
-      ['Anesthesia and analgesia', 'Tetrodotoxin-Bupivacaine-Epinephrine Combinations for Prolonged Local Anesthesia', 'Charles B. Berde, Umeshkumar Athiraman, Barak Yahalom, David Zurakowski, Gabriel Corfas, Christina Bognet', 'Barak Yahalom', ''],
-      ['Anesthesia and analgesia', 'Spinal Anesthesia in Infant Rats: Development of a Model, Preliminary Observations, and Assessment of Neurologic Outcomes', 'Yahalom B, Athiraman UK, Soriano S, Zurakowski D, Corfas G, Carpino E, Berde CB', 'Barak Yahalom', ''],
-      ['Gene regulation', 'Structural analysis of the yeast SWI/SNF chromatin remodeling complex', 'Corey L. Smith, Rachel Horowitz-Scherer, Joan F. Flanagan, Christopher L. Woodcock, Craig L. Peterson', 'Joan F. Flanagan', ''],
-      ['Gene regulation', 'A role for the yeast SWI/SNF complex in DNA replication', 'Joan F. Flanagan, Craig L. Peterson', 'Joan F. Flanagan', '']
-    ].map(([area, title, others, alpha, journal]) => ({ area, title, others, alpha, journal }));
+      ['Type 1 diabetes', 'Prevention of Type 1 Diabetes in the Rat With an Allele-Specific Anti–T-Cell Receptor Antibody: Vβ13 as a Therapeutic Target and Biomarker', 'Zhijun Liu, Laura Cort, Ryan Eberwine, Thomas Herrmann, Jean H. Leif, Dale L. Greiner, Barak Yahalom, Elizabeth P. Blankenhorn, John P. Mordes', 'Barak Yahalom', '', 'https://www.alphapreclinical.com/_files/ugd/095141_dc8520bb9ec74cc3b678c7bb10a8ab72.pdf'],
+      ['Type 1 diabetes', 'Development of Standardized Insulin Treatment Protocols for Spontaneous Rodent Models of Type 1 Diabetes', 'Christian W. Grant, Shane K. Duclos, Catherine M. Moran-Paul, Barak Yahalom, Rebecca S. Tirabassi, Guillermo Arreaza-Rubin, Lisa M. Spain, Dennis L. Guberski', 'Barak Yahalom', '', 'https://www.alphapreclinical.com/_files/ugd/095141_e2a155b61ebe4b14a8b72faea75ddb60.pdf'],
+      ['Type 1 diabetes', 'LEW.1WR1 Rats Develop Autoimmune Diabetes Spontaneously and in Response to Environmental Perturbation', 'John P. Mordes, Dennis L. Guberski, Jean H. Leif, Bruce A. Woda, Joan F. Flanagan, Dale L. Greiner, Edward H. Kislauskis, Rebecca S. Tirabassi', 'Joan F. Flanagan', '', 'https://www.alphapreclinical.com/_files/ugd/095141_5c6416f48fcd4f968efebb0cef77b638.pdf'],
+      ['Type 2 diabetes and metabolic syndrome', 'The C57BL/6NCrl-lb Mouse: A New Model for Metabolic Syndrome', 'Dwight R. Owens, Richard G. Peterson, Wu-Kuang Yeh, Yiyun Wang, Kathleen R. Pritchett-Corning, Bruce Elder, Charles B. Clifford, Joan Flanagan', 'Joan Flanagan', '', 'https://www.alphapreclinical.com/_files/ugd/095141_4f715cbd371b4461961a30800e5b069d.pdf'],
+      ['Type 2 diabetes and metabolic syndrome', 'Antidiabetic effect of novel modulating peptides of G-protein-coupled kinase in experimental models of diabetes', 'Leshem O, Reuveni H, Wexler I, Ben Sasson R, Yahalom B, Laster M, Raz I, Ben Sasson S, Shafrir E, Ziv E', 'Barak Yahalom', '', 'https://www.alphapreclinical.com/_files/ugd/095141_53c8193dbdb64ad6836bf1fbcf2efa18.pdf'],
+      ['Type 2 diabetes and metabolic syndrome', 'The BBZDR/Wor Rat Model for Investigating the Complications of Type 2 Diabetes Mellitus', 'Rebecca S. Tirabassi, Joan F. Flanagan, Tiangen Wu, Edward H. Kislauskis, Paul J. Birckbichler, Dennis L. Guberski', 'Joan F. Flanagan', '', 'https://www.alphapreclinical.com/_files/ugd/095141_bd1413ed7182424aab63ad6f1a938f40.pdf'],
+      ['Gene therapy', 'Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy', 'DeRosa F, Smith L, Shen Y, Huang Y, Pan J, Xie H, Yahalom B, Heartlein MW', 'Barak Yahalom', 'Molecular Therapy', 'https://www.alphapreclinical.com/_files/ugd/095141_ab7b5981358e44b2b14ca12986013d89.pdf'],
+      ['Gene therapy', 'Analytical Characterization of Heterogeneities in mRNA-Lipid Nanoparticles Using Sucrose Density Gradient Ultracentrifugation', 'Amita Vaidya, Dipen Parande, Nikita Khadse, Natalia Vargas-Montoya, Vikram Agarwal, Christian Ortiz, Gordon Ellis, Neha Kaushal, Ashish Sarode, Shrirang Karve, Frank DeRosa', '[Confirm]', '', 'https://www.alphapreclinical.com/_files/ugd/095141_1ae8158bdd1d4a8f9ccd08d8231ad872.pdf'],
+      ['Gene therapy', 'Therapeutic Efficacy in a Hemophilia B Model Using a Biosynthetic mRNA Liver Depot System', 'DeRosa F, Guild B, Karve S, Smith L, Love K, Dorkin JR, Kauffman KJ, Zhang J, Yahalom B, Anderson DG, Heartlein MW', 'Barak Yahalom', 'Gene Therapy', 'https://www.alphapreclinical.com/_files/ugd/095141_05f87e7d92a14f18baefc4e9164426de.pdf'],
+      ['Gene therapy', 'Mechanistic model for improved performance of mRNA–LNPs formulated under turbulent mixing conditions', 'Richard Mosesso, Katie Randall, Amita Vaidya, Jackie Tang, Trent Northen, Aurélie Deliot, Mengwei Sun, Rebecca Goldman, Adam Lyons, Lingyun Liu, Shrirang Karve, Frank DeRosa', '[Confirm]', '', 'https://www.alphapreclinical.com/_files/ugd/095141_c496028421e84020a381221536308767.pdf'],
+      ['Gene therapy', 'Understanding structure activity relationships of Good HEPES lipids for lipid nanoparticle mRNA vaccine applications', 'Rebecca L. Goldman, Namratha Turuvekere Vittala Murthy, Trent P. Northen, Anuranjani Balakrishnan, Sudha Chivukula, Hillary Danz, Timothy Tibbitts, Anusha Dias, Jorel Vargas, Dustin Cooper, Hardip Gopani, Angela Beaulieu, Kirill V. Kalnin, Timothy Plitnik, Saswata Karmakar, Ramesh Dasari, Ryan Landis, Shrirang Karve, Frank DeRosa', '[Confirm]', '', 'https://www.alphapreclinical.com/_files/ugd/095141_761a3e0764904a838e4bbf77a142389f.pdf'],
+      ['Anesthesia and analgesia', 'Antinociceptive Effect of Vapocoolant Medium Stream Spray on Hotplate Latency in Rat Pups', 'Navil F. Sethna, Brenden Fish, Barak Yahalom, Birgitta Schmidt, David Zurakowski', 'Barak Yahalom', '', 'https://www.alphapreclinical.com/_files/ugd/095141_429bf0f37d9f4601a9efc1b3b3eab065.pdf'],
+      ['Anesthesia and analgesia', 'Tetrodotoxin-Bupivacaine-Epinephrine Combinations for Prolonged Local Anesthesia', 'Charles B. Berde, Umeshkumar Athiraman, Barak Yahalom, David Zurakowski, Gabriel Corfas, Christina Bognet', 'Barak Yahalom', '', 'https://www.alphapreclinical.com/_files/ugd/095141_83d747a2b3bd4175a264a7e430cd0116.pdf'],
+      ['Anesthesia and analgesia', 'Spinal Anesthesia in Infant Rats: Development of a Model, Preliminary Observations, and Assessment of Neurologic Outcomes', 'Yahalom B, Athiraman UK, Soriano S, Zurakowski D, Corfas G, Carpino E, Berde CB', 'Barak Yahalom', '', 'https://www.alphapreclinical.com/_files/ugd/095141_c7585c435efe4ec38be8a88c9ef5346f.pdf'],
+      ['Gene regulation', 'Structural analysis of the yeast SWI/SNF chromatin remodeling complex', 'Corey L. Smith, Rachel Horowitz-Scherer, Joan F. Flanagan, Christopher L. Woodcock, Craig L. Peterson', 'Joan F. Flanagan', '', 'https://www.alphapreclinical.com/_files/ugd/095141_76f6b9d0065c4ad3b6b609c7ae21447b.pdf'],
+      ['Gene regulation', 'A role for the yeast SWI/SNF complex in DNA replication', 'Joan F. Flanagan, Craig L. Peterson', 'Joan F. Flanagan', '', 'https://www.alphapreclinical.com/_files/ugd/095141_314f0e4e66004b479b2f44e12646b7f0.pdf']
+    ].map(([area, title, others, alpha, journal, pdf]) => ({ area, title, others, alpha, journal, pdf, pdfLabel: 'Read PDF: ' + title + ' (opens in new tab)' }));
     const order = ['Gene therapy', 'Type 1 diabetes', 'Type 2 diabetes and metabolic syndrome', 'Anesthesia and analgesia', 'Gene regulation'];
     const area = this.state.area;
     const filters = ['All'].concat(order).map((label) => ({
