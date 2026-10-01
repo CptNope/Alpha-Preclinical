@@ -161,6 +161,13 @@ td:first-child{font-weight:600;width:38%}
 .ap .ftr li a,.ap .ftr-base a,.ap .crumbs a{display:inline-block;padding:4px 0}
 .ap .btn{max-width:100%;text-align:center;line-height:1.2}
 .wv{animation:drift linear infinite}.wv1{animation-duration:90s}.wv2{animation-duration:70s;animation-direction:reverse}.wv3{animation-duration:56s}.wv4{animation-duration:120s;animation-direction:reverse}@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-1440px)}}.strata.is-paused .wv{animation-play-state:paused}@media (prefers-reduced-motion:reduce){.wv{animation:none}}.motion-toggle{position:absolute;right:16px;bottom:6px;z-index:3;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font:600 14px/1 "Figtree",sans-serif;cursor:pointer}.motion-toggle:hover{border-color:var(--tide);color:var(--tide)}.motion-toggle:focus-visible{outline:3px solid var(--current);outline-offset:3px}
+.area-cta{display:inline-flex;align-items:center;gap:10px;margin-top:20px;min-height:48px;padding:0 22px;border-radius:999px;background:var(--tide);color:#fff !important;font-weight:600;font-size:15px;text-decoration:none;transition:background-color .2s ease}
+.area-cta:hover{background:var(--navy)}
+.area-cta::after{content:"";width:16px;height:10px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3Cpath d='M0 5h14M10 1l4 4-4 4' fill='none' stroke='black' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat center/contain;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3Cpath d='M0 5h14M10 1l4 4-4 4' fill='none' stroke='black' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat center/contain;transition:transform .2s ease}
+.area-cta:hover::after{transform:translateX(3px)}
+.inline-cta{margin:40px 0;padding:28px 32px;border-radius:14px;background:var(--mist);border-left:4px solid var(--current)}
+.ap .inline-cta p{margin:0;font-size:17px;line-height:1.55;color:var(--navy)}
+.inline-cta .area-cta{margin-top:16px}
 </style>
 <link rel="stylesheet" href="assets/css/site.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What an mRNA liver depot study looks like in practice", "author": {"@type": "Person", "name": "Barak Yahalom", "honorificSuffix": "DVM", "jobTitle": "Chief Executive Officer and Chief Scientific Officer"}, "reviewedBy": {"@type": "Person", "name": "Joan Flanagan", "honorificSuffix": "PhD"}, "publisher": {"@type": "Organization", "name": "Alpha Preclinical LLC"}, "citation": ["DeRosa F, et al. Therapeutic efficacy in a hemophilia B model using a biosynthetic mRNA liver depot system. Gene Therapy. 2016;23(10):699-707.", "DeRosa F, et al. Improved efficacy in a Fabry disease model using a systemic mRNA liver depot system as compared to enzyme replacement therapy. Molecular Therapy. 2019;27(4):878-889."]}</script>
@@ -171,7 +178,7 @@ td:first-child{font-weight:600;width:38%}
 <header class="bar">
   <div class="wrap hdr">
     <a href="index.html" aria-label="Alpha Preclinical home"><img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:64px;height:auto;display:block"></a>
-    <nav aria-label="Main"><ul class="nav"><li><a href="expertise.html">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html" aria-current="page">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    <nav aria-label="Main"><ul class="nav"><li><a href="expertise.html">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="publications.html">Publications</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="blog.html" aria-current="page">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
     <a class="btn btn-light" href="contact.html">Request a study quote</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg></button>
   </div>
   <svg class="strata" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path class="wv wv1" d="M0 22 C180 4 540 40 720 22 S1260 40 1440 22 S1980 40 2160 22 S2700 40 2880 22 L2880 56 L0 56 Z" fill="#1E58A0"></path><path class="wv wv2" d="M0 34 C180 20 540 48 720 34 S1260 48 1440 34 S1980 48 2160 34 S2700 48 2880 34 L2880 56 L0 56 Z" fill="#88C6EE"></path><path class="wv wv3" d="M0 44 C180 34 540 54 720 44 S1260 54 1440 44 S1980 54 2160 44 S2700 54 2880 44 L2880 56 L0 56 Z" fill="#FFFFFF"></path></svg>
@@ -240,6 +247,10 @@ td:first-child{font-weight:600;width:38%}
       </tbody>
     </table>
 
+    <aside class="inline-cta" aria-label="Talk to a scientist">
+      <p><b>Planning an mRNA or gene therapy study?</b> A senior scientist can review your model, dose and endpoints before you commit animals.</p>
+      <a class="area-cta" href="contact.html?study=Gene%20therapy#form">Talk to a scientist</a>
+    </aside>
     <h2 id="protein">2. Measure the protein, not just the outcome</h2>
     <p>The primary readout of an mRNA study is the protein your mRNA is supposed to make. Plan serial blood samples to build a time course after each dose, measured by ELISA or an activity assay.</p>
     <p>That time course makes the depot visible: in the Fabry study, enzyme made from mRNA circulated far longer than infused enzyme.<sup><a href="#ref2">2</a></sup> It also sets the dosing interval for longer studies.</p>
@@ -328,7 +339,7 @@ td:first-child{font-weight:600;width:38%}
       </div>
       <div><h2>Expertise</h2><ul><li><a href="expertise.html#pk-pd">PK/PD</a></li><li><a href="expertise.html#gene-therapy">Gene therapy</a></li><li><a href="expertise.html#autoimmune">Autoimmune disease</a></li><li><a href="expertise.html#metabolic">Metabolic disease</a></li><li><a href="expertise.html#fibrosis">Inflammation and fibrosis</a></li><li><a href="tumor-models.html">Tumor models</a></li></ul></div>
       <div><h2>Services</h2><ul><li><a href="services.html#ivis">IVIS imaging</a></li><li><a href="services.html#surgery">Surgical services</a></li><li><a href="services.html#colony">Colony management</a></li><li><a href="services.html#in-vitro">In vitro laboratory</a></li><li><a href="services.html#support">Study support</a></li></ul></div>
-      <div><h2>Company</h2><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h2>Company</h2><ul><li><a href="publications.html">Publications</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     </nav>
     <div class="ftr-base"><span>© 2026 Alpha Preclinical LLC</span><span class="legal-links"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a><a href="accessibility.html">Accessibility</a></span></div>
   </div>

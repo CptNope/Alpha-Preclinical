@@ -17,6 +17,7 @@ import re
 from pathlib import Path
 
 import markdown
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE = ROOT / 'blog-mrna-liver-depot-study-design.html'
@@ -198,6 +199,19 @@ def main():
                       f'        <h2 id="author-h">{E(author)}</h2>\n        <p class="role">{E(a["role"])}, Alpha Preclinical</p>\n'
                       f'        <p>{E(a["bio"])}</p>\n        <div class="creds">' + ''.join(f'<span>{E(c)}</span>' for c in a['creds']) + '</div>\n'
                       f'        <a class="more" href="team.html#{a["anchor"]}">Full profile</a>\n      </div>\n    </section>')
+        # mid-article CTA before the third section heading (or the last one in short posts)
+        STUDY = {'Tumor models': 'Tumor models', 'Metabolic disease': 'Metabolic disease',
+                 'Autoimmune disease': 'Autoimmune disease', 'Gene therapy': 'Gene therapy',
+                 'Lab services': 'IVIS imaging, surgery or lab services'}
+        study = STUDY.get(cfg['topic'])
+        href = 'contact.html' + (f'?study={quote(study, safe="")}' if study else '') + '#form'
+        inline = (f'<aside class="inline-cta" aria-label="Talk to a scientist">\n      <p><b>{E(cfg["cta"])}</b> '
+                  'A senior scientist can review your model, dose and endpoints before you commit animals.</p>\n'
+                  f'      <a class="area-cta" href="{href}">Talk to a scientist</a>\n    </aside>\n    ')
+        heads = [m.start() for m in re.finditer(r'<h2 id=', body)]
+        if heads:
+            at = heads[2] if len(heads) > 3 else heads[-1]
+            body = body[:at] + inline + body[at:]
         article = f'<article>\n    {summary}\n\n    {body}\n\n    {refs}\n\n    {review}\n\n    {author_box}\n  </article>'
         s = re.sub(r'<article>.*?</article>', lambda m: article, s, count=1, flags=re.S)
         # related research

@@ -18,6 +18,9 @@ This repo holds three things:
 ## Contents
 
 - [Design direction](#design-direction)
+- [Navigation order](#navigation-order)
+- [Calls to action](#calls-to-action)
+- [Motion](#motion)
 - [Site map](#site-map)
 - [Pages](#pages)
 - [Repository structure](#repository-structure)
@@ -60,6 +63,43 @@ flowchart LR
 
 ---
 
+## Navigation order
+
+**Expertise · Services · Publications · About · Team · Blog · Careers · Contact**, the same in the header, the mobile menu and the footer's Company column. It follows a buyer's questions in order: *can you run my model* (Expertise, Services), *can I trust the science* (Publications), *who are you* (About, Team), then supporting content, hiring and contact. "Request a study quote" stays as the header button on every page.
+
+## Calls to action
+
+Every study CTA lands on the contact form. Links from an area or service pass the study type, so the form opens with it already chosen (`contact.html?study=Tumor%20models#form`, read by `assets/js/site.js`).
+
+```mermaid
+flowchart LR
+    HM["Home<br/>after 'How a study runs'"] -- "Talk to a scientist" --> F["contact.html#form"]
+    EX["Expertise<br/>each of the 6 areas"] -- "Plan your … study<br/>(study type preset)" --> F
+    SV["Services<br/>each service"] -- "Add … to your study<br/>(study type preset)" --> F
+    BP["Every blog post<br/>mid-article box + closing band"] -- "Talk to a scientist<br/>(topic preset)" --> F
+    PB["Publications"] -- "Want the authors on your study?" --> F
+    BL["Blog index"] -- "Ask a scientist" --> F
+    TM["Team"] -- "Put this team on your program" --> F
+    AB["About, Model, Services, Expertise"] -- "closing band" --> F
+```
+
+## Motion
+
+All motion is decorative, built from the strata wave idea, and switched off entirely when a visitor's device asks for reduced motion (or JavaScript is off). It lives in `assets/css/site.css` and `assets/js/site.js`, so the design canvas shows the resting state.
+
+| Motion | Where | Notes |
+| --- | --- | --- |
+| Drifting wave bands | Every page header | Continuous, so each has a Pause button (WCAG 2.2.2) |
+| Header content rises in | Every page, on load | Under 1 second, staggered |
+| Sections fade up as they scroll into view | Cards, lists, steps, papers, team, bands | Staggered across rows; anything that receives keyboard focus shows at once |
+| Contour lines draw left to right | CTA bands and the closing CTA | One-time, about 2.5 seconds |
+| Process connector lines draw in | Home, "How a study runs" | Follows each step in |
+| Numbers count up | Home hero stats, "16 papers" | Real number stays in the markup and in an `aria-label` |
+| Photos settle from a slight zoom | Revealed sections with photos | |
+| Hover: cards lift, nav underline grows, arrows nudge | Site-wide | |
+
+---
+
 ## Site map
 
 ```mermaid
@@ -67,9 +107,9 @@ flowchart TD
     H["Home<br/>index.html"]
     H --> EX["Expertise<br/>expertise.html<br/>(6 areas as sections)"]
     H --> SV["Services<br/>services.html"]
+    H --> PB["Publications<br/>publications.html"]
     H --> AB["About<br/>about.html"]
     H --> TM["Team<br/>team.html"]
-    H --> PB["Publications<br/>publications.html"]
     H --> BL["Blog<br/>blog.html"]
     H --> CA["Careers<br/>careers.html"]
     H --> CO["Contact / quote<br/>contact.html"]
@@ -100,7 +140,7 @@ Every page is designed and built. The six expertise areas are sections of `exper
 
 | Page | File | Interactive in preview | What it does |
 | --- | --- | --- | --- |
-| Home | `index.html` | FAQ accordion, mobile menu | Hero with animated strata, 6 expertise areas with leads, 4 services, study process, featured publications, team, FAQ, quote CTA |
+| Home | `index.html` | FAQ accordion, mobile menu, count-up stats | A short front door to the full pages: hero with animated strata, 6 expertise areas with leads, 4 service tiles, study process with a "talk to a scientist" CTA, 2 featured papers with headline stats, the team in one row, FAQ, quote CTA |
 | Services | `services.html` | Jump links to each service | Study types, then IVIS imaging, surgical services, colony management, in vitro laboratory and study support, each with its lead and full detail from the old site |
 | Expertise | `expertise.html` | Jump links to each area | All six therapeutic areas: overview, the models from the old site in a table, who leads it, related papers and blog posts |
 | Tumor models | `tumor-models.html` | — | Template for each disease-model page: models table, in-house endpoints, study team, related expertise |
@@ -374,7 +414,7 @@ The site was audited against **WCAG 2.1 AA** (plus the WCAG 2.2 target-size rule
 | axe-core (wcag2a, wcag2aa, wcag21a, wcag21aa) | 0 violations on all 20 pages |
 | Reflow at 320 px and text spacing (1.4.10, 1.4.12) | Pass on all pages |
 | Visible focus on every focusable element (2.4.7) | Pass |
-| Wave animation can be paused (2.2.2) | Pause button on every page; starts paused under reduced motion |
+| Wave animation can be paused (2.2.2) | Pause button on every page; starts paused under reduced motion. Scroll reveals and line drawing run once and finish in under 5 seconds |
 | Filter results announced (4.1.3) | `role="status"` live region |
 | Targets at least 24 px (2.5.8) | Pass, except links inside sentences (exempt) |
 

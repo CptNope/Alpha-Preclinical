@@ -86,13 +86,19 @@ body{margin:0}
 .top-body{padding-bottom:204px}
 @media (max-width:680px){.top-body{padding-bottom:132px}.strata{height:110px}}
 .wv{animation:drift linear infinite}.wv1{animation-duration:90s}.wv2{animation-duration:70s;animation-direction:reverse}.wv3{animation-duration:56s}.wv4{animation-duration:120s;animation-direction:reverse}@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-1440px)}}.strata.is-paused .wv{animation-play-state:paused}@media (prefers-reduced-motion:reduce){.wv{animation:none}}.motion-toggle{position:absolute;right:16px;bottom:16px;z-index:3;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font:600 14px/1 "Figtree",sans-serif;cursor:pointer}.motion-toggle:hover{border-color:var(--tide);color:var(--tide)}.motion-toggle:focus-visible{outline:3px solid var(--current);outline-offset:3px}
+.band{background:var(--abyss);color:#fff;border-radius:14px;padding:56px;display:flex;justify-content:space-between;align-items:center;gap:40px}
+.band h2{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;font-weight:600;font-size:36px;line-height:1.08;letter-spacing:-.02em;max-width:18ch;margin:0}
+.band p{color:var(--on-abyss);margin-top:12px;max-width:30em}
+@media (max-width:1080px){.band{flex-direction:column;align-items:flex-start;padding:40px}}
+@media (max-width:680px){.band{padding:32px 24px}.band h2{font-size:30px}}
+.band{position:relative;overflow:hidden}.band>*{position:relative;z-index:1}.band>.band-lines{position:absolute;left:0;right:0;bottom:0;width:100%;height:48px;z-index:0;pointer-events:none}.band-lines path{fill:none;stroke:rgba(136,198,238,.3);stroke-width:1.5}
 </style>
 </helmet>
 <div class="ap">
 <header class="top">
   <div class="wrap hdr">
     <a href="Main.dc.html" aria-label="Alpha Preclinical home"><img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
-    <nav aria-label="Main"><ul class="nav"><li><a href="Expertise.dc.html">Expertise</a></li><li><a href="Services.dc.html">Services</a></li><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html" aria-current="page">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></nav>
+    <nav aria-label="Main"><ul class="nav"><li><a href="Expertise.dc.html">Expertise</a></li><li><a href="Services.dc.html">Services</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Blog.dc.html" aria-current="page">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></nav>
     <a class="btn btn-light" href="Contact.dc.html">Request a study quote</a>
   </div>
   <div class="wrap top-body">
@@ -142,6 +148,11 @@ body{margin:0}
       </sc-for>
     </div>
     <sc-if value="{{isEmpty}}" hint-placeholder-val="{{false}}"><p class="empty">No posts in this topic yet. <a href="Contact.dc.html">Ask us a question</a> and it may become the next one.</p></sc-if>
+    <div class="band" style="margin-top:96px">
+      <svg class="band-lines" viewBox="0 0 1160 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C145 4 435 40 580 22 S1015 4 1160 22"></path><path d="M0 40 C160 26 420 54 580 40 S1000 26 1160 40"></path></svg>
+      <div><h2>Have a study design question?</h2><p>Our posts come from the questions research teams ask us. Ask yours, and a senior scientist will answer directly.</p></div>
+      <a class="btn btn-light" href="Contact.dc.html#form">Ask a scientist</a>
+    </div>
   </div>
 </main>
 <footer class="ftr">
@@ -153,14 +164,14 @@ body{margin:0}
       </div>
       <div><h2>Expertise</h2><ul><li><a href="Expertise.dc.html#pk-pd">PK/PD</a></li><li><a href="Expertise.dc.html#gene-therapy">Gene therapy</a></li><li><a href="Expertise.dc.html#autoimmune">Autoimmune disease</a></li><li><a href="Expertise.dc.html#metabolic">Metabolic disease</a></li><li><a href="Expertise.dc.html#fibrosis">Inflammation and fibrosis</a></li><li><a href="Model.dc.html">Tumor models</a></li></ul></div>
       <div><h2>Services</h2><ul><li><a href="Services.dc.html#ivis">IVIS imaging</a></li><li><a href="Services.dc.html#surgery">Surgical services</a></li><li><a href="Services.dc.html#colony">Colony management</a></li><li><a href="Services.dc.html#in-vitro">In vitro laboratory</a></li><li><a href="Services.dc.html#support">Study support</a></li></ul></div>
-      <div><h2>Company</h2><ul><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></div>
+      <div><h2>Company</h2><ul><li><a href="Publications.dc.html">Publications</a></li><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></div>
     </nav>
     <div class="ftr-base"><span>© 2026 Alpha Preclinical LLC</span><span class="legal-links"><a href="Privacy.dc.html">Privacy policy</a><a href="Terms.dc.html">Terms of use</a><a href="Accessibility.dc.html">Accessibility</a></span></div>
   </div>
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2958}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3310}}'>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { topic: 'All' }; }
   renderVals() {

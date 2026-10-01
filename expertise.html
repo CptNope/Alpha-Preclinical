@@ -134,6 +134,11 @@ body{margin:0}
 @media (max-width:1080px){.areas-nav{margin-bottom:0}}
 @media (max-width:680px){.areas-nav{grid-template-columns:minmax(0,1fr)}.mtable td:first-child{width:auto}.mtable thead{display:none}.mtable tr{display:grid;gap:4px;padding:14px 16px;border-bottom:1.5px solid var(--line)}.mtable td{padding:0;border:0}}
 .wv{animation:drift linear infinite}.wv1{animation-duration:90s}.wv2{animation-duration:70s;animation-direction:reverse}.wv3{animation-duration:56s}.wv4{animation-duration:120s;animation-direction:reverse}@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-1440px)}}.strata.is-paused .wv{animation-play-state:paused}@media (prefers-reduced-motion:reduce){.wv{animation:none}}.motion-toggle{position:absolute;right:16px;bottom:16px;z-index:3;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font:600 14px/1 "Figtree",sans-serif;cursor:pointer}.motion-toggle:hover{border-color:var(--tide);color:var(--tide)}.motion-toggle:focus-visible{outline:3px solid var(--current);outline-offset:3px}
+.area-cta{display:inline-flex;align-items:center;gap:10px;margin-top:20px;min-height:48px;padding:0 22px;border-radius:999px;background:var(--tide);color:#fff !important;font-weight:600;font-size:15px;text-decoration:none;transition:background-color .2s ease}
+.area-cta:hover{background:var(--navy)}
+.area-cta::after{content:"";width:16px;height:10px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3Cpath d='M0 5h14M10 1l4 4-4 4' fill='none' stroke='black' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat center/contain;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3Cpath d='M0 5h14M10 1l4 4-4 4' fill='none' stroke='black' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat center/contain;transition:transform .2s ease}
+.area-cta:hover::after{transform:translateX(3px)}
+.band{position:relative;overflow:hidden}.band>*{position:relative;z-index:1}.band>.band-lines{position:absolute;left:0;right:0;bottom:0;width:100%;height:48px;z-index:0;pointer-events:none}.band-lines path{fill:none;stroke:rgba(136,198,238,.3);stroke-width:1.5}
 </style>
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
@@ -143,7 +148,7 @@ body{margin:0}
 <header class="top">
   <div class="wrap hdr">
     <a href="index.html" aria-label="Alpha Preclinical home"><img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
-    <nav aria-label="Main"><ul class="nav"><li><a href="expertise.html" aria-current="page">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    <nav aria-label="Main"><ul class="nav"><li><a href="expertise.html" aria-current="page">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="publications.html">Publications</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
     <a class="btn btn-light" href="contact.html">Request a study quote</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg></button>
   </div>
   <div class="wrap top-body">
@@ -173,6 +178,7 @@ body{margin:0}
         <h2>PK/PD</h2>
         <p class="desc">Well-run pharmacokinetic and pharmacodynamic studies tell you how much of your compound reaches its target, for how long, and with what effect. We run them primarily in rodents, with capacity for most common laboratory species.</p>
         <div class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt=""><div><small>Led by</small><b><a href="team.html#barak-yahalom">Barak Yahalom, DVM</a></b></div></div>
+        <a class="area-cta" href="contact.html?study=PK%2FPD#form">Plan your PK/PD study</a>
       </div>
       <div class="detail">
         <table class="mtable"><thead><tr><th scope="col">Capability</th><th scope="col">What we offer</th></tr></thead><tbody><tr><td>Routine routes</td><td>Intravenous, oral, subcutaneous, intraperitoneal, intramuscular, intradermal, topical, rectal</td></tr><tr><td>Specialized routes</td><td>Hydrodynamic IV, intravitreal, intra-articular, Alzet continuous subcutaneous, intrathecal, intratracheal, intracerebroventricular, nebulizer, intrasplenic, portal vein</td></tr><tr><td>Samples</td><td>Blood, urine, feces, cerebrospinal fluid, bile</td></tr><tr><td>Imaging</td><td>In-life IVIS bioluminescence and fluorescence</td></tr></tbody></table>
@@ -185,6 +191,7 @@ body{margin:0}
         <h2>Gene therapy</h2>
         <p class="desc">Gene therapy modifies or replaces faulty genes to treat, cure or prevent disease. Our scientists have worked with nucleic acid delivery for more than a decade, across many carriers, vectors and routes of administration.</p>
         <div class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt=""><div><small>Led by</small><b><a href="team.html#barak-yahalom">Barak Yahalom, DVM</a></b></div></div>
+        <a class="area-cta" href="contact.html?study=Gene%20therapy#form">Plan your gene therapy study</a>
       </div>
       <div class="detail">
         <table class="mtable"><thead><tr><th scope="col">Capability</th><th scope="col">Details</th></tr></thead><tbody><tr><td>Nucleic acid delivery</td><td>Multiple carrier and vector systems, including lipid nanoparticles, by many routes</td></tr><tr><td>Custom models</td><td>Developed around your platform's delivery requirements</td></tr><tr><td>Pulmonary delivery</td><td>Nebulizer and intratracheal administration</td></tr><tr><td>Hydrodynamic IV</td><td>High-volume tail vein delivery for liver expression</td></tr><tr><td>Genetically modified rodents</td><td>Knockout and transgenic disease models</td></tr><tr><td>Imaging</td><td>In-life IVIS bioluminescence and fluorescence</td></tr></tbody></table>
@@ -197,6 +204,7 @@ body{margin:0}
         <h2>Autoimmune disease</h2>
         <p class="desc">Each autoimmune disease has its own mechanism, but all are a malfunction of the immune system, driven by genes together with environment, lifestyle and infection. We run both spontaneous and induced rodent models.</p>
         <div class="lead"><img src="assets/img/team/joan-flanagan.jpg" alt=""><div><small>Led by</small><b><a href="team.html#joan-flanagan">Joan Flanagan, PhD</a></b></div></div>
+        <a class="area-cta" href="contact.html?study=Autoimmune%20disease#form">Plan your autoimmune study</a>
       </div>
       <div class="detail">
         <table class="mtable"><thead><tr><th scope="col">Disease</th><th scope="col">Models</th></tr></thead><tbody><tr><td>Systemic lupus erythematosus (SLE)</td><td>NZB/W F1 and MRL/lpr spontaneous mouse models</td></tr><tr><td>Type 1 diabetes</td><td>Streptozotocin (STZ)-induced model</td></tr><tr><td>Multiple sclerosis (EAE)</td><td>MOG- and PLP-induced experimental autoimmune encephalomyelitis</td></tr><tr><td>Inflammatory bowel disease</td><td>TNBS- and DSS-induced colitis</td></tr><tr><td>Rheumatoid arthritis</td><td>CFA/IFA-induced arthritis</td></tr></tbody></table>
@@ -209,6 +217,7 @@ body{margin:0}
         <h2>Metabolic disease</h2>
         <p class="desc">Metabolic diseases disrupt how cells process or transport proteins, carbohydrates and lipids. Our team draws on years of diabetes research and close ties with specialists in the field to evaluate metabolic drug candidates thoroughly.</p>
         <div class="lead"><img src="assets/img/team/joan-flanagan.jpg" alt=""><div><small>Led by</small><b><a href="team.html#joan-flanagan">Joan Flanagan, PhD</a></b></div></div>
+        <a class="area-cta" href="contact.html?study=Metabolic%20disease#form">Plan your metabolic study</a>
       </div>
       <div class="detail">
         <table class="mtable"><thead><tr><th scope="col">Disease</th><th scope="col">Models</th></tr></thead><tbody><tr><td>Obesity</td><td>Diet-induced obesity (DIO) rodents, ob/ob mice</td></tr><tr><td>Type 2 diabetes</td><td>db/db mice and ZDF rats, including wound healing studies</td></tr><tr><td>Fatty liver disease</td><td>NAFLD and NASH models</td></tr><tr><td>Lipid disorders</td><td>High-fat diet-induced dyslipidemia and hypercholesterolemia</td></tr></tbody></table>
@@ -221,6 +230,7 @@ body{margin:0}
         <h2>Inflammation and fibrosis</h2>
         <p class="desc">Rodent models of inflammation and inflammatory pain are widely used to study how tissue injury leads to persistent pain and disease. We provide complete evaluations of anti-inflammatory and anti-fibrotic compounds.</p>
         <div class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt=""><div><small>Led by</small><b><a href="team.html#barak-yahalom">Barak Yahalom, DVM</a></b></div></div>
+        <a class="area-cta" href="contact.html?study=Inflammation%20and%20fibrosis#form">Plan your inflammation or fibrosis study</a>
       </div>
       <div class="detail">
         <table class="mtable"><thead><tr><th scope="col">Model</th><th scope="col">Details</th></tr></thead><tbody><tr><td>Osteoarthritis</td><td>Complete Freund's Adjuvant (CFA)-induced</td></tr><tr><td>Pulmonary fibrosis</td><td>Bleomycin-induced</td></tr><tr><td>Systemic inflammation</td><td>LPS-induced</td></tr><tr><td>Tissues evaluated</td><td>Skin, paw, muscle, joint and visceral organs</td></tr></tbody></table>
@@ -233,6 +243,7 @@ body{margin:0}
         <h2>Tumor models</h2>
         <p class="desc">Using commercially available murine and human cell lines, we build subcutaneous and orthotopic tumor models for anti-tumor activity, dose response and tumor progression studies.</p>
         <div class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt=""><div><small>Led by</small><b><a href="team.html#barak-yahalom">Barak Yahalom, DVM</a></b></div></div>
+        <a class="area-cta" href="contact.html?study=Tumor%20models#form">Plan your oncology study</a>
       </div>
       <div class="detail">
         <table class="mtable"><thead><tr><th scope="col">Model</th><th scope="col">Used for</th></tr></thead><tbody><tr><td>Subcutaneous</td><td>Pharmacodynamic target activity, anti-tumor efficacy and dose response</td></tr><tr><td>Orthotopic</td><td>Tumor progression in the organ of origin</td></tr><tr><td>Imaging</td><td>In-life and ex vivo Spectrum IVIS bioluminescence (luciferase)</td></tr></tbody></table>
@@ -246,6 +257,7 @@ body{margin:0}
 <section class="sec">
   <div class="wrap">
     <div class="band">
+      <svg class="band-lines" viewBox="0 0 1160 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C145 4 435 40 580 22 S1015 4 1160 22"></path><path d="M0 40 C160 26 420 54 580 40 S1000 26 1160 40"></path></svg>
       <div><h2>Need a model that isn't listed?</h2><p>We adapt existing models and set up models from the literature. Tell us what you need to show and we'll recommend a design.</p></div>
       <a class="btn btn-light" href="contact.html">Request a study quote</a>
     </div>
@@ -261,7 +273,7 @@ body{margin:0}
       </div>
       <div><h2>Expertise</h2><ul><li><a href="expertise.html#pk-pd">PK/PD</a></li><li><a href="expertise.html#gene-therapy">Gene therapy</a></li><li><a href="expertise.html#autoimmune">Autoimmune disease</a></li><li><a href="expertise.html#metabolic">Metabolic disease</a></li><li><a href="expertise.html#fibrosis">Inflammation and fibrosis</a></li><li><a href="tumor-models.html">Tumor models</a></li></ul></div>
       <div><h2>Services</h2><ul><li><a href="services.html#ivis">IVIS imaging</a></li><li><a href="services.html#surgery">Surgical services</a></li><li><a href="services.html#colony">Colony management</a></li><li><a href="services.html#in-vitro">In vitro laboratory</a></li><li><a href="services.html#support">Study support</a></li></ul></div>
-      <div><h2>Company</h2><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h2>Company</h2><ul><li><a href="publications.html">Publications</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     </nav>
     <div class="ftr-base"><span>© 2026 Alpha Preclinical LLC</span><span class="legal-links"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a><a href="accessibility.html">Accessibility</a></span></div>
   </div>

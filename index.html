@@ -218,6 +218,44 @@ body{margin:0}
 .motion-toggle:hover{border-color:var(--tide);color:var(--tide)}
 .motion-toggle:focus-visible{outline:3px solid var(--current);outline-offset:3px}
 .strata.is-paused .band{animation-play-state:paused}
+
+/* homepage v2: compact service tiles, mid-page CTA, publication stats */
+.svc-tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.ap .svc-tile{height:100%;display:flex;flex-direction:column;gap:12px;padding:32px 28px;border-radius:14px;background:#fff;border:1.5px solid var(--line);color:var(--navy);text-decoration:none;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.ap .svc-tile:hover{border-color:var(--current);color:var(--navy);transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(15,51,96,.45)}
+.svc-ico{width:40px;height:40px;fill:none;stroke:var(--tide);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.svc-tile h3{font-size:23px;line-height:1.15;letter-spacing:-.015em}
+.svc-tile p{color:var(--muted);font-size:15.5px;line-height:1.55;flex:1}
+.svc-tile .go{font-weight:600;color:var(--tide);font-size:15px}
+.mid-cta{position:relative;overflow:hidden;margin-top:80px;border-radius:14px;background:var(--abyss);color:#fff;padding:48px 56px;display:flex;justify-content:space-between;align-items:center;gap:40px}
+.mid-cta>div,.mid-cta>.btn{position:relative;z-index:1}
+.mid-cta h3{font-size:32px;line-height:1.1;letter-spacing:-.02em}
+.mid-cta p{color:var(--on-abyss);margin-top:10px;max-width:36em}
+.mid-lines{position:absolute;left:0;right:0;bottom:0;width:100%;height:40px;pointer-events:none}
+.mid-lines path{fill:none;stroke:rgba(136,198,238,.3);stroke-width:1.5}
+.pub-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:36px 0 0;padding-top:24px;border-top:1.5px solid var(--line)}
+.pub-stats div{margin:0}
+.pub-stats dt{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:56px;line-height:1;letter-spacing:-.03em;color:var(--tide)}
+.pub-stats dd{margin:8px 0 0;color:var(--muted);font-size:15.5px}
+.more-links{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:32px !important}
+.ap .more-links a{font-weight:600;text-decoration:none;display:inline-block;padding:4px 0}
+@media (max-width:1080px){.svc-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.mid-cta{flex-direction:column;align-items:flex-start;padding:40px}}
+@media (max-width:680px){.svc-tiles{grid-template-columns:minmax(0,1fr)}.mid-cta{padding:32px 24px;margin-top:56px}.mid-cta h3{font-size:27px}.pub-stats dt{font-size:44px}}
+
+/* people: heading row, then the whole team in one row */
+.people{display:block}
+.people-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 40px;align-items:end;margin-bottom:56px}
+.people-head .intro{margin-top:0 !important}
+.people-head .more-links{grid-column:2;margin-top:0 !important}
+.people-head h2{grid-row:span 2}
+.team{grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.member b{font-size:18px}
+.team-cta{aspect-ratio:auto;padding:22px}
+.team-cta p{font-size:20px}
+@media (max-width:1080px){.people-head{grid-template-columns:minmax(0,1fr)}.people-head .more-links{grid-column:1}.people-head h2{grid-row:auto}.team{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:680px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sec{padding:108px 0}.sec-head{margin-bottom:56px}.ap .model{padding-top:24px;padding-bottom:24px}
+@media (max-width:680px){.sec{padding:72px 0}.sec-head{margin-bottom:40px}}
 </style>
 <link rel="stylesheet" href="assets/css/site.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Alpha Preclinical LLC", "url": "https://www.alphapreclinical.com/", "logo": "https://www.alphapreclinical.com/assets/img/logo-color.png", "email": "info@alphapreclinical.com", "foundingDate": "2020", "address": {"@type": "PostalAddress", "streetAddress": "722 Plantation Street", "addressLocality": "Worcester", "addressRegion": "MA", "postalCode": "01605", "addressCountry": "US"}}</script>
@@ -231,7 +269,7 @@ body{margin:0}
   <div class="wrap hdr">
     <a href="#top" aria-label="Alpha Preclinical home"><img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:84px;height:auto;display:block"></a>
     <nav aria-label="Main">
-      <ul class="nav"><li><a href="expertise.html">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <ul class="nav"><li><a href="expertise.html">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="publications.html">Publications</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
     </nav>
     <a class="btn btn-light" href="contact.html">Request a study quote</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg></button>
     
@@ -247,8 +285,8 @@ body{margin:0}
       </div>
     </div>
     <dl class="hero-aside">
-      <div><dt>20+ yrs</dt><dd>Average research experience of our scientists, from academia to large pharma</dd></div>
-      <div><dt>15+ yrs</dt><dd>Average industry experience of our technical staff</dd></div>
+      <div><dt><span data-count="20">20</span>+ yrs</dt><dd>Average research experience of our scientists, from academia to large pharma</dd></div>
+      <div><dt><span data-count="15">15</span>+ yrs</dt><dd>Average industry experience of our technical staff</dd></div>
       <div><dt>USDA</dt><dd>Compliant surgical suite with a staff veterinarian (DVM)</dd></div>
     </dl>
   </div>
@@ -290,38 +328,12 @@ body{margin:0}
       <h2 id="cap-h">Services that support every study</h2>
       <div><p>Formulation, dosing, surgery, imaging and lab analysis happen under one roof, so your data come back consistent and your timeline stays intact.</p><p style="margin-top:18px"><a href="services.html" style="font-weight:600;text-decoration:none">See all services</a></p></div>
     </div>
-    <div class="caps">
-      <div class="photo">
-        <img class="photo-img" src="assets/img/lab-biosafety-cabinet.jpg" alt="Alpha scientist preparing samples in a biosafety cabinet">
-        <svg viewBox="0 0 600 260" preserveAspectRatio="none" aria-hidden="true"><path d="M0 206 C140 176 300 240 430 206 S560 186 600 196 L600 260 L0 260 Z" fill="#EEF5FB"></path></svg>
-      </div>
-      <div class="cap-list">
-        <div class="cap">
-          <h3>IVIS imaging</h3>
-          <p>Our Spectrum IVIS imager captures bioluminescence and fluorescence in live, whole-body images or ex vivo tissue.</p>
-          <ul><li>Bioluminescence</li><li>Fluorescence</li><li>Longitudinal tumor burden</li></ul>
-          <p class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt=""><a href="team.html#barak-yahalom">Led by Barak Yahalom, DVM</a></p>
-        </div>
-        <div class="cap">
-          <h3>Surgical services</h3>
-          <p>Aseptic surgery in small and large animal species, performed by a trained team led by a staff DVM for smoother recovery.</p>
-          <ul><li>USDA-compliant suite</li><li>Alzet continuous SC dosing</li><li>Intracerebroventricular (ICV)</li></ul>
-          <p class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt=""><img src="assets/img/team/gil-chacon.jpg" alt=""><span><a href="team.html#barak-yahalom">Barak Yahalom, DVM</a> and <a href="team.html#gil-chacon">Gil Chacon</a></span></p>
-        </div>
-        <div class="cap">
-          <h3>Colony management</h3>
-          <p>Custom breeding programs run by staff skilled in rodent reproduction, with a dedicated project manager for data and colony records.</p>
-          <ul><li>Innovive racks</li><li>Breeding strategy design</li><li>Dedicated project manager</li></ul>
-          <p class="lead"><img src="assets/img/team/ashley-kolofsky.jpg" alt=""><a href="team.html#ashley-kolofsky">Led by Ashley Kolofsky</a></p>
-        </div>
-        <div class="cap">
-          <h3>In vitro laboratory</h3>
-          <p>Biomarker and cellular analysis on the samples your study generates, without shipping them out.</p>
-          <ul><li>Multicolor flow cytometry</li><li>ELISA and cytokine assays</li><li>CBC and serum chemistry</li><li>Primary cell isolation</li><li>Histology and IHC</li></ul>
-          <p class="lead"><img src="assets/img/team/cindy-hopper.jpg" alt=""><a href="team.html#cindy-hopper">Led by Cindy Hopper</a></p>
-        </div>
-      </div>
-    </div>
+    <ul class="svc-tiles">
+      <li><a class="svc-tile" href="services.html#ivis"><svg class="svc-ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="6"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8"/></svg><h3>IVIS imaging</h3><p>Live, whole-body bioluminescence and fluorescence imaging, or ex vivo tissue.</p><span class="go">Details</span></a></li>
+      <li><a class="svc-tile" href="services.html#surgery"><svg class="svc-ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26 22 10l4 4L10 30H6z"/><path d="M19 13l4 4"/><path d="M22 4l6 6"/></svg><h3>Surgical services</h3><p>Aseptic surgery in a USDA-compliant suite led by a staff DVM, including Alzet pumps and ICV.</p><span class="go">Details</span></a></li>
+      <li><a class="svc-tile" href="services.html#colony"><svg class="svc-ico" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="6" width="24" height="8" rx="2"/><rect x="4" y="18" width="24" height="8" rx="2"/><path d="M9 10h4M9 22h4"/></svg><h3>Colony management</h3><p>Custom breeding programs with a dedicated project manager for data and records.</p><span class="go">Details</span></a></li>
+      <li><a class="svc-tile" href="services.html#in-vitro"><svg class="svc-ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M12 4v10L5 26a2 2 0 0 0 1.8 3h18.4A2 2 0 0 0 27 26l-7-12V4"/><path d="M10 4h12M8.5 20h15"/></svg><h3>In vitro laboratory</h3><p>Flow cytometry, ELISA, serum chemistry and histology on your study samples, in house.</p><span class="go">Details</span></a></li>
+    </ul>
   </div>
 </section>
 
@@ -337,6 +349,11 @@ body{margin:0}
       <li class="step"><h3>Run the study</h3><p>Dosing, imaging, sampling and in-life observations, with progress updates on the schedule you choose.</p></li>
       <li class="step"><h3>Report the data</h3><p>Analyzed results, raw data and a review call with the scientist who ran your study.</p></li>
     </ol>
+    <div class="mid-cta">
+      <svg class="mid-lines" viewBox="0 0 1160 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 C145 4 435 36 580 20 S1015 4 1160 20"></path><path d="M0 36 C160 24 420 48 580 36 S1000 24 1160 36"></path></svg>
+      <div><h3>Start with step one</h3><p>Tell us your compound, target and decision point. A senior scientist will recommend the model and endpoints that answer it.</p></div>
+      <a class="btn btn-light" href="contact.html#form">Talk to a scientist</a>
+    </div>
   </div>
 </section>
 
@@ -345,35 +362,25 @@ body{margin:0}
     <div>
       <h2 id="pub-h">Our scientists publish the models they run</h2>
       <p class="intro">Alpha's scientists and their collaborators have published 16 peer-reviewed papers on the disease models, delivery systems and methods behind your studies.</p>
-      <ul class="areas">
-        <li><span>Gene therapy</span><b>5</b></li>
-        <li><span>Type 2 diabetes and metabolic syndrome</span><b>3</b></li>
-        <li><span>Type 1 diabetes</span><b>3</b></li>
-        <li><span>Anesthesia and analgesia</span><b>3</b></li>
-        <li><span>Gene regulation</span><b>2</b></li>
-      </ul>
+      <dl class="pub-stats">
+        <div><dt><span data-count="16">16</span></dt><dd>peer-reviewed papers</dd></div>
+        <div><dt><span data-count="5">5</span></dt><dd>research areas, from gene therapy to type 1 diabetes</dd></div>
+      </dl>
       <a class="btn btn-primary" href="publications.html" style="margin-top:36px">Browse all publications</a>
     </div>
     <ol class="paper-list">
       <li class="paper"><span class="area-tag">Gene therapy</span><h3><a href="https://www.alphapreclinical.com/_files/ugd/095141_ab7b5981358e44b2b14ca12986013d89.pdf" target="_blank" rel="noopener" aria-label="Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy (PDF, opens in new tab)">Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy</a></h3><p class="by">DeRosa F, Smith L, Shen Y, Huang Y, Pan J, Xie H, <b>Yahalom B</b>, Heartlein MW</p><p class="journal">Molecular Therapy</p></li>
-      <li class="paper"><span class="area-tag">Gene therapy</span><h3><a href="https://www.alphapreclinical.com/_files/ugd/095141_05f87e7d92a14f18baefc4e9164426de.pdf" target="_blank" rel="noopener" aria-label="Therapeutic Efficacy in a Hemophilia B Model Using a Biosynthetic mRNA Liver Depot System (PDF, opens in new tab)">Therapeutic Efficacy in a Hemophilia B Model Using a Biosynthetic mRNA Liver Depot System</a></h3><p class="by">DeRosa F, Guild B, Karve S, Smith L, Love K, Dorkin JR, Kauffman KJ, Zhang J, <b>Yahalom B</b>, Anderson DG, Heartlein MW</p><p class="journal">Gene Therapy</p></li>
       <li class="paper"><span class="area-tag">Type 1 diabetes</span><h3><a href="https://www.alphapreclinical.com/_files/ugd/095141_5c6416f48fcd4f968efebb0cef77b638.pdf" target="_blank" rel="noopener" aria-label="LEW.1WR1 Rats Develop Autoimmune Diabetes Spontaneously and in Response to Environmental Perturbation (PDF, opens in new tab)">LEW.1WR1 Rats Develop Autoimmune Diabetes Spontaneously and in Response to Environmental Perturbation</a></h3><p class="by">Mordes JP, Guberski DL, Leif JH, Woda BA, <b>Flanagan JF</b>, Greiner DL, Kislauskis EH, Tirabassi RS</p></li>
-      <li class="paper"><span class="area-tag">Type 2 diabetes</span><h3><a href="https://www.alphapreclinical.com/_files/ugd/095141_bd1413ed7182424aab63ad6f1a938f40.pdf" target="_blank" rel="noopener" aria-label="The BBZDR/Wor Rat Model for Investigating the Complications of Type 2 Diabetes Mellitus (PDF, opens in new tab)">The BBZDR/Wor Rat Model for Investigating the Complications of Type 2 Diabetes Mellitus</a></h3><p class="by">Tirabassi RS, <b>Flanagan JF</b>, Wu T, Kislauskis EH, Birckbichler PJ, Guberski DL</p></li>
     </ol>
   </div>
 </section>
 
 <section class="sec sec-mist" id="about" aria-labelledby="ppl-h">
   <div class="wrap people">
-    <div>
+    <div class="people-head">
       <h2 id="ppl-h">Senior scientists who treat your program as their own</h2>
       <p class="intro">Founded in 2020 and US owned, Alpha was built to give biotech and pharma teams the attention of a partner with the capacity of a CRO.</p>
-      <div class="values">
-        <div><h3>Trust</h3><p>Honest, open discussion toward a shared goal: your program's success.</p></div>
-        <div><h3>Innovation</h3><p>Decades of preclinical expertise, applied to new questions.</p></div>
-        <div><h3>Transparency</h3><p>Every operational and study detail communicated clearly and promptly.</p></div>
-        <div><h3>Client first</h3><p>A seamless experience and long-term value for your research.</p></div>
-      </div>
+      <p class="more-links"><a href="team.html">Meet the team</a><a href="about.html">About Alpha</a></p>
     </div>
     <div class="team">
       <a class="member" href="team.html#ashley-kolofsky"><div class="face"><img src="assets/img/team/ashley-kolofsky.jpg" alt="Ashley Kolofsky"><img class="alt" src="assets/img/team/ashley-kolofsky-alt.jpg" alt=""></div><div><b>Ashley Kolofsky</b><small>Study Team Supervisor</small></div></a>
@@ -426,7 +433,7 @@ body{margin:0}
       </div>
       <div><h2>Expertise</h2><ul><li><a href="expertise.html#pk-pd">PK/PD</a></li><li><a href="expertise.html#gene-therapy">Gene therapy</a></li><li><a href="expertise.html#autoimmune">Autoimmune disease</a></li><li><a href="expertise.html#metabolic">Metabolic disease</a></li><li><a href="expertise.html#fibrosis">Inflammation and fibrosis</a></li><li><a href="tumor-models.html">Tumor models</a></li></ul></div>
       <div><h2>Services</h2><ul><li><a href="services.html#ivis">IVIS imaging</a></li><li><a href="services.html#surgery">Surgical services</a></li><li><a href="services.html#colony">Colony management</a></li><li><a href="services.html#in-vitro">In vitro laboratory</a></li><li><a href="services.html#support">Study support</a></li></ul></div>
-      <div><h2>Company</h2><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h2>Company</h2><ul><li><a href="publications.html">Publications</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     </nav>
     <div class="ftr-base"><span>© 2026 Alpha Preclinical LLC</span><span class="legal-links"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a><a href="accessibility.html">Accessibility</a></span></div>
   </div>

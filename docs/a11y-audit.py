@@ -49,7 +49,7 @@ with sync_playwright() as p:
     b = p.chromium.launch()
     for name in PAGES:
         url = f'{BASE}/{name}.html'
-        pg = b.new_page(viewport={'width': 1440, 'height': 900})
+        pg = b.new_page(viewport={'width': 1440, 'height': 900}, reduced_motion='reduce')  # scroll reveals off, so axe sees every element at full opacity
         pg.goto(url); pg.wait_for_timeout(300)
         pg.add_script_tag(content=AXE)
         axe = pg.evaluate("""async () => { const r = await axe.run(document, {runOnly: {type: 'tag', values: ['wcag2a','wcag2aa','wcag21a','wcag21aa']}, resultTypes: ['violations','incomplete']});

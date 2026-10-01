@@ -130,4 +130,80 @@
       });
     }
   });
+
+  // Quote links can preselect the study type: contact.html?study=PK%2FPD#form
+  (function () {
+    var select = document.querySelector('select[name="study_type"]');
+    if (!select || !window.URLSearchParams) return;
+    var want = new URLSearchParams(window.location.search).get('study');
+    if (!want) return;
+    for (var i = 0; i < select.options.length; i++) {
+      if (select.options[i].text === want) { select.selectedIndex = i; break; }
+    }
+  })();
+
+  // Motion: scroll reveals, count-ups and contour lines that draw in.
+  // Everything here is decorative and skipped entirely when the visitor
+  // prefers reduced motion, or the browser lacks IntersectionObserver.
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  var root = document.documentElement;
+  root.classList.add('has-motion');
+
+  var REVEAL = [
+    '.sec-head', '.models > li', '.svc-tile', '.step', '.mid-cta', '.pubs > div', '.paper-list > li',
+    '.people > div', '.team > *', '.faq > div', '.band', '.cta .wrap', '.val', '.leader', '.facts > *',
+    '.story > *', '.photo', '.person', '.group-photo', 'article.svc', '.end', '.crew', '.perk', '.post',
+    '.feature', '.group', '.research .paper', '.author', '.summary', '.inline-cta', '.map-card', '.building'
+  ].join(',');
+  var items = Array.prototype.slice.call(document.querySelectorAll('main ' + REVEAL.split(',').join(', main ')));
+  items.forEach(function (el) {
+    el.classList.add('reveal');
+    // stagger siblings in the same row or list
+    var i = 0, prev = el.previousElementSibling;
+    while (prev && i < 4) { if (prev.classList.contains('reveal')) i++; prev = prev.previousElementSibling; }
+    el.style.setProperty('--d', (i * 0.08) + 's');
+  });
+
+  // Decorative lines draw from left to right
+  document.querySelectorAll('.band-lines path, .mid-lines path, .cta > svg path, .contour path').forEach(function (p) {
+    p.setAttribute('pathLength', '1');
+    p.classList.add('draw');
+  });
+
+  function countUp(el) {
+    var end = parseInt(el.getAttribute('data-count'), 10), t0 = null, dur = 1200;
+    if (!end) return;
+    el.setAttribute('aria-hidden', 'true');
+    var label = el.closest('dt') || el.parentNode;
+    if (label && !label.hasAttribute('aria-label')) label.setAttribute('aria-label', label.textContent.trim());
+    function step(t) {
+      if (t0 === null) t0 = t;
+      var k = Math.min(1, (t - t0) / dur), eased = 1 - Math.pow(1 - k, 3);
+      el.textContent = Math.round(end * eased);
+      if (k < 1) requestAnimationFrame(step);
+    }
+    el.textContent = '0';
+    requestAnimationFrame(step);
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target;
+      el.classList.add('is-in');
+      if (el.hasAttribute('data-count')) countUp(el);
+      io.unobserve(el);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+  items.forEach(function (el) { io.observe(el); });
+  document.querySelectorAll('[data-count]').forEach(function (el) { io.observe(el); });
+  document.querySelectorAll('.band, .mid-cta, .cta').forEach(function (el) { if (items.indexOf(el) < 0) io.observe(el); });
+
+  // Never leave keyboard focus on something still invisible
+  document.addEventListener('focusin', function (e) {
+    var r = e.target.closest && e.target.closest('.reveal');
+    if (r) r.classList.add('is-in');
+  });
 })();

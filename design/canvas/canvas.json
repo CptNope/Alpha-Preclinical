@@ -12,7 +12,7 @@
     },
     "Blog.dc.html": {
       "expand": "fill",
-      "h": 2958,
+      "h": 3310,
       "is_interactive": true,
       "title": "Blog",
       "w": 1440,
@@ -21,7 +21,7 @@
     },
     "BlogPost.dc.html": {
       "expand": "fill",
-      "h": 7334,
+      "h": 7547,
       "title": "Blog post",
       "w": 1440,
       "x": 12160,
@@ -47,7 +47,7 @@
     },
     "Main.dc.html": {
       "expand": "fill",
-      "h": 8000,
+      "h": 7492,
       "is_interactive": true,
       "title": "Homepage",
       "w": 1440,
@@ -64,7 +64,7 @@
     },
     "Publications.dc.html": {
       "expand": "fill",
-      "h": 4861,
+      "h": 5240,
       "is_interactive": true,
       "title": "Publications",
       "w": 1440,
@@ -73,7 +73,7 @@
     },
     "Services.dc.html": {
       "expand": "fill",
-      "h": 5780,
+      "h": 5848,
       "title": "Services",
       "w": 1440,
       "x": 13680,
@@ -81,7 +81,7 @@
     },
     "Team.dc.html": {
       "expand": "fill",
-      "h": 5658,
+      "h": 5685,
       "title": "Team",
       "w": 1440,
       "x": 6080,
