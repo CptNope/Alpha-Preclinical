@@ -362,6 +362,29 @@ def page_team(s, src):
         li = re.search(r'<a class="li" href="([^"]+)"', body)
         if li:
             p["sameAs"] = [li.group(1)]
+        txt = lambda h: html.unescape(re.sub(r"<.*?>", "", h)).strip()
+        bio = re.search(r'<div class="bio">\s*<p>(.*?)</p>', body, re.S)
+        if bio:
+            p["description"] = txt(bio.group(1))
+        p["image"] = f"assets/img/team/{pid}.jpg"
+        def side(head):
+            m = re.search(r"<h4>" + head + r"</h4><ul>(.*?)</ul>", body, re.S)
+            return [txt(x) for x in re.findall(r"<li>(.*?)</li>", m.group(1), re.S)] if m else []
+        knows = side("Leads") or side("Supports")
+        if knows:
+            p["knowsAbout"] = knows
+        schools = []
+        for e in side("Education"):
+            parts = [x.strip() for x in e.split(",")]
+            named = [x for x in parts if re.search(r"University|College|School|Institute", x)]
+            org = named[-1] if named else parts[-1]
+            if org and org not in schools:
+                schools.append(org)
+        if schools:
+            p["alumniOf"] = [{"@type": "EducationalOrganization", "name": o} for o in schools]
+        member = [m for m in side("Affiliations") if not m.startswith("[")]
+        if member:
+            p["memberOf"] = [{"@type": "Organization", "name": m} for m in member]
         people.append(p)
     return s, [{"@context": "https://schema.org", "@type": "ItemList", "name": "Alpha Preclinical team",
                 "itemListElement": [{"@type": "ListItem", "position": i + 1, "item": p} for i, p in enumerate(people)]}]
