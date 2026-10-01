@@ -52,7 +52,7 @@ flowchart LR
     C["Melior Discovery<br/>SEO page structure"] --> E
     D --> E
     F["Old site content<br/>bios, services, 16 papers"] --> E
-    E --> G["Design canvas<br/>9 artboards"]
+    E --> G["Design canvas<br/>10 artboards"]
     E --> H["Design system<br/>tokens + rules"]
     E --> I["7 blog drafts<br/>SEO-optimized"]
 ```
@@ -65,7 +65,7 @@ flowchart LR
 flowchart TD
     H["Home<br/>index.html"]
     H --> EX["Expertise (6 areas)"]
-    H --> SV["Services (4)"]
+    H --> SV["Services<br/>services.html"]
     H --> AB["About<br/>about.html"]
     H --> TM["Team<br/>team.html"]
     H --> PB["Publications<br/>publications.html"]
@@ -85,10 +85,12 @@ flowchart TD
     BP --> TM
     TM --> PB
     TU --> TM
+    SV --> TM
+    SV --> CO
 
     classDef built fill:#1E58A0,color:#fff,stroke:#0F3360
     classDef todo fill:#EEF5FB,color:#1F2858,stroke:#4B98D2,stroke-dasharray:4 3
-    class H,AB,TM,PB,BL,CA,CO,TU,BP built
+    class H,SV,AB,TM,PB,BL,CA,CO,TU,BP built
     class X1,X2,X3,X4,X5 todo
 ```
 
@@ -101,6 +103,7 @@ Solid boxes are designed and built. Dashed boxes reuse the tumor-models template
 | Page | File | Interactive in preview | What it does |
 | --- | --- | --- | --- |
 | Home | `index.html` | FAQ accordion, mobile menu | Hero with animated strata, 6 expertise areas with leads, 4 services, study process, featured publications, team, FAQ, quote CTA |
+| Services | `services.html` | Jump links to each service | Study types, then IVIS imaging, surgical services, colony management, in vitro laboratory and study support, each with its lead and full detail from the old site |
 | Tumor models | `tumor-models.html` | — | Template for each disease-model page: models table, in-house endpoints, study team, related expertise |
 | Publications | `publications.html` | Filter by research area | All 16 papers grouped by area, Alpha authors called out |
 | About | `about.html` | — | Company story, key facts, values, facility, leadership |
@@ -116,14 +119,14 @@ Solid boxes are designed and built. Dashed boxes reuse the tumor-models template
 
 ```mermaid
 flowchart LR
-    R(("repo root")) --> P["*.html<br/>9 static pages"]
+    R(("repo root")) --> P["*.html<br/>10 static pages"]
     R --> AS["assets/"]
     AS --> CSS["css/site.css<br/>shared: menu, skip link, filters"]
     AS --> JS["js/site.js<br/>filters, accordions, demo forms"]
     AS --> IMG["img/<br/>logos, photos, map"]
     IMG --> TEAM["team/<br/>10 headshots"]
     R --> DS["design/"]
-    DS --> CV["canvas/<br/>9 .dc.html artboards + canvas.json"]
+    DS --> CV["canvas/<br/>10 .dc.html artboards + canvas.json"]
     DS --> SYS["design-system/<br/>tokens.json, README.md, cover"]
     R --> CT["content/blog-posts.md<br/>7 SEO blog drafts"]
     R --> WP["wordpress/theme.json<br/>FSE starter"]
@@ -133,7 +136,7 @@ flowchart LR
 ```text
 .
 ├── index.html, about.html, team.html, publications.html, blog.html,
-│   blog-mrna-liver-depot-study-design.html, tumor-models.html,
+│   blog-mrna-liver-depot-study-design.html, services.html, tumor-models.html,
 │   contact.html, careers.html          # generated preview pages
 ├── assets/
 │   ├── css/site.css                     # shared styles (each page also keeps its own inline styles)
@@ -331,7 +334,7 @@ flowchart TD
 
 | Static piece | FSE equivalent |
 | --- | --- |
-| Header / footer | `parts/header.html`, `parts/footer.html` (Navigation block) |
+| Header / footer (same on every page) | `parts/header.html`, `parts/footer.html` (Navigation block) |
 | Hero with strata | Block pattern: Cover or Group with inline SVG bands |
 | Expertise list with leads | Pattern + a relationship field from each service page to a Team member |
 | Publications | Custom post type `publication` (area taxonomy, authors, journal, year, DOI, PDF) with a Query Loop |

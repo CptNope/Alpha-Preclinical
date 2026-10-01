@@ -93,13 +93,26 @@ body{margin:0}
 .done button{all:unset;cursor:pointer;color:var(--tide);font-weight:600;margin-top:18px;display:inline-block}
 @media (max-width:1080px){.nav,.hdr .btn{display:none}.top-body,.why,.apply-sec{grid-template-columns:minmax(0,1fr);gap:40px}.top-photo{margin-bottom:0}.role-body{grid-template-columns:minmax(0,1fr);gap:28px}}
 @media (max-width:680px){.wrap{padding:0 16px}.sec{padding:72px 0}.top-body{padding-bottom:110px}.strata{height:110px}.perks,.fields{grid-template-columns:minmax(0,1fr)}.role-btn{grid-template-columns:minmax(0,1fr) 44px;gap:12px 16px}.role-meta{grid-column:1;grid-row:2}.ico{grid-column:2;grid-row:1}}
+
+/* shared footer */
+.ftr{background:#0B2747;color:var(--on-abyss);padding:80px 0 40px;font-size:15px}
+.ftr-grid{display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,2fr));gap:40px}
+.ap .ftr h3{font-family:"Figtree",sans-serif;font-size:15px;font-weight:600;color:#fff;margin:0 0 14px}
+.ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ap .ftr a{color:var(--on-abyss);text-decoration:none}
+.ap .ftr a:hover{color:#fff}
+.ftr address{font-style:normal;line-height:1.6;margin-top:24px}
+.ftr-base{margin-top:64px;padding-top:24px;border-top:1px solid rgba(185,204,227,.2);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+@media (max-width:1240px){.nav{gap:18px}.ap .nav a{font-size:15px}}
+@media (max-width:1080px){.ftr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:680px){.ftr-grid{grid-template-columns:minmax(0,1fr)}.ftr{padding:56px 0 32px}}
 </style>
 </helmet>
 <div class="ap">
 <header class="top">
   <div class="wrap hdr">
     <a href="Main.dc.html" aria-label="Alpha Preclinical home"><img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
-    <nav aria-label="Main"><ul class="nav"><li><a href="Main.dc.html#expertise">Expertise</a></li><li><a href="Main.dc.html#capabilities">Services</a></li><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="#" aria-current="page">Careers</a></li></ul></nav>
+    <nav aria-label="Main"><ul class="nav"><li><a href="Main.dc.html#expertise">Expertise</a></li><li><a href="Services.dc.html">Services</a></li><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="Careers.dc.html" aria-current="page">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></nav>
     <a class="btn btn-light" href="Contact.dc.html">Request a study quote</a>
   </div>
   <div class="wrap top-body">
@@ -206,9 +219,23 @@ body{margin:0}
   </div>
 </section>
 </main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:96px;height:auto;display:block">
+        <address>Alpha Preclinical LLC<br>722 Plantation Street<br>Worcester, MA 01605<br><a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a></address>
+      </div>
+      <div><h3>Expertise</h3><ul><li><a href="Main.dc.html#expertise">PK/PD</a></li><li><a href="Main.dc.html#expertise">Gene therapy</a></li><li><a href="Main.dc.html#expertise">Autoimmune disease</a></li><li><a href="Main.dc.html#expertise">Metabolic disease</a></li><li><a href="Main.dc.html#expertise">Inflammation and fibrosis</a></li><li><a href="Model.dc.html">Tumor models</a></li></ul></div>
+      <div><h3>Services</h3><ul><li><a href="Services.dc.html#ivis">IVIS imaging</a></li><li><a href="Services.dc.html#surgery">Surgical services</a></li><li><a href="Services.dc.html#colony">Colony management</a></li><li><a href="Services.dc.html#in-vitro">In vitro laboratory</a></li><li><a href="Services.dc.html#support">Study support</a></li></ul></div>
+      <div><h3>Company</h3><ul><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></div>
+    </div>
+    <div class="ftr-base"><span>© 2026 Alpha Preclinical LLC</span><span><a href="#privacy">Privacy policy</a></span></div>
+  </div>
+</footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3600}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3823}}'>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { team: 'All', open: 0, sent: false, email: '', tried: false, applyRole: 'Senior Research Technician, In Vivo' }; }
   renderVals() {

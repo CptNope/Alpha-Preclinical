@@ -73,6 +73,19 @@ body{margin:0}
 .band p{color:var(--on-abyss);margin-top:12px;max-width:30em}
 @media (max-width:1080px){.nav,.hdr .btn{display:none}.person{grid-template-columns:minmax(0,4fr) minmax(0,8fr)}.side{grid-column:2}.band{flex-direction:column;align-items:flex-start;padding:40px}}
 @media (max-width:680px){.wrap{padding:0 16px}.grp{padding:72px 0}.top-body{padding-bottom:120px}.strata{height:120px}.person{grid-template-columns:minmax(0,1fr);gap:24px;padding:40px 0}.side{grid-column:1}.face{max-width:240px}.person h2,.person h3{font-size:30px}}
+
+/* shared footer */
+.ftr{background:#0B2747;color:var(--on-abyss);padding:80px 0 40px;font-size:15px}
+.ftr-grid{display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,2fr));gap:40px}
+.ap .ftr h3{font-family:"Figtree",sans-serif;font-size:15px;font-weight:600;color:#fff;margin:0 0 14px}
+.ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ap .ftr a{color:var(--on-abyss);text-decoration:none}
+.ap .ftr a:hover{color:#fff}
+.ftr address{font-style:normal;line-height:1.6;margin-top:24px}
+.ftr-base{margin-top:64px;padding-top:24px;border-top:1px solid rgba(185,204,227,.2);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+@media (max-width:1240px){.nav{gap:18px}.ap .nav a{font-size:15px}}
+@media (max-width:1080px){.ftr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:680px){.ftr-grid{grid-template-columns:minmax(0,1fr)}.ftr{padding:56px 0 32px}}
 </style>
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
@@ -82,7 +95,7 @@ body{margin:0}
 <header class="top">
   <div class="wrap hdr">
     <a href="index.html" aria-label="Alpha Preclinical home"><img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
-    <nav aria-label="Main"><ul class="nav"><li><a href="index.html#expertise">Expertise</a></li><li><a href="index.html#capabilities">Services</a></li><li><a href="about.html">About</a></li><li><a href="#" aria-current="page">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li></ul></nav>
+    <nav aria-label="Main"><ul class="nav"><li><a href="index.html#expertise">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="team.html" aria-current="page">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
     <a class="btn btn-light" href="contact.html">Request a study quote</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg></button>
   </div>
   <div class="wrap top-body">
@@ -118,7 +131,7 @@ body{margin:0}
         </div>
       </div>
       <div class="side">
-        <div class="leads"><h4>Leads</h4><ul><li><a href="index.html#expertise">PK/PD</a></li><li><a href="index.html#expertise">Gene therapy</a></li><li><a href="tumor-models.html">Tumor models</a></li><li><a href="index.html#expertise">Inflammation and fibrosis</a></li><li><a href="index.html#capabilities">IVIS imaging</a></li><li><a href="index.html#capabilities">Surgical services</a></li></ul></div>
+        <div class="leads"><h4>Leads</h4><ul><li><a href="index.html#expertise">PK/PD</a></li><li><a href="index.html#expertise">Gene therapy</a></li><li><a href="tumor-models.html">Tumor models</a></li><li><a href="index.html#expertise">Inflammation and fibrosis</a></li><li><a href="services.html#ivis">IVIS imaging</a></li><li><a href="services.html#surgery">Surgical services</a></li></ul></div>
         <div><h4>Education</h4><ul><li>DVM, Koret School of Veterinary Medicine, Hebrew University of Jerusalem</li><li>BS, Animal Science, Hebrew University of Jerusalem</li></ul></div>
         <div><h4>Before Alpha</h4><ul><li>Director of in vivo pharmacology, biotech</li><li>Boston Children's Hospital</li><li>Biomere</li></ul></div>
         <div><h4>Affiliations</h4><ul><li>Sideromics Scientific Advisory Board</li></ul></div>
@@ -137,7 +150,7 @@ body{margin:0}
         </div>
       </div>
       <div class="side">
-        <div class="leads"><h4>Leads</h4><ul><li><a href="index.html#expertise">Metabolic disease</a></li><li><a href="index.html#expertise">Autoimmune disease</a></li><li><a href="index.html#capabilities">Operations</a></li></ul></div>
+        <div class="leads"><h4>Leads</h4><ul><li><a href="index.html#expertise">Metabolic disease</a></li><li><a href="index.html#expertise">Autoimmune disease</a></li><li><a href="about.html">Operations</a></li></ul></div>
         <div><h4>Education</h4><ul><li>PhD, Molecular Biology and Biochemistry, UMass Medical School, Worcester</li><li>BS, Biochemistry, UMass Amherst</li></ul></div>
         <div><h4>Before Alpha</h4><ul><li>Biomedical Research Models</li><li>Charles River Laboratories</li></ul></div>
         <div><h4>Affiliations</h4><ul><li>Massachusetts Society for Medical Research, Training and Program Development</li><li>New England Branch, AALAS (NEBAALAS)</li><li>Worcester Technical High School Scientific Advisory Board</li><li>[Confirm: Becker College Industry Advisory Board]</li></ul></div>
@@ -162,7 +175,7 @@ body{margin:0}
         </div>
       </div>
       <div class="side">
-        <div class="leads"><h4>Leads</h4><ul><li><a href="index.html#capabilities">Colony management</a></li><li><a href="index.html#capabilities">Study scheduling and vivarium operations</a></li></ul></div>
+        <div class="leads"><h4>Leads</h4><ul><li><a href="services.html#colony">Colony management</a></li><li><a href="services.html#colony">Study scheduling and vivarium operations</a></li></ul></div>
         <div><h4>Education</h4><ul><li>BS, Zoology, University of Maine, Orono</li><li>Field studies, School for Field Studies, Karatu, Tanzania</li></ul></div>
       </div>
     </article>
@@ -178,7 +191,7 @@ body{margin:0}
         </div>
       </div>
       <div class="side">
-        <div class="leads"><h4>Leads</h4><ul><li><a href="index.html#capabilities">In vitro laboratory services</a></li><li><a href="blog-mrna-liver-depot-study-design.html">Flow cytometry and immunophenotyping</a></li></ul></div>
+        <div class="leads"><h4>Leads</h4><ul><li><a href="services.html#in-vitro">In vitro laboratory services</a></li><li><a href="blog-mrna-liver-depot-study-design.html">Flow cytometry and immunophenotyping</a></li></ul></div>
         <div><h4>Education</h4><ul><li>AS, Quinsigamond Community College</li><li>Continuing studies, Worcester Polytechnic Institute</li></ul></div>
       </div>
     </article>
@@ -194,7 +207,7 @@ body{margin:0}
         </div>
       </div>
       <div class="side">
-        <div class="leads"><h4>Supports</h4><ul><li><a href="index.html#capabilities">Surgical services</a></li><li><a href="index.html#expertise">In vivo studies</a></li><li><a href="careers.html">Staff training</a></li></ul></div>
+        <div class="leads"><h4>Supports</h4><ul><li><a href="services.html#surgery">Surgical services</a></li><li><a href="index.html#expertise">In vivo studies</a></li><li><a href="careers.html">Staff training</a></li></ul></div>
         <div><h4>Experience</h4><ul><li>Nearly 20 years in preclinical research</li><li>Former training and development coordinator at a preclinical CRO</li></ul></div>
         <div><h4>Education</h4><ul><li>Second Language Certificate, Worcester State College</li></ul></div>
       </div>
@@ -211,6 +224,20 @@ body{margin:0}
   </div>
 </section>
 </main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:96px;height:auto;display:block">
+        <address>Alpha Preclinical LLC<br>722 Plantation Street<br>Worcester, MA 01605<br><a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a></address>
+      </div>
+      <div><h3>Expertise</h3><ul><li><a href="index.html#expertise">PK/PD</a></li><li><a href="index.html#expertise">Gene therapy</a></li><li><a href="index.html#expertise">Autoimmune disease</a></li><li><a href="index.html#expertise">Metabolic disease</a></li><li><a href="index.html#expertise">Inflammation and fibrosis</a></li><li><a href="tumor-models.html">Tumor models</a></li></ul></div>
+      <div><h3>Services</h3><ul><li><a href="services.html#ivis">IVIS imaging</a></li><li><a href="services.html#surgery">Surgical services</a></li><li><a href="services.html#colony">Colony management</a></li><li><a href="services.html#in-vitro">In vitro laboratory</a></li><li><a href="services.html#support">Study support</a></li></ul></div>
+      <div><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="ftr-base"><span>© 2026 Alpha Preclinical LLC</span><span><a href="#privacy">Privacy policy</a></span></div>
+  </div>
+</footer>
 </div>
 <script src="assets/js/site.js" defer></script>
 </body>

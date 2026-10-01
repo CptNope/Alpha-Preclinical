@@ -23,6 +23,7 @@ PAGES = {
     "Blog.dc.html": "blog.html",
     "BlogPost.dc.html": "blog-mrna-liver-depot-study-design.html",
     "Model.dc.html": "tumor-models.html",
+    "Services.dc.html": "services.html",
     "Contact.dc.html": "contact.html",
     "Careers.dc.html": "careers.html",
 }
@@ -55,6 +56,7 @@ TITLES = {
     "blog-mrna-liver-depot-study-design.html": "Designing In Vivo mRNA-LNP Studies | Alpha Preclinical",
     "tumor-models.html": "Tumor Models for In Vivo Oncology Studies | Alpha Preclinical",
     "contact.html": "Contact and Study Quotes | Alpha Preclinical",
+    "services.html": "Preclinical CRO Services: IVIS, Surgery, In Vitro Lab | Alpha Preclinical",
     "careers.html": "Careers | Alpha Preclinical",
 }
 
@@ -67,6 +69,7 @@ META = {
     "blog-mrna-liver-depot-study-design.html": "How preclinical studies of mRNA-LNP protein replacement are designed, using published Fabry disease and hemophilia B studies as worked examples.",
     "tumor-models.html": "Syngeneic and xenograft tumor models for in vivo oncology efficacy studies, with caliper and bioluminescent IVIS imaging readouts. Worcester, MA.",
     "contact.html": "Request a preclinical study quote from Alpha Preclinical. Email info@alphapreclinical.com or visit us at 722 Plantation Street, Worcester, MA 01605.",
+    "services.html": "In vivo PK/PD, proof-of-concept and efficacy studies, plus IVIS imaging, USDA-compliant surgery, colony management and in vitro lab services in Worcester, MA.",
     "careers.html": "Join Alpha Preclinical in Worcester, MA. Open roles for in vivo and in vitro research associates, technicians and study directors.",
 }
 

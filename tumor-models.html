@@ -74,6 +74,19 @@ td:first-child{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font
 .band p{color:var(--on-abyss);margin-top:12px;max-width:30em}
 @media (max-width:1080px){.nav,.hdr .btn{display:none}.split{grid-template-columns:minmax(0,1fr);gap:32px}.ends{grid-template-columns:minmax(0,1fr)}.band{flex-direction:column;align-items:flex-start;padding:40px}}
 @media (max-width:680px){.wrap{padding:0 16px}.sec{padding:72px 0}.top-body{padding-bottom:120px}.strata{height:120px}td:first-child{width:auto}thead{display:none}.crew{grid-template-columns:minmax(0,1fr)}tr{display:grid;gap:10px;padding:20px 0;border-bottom:1.5px solid var(--line)}td{padding:0;border:none}}
+
+/* shared footer */
+.ftr{background:#0B2747;color:var(--on-abyss);padding:80px 0 40px;font-size:15px}
+.ftr-grid{display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,2fr));gap:40px}
+.ap .ftr h3{font-family:"Figtree",sans-serif;font-size:15px;font-weight:600;color:#fff;margin:0 0 14px}
+.ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ap .ftr a{color:var(--on-abyss);text-decoration:none}
+.ap .ftr a:hover{color:#fff}
+.ftr address{font-style:normal;line-height:1.6;margin-top:24px}
+.ftr-base{margin-top:64px;padding-top:24px;border-top:1px solid rgba(185,204,227,.2);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+@media (max-width:1240px){.nav{gap:18px}.ap .nav a{font-size:15px}}
+@media (max-width:1080px){.ftr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:680px){.ftr-grid{grid-template-columns:minmax(0,1fr)}.ftr{padding:56px 0 32px}}
 </style>
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
@@ -83,11 +96,11 @@ td:first-child{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font
 <header class="top">
   <div class="wrap hdr">
     <a href="index.html" aria-label="Alpha Preclinical home"><img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
-    <nav aria-label="Main"><ul class="nav"><li><a href="#" aria-current="page">Expertise</a></li><li><a href="#">Services</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li></ul></nav>
+    <nav aria-label="Main"><ul class="nav"><li><a href="index.html#expertise" aria-current="page">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
     <a class="btn btn-light" href="contact.html">Request a study quote</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg></button>
   </div>
   <div class="wrap top-body">
-    <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="index.html">Home</a></li><li><a href="#">Expertise</a></li><li aria-current="page">Tumor models</li></ol></nav>
+    <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="index.html">Home</a></li><li><a href="index.html#expertise">Expertise</a></li><li aria-current="page">Tumor models</li></ol></nav>
     <h1>Tumor models for in vivo oncology efficacy studies</h1>
     <p>Syngeneic and xenograft models run by scientists who have designed oncology studies for decades, with tumor burden tracked by caliper and by bioluminescent IVIS imaging.</p>
   </div>
@@ -122,9 +135,9 @@ td:first-child{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font
   <div class="wrap">
     <h2 id="e-h" style="font-size:clamp(30px,3.4vw,44px);line-height:1.06;letter-spacing:-.025em;margin-bottom:56px;max-width:20ch">Endpoints measured in house</h2>
     <div class="ends">
-      <div class="end"><h3>Live imaging</h3><p>Whole-body bioluminescence and fluorescence on our Spectrum IVIS, plus ex vivo tissue imaging at termination.</p><a href="#">IVIS imaging</a></div>
-      <div class="end"><h3>Immune profiling</h3><p>Multicolor flow cytometry on tumor, blood and spleen, analyzed in FlowJo, with ELISA and cytokine panels.</p><a href="#">In vitro laboratory</a></div>
-      <div class="end"><h3>Tissue analysis</h3><p>Histology and immunohistochemistry on tumors and organs, plus CBC and serum chemistry for tolerability.</p><a href="#">In vitro laboratory</a></div>
+      <div class="end"><h3>Live imaging</h3><p>Whole-body bioluminescence and fluorescence on our Spectrum IVIS, plus ex vivo tissue imaging at termination.</p><a href="services.html#ivis">IVIS imaging</a></div>
+      <div class="end"><h3>Immune profiling</h3><p>Multicolor flow cytometry on tumor, blood and spleen, analyzed in FlowJo, with ELISA and cytokine panels.</p><a href="services.html#in-vitro">In vitro laboratory</a></div>
+      <div class="end"><h3>Tissue analysis</h3><p>Histology and immunohistochemistry on tumors and organs, plus CBC and serum chemistry for tolerability.</p><a href="services.html#in-vitro">In vitro laboratory</a></div>
     </div>
   </div>
 </section>
@@ -145,7 +158,7 @@ td:first-child{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font
 <section class="sec sec-mist" aria-labelledby="r-h">
   <div class="wrap">
     <h2 id="r-h" style="font-size:28px;margin-bottom:20px">Related expertise</h2>
-    <div class="related"><a href="#">PK/PD</a><a href="#">Gene therapy</a><a href="#">Autoimmune disease</a><a href="#">Metabolic disease</a><a href="#">Inflammation and fibrosis</a></div>
+    <div class="related"><a href="index.html#expertise">PK/PD</a><a href="index.html#expertise">Gene therapy</a><a href="index.html#expertise">Autoimmune disease</a><a href="index.html#expertise">Metabolic disease</a><a href="index.html#expertise">Inflammation and fibrosis</a></div>
     <div class="band" id="quote" style="margin-top:96px">
       <div><h2>Plan your next oncology study with us</h2><p>Send your compound, model and timeline. A senior scientist will reply with a study design and quote.</p></div>
       <a class="btn btn-light" href="contact.html">Request a study quote</a>
@@ -153,6 +166,20 @@ td:first-child{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font
   </div>
 </section>
 </main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:96px;height:auto;display:block">
+        <address>Alpha Preclinical LLC<br>722 Plantation Street<br>Worcester, MA 01605<br><a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a></address>
+      </div>
+      <div><h3>Expertise</h3><ul><li><a href="index.html#expertise">PK/PD</a></li><li><a href="index.html#expertise">Gene therapy</a></li><li><a href="index.html#expertise">Autoimmune disease</a></li><li><a href="index.html#expertise">Metabolic disease</a></li><li><a href="index.html#expertise">Inflammation and fibrosis</a></li><li><a href="tumor-models.html">Tumor models</a></li></ul></div>
+      <div><h3>Services</h3><ul><li><a href="services.html#ivis">IVIS imaging</a></li><li><a href="services.html#surgery">Surgical services</a></li><li><a href="services.html#colony">Colony management</a></li><li><a href="services.html#in-vitro">In vitro laboratory</a></li><li><a href="services.html#support">Study support</a></li></ul></div>
+      <div><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="ftr-base"><span>© 2026 Alpha Preclinical LLC</span><span><a href="#privacy">Privacy policy</a></span></div>
+  </div>
+</footer>
 </div>
 <script src="assets/js/site.js" defer></script>
 </body>

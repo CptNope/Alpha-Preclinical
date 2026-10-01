@@ -1,23 +1,121 @@
 {
   "v": 3,
-  "createdOnFiles": {"v": 1, "at": "2026-10-01T20:30:00Z"},
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-01T20:30:00Z"
+  },
   "title": "Alpha Preclinical Website",
-  "launch": {"view": "canvas"},
+  "launch": {
+    "view": "canvas"
+  },
   "pages": [],
   "boards": {
-    "Main.dc.html": {"x": 0, "y": 0, "w": 1440, "h": 7300, "title": "Homepage", "expand": "fill", "is_interactive": true},
-    "Model.dc.html": {"x": 1520, "y": 0, "w": 1440, "h": 3900, "title": "Disease model page template", "expand": "fill"},
-    "Publications.dc.html": {"x": 3040, "y": 0, "w": 1440, "h": 4800, "title": "Publications", "expand": "fill", "is_interactive": true},
-    "About.dc.html": {"x": 4560, "y": 0, "w": 1440, "h": 4700, "title": "About", "expand": "fill"},
-    "Team.dc.html": {"x": 6080, "y": 0, "w": 1440, "h": 5500, "title": "Team", "expand": "fill"},
-    "Blog.dc.html": {"x": 7600, "y": 0, "w": 1440, "h": 2900, "title": "Blog", "expand": "fill", "is_interactive": true},
-    "Contact.dc.html": {"x": 9120, "y": 0, "w": 1440, "h": 2700, "title": "Contact", "expand": "fill", "is_interactive": true},
-    "Careers.dc.html": {"x": 10640, "y": 0, "w": 1440, "h": 3600, "title": "Careers", "expand": "fill", "is_interactive": true},
-    "BlogPost.dc.html": {"x": 12160, "y": 0, "w": 1440, "h": 5600, "title": "Blog post", "expand": "fill"}
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 8587,
+      "title": "Homepage",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Model.dc.html": {
+      "x": 1520,
+      "y": 0,
+      "w": 1440,
+      "h": 3517,
+      "title": "Disease model page template",
+      "expand": "fill"
+    },
+    "Publications.dc.html": {
+      "x": 3040,
+      "y": 0,
+      "w": 1440,
+      "h": 4763,
+      "title": "Publications",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "About.dc.html": {
+      "x": 4560,
+      "y": 0,
+      "w": 1440,
+      "h": 4949,
+      "title": "About",
+      "expand": "fill"
+    },
+    "Team.dc.html": {
+      "x": 6080,
+      "y": 0,
+      "w": 1440,
+      "h": 5644,
+      "title": "Team",
+      "expand": "fill"
+    },
+    "Blog.dc.html": {
+      "x": 7600,
+      "y": 0,
+      "w": 1440,
+      "h": 2860,
+      "title": "Blog",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Contact.dc.html": {
+      "x": 9120,
+      "y": 0,
+      "w": 1440,
+      "h": 2759,
+      "title": "Contact",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Careers.dc.html": {
+      "x": 10640,
+      "y": 0,
+      "w": 1440,
+      "h": 3823,
+      "title": "Careers",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "BlogPost.dc.html": {
+      "x": 12160,
+      "y": 0,
+      "w": 1440,
+      "h": 7270,
+      "title": "Blog post",
+      "expand": "fill"
+    },
+    "Services.dc.html": {
+      "x": 13680,
+      "y": 0,
+      "w": 1440,
+      "h": 5712,
+      "title": "Services",
+      "expand": "fill"
+    }
   },
-  "order": ["Main.dc.html", "Model.dc.html", "Publications.dc.html", "About.dc.html", "Team.dc.html", "Blog.dc.html", "Contact.dc.html", "Careers.dc.html", "BlogPost.dc.html"],
+  "order": [
+    "Main.dc.html",
+    "Model.dc.html",
+    "Publications.dc.html",
+    "About.dc.html",
+    "Team.dc.html",
+    "Blog.dc.html",
+    "Contact.dc.html",
+    "Careers.dc.html",
+    "BlogPost.dc.html",
+    "Services.dc.html"
+  ],
   "notes": {},
   "designSystems": [
-    {"title": "Alpha Preclinical", "namespace": "alphapreclinical", "artifact": "https://claude.ai/artifact/KxNT5ot3543zsqUDDMt54A", "version": "1790885815-5a61", "copiedAt": "2026-10-01T20:30:00Z"}
+    {
+      "title": "Alpha Preclinical",
+      "namespace": "alphapreclinical",
+      "artifact": "https://claude.ai/artifact/KxNT5ot3543zsqUDDMt54A",
+      "version": "1790885815-5a61",
+      "copiedAt": "2026-10-01T20:30:00Z"
+    }
   ]
 }
