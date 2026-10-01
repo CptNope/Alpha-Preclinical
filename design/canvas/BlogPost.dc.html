@@ -145,6 +145,10 @@ td:first-child{font-weight:600;width:38%}
 @media (max-width:680px){.ftr-grid{grid-template-columns:minmax(0,1fr)}.ftr{padding:56px 0 32px}}
 
 /* accessibility (WCAG 2.1 AA audit) */
+.ap h1,.ap h2,.ap h3{overflow-wrap:break-word;hyphens:auto}
+.table-scroll{overflow-x:auto;margin-top:24px;border-radius:6px}
+.table-scroll:focus-visible{outline:3px solid var(--current);outline-offset:3px}
+.table-scroll table{margin-top:0;min-width:520px}
 .ap a[href^="mailto:"]{overflow-wrap:anywhere}
 .ap .lead a,.ap .side a,.ap .member,.ap .who a{display:inline-block;padding:3px 0}
 .ftr-base .legal-links{display:flex;flex-wrap:wrap;gap:8px 24px}
@@ -158,7 +162,7 @@ td:first-child{font-weight:600;width:38%}
 <header class="bar">
   <div class="wrap hdr">
     <a href="Main.dc.html" aria-label="Alpha Preclinical home"><img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:64px;height:auto;display:block"></a>
-    <nav aria-label="Main"><ul class="nav"><li><a href="Main.dc.html#expertise">Expertise</a></li><li><a href="Services.dc.html">Services</a></li><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html" aria-current="page">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></nav>
+    <nav aria-label="Main"><ul class="nav"><li><a href="Expertise.dc.html">Expertise</a></li><li><a href="Services.dc.html">Services</a></li><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html" aria-current="page">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></nav>
     <a class="btn btn-light" href="Contact.dc.html">Request a study quote</a>
   </div>
   <svg viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C180 4 540 40 720 22 S1260 4 1440 22 L1440 56 L0 56 Z" fill="#1E58A0"></path><path d="M0 34 C180 20 540 48 720 34 S1260 20 1440 34 L1440 56 L0 56 Z" fill="#88C6EE"></path><path d="M0 44 C180 34 540 54 720 44 S1260 34 1440 44 L1440 56 L0 56 Z" fill="#FFFFFF"></path></svg>
@@ -174,7 +178,7 @@ td:first-child{font-weight:600;width:38%}
     <div class="byline">
       <div class="who"><img src="/_blob/c9d31a9dcb31363d7c0a0ba388f59670" alt=""><div><b><a href="Team.dc.html#barak-yahalom">Barak Yahalom, DVM</a></b><small>CEO and Chief Scientific Officer</small></div></div>
       <div class="who"><img src="/_blob/590caa59917513c5891b761a02b75807" alt=""><div><small>Scientific review by</small><b><a href="Team.dc.html#joan-flanagan">Joan Flanagan, PhD</a></b></div></div>
-      <p class="dates"><b>Published</b> [Date]<br><b>Updated</b> [Date], 6 min read</p>
+      <p class="dates"><b>Published</b> [Date]<br><b>Updated</b> [Date], 3 min read</p>
     </div>
   </div>
   <figure class="hero-img">
@@ -287,9 +291,9 @@ td:first-child{font-weight:600;width:38%}
   <div class="wrap">
     <h2 id="rel-h">Keep reading</h2>
     <div class="posts">
-      <a class="post" href="BlogPost.dc.html"><span class="tag">Study design</span><h3>How to scope your first in vivo efficacy study</h3><p>Barak Yahalom, DVM, 6 min read</p></a>
-      <a class="post" href="BlogPost.dc.html"><span class="tag">Lab services</span><h3>Getting more from every animal with in-house flow cytometry</h3><p>Cindy Hopper, 6 min read</p></a>
-      <a class="post" href="BlogPost.dc.html"><span class="tag">Study design</span><h3>Continuous dosing with Alzet pumps: when and why</h3><p>Gil Chacon, 5 min read</p></a>
+      <a class="post" href="BlogPost.dc.html"><span class="tag">Study design</span><h3>How to scope your first in vivo efficacy study</h3><p>Barak Yahalom, DVM, 3 min read</p></a>
+      <a class="post" href="BlogPost.dc.html"><span class="tag">Lab services</span><h3>Getting more from every animal with in-house flow cytometry</h3><p>Cindy Hopper, 3 min read</p></a>
+      <a class="post" href="BlogPost.dc.html"><span class="tag">Study design</span><h3>Continuous dosing with Alzet pumps: when and why</h3><p>Gil Chacon, 3 min read</p></a>
     </div>
   </div>
 </section>
@@ -312,7 +316,7 @@ td:first-child{font-weight:600;width:38%}
         <img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:96px;height:auto;display:block">
         <address>Alpha Preclinical LLC<br>722 Plantation Street<br>Worcester, MA 01605<br><a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a></address>
       </div>
-      <div><h2>Expertise</h2><ul><li><a href="Main.dc.html#expertise">PK/PD</a></li><li><a href="Main.dc.html#expertise">Gene therapy</a></li><li><a href="Main.dc.html#expertise">Autoimmune disease</a></li><li><a href="Main.dc.html#expertise">Metabolic disease</a></li><li><a href="Main.dc.html#expertise">Inflammation and fibrosis</a></li><li><a href="Model.dc.html">Tumor models</a></li></ul></div>
+      <div><h2>Expertise</h2><ul><li><a href="Expertise.dc.html#pk-pd">PK/PD</a></li><li><a href="Expertise.dc.html#gene-therapy">Gene therapy</a></li><li><a href="Expertise.dc.html#autoimmune">Autoimmune disease</a></li><li><a href="Expertise.dc.html#metabolic">Metabolic disease</a></li><li><a href="Expertise.dc.html#fibrosis">Inflammation and fibrosis</a></li><li><a href="Model.dc.html">Tumor models</a></li></ul></div>
       <div><h2>Services</h2><ul><li><a href="Services.dc.html#ivis">IVIS imaging</a></li><li><a href="Services.dc.html#surgery">Surgical services</a></li><li><a href="Services.dc.html#colony">Colony management</a></li><li><a href="Services.dc.html#in-vitro">In vitro laboratory</a></li><li><a href="Services.dc.html#support">Study support</a></li></ul></div>
       <div><h2>Company</h2><ul><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></div>
     </nav>

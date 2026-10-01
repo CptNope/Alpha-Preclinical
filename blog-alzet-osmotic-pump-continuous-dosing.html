@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Designing In Vivo mRNA-LNP Studies | Alpha Preclinical</title>
-<meta name="description" content="How preclinical studies of mRNA-LNP protein replacement are designed, using published Fabry disease and hemophilia B studies as worked examples.">
-<meta property="og:title" content="Designing In Vivo mRNA-LNP Studies | Alpha Preclinical">
-<meta property="og:description" content="How preclinical studies of mRNA-LNP protein replacement are designed, using published Fabry disease and hemophilia B studies as worked examples.">
+<title>Alzet Osmotic Pumps for Continuous Dosing in Rodents | Alpha Preclinical</title>
+<meta name="description" content="When continuous infusion beats daily injections: how Alzet osmotic pumps work, choosing a model, and subcutaneous vs ICV delivery in mice and rats.">
+<meta property="og:title" content="Alzet Osmotic Pumps for Continuous Dosing in Rodents | Alpha Preclinical">
+<meta property="og:description" content="When continuous infusion beats daily injections: how Alzet osmotic pumps work, choosing a model, and subcutaneous vs ICV delivery in mice and rats.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="assets/img/building-sign.jpg">
 <link rel="icon" href="assets/img/logo-color.png">
@@ -162,7 +162,7 @@ td:first-child{font-weight:600;width:38%}
 .ap .btn{max-width:100%;text-align:center;line-height:1.2}
 </style>
 <link rel="stylesheet" href="assets/css/site.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What an mRNA liver depot study looks like in practice", "author": {"@type": "Person", "name": "Barak Yahalom", "honorificSuffix": "DVM", "jobTitle": "Chief Executive Officer and Chief Scientific Officer"}, "reviewedBy": {"@type": "Person", "name": "Joan Flanagan", "honorificSuffix": "PhD"}, "publisher": {"@type": "Organization", "name": "Alpha Preclinical LLC"}, "citation": ["DeRosa F, et al. Therapeutic efficacy in a hemophilia B model using a biosynthetic mRNA liver depot system. Gene Therapy. 2016;23(10):699-707.", "DeRosa F, et al. Improved efficacy in a Fabry disease model using a systemic mRNA liver depot system as compared to enzyme replacement therapy. Molecular Therapy. 2019;27(4):878-889."]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Continuous dosing with Alzet pumps: when and why", "author": {"@type": "Person", "name": "Gil Chacon", "jobTitle": "In Vivo Studies, Surgical Support and Training"}, "reviewedBy": {"@type": "Person", "name": "Barak Yahalom"}, "publisher": {"@type": "Organization", "name": "Alpha Preclinical LLC"}, "keywords": "Alzet osmotic pump", "citation": ["https://alzet.com/products/alzet_pumps/how-does-it-work/", "https://alzet.com/products/ALZET_pumps/specifications/"]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -179,88 +179,93 @@ td:first-child{font-weight:600;width:38%}
 <main id="main">
 <div class="wrap head">
   <div class="head-main">
-    <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="index.html">Home</a></li><li><a href="blog.html">Blog</a></li><li aria-current="page">Gene therapy</li></ol></nav>
-    <span class="tag">Gene therapy</span>
-    <h1>What an mRNA liver depot study looks like in practice</h1>
-    <p class="dek">How preclinical studies of mRNA protein replacement are designed, using two published studies our CEO co-authored as worked examples.</p>
+    <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="index.html">Home</a></li><li><a href="blog.html">Blog</a></li><li aria-current="page">Study design</li></ol></nav>
+    <span class="tag">Study design</span>
+    <h1>Continuous dosing with Alzet pumps: when and why</h1>
+    <p class="dek">When continuous infusion beats daily injections: how Alzet osmotic pumps work, choosing a model, and subcutaneous vs ICV delivery in mice and rats.</p>
     <div class="byline">
-      <div class="who"><img src="assets/img/team/barak-yahalom.jpg" alt=""><div><b><a href="team.html#barak-yahalom">Barak Yahalom, DVM</a></b><small>CEO and Chief Scientific Officer</small></div></div>
-      <div class="who"><img src="assets/img/team/joan-flanagan.jpg" alt=""><div><small>Scientific review by</small><b><a href="team.html#joan-flanagan">Joan Flanagan, PhD</a></b></div></div>
+      <div class="who"><img src="assets/img/team/gil-chacon.jpg" alt=""><div><b><a href="team.html#gil-chacon">Gil Chacon</a></b><small>In Vivo Studies, Surgical Support and Training</small></div></div>
+      <div class="who"><img src="assets/img/team/barak-yahalom.jpg" alt=""><div><small>Scientific review by</small><b><a href="team.html#barak-yahalom">Barak Yahalom, DVM</a></b></div></div>
       <p class="dates"><b>Published</b> [Date]<br><b>Updated</b> [Date], 3 min read</p>
     </div>
   </div>
   <figure class="hero-img">
-    <img src="assets/img/lab-biosafety-cabinet.jpg" alt="Alpha scientist preparing samples in a biosafety cabinet">
-    <figcaption>Sample preparation in the Alpha laboratory, Worcester, Massachusetts.</figcaption>
+    <img src="assets/img/team-group.jpg" alt="The Alpha Preclinical team outside the Worcester facility">
+    <figcaption>The Alpha in vivo and surgical team.</figcaption>
   </figure>
 </div>
 
 <div class="wrap body">
   <aside class="toc" aria-label="On this page">
     <h2>On this page</h2>
-    <ol>
-      <li><a href="#examples">The two worked examples</a></li>
-      <li><a href="#models">Use more than one model</a></li>
-      <li><a href="#protein">Measure the protein</a></li>
-      <li><a href="#endpoint">Choose a clinical endpoint</a></li>
-      <li><a href="#soc">Include the standard of care</a></li>
-      <li><a href="#repeat">Plan for repeat dosing</a></li>
-      <li><a href="#refs">References</a></li>
-    </ol>
+    <ol><li><a href="#how-an-osmotic-pump-works">How an osmotic pump works</a></li><li><a href="#when-continuous-dosing-is-the-better-choice">When continuous dosing is the better choice</a></li><li><a href="#subcutaneous-intraperitoneal-or-brain-delivery">Subcutaneous, intraperitoneal or brain delivery</a></li><li><a href="#five-details-that-decide-whether-pump-studies-wo">Five details that decide whether pump studies work</a></li><li><a href="#refs">Sources</a></li></ol>
     <div class="share"><h2 style="margin:0">Share</h2><a href="#share-linkedin">LinkedIn</a><a href="#share-email">Email</a><a href="#copy">Copy link</a></div>
   </aside>
 
   <article>
     <div class="summary">
       <h2>In short</h2>
-      <ul>
-        <li>Screen formulations and doses in wild-type animals, then prove efficacy in a disease model.</li>
-        <li>Build a protein time course into every study: it sets the dosing interval.</li>
-        <li>Pair protein levels with an endpoint a clinician would recognize, and compare against the standard of care.</li>
-      </ul>
+      <ul><li>Osmotic pumps give steady exposure for days to weeks without repeated handling.</li><li>Choose them for short half-life compounds, steady-state questions, long studies and brain delivery.</li><li>Check stability at 37 °C, solubility, priming and fill volume before you implant.</li></ul>
     </div>
 
-    <p class="lede">An mRNA liver depot uses the liver as a factory. Lipid nanoparticles (LNPs) carry mRNA to liver cells after an intravenous dose, the cells make the missing protein, and it circulates through the body.</p>
-    <p>I co-authored two published studies that show how preclinical programs prove this approach works. Here is what they teach about designing an in vivo study for your own mRNA program.</p>
-
-    <h2 id="examples">The two worked examples</h2>
-    <p>In hemophilia B, mRNA encoding human factor IX was delivered in LNPs made with the lipidoid C12-200. In factor IX knockout mice, a single dose produced therapeutic factor IX levels and markedly reduced blood loss after a surgical injury.<sup><a href="#ref1">1</a></sup></p>
-    <p>In Fabry disease, mRNA encoding human alpha-galactosidase A was delivered the same way to knockout mice lacking the enzyme. A single dose cleared more of the toxic lipid Gb3 from the heart and kidney than enzyme replacement therapy, and monthly mRNA dosing matched weekly enzyme replacement over two months.<sup><a href="#ref2">2</a></sup></p>
-
-    <h2 id="models">1. Use more than one model</h2>
-    <p>Both programs moved through the same sequence of models, each answering a different question.</p>
-    <table>
-      <thead><tr><th scope="col">Model</th><th scope="col">Question it answers</th></tr></thead>
-      <tbody>
-        <tr><td>Wild-type mice</td><td>How much protein does a dose produce, and for how long?</td></tr>
-        <tr><td>Knockout disease mice</td><td>Does the protein correct the disease?</td></tr>
-        <tr><td>Non-human primates</td><td>Does expression translate to a larger species?</td></tr>
-      </tbody>
-    </table>
-
-    <h2 id="protein">2. Measure the protein, not just the outcome</h2>
-    <p>The primary readout of an mRNA study is the protein your mRNA is supposed to make. Plan serial blood samples to build a time course after each dose, measured by ELISA or an activity assay.</p>
-    <p>That time course makes the depot visible: in the Fabry study, enzyme made from mRNA circulated far longer than infused enzyme.<sup><a href="#ref2">2</a></sup> It also sets the dosing interval for longer studies.</p>
-    <div class="callout"><b>From the lab</b><p>[Barak to add one sentence from experience, for example how sampling schedules are planned around blood volume limits in mice.]</p></div>
-
-    <h2 id="endpoint">3. Choose a disease endpoint that matters clinically</h2>
-    <ul class="list">
-      <li><b>Hemophilia B:</b> blood loss after a standardized surgical injury, a direct test of whether clotting is restored.<sup><a href="#ref1">1</a></sup></li>
-      <li><b>Fabry disease:</b> Gb3 and lyso-Gb3 in the tissues that fail in patients, the heart and kidney.<sup><a href="#ref2">2</a></sup></li>
-    </ul>
-
-    <h2 id="soc">4. Include the standard of care</h2>
-    <p>The Fabry study's most persuasive result is the head-to-head comparison with enzyme replacement therapy. If an approved therapy exists, include it as a comparator arm. Matching or beating the current standard is what investors and partners want to see.</p>
-
-    <h2 id="repeat">5. Plan for repeat dosing and tolerability</h2>
-    <p>mRNA therapy for a chronic disease means repeat doses. Design at least one arm that doses repeatedly, and track body weight, clinical observations, liver enzymes and protein levels across doses.</p>
+    <p class="lede">Some compounds can't do their job with a daily injection. If a molecule clears in minutes, or the biology needs steady exposure, a once-a-day bolus gives a spike and then nothing. An implanted osmotic pump delivers the compound continuously for days or weeks, without repeated handling of the animal.</p>
+<h2 id="how-an-osmotic-pump-works">How an osmotic pump works</h2>
+<p>An <a href="https://alzet.com/products/alzet_pumps/how-does-it-work/" rel="noopener">Alzet pump</a> is a small capsule with a drug reservoir surrounded by a salt layer and a semipermeable outer membrane. Once implanted, water from the surrounding tissue moves into the salt layer, which squeezes the reservoir and pushes the solution out at a steady rate.</p>
+<p>The rate is set by the membrane, not by your compound, so delivery is predictable whatever the molecule. You set the dose by changing the concentration in the fill solution. Pumps cover rates from 0.08 to 10 µL per hour and durations from about one day to six weeks, in <a href="https://alzet.com/products/ALZET_pumps/specifications/" rel="noopener">three sizes</a>: 100 µL and 200 µL models suited to mice, and 2 mL models for rats and larger animals.</p>
+<h2 id="when-continuous-dosing-is-the-better-choice">When continuous dosing is the better choice</h2>
+<ul class="list">
+<li><strong>Short half-life compounds</strong>, such as many peptides, that would need several injections a day to stay above effective levels</li>
+<li><strong>Steady-state questions</strong>, where the biology depends on constant exposure rather than peaks and troughs</li>
+<li><strong>Long studies</strong>, where daily injections would stress the animals and add handling variables</li>
+<li><strong>Disease induction</strong>, where an agent such as a hormone or peptide is infused to create the model itself</li>
+<li><strong>Brain delivery</strong>, where a compound that can't cross the blood-brain barrier is infused directly into the brain</li>
+</ul>
+<p>Daily injection is still simpler and cheaper when exposure from a bolus is enough, and it lets you stop dosing at any time. A pump keeps delivering until it's empty or removed.</p>
+<h2 id="subcutaneous-intraperitoneal-or-brain-delivery">Subcutaneous, intraperitoneal or brain delivery</h2>
+<div class="table-scroll" role="region" aria-label="Subcutaneous, intraperitoneal or brain delivery" tabindex="0"><table>
+<thead>
+<tr>
+<th>Route</th>
+<th>How</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Subcutaneous</td>
+<td>Pump placed under the skin of the back through a small incision</td>
+<td>Most systemic dosing, the simplest surgery</td>
+</tr>
+<tr>
+<td>Intraperitoneal</td>
+<td>Pump placed in the abdominal cavity</td>
+<td>Larger pumps in small animals, or faster uptake for some compounds</td>
+</tr>
+<tr>
+<td>Intravenous</td>
+<td>Pump connected to a catheter in a vein</td>
+<td>Compounds that must reach blood directly</td>
+</tr>
+<tr>
+<td>Intracerebroventricular (ICV)</td>
+<td>Pump under the skin, connected by a catheter to a cannula placed in a brain ventricle</td>
+<td>Delivery to the brain past the blood-brain barrier</td>
+</tr>
+</tbody>
+</table></div>
+<p>Every route is a surgery. Aseptic technique, anesthesia, pain relief and post-operative monitoring matter as much as the pump itself, and ICV placement needs stereotaxic surgery to hit the ventricle reliably.</p>
+<h2 id="five-details-that-decide-whether-pump-studies-wo">Five details that decide whether pump studies work</h2>
+<ol class="list">
+<li><strong>Stability at body temperature.</strong> The compound sits at 37 °C for the whole delivery period. Confirm it stays stable and soluble for that long in your vehicle.</li>
+<li><strong>Solubility at the needed concentration.</strong> The pump's rate is fixed, so a high dose needs a concentrated solution. Check it can be made before you choose the model.</li>
+<li><strong>Priming.</strong> A pump takes several hours to reach its steady rate after implantation. When delivery must start immediately, prime filled pumps in warm saline beforehand.</li>
+<li><strong>Fill carefully.</strong> Air bubbles in the reservoir cause uneven delivery. Weigh pumps before and after filling to confirm the volume.</li>
+<li><strong>Check delivery at the end.</strong> Recover pumps at termination and measure the residual volume, and confirm exposure with a plasma sample where you can.</li>
+</ol>
 
     <section class="refs" id="refs" aria-labelledby="refs-h">
-      <h2 id="refs-h">References</h2>
-      <ol>
-        <li id="ref1">DeRosa F, Guild B, Karve S, Smith L, Love K, Dorkin JR, Kauffman KJ, Zhang J, <span class="team">Yahalom B</span>, Anderson DG, Heartlein MW. Therapeutic efficacy in a hemophilia B model using a biosynthetic mRNA liver depot system. <i>Gene Therapy</i>. 2016;23(10):699–707.</li>
-        <li id="ref2">DeRosa F, Smith L, Shen Y, Huang Y, Pan J, Xie H, <span class="team">Yahalom B</span>, Heartlein MW. Improved efficacy in a Fabry disease model using a systemic mRNA liver depot system as compared to enzyme replacement therapy. <i>Molecular Therapy</i>. 2019;27(4):878–889.</li>
-      </ol>
+      <h2 id="refs-h">Sources</h2>
+      <ol><li><a href="https://alzet.com/products/alzet_pumps/how-does-it-work/" rel="noopener">Alzet pump</a></li><li><a href="https://alzet.com/products/ALZET_pumps/specifications/" rel="noopener">three sizes</a></li></ol>
     </section>
 
     <div class="review">
@@ -269,13 +274,13 @@ td:first-child{font-weight:600;width:38%}
     </div>
 
     <section class="author" aria-labelledby="author-h">
-      <img src="assets/img/team/barak-yahalom.jpg" alt="Barak Yahalom">
+      <img src="assets/img/team/gil-chacon.jpg" alt="Gil Chacon">
       <div>
-        <h2 id="author-h">Barak Yahalom, DVM</h2>
-        <p class="role">CEO and Chief Scientific Officer, Alpha Preclinical</p>
-        <p>Barak has more than 20 years of scientific and veterinary experience in biotechnology and preclinical research. Before co-founding Alpha, he directed in vivo pharmacology at several biotech companies and held senior roles at Boston Children's Hospital and Biomere.</p>
-        <div class="creds"><span>DVM, Hebrew University of Jerusalem</span><span>20+ years in preclinical research</span><span>8 peer-reviewed publications</span><span>Sideromics Scientific Advisory Board</span></div>
-        <a class="more" href="team.html#barak-yahalom">Full profile and publications</a>
+        <h2 id="author-h">Gil Chacon</h2>
+        <p class="role">In Vivo Studies, Surgical Support and Training, Alpha Preclinical</p>
+        <p>Gil has nearly 20 years in preclinical research. He works on in vivo studies, provides technical and surgical support, trains staff and keeps facility operations running. Before Alpha, he was training and development coordinator at a preclinical CRO.</p>
+        <div class="creds"><span>Nearly 20 years in preclinical research</span><span>Surgical and technical support</span><span>Staff training</span></div>
+        <a class="more" href="team.html#gil-chacon">Full profile</a>
       </div>
     </section>
   </article>
@@ -285,12 +290,8 @@ td:first-child{font-weight:600;width:38%}
 <section class="research" aria-labelledby="res-h">
   <div class="wrap">
     <h2 id="res-h">Related research from our team</h2>
-    <p class="sub">Peer-reviewed papers on mRNA delivery and gene therapy co-authored by Alpha scientists and collaborators.</p>
-    <ul class="papers">
-      <li class="paper"><p class="jr">Molecular Therapy, 2019</p><h3><a href="publications.html">Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy</a></h3><p class="by">DeRosa F, Smith L, Shen Y, Huang Y, Pan J, Xie H, <b>Yahalom B</b>, Heartlein MW</p></li>
-      <li class="paper"><p class="jr">Gene Therapy, 2016</p><h3><a href="publications.html">Therapeutic Efficacy in a Hemophilia B Model Using a Biosynthetic mRNA Liver Depot System</a></h3><p class="by">DeRosa F, Guild B, Karve S, Smith L, Love K, Dorkin JR, Kauffman KJ, Zhang J, <b>Yahalom B</b>, Anderson DG, Heartlein MW</p></li>
-      <li class="paper"><p class="jr">[Journal, year]</p><h3><a href="publications.html">Mechanistic model for improved performance of mRNA–LNPs formulated under turbulent mixing conditions</a></h3><p class="by">Mosesso R, Randall K, Vaidya A, Tang J, Northen T, Deliot A, Sun M, Goldman R, Lyons A, Liu L, Karve S, DeRosa F</p></li>
-    </ul>
+    <p class="sub">Peer-reviewed papers on this topic co-authored by Alpha scientists.</p>
+    <ul class="papers"><li class="paper"><p class="jr">Peer-reviewed publication</p><h3><a href="publications.html">Spinal Anesthesia in Infant Rats: Development of a Model, Preliminary Observations, and Assessment of Neurologic Outcomes</a></h3><p class="by"><b>Yahalom B</b>, Athiraman UK, Soriano S, Zurakowski D, Corfas G, Carpino E, Berde CB</p></li><li class="paper"><p class="jr">Peer-reviewed publication</p><h3><a href="publications.html">Tetrodotoxin-Bupivacaine-Epinephrine Combinations for Prolonged Local Anesthesia</a></h3><p class="by">Berde CB, Athiraman U, <b>Yahalom B</b>, Zurakowski D, Corfas G, Bognet C</p></li></ul>
     <a class="all" href="publications.html">All 16 publications</a>
   </div>
 </section>
@@ -298,19 +299,15 @@ td:first-child{font-weight:600;width:38%}
 <section class="related" aria-labelledby="rel-h">
   <div class="wrap">
     <h2 id="rel-h">Keep reading</h2>
-    <div class="posts">
-      <a class="post" href="blog-how-to-scope-in-vivo-efficacy-study.html"><span class="tag">Study design</span><h3>How to scope your first in vivo efficacy study</h3><p>Barak Yahalom, DVM, 3 min read</p></a>
-      <a class="post" href="blog-flow-cytometry-immunophenotyping-in-vivo-studies.html"><span class="tag">Lab services</span><h3>Getting more from every animal with in-house flow cytometry</h3><p>Cindy Hopper, 3 min read</p></a>
-      <a class="post" href="blog-alzet-osmotic-pump-continuous-dosing.html"><span class="tag">Study design</span><h3>Continuous dosing with Alzet pumps: when and why</h3><p>Gil Chacon, 3 min read</p></a>
-    </div>
+    <div class="posts"><a class="post" href="blog-how-to-scope-in-vivo-efficacy-study.html"><span class="tag">Study design</span><h3>How to scope your first in vivo efficacy study</h3><p>Barak Yahalom, DVM, 3 min read</p></a><a class="post" href="blog-caliper-vs-ivis-tumor-burden.html"><span class="tag">Tumor models</span><h3>Caliper or IVIS? Choosing how to measure tumor burden</h3><p>Barak Yahalom, DVM, 3 min read</p></a><a class="post" href="blog-diet-induced-vs-genetic-type-2-diabetes-models.html"><span class="tag">Metabolic disease</span><h3>Diet-induced versus genetic models of type 2 diabetes</h3><p>Joan Flanagan, PhD, 3 min read</p></a></div>
   </div>
 </section>
 
 <div class="wrap">
   <section class="cta" aria-labelledby="cta-h">
     <div>
-      <h2 id="cta-h">Planning an mRNA or gene therapy study?</h2>
-      <p>Talk with the scientist who wrote this article about models, endpoints and timelines for your program.</p>
+      <h2 id="cta-h">Need continuous or brain-targeted dosing?</h2>
+      <p>Talk with Gil and the Alpha team about models, endpoints and timelines for your program.</p>
       <a class="btn btn-light" href="contact.html">Request a study quote</a>
     </div>
     <img src="assets/img/building-sign.jpg" alt="Alpha Preclinical sign at 722 Plantation Street, Worcester">

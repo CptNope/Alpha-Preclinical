@@ -53,7 +53,7 @@ flowchart LR
     C["Melior Discovery<br/>SEO page structure"] --> E
     D --> E
     F["Old site content<br/>bios, services, 16 papers"] --> E
-    E --> G["Design canvas<br/>13 artboards"]
+    E --> G["Design canvas<br/>14 artboards"]
     E --> H["Design system<br/>tokens + rules"]
     E --> I["7 blog drafts<br/>SEO-optimized"]
 ```
@@ -65,7 +65,7 @@ flowchart LR
 ```mermaid
 flowchart TD
     H["Home<br/>index.html"]
-    H --> EX["Expertise (6 areas)"]
+    H --> EX["Expertise<br/>expertise.html<br/>(6 areas as sections)"]
     H --> SV["Services<br/>services.html"]
     H --> AB["About<br/>about.html"]
     H --> TM["Team<br/>team.html"]
@@ -75,28 +75,24 @@ flowchart TD
     H --> CO["Contact / quote<br/>contact.html"]
     H --> LG["Footer: Privacy, Terms,<br/>Accessibility"]
 
-    EX --> TU["Tumor models<br/>tumor-models.html<br/>(template for all 6)"]
-    EX -.-> X1["PK/PD"]
-    EX -.-> X2["Gene therapy"]
-    EX -.-> X3["Autoimmune"]
-    EX -.-> X4["Metabolic"]
-    EX -.-> X5["Inflammation & fibrosis"]
+    EX --> TU["Tumor models<br/>tumor-models.html<br/>(deep-dive template)"]
+    EX --> BL
 
-    BL --> BP["Blog post<br/>blog-mrna-liver-depot-study-design.html<br/>(template for all posts)"]
+    BL --> BP["7 blog posts<br/>blog-*.html<br/>(one shared template)"]
     BP --> PB
     BP --> TM
+    BP --> EX
     TM --> PB
+    TM --> EX
     TU --> TM
     SV --> TM
     SV --> CO
 
     classDef built fill:#1E58A0,color:#fff,stroke:#0F3360
-    classDef todo fill:#EEF5FB,color:#1F2858,stroke:#4B98D2,stroke-dasharray:4 3
-    class H,SV,AB,TM,PB,BL,CA,CO,TU,BP,LG built
-    class X1,X2,X3,X4,X5 todo
+    class H,EX,SV,AB,TM,PB,BL,CA,CO,TU,BP,LG built
 ```
 
-Solid boxes are designed and built. Dashed boxes reuse the tumor-models template and still need their own content.
+Every page is designed and built. The six expertise areas are sections of `expertise.html` (anchors `#pk-pd`, `#gene-therapy`, `#autoimmune`, `#metabolic`, `#fibrosis`, `#tumor`); `tumor-models.html` shows how any area can grow into its own deep-dive page later.
 
 ---
 
@@ -106,12 +102,14 @@ Solid boxes are designed and built. Dashed boxes reuse the tumor-models template
 | --- | --- | --- | --- |
 | Home | `index.html` | FAQ accordion, mobile menu | Hero with animated strata, 6 expertise areas with leads, 4 services, study process, featured publications, team, FAQ, quote CTA |
 | Services | `services.html` | Jump links to each service | Study types, then IVIS imaging, surgical services, colony management, in vitro laboratory and study support, each with its lead and full detail from the old site |
+| Expertise | `expertise.html` | Jump links to each area | All six therapeutic areas: overview, the models from the old site in a table, who leads it, related papers and blog posts |
 | Tumor models | `tumor-models.html` | — | Template for each disease-model page: models table, in-house endpoints, study team, related expertise |
 | Publications | `publications.html` | Filter by research area | All 16 papers grouped by area, Alpha authors called out |
 | About | `about.html` | — | Company story, key facts, values, facility, leadership |
 | Team | `team.html` | Photo swap on hover | Group photo, leadership and founding team profiles with education, prior roles, affiliations and the areas each person leads |
-| Blog | `blog.html` | Filter by topic | Index of the seven launch posts |
-| Blog post | `blog-mrna-liver-depot-study-design.html` | — | Single-post template built for E-E-A-T (see below) |
+| Blog | `blog.html` | Filter by topic | Index of the seven launch posts, all linked |
+| Blog post (designed) | `blog-mrna-liver-depot-study-design.html` | — | Single-post template built for E-E-A-T (see below) |
+| Blog posts (generated) | `blog-how-to-scope-in-vivo-efficacy-study.html`, `blog-caliper-vs-ivis-tumor-burden.html`, `blog-diet-induced-vs-genetic-type-2-diabetes-models.html`, `blog-flow-cytometry-immunophenotyping-in-vivo-studies.html`, `blog-alzet-osmotic-pump-continuous-dosing.html`, `blog-rat-models-type-1-diabetes.html` | — | The other six drafts on the same template: author and reviewer, contents, key takeaways, sources, related Alpha papers, quote CTA, `Article` schema |
 | Contact | `contact.html` | Demo form with validation | Quote form with study-type picker, contact details, building photo, branded map |
 | Privacy policy | `privacy.html` | — | **Draft for legal review.** What the forms collect, how it is used and shared, retention, rights |
 | Terms of use | `terms.html` | — | **Draft for legal review.** Site use, studies governed by separate agreements, IP, disclaimers, Massachusetts law |
@@ -124,25 +122,27 @@ Solid boxes are designed and built. Dashed boxes reuse the tumor-models template
 
 ```mermaid
 flowchart LR
-    R(("repo root")) --> P["*.html<br/>13 static pages"]
+    R(("repo root")) --> P["*.html<br/>20 static pages"]
     R --> AS["assets/"]
     AS --> CSS["css/site.css<br/>shared: menu, skip link, filters"]
     AS --> JS["js/site.js<br/>filters, accordions, demo forms"]
     AS --> IMG["img/<br/>logos, photos, map"]
     IMG --> TEAM["team/<br/>10 headshots"]
     R --> DS["design/"]
-    DS --> CV["canvas/<br/>13 .dc.html artboards + canvas.json"]
+    DS --> CV["canvas/<br/>14 .dc.html artboards + canvas.json"]
     DS --> SYS["design-system/<br/>tokens.json, README.md, cover"]
     R --> CT["content/blog-posts.md<br/>7 SEO blog drafts"]
     R --> WP["wordpress/theme.json<br/>FSE starter"]
     R --> TL["tools/convert.py<br/>canvas → static HTML"]
+    R --> TB["tools/build_posts.py<br/>drafts → post pages"]
     R --> DC["docs/<br/>accessibility audit + script"]
 ```
 
 ```text
 .
 ├── index.html, about.html, team.html, publications.html, blog.html,
-│   blog-mrna-liver-depot-study-design.html, services.html, tumor-models.html,
+│   services.html, expertise.html, tumor-models.html,
+│   blog-*.html (7 posts),
 │   contact.html, careers.html,
 │   privacy.html, terms.html, accessibility.html   # generated preview pages
 ├── assets/
@@ -155,6 +155,7 @@ flowchart LR
 ├── content/blog-posts.md                # all 7 blog drafts with SEO fields and sources
 ├── wordpress/theme.json                 # token mapping for the FSE block theme
 ├── tools/convert.py                     # regenerates the HTML pages from design/canvas
+├── tools/build_posts.py                 # builds the six other posts from content/blog-posts.md
 ├── docs/accessibility-audit.md          # WCAG 2.1 AA audit report
 ├── docs/a11y-audit.py                   # re-runnable audit (axe-core + custom checks)
 ├── .nojekyll                            # serve files as-is on GitHub Pages
@@ -296,14 +297,21 @@ flowchart LR
     B --> F["Pre-render loops from page data<br/>FAQ, papers, posts, roles"]
     B --> G["Add meta, JSON-LD, skip link,<br/>mobile menu, site.js"]
     C & D & E & F & G --> H["*.html in repo root"]
-    H --> I["GitHub Pages"]
+    MD["content/blog-posts.md"] --> BP["tools/build_posts.py"]
+    H -- "designed post as template" --> BP
+    BP --> H2["6 more blog-*.html<br/>+ read times + internal links"]
+    H & H2 --> I["GitHub Pages"]
 ```
 
-To regenerate after editing an artboard (needs Python 3 and Node.js, which evaluates each page's data arrays):
+To regenerate after editing an artboard or a blog draft (needs Python 3 with the `markdown` package, and Node.js, which evaluates each page's data arrays). Run both, in this order:
 
 ```bash
+pip install markdown
 python3 tools/convert.py design/canvas .
+python3 tools/build_posts.py
 ```
+
+`build_posts.py` fills the designed post with each draft (the SEO table at the top of each draft becomes the title, meta and slug), sets read times from real word counts on every page, and points matching links across the site at the new posts.
 
 The script stops with an error if any template syntax (`{{ }}`, `<sc-for>`, `<sc-if>`) is left unconverted.
 
@@ -362,7 +370,7 @@ The site was audited against **WCAG 2.1 AA** (plus the WCAG 2.2 target-size rule
 
 | Check | Result |
 | --- | --- |
-| axe-core (wcag2a, wcag2aa, wcag21a, wcag21aa) | 0 violations on all 13 pages |
+| axe-core (wcag2a, wcag2aa, wcag21a, wcag21aa) | 0 violations on all 20 pages |
 | Reflow at 320 px and text spacing (1.4.10, 1.4.12) | Pass on all pages |
 | Visible focus on every focusable element (2.4.7) | Pass |
 | Hero animation can be paused (2.2.2) | Pause button; starts paused under reduced motion |
@@ -398,7 +406,7 @@ AXE_PATH=path/to/axe.min.js python3 docs/a11y-audit.py http://localhost:8766 aud
 - [ ] Journal, year, volume and DOI for each publication, plus PDFs
 - [ ] ORCID / Google Scholar links for Barak and Joan
 - [ ] Real lab photos for each therapeutic area
-- [ ] Model names and strains for each disease-model page
+- [ ] Confirm the model lists on the Expertise page are current (copied from the old site)
 - [ ] Author review of each blog post, plus one first-hand detail per post
 
 ### Build tasks
@@ -406,7 +414,7 @@ AXE_PATH=path/to/axe.min.js python3 docs/a11y-audit.py http://localhost:8766 aud
 - [ ] Attorney review of the draft Privacy Policy and Terms of Use (bracketed items depend on the final analytics, form and hosting tools)
 - [ ] Response time for accessibility requests (Accessibility Statement)
 - [ ] Screen-reader pass with VoiceOver and NVDA on staging
-- [ ] Five remaining expertise pages from the tumor-models template
+- [ ] PDF download and share links on blog posts (placeholders)
 - [ ] Real form handling and spam protection
 - [ ] `JobPosting`, `Person` and `ScholarlyArticle` schema
 - [ ] XML sitemap and redirects from old Wix URLs (`/experetise`, `/services`, `/about-us`, `/pk-pd`, …)

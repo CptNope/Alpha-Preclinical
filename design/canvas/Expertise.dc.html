@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Alpha Preclinical expertise</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+.ap{--navy:#1F2858;--abyss:#0F3360;--tide:#1E58A0;--current:#4B98D2;--shallows:#88C6EE;--mist:#EEF5FB;--paper:#FFFFFF;--muted:#4A5878;--on-abyss:#B9CCE3;--line:#D3E0EE;
+  font-family:"Figtree","Helvetica Neue",Arial,sans-serif;color:var(--navy);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.ap *{box-sizing:border-box}
+.ap h1,.ap h2,.ap h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;font-weight:600;margin:0;text-wrap:balance}
+.ap p{margin:0}
+.ap a{color:var(--tide)}
+.ap a:hover{color:var(--navy)}
+.ap a:focus-visible{outline:3px solid var(--current);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;line-height:1}
+.ap .btn-primary{background:var(--tide);color:#fff}
+.ap .btn-primary:hover{background:var(--navy);color:#fff}
+.ap .btn-light{background:var(--shallows);color:var(--abyss)}
+.ap .btn-light:hover{background:#fff;color:var(--abyss)}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:32px;padding-top:24px;padding-bottom:24px}
+.nav{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.ap .nav a{color:#fff;text-decoration:none;font-weight:500}
+.ap .nav a:hover,.ap .nav a[aria-current]{color:var(--shallows)}
+.top{position:relative;background:var(--abyss);color:#fff;overflow:hidden}
+.top-body{position:relative;z-index:2;padding-top:40px;padding-bottom:200px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:end}
+.crumbs{display:flex;gap:10px;list-style:none;margin:0 0 28px;padding:0;font-size:15px;color:var(--on-abyss)}
+.ap .crumbs a{color:var(--on-abyss);text-decoration:none}
+.crumbs li+li::before{content:"/";margin-right:10px;color:rgba(185,204,227,.5)}
+.top h1{font-size:clamp(42px,5.6vw,76px);line-height:.99;letter-spacing:-.035em}
+.top .lead-in{color:var(--on-abyss);font-size:20px;line-height:1.55;max-width:34em;margin-top:24px}
+.top-photo{border-radius:14px;overflow:hidden;aspect-ratio:4/3;margin-bottom:-56px;position:relative;z-index:2}
+.top-photo img{width:100%;height:100%;object-fit:cover;object-position:35% 50%;display:block}
+.strata{position:absolute;left:0;right:0;bottom:-1px;height:200px;z-index:1}
+.strata svg{width:100%;height:100%;display:block}
+
+.sec{padding:112px 0}
+.sec-mist{background:var(--mist)}
+.h2{font-size:clamp(32px,3.8vw,48px);line-height:1.05;letter-spacing:-.025em}
+.intro{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
+.intro .body{display:grid;gap:18px;font-size:19px;line-height:1.65;color:var(--navy);max-width:36em}
+.intro .body p+p{color:var(--muted)}
+.types{list-style:none;margin:64px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px;border-top:1.5px solid var(--navy);padding-top:32px}
+.types h3{font-size:22px;line-height:1.2;margin-bottom:10px}
+.types p{color:var(--muted);font-size:16px}
+
+.jump{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.ap .jump a{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:999px;background:#fff;border:1.5px solid var(--line);color:var(--navy);text-decoration:none;font-weight:500}
+.ap .jump a:hover{border-color:var(--tide);color:var(--tide)}
+
+.svc{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start;padding:80px 0;border-top:1.5px solid var(--line);scroll-margin-top:24px}
+.svc:first-of-type{border-top:0;padding-top:0}
+.svc h2{font-size:clamp(30px,3.2vw,42px);line-height:1.06;letter-spacing:-.02em}
+.svc .desc{color:var(--muted);font-size:18px;line-height:1.6;margin-top:16px;max-width:30em}
+.lead{display:flex;align-items:center;gap:14px;margin-top:28px;padding:14px 16px;border-radius:14px;background:var(--mist);max-width:380px}
+.sec-mist .lead{background:#fff}
+.lead img{width:52px;height:52px;border-radius:999px;object-fit:cover;object-position:50% 18%;flex:none}
+.lead small{display:block;font-size:13px;color:var(--muted);line-height:1.3}
+.lead b{display:block;font-size:16px;line-height:1.3}
+.ap .lead a{color:var(--navy);text-decoration:none}
+.ap .lead a:hover{color:var(--tide)}
+.lead .pair{display:flex}
+.lead .pair img+img{margin-left:-14px;box-shadow:0 0 0 2px var(--mist)}
+.sec-mist .lead .pair img+img{box-shadow:0 0 0 2px #fff}
+.detail{display:grid;gap:28px}
+.detail h3{font-family:"Figtree",sans-serif;font-size:14px;font-weight:600;color:var(--muted);margin-bottom:10px}
+.detail ul{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--line)}
+.detail li{padding:14px 0;border-bottom:1.5px solid var(--line);font-size:17px;line-height:1.5}
+.detail li span{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+.related{font-size:15px;color:var(--muted)}
+.ap .related a{font-weight:600;text-decoration:none}
+.svc-photo{border-radius:14px;overflow:hidden;aspect-ratio:16/10;margin-bottom:8px}
+.svc-photo img{width:100%;height:100%;object-fit:cover;object-position:35% 50%;display:block}
+
+.band{background:var(--abyss);color:#fff;border-radius:14px;padding:56px;display:flex;justify-content:space-between;align-items:center;gap:40px}
+.band h2{font-size:36px;line-height:1.08;letter-spacing:-.02em;max-width:18ch}
+.band p{color:var(--on-abyss);margin-top:12px;max-width:30em}
+@media (max-width:1080px){.nav,.hdr .btn{display:none}.top-body,.intro,.svc{grid-template-columns:minmax(0,1fr);gap:36px}.top-photo{margin-bottom:0}.types{grid-template-columns:repeat(2,minmax(0,1fr))}.band{flex-direction:column;align-items:flex-start;padding:40px}}
+@media (max-width:680px){.wrap{padding:0 16px}.sec{padding:72px 0}.top-body{padding-bottom:110px}.strata{height:110px}.types{grid-template-columns:minmax(0,1fr);gap:28px}.svc{padding:56px 0}}
+
+/* shared footer */
+.ftr{background:#0B2747;color:var(--on-abyss);padding:80px 0 40px;font-size:15px}
+.ftr-grid{display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,2fr));gap:40px}
+.ap .ftr h2{font-family:"Figtree",sans-serif;font-size:15px;font-weight:600;color:#fff;margin:0 0 14px}
+.ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ap .ftr a{color:var(--on-abyss);text-decoration:none}
+.ap .ftr a:hover{color:#fff}
+.ftr address{font-style:normal;line-height:1.6;margin-top:24px}
+.ftr-base{margin-top:64px;padding-top:24px;border-top:1px solid rgba(185,204,227,.2);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+@media (max-width:1240px){.nav{gap:18px}.ap .nav a{font-size:15px}}
+@media (max-width:1080px){.ftr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:680px){.ftr-grid{grid-template-columns:minmax(0,1fr)}.ftr{padding:56px 0 32px}}
+
+/* accessibility (WCAG 2.1 AA audit) */
+.ap h1,.ap h2,.ap h3{overflow-wrap:break-word;hyphens:auto}
+.ap a[href^="mailto:"]{overflow-wrap:anywhere}
+.ap .lead a,.ap .side a,.ap .member,.ap .who a{display:inline-block;padding:3px 0}
+.ftr-base .legal-links{display:flex;flex-wrap:wrap;gap:8px 24px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ap .nav a{display:inline-block;padding:10px 0}
+.ap .ftr li a,.ap .ftr-base a,.ap .crumbs a{display:inline-block;padding:4px 0}
+.ap .btn{max-width:100%;text-align:center;line-height:1.2}
+.top-body{padding-bottom:204px}
+@media (max-width:680px){.top-body{padding-bottom:132px}.strata{height:110px}}
+
+/* expertise page */
+.areas-nav{list-style:none;margin:0 0 -56px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;position:relative;z-index:2}
+.ap .areas-nav a{display:flex;flex-direction:column;gap:2px;min-height:76px;justify-content:center;padding:14px 18px;border-radius:14px;background:rgba(255,255,255,.08);border:1.5px solid rgba(136,198,238,.35);color:#fff;text-decoration:none}
+.ap .areas-nav a:hover{background:#fff;color:var(--abyss)}
+.areas-nav span{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:19px;line-height:1.2}
+.areas-nav small{font-size:13.5px;color:var(--on-abyss);line-height:1.3}
+.ap .areas-nav a:hover small{color:var(--muted)}
+.mtable{width:100%;border-collapse:collapse;font-size:16px;background:#fff;border-radius:14px;overflow:hidden}
+.mtable th{text-align:left;font-weight:600;font-size:14px;color:var(--muted);padding:14px 18px;border-bottom:1.5px solid var(--navy)}
+.mtable td{padding:16px 18px;border-bottom:1.5px solid var(--line);vertical-align:top;line-height:1.5}
+.mtable tr:last-child td{border-bottom:0}
+.mtable td:first-child{font-weight:600;width:36%}
+.pubs ul,.reads ul{border-top:0}
+.pubs li span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+.ap .pubs li a,.ap .reads li a{color:var(--navy);text-decoration:none;font-weight:600;line-height:1.35}
+.ap .pubs li a:hover,.ap .reads li a:hover{color:var(--tide);text-decoration:underline;text-underline-offset:3px}
+.more{margin-top:4px}
+@media (max-width:1080px){.areas-nav{margin-bottom:0}}
+@media (max-width:680px){.areas-nav{grid-template-columns:minmax(0,1fr)}.mtable td:first-child{width:auto}.mtable thead{display:none}.mtable tr{display:grid;gap:4px;padding:14px 16px;border-bottom:1.5px solid var(--line)}.mtable td{padding:0;border:0}}
+</style>
+</helmet>
+<div class="ap">
+<header class="top">
+  <div class="wrap hdr">
+    <a href="Main.dc.html" aria-label="Alpha Preclinical home"><img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
+    <nav aria-label="Main"><ul class="nav"><li><a href="Expertise.dc.html" aria-current="page">Expertise</a></li><li><a href="Services.dc.html">Services</a></li><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></nav>
+    <a class="btn btn-light" href="Contact.dc.html">Request a study quote</a>
+  </div>
+  <div class="wrap top-body">
+    <div>
+      <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="Main.dc.html">Home</a></li><li aria-current="page">Expertise</li></ol></nav>
+      <h1>Disease models and study expertise across six therapeutic areas</h1>
+      <p class="lead-in">Validated rodent models and study designs for PK/PD, gene therapy, autoimmune and metabolic disease, inflammation and fibrosis, and oncology. Each area is led by a senior scientist who has published in it or run it for years.</p>
+    </div>
+    <nav aria-label="Areas of expertise"><ul class="areas-nav"><li><a href="#pk-pd"><span>PK/PD</span><small>Routes, samples, imaging</small></a></li><li><a href="#gene-therapy"><span>Gene therapy</span><small>Nucleic acid delivery</small></a></li><li><a href="#autoimmune"><span>Autoimmune disease</span><small>SLE, T1D, EAE, IBD, RA</small></a></li><li><a href="#metabolic"><span>Metabolic disease</span><small>Obesity, T2D, NASH, lipids</small></a></li><li><a href="#fibrosis"><span>Inflammation and fibrosis</span><small>OA, fibrosis, LPS</small></a></li><li><a href="#tumor"><span>Tumor models</span><small>Subcutaneous, orthotopic</small></a></li></ul></nav>
+  </div>
+  <div class="strata" aria-hidden="true">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0 70 C180 30 540 110 720 70 S1260 30 1440 70 L1440 200 L0 200 Z" fill="#1E58A0"></path>
+      <path d="M0 110 C180 76 540 144 720 110 S1260 76 1440 110 L1440 200 L0 200 Z" fill="#4B98D2"></path>
+      <path d="M0 144 C180 118 540 170 720 144 S1260 118 1440 144 L1440 200 L0 200 Z" fill="#88C6EE"></path>
+      <path d="M0 174 C180 156 540 192 720 174 S1260 156 1440 174 L1440 200 L0 200 Z" fill="#FFFFFF"></path>
+    </svg>
+  </div>
+</header>
+
+<main>
+<section class="sec sec-mist" aria-label="Areas of expertise">
+  <div class="wrap">
+    <article class="svc" id="pk-pd">
+      <div>
+        <h2>PK/PD</h2>
+        <p class="desc">Well-run pharmacokinetic and pharmacodynamic studies tell you how much of your compound reaches its target, for how long, and with what effect. We run them primarily in rodents, with capacity for most common laboratory species.</p>
+        <div class="lead"><img src="/_blob/c9d31a9dcb31363d7c0a0ba388f59670" alt=""><div><small>Led by</small><b><a href="Team.dc.html#barak-yahalom">Barak Yahalom, DVM</a></b></div></div>
+      </div>
+      <div class="detail">
+        <table class="mtable"><thead><tr><th scope="col">Capability</th><th scope="col">What we offer</th></tr></thead><tbody><tr><td>Routine routes</td><td>Intravenous, oral, subcutaneous, intraperitoneal, intramuscular, intradermal, topical, rectal</td></tr><tr><td>Specialized routes</td><td>Hydrodynamic IV, intravitreal, intra-articular, Alzet continuous subcutaneous, intrathecal, intratracheal, intracerebroventricular, nebulizer, intrasplenic, portal vein</td></tr><tr><td>Samples</td><td>Blood, urine, feces, cerebrospinal fluid, bile</td></tr><tr><td>Imaging</td><td>In-life IVIS bioluminescence and fluorescence</td></tr></tbody></table>
+        <div class="pubs"><h3>Related research by our scientists</h3><ul><li><a href="Publications.dc.html">Spinal Anesthesia in Infant Rats: Development of a Model, Preliminary Observations, and Assessment of Neurologic Outcomes</a><span>Yahalom B, et al.</span></li><li><a href="Publications.dc.html">Tetrodotoxin-Bupivacaine-Epinephrine Combinations for Prolonged Local Anesthesia</a><span>Berde CB, Athiraman U, Yahalom B, et al.</span></li></ul></div>
+        <div class="reads"><h3>Read more on the blog</h3><ul><li><a href="BlogPost.dc.html">How to scope your first in vivo efficacy study</a></li><li><a href="BlogPost.dc.html">Continuous dosing with Alzet pumps: when and why</a></li></ul></div>
+      </div>
+    </article>
+    <article class="svc" id="gene-therapy">
+      <div>
+        <h2>Gene therapy</h2>
+        <p class="desc">Gene therapy modifies or replaces faulty genes to treat, cure or prevent disease. Our scientists have worked with nucleic acid delivery for more than a decade, across many carriers, vectors and routes of administration.</p>
+        <div class="lead"><img src="/_blob/c9d31a9dcb31363d7c0a0ba388f59670" alt=""><div><small>Led by</small><b><a href="Team.dc.html#barak-yahalom">Barak Yahalom, DVM</a></b></div></div>
+      </div>
+      <div class="detail">
+        <table class="mtable"><thead><tr><th scope="col">Capability</th><th scope="col">Details</th></tr></thead><tbody><tr><td>Nucleic acid delivery</td><td>Multiple carrier and vector systems, including lipid nanoparticles, by many routes</td></tr><tr><td>Custom models</td><td>Developed around your platform's delivery requirements</td></tr><tr><td>Pulmonary delivery</td><td>Nebulizer and intratracheal administration</td></tr><tr><td>Hydrodynamic IV</td><td>High-volume tail vein delivery for liver expression</td></tr><tr><td>Genetically modified rodents</td><td>Knockout and transgenic disease models</td></tr><tr><td>Imaging</td><td>In-life IVIS bioluminescence and fluorescence</td></tr></tbody></table>
+        <div class="pubs"><h3>Related research by our scientists</h3><ul><li><a href="Publications.dc.html">Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy</a><span>Molecular Therapy, 2019</span></li><li><a href="Publications.dc.html">Therapeutic Efficacy in a Hemophilia B Model Using a Biosynthetic mRNA Liver Depot System</a><span>Gene Therapy, 2016</span></li></ul></div>
+        <div class="reads"><h3>Read more on the blog</h3><ul><li><a href="BlogPost.dc.html">What an mRNA liver depot study looks like in practice</a></li></ul></div>
+      </div>
+    </article>
+    <article class="svc" id="autoimmune">
+      <div>
+        <h2>Autoimmune disease</h2>
+        <p class="desc">Each autoimmune disease has its own mechanism, but all are a malfunction of the immune system, driven by genes together with environment, lifestyle and infection. We run both spontaneous and induced rodent models.</p>
+        <div class="lead"><img src="/_blob/590caa59917513c5891b761a02b75807" alt=""><div><small>Led by</small><b><a href="Team.dc.html#joan-flanagan">Joan Flanagan, PhD</a></b></div></div>
+      </div>
+      <div class="detail">
+        <table class="mtable"><thead><tr><th scope="col">Disease</th><th scope="col">Models</th></tr></thead><tbody><tr><td>Systemic lupus erythematosus (SLE)</td><td>NZB/W F1 and MRL/lpr spontaneous mouse models</td></tr><tr><td>Type 1 diabetes</td><td>Streptozotocin (STZ)-induced model</td></tr><tr><td>Multiple sclerosis (EAE)</td><td>MOG- and PLP-induced experimental autoimmune encephalomyelitis</td></tr><tr><td>Inflammatory bowel disease</td><td>TNBS- and DSS-induced colitis</td></tr><tr><td>Rheumatoid arthritis</td><td>CFA/IFA-induced arthritis</td></tr></tbody></table>
+        <div class="pubs"><h3>Related research by our scientists</h3><ul><li><a href="Publications.dc.html">LEW.1WR1 Rats Develop Autoimmune Diabetes Spontaneously and in Response to Environmental Perturbation</a><span>Mordes JP, … Flanagan JF, et al.</span></li><li><a href="Publications.dc.html">Prevention of Type 1 Diabetes in the Rat With an Allele-Specific Anti-T-Cell Receptor Antibody</a><span>Liu Z, … Yahalom B, et al.</span></li><li><a href="Publications.dc.html">Development of Standardized Insulin Treatment Protocols for Spontaneous Rodent Models of Type 1 Diabetes</a><span>Grant CW, … Yahalom B, et al.</span></li></ul></div>
+        <div class="reads"><h3>Read more on the blog</h3><ul><li><a href="BlogPost.dc.html">Spontaneous rat models of type 1 diabetes, explained</a></li><li><a href="BlogPost.dc.html">Getting more from every animal with in-house flow cytometry</a></li></ul></div>
+      </div>
+    </article>
+    <article class="svc" id="metabolic">
+      <div>
+        <h2>Metabolic disease</h2>
+        <p class="desc">Metabolic diseases disrupt how cells process or transport proteins, carbohydrates and lipids. Our team draws on years of diabetes research and close ties with specialists in the field to evaluate metabolic drug candidates thoroughly.</p>
+        <div class="lead"><img src="/_blob/590caa59917513c5891b761a02b75807" alt=""><div><small>Led by</small><b><a href="Team.dc.html#joan-flanagan">Joan Flanagan, PhD</a></b></div></div>
+      </div>
+      <div class="detail">
+        <table class="mtable"><thead><tr><th scope="col">Disease</th><th scope="col">Models</th></tr></thead><tbody><tr><td>Obesity</td><td>Diet-induced obesity (DIO) rodents, ob/ob mice</td></tr><tr><td>Type 2 diabetes</td><td>db/db mice and ZDF rats, including wound healing studies</td></tr><tr><td>Fatty liver disease</td><td>NAFLD and NASH models</td></tr><tr><td>Lipid disorders</td><td>High-fat diet-induced dyslipidemia and hypercholesterolemia</td></tr></tbody></table>
+        <div class="pubs"><h3>Related research by our scientists</h3><ul><li><a href="Publications.dc.html">The BBZDR/Wor Rat Model for Investigating the Complications of Type 2 Diabetes Mellitus</a><span>Tirabassi RS, Flanagan JF, et al.</span></li><li><a href="Publications.dc.html">The C57BL/6NCrl-lb Mouse: A New Model for Metabolic Syndrome</a><span>Owens DR, … Flanagan J</span></li><li><a href="Publications.dc.html">Antidiabetic effect of novel modulating peptides of G-protein-coupled kinase in experimental models of diabetes</a><span>Leshem O, … Yahalom B, et al.</span></li></ul></div>
+        <div class="reads"><h3>Read more on the blog</h3><ul><li><a href="BlogPost.dc.html">Diet-induced versus genetic models of type 2 diabetes</a></li></ul></div>
+      </div>
+    </article>
+    <article class="svc" id="fibrosis">
+      <div>
+        <h2>Inflammation and fibrosis</h2>
+        <p class="desc">Rodent models of inflammation and inflammatory pain are widely used to study how tissue injury leads to persistent pain and disease. We provide complete evaluations of anti-inflammatory and anti-fibrotic compounds.</p>
+        <div class="lead"><img src="/_blob/c9d31a9dcb31363d7c0a0ba388f59670" alt=""><div><small>Led by</small><b><a href="Team.dc.html#barak-yahalom">Barak Yahalom, DVM</a></b></div></div>
+      </div>
+      <div class="detail">
+        <table class="mtable"><thead><tr><th scope="col">Model</th><th scope="col">Details</th></tr></thead><tbody><tr><td>Osteoarthritis</td><td>Complete Freund's Adjuvant (CFA)-induced</td></tr><tr><td>Pulmonary fibrosis</td><td>Bleomycin-induced</td></tr><tr><td>Systemic inflammation</td><td>LPS-induced</td></tr><tr><td>Tissues evaluated</td><td>Skin, paw, muscle, joint and visceral organs</td></tr></tbody></table>
+        <div class="pubs"><h3>Related research by our scientists</h3><ul><li><a href="Publications.dc.html">Antinociceptive Effect of Vapocoolant Medium Stream Spray on Hotplate Latency in Rat Pups</a><span>Sethna NF, Fish B, Yahalom B, et al.</span></li></ul></div>
+        <div class="reads"><h3>Read more on the blog</h3><ul><li><a href="BlogPost.dc.html">Getting more from every animal with in-house flow cytometry</a></li></ul></div>
+      </div>
+    </article>
+    <article class="svc" id="tumor">
+      <div>
+        <h2>Tumor models</h2>
+        <p class="desc">Using commercially available murine and human cell lines, we build subcutaneous and orthotopic tumor models for anti-tumor activity, dose response and tumor progression studies.</p>
+        <div class="lead"><img src="/_blob/c9d31a9dcb31363d7c0a0ba388f59670" alt=""><div><small>Led by</small><b><a href="Team.dc.html#barak-yahalom">Barak Yahalom, DVM</a></b></div></div>
+      </div>
+      <div class="detail">
+        <table class="mtable"><thead><tr><th scope="col">Model</th><th scope="col">Used for</th></tr></thead><tbody><tr><td>Subcutaneous</td><td>Pharmacodynamic target activity, anti-tumor efficacy and dose response</td></tr><tr><td>Orthotopic</td><td>Tumor progression in the organ of origin</td></tr><tr><td>Imaging</td><td>In-life and ex vivo Spectrum IVIS bioluminescence (luciferase)</td></tr></tbody></table>
+        <p class="more"><a class="btn btn-primary" href="Model.dc.html">See tumor models in detail</a></p>
+        <div class="reads"><h3>Read more on the blog</h3><ul><li><a href="BlogPost.dc.html">Caliper or IVIS? Choosing how to measure tumor burden</a></li></ul></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="band">
+      <div><h2>Need a model that isn't listed?</h2><p>We adapt existing models and set up models from the literature. Tell us what you need to show and we'll recommend a design.</p></div>
+      <a class="btn btn-light" href="Contact.dc.html">Request a study quote</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="ftr">
+  <div class="wrap">
+    <nav class="ftr-grid" aria-label="Footer">
+      <div>
+        <img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:96px;height:auto;display:block">
+        <address>Alpha Preclinical LLC<br>722 Plantation Street<br>Worcester, MA 01605<br><a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a></address>
+      </div>
+      <div><h2>Expertise</h2><ul><li><a href="Expertise.dc.html#pk-pd">PK/PD</a></li><li><a href="Expertise.dc.html#gene-therapy">Gene therapy</a></li><li><a href="Expertise.dc.html#autoimmune">Autoimmune disease</a></li><li><a href="Expertise.dc.html#metabolic">Metabolic disease</a></li><li><a href="Expertise.dc.html#fibrosis">Inflammation and fibrosis</a></li><li><a href="Model.dc.html">Tumor models</a></li></ul></div>
+      <div><h2>Services</h2><ul><li><a href="Services.dc.html#ivis">IVIS imaging</a></li><li><a href="Services.dc.html#surgery">Surgical services</a></li><li><a href="Services.dc.html#colony">Colony management</a></li><li><a href="Services.dc.html#in-vitro">In vitro laboratory</a></li><li><a href="Services.dc.html#support">Study support</a></li></ul></div>
+      <div><h2>Company</h2><ul><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></div>
+    </nav>
+    <div class="ftr-base"><span>© 2026 Alpha Preclinical LLC</span><span class="legal-links"><a href="Privacy.dc.html">Privacy policy</a><a href="Terms.dc.html">Terms of use</a><a href="Accessibility.dc.html">Accessibility</a></span></div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7511}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

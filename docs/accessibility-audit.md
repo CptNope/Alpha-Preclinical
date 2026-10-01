@@ -5,7 +5,7 @@
 ## Summary
 
 **Before fixes:** axe-core reported 0 violations, but manual and scripted checks found 9 issues (3 major, 6 minor).
-**After fixes:** axe-core reports 0 violations on all 13 pages, and all 9 issues are resolved.
+**After fixes:** axe-core reports 0 violations on all 20 pages (13 at the original audit, plus the Expertise page and six more blog posts added since), and all 9 issues are resolved.
 
 | | Before | After |
 | --- | --- | --- |
@@ -20,7 +20,7 @@ Automated tools catch roughly a third of accessibility problems. Most findings b
 
 ```mermaid
 flowchart LR
-    A["axe-core scan<br/>13 pages"] --> R["Findings"]
+    A["axe-core scan<br/>20 pages"] --> R["Findings"]
     B["Keyboard walk<br/>80 tab stops/page"] --> R
     C["Reflow 320 px<br/>+ text spacing"] --> R
     D["Touch targets<br/>24 px minimum"] --> R

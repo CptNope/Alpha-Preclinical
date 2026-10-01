@@ -9,12 +9,8 @@ from playwright.sync_api import sync_playwright
 BASE, OUT = sys.argv[1], sys.argv[2]
 import os
 AXE = open(os.environ.get('AXE_PATH', 'node_modules/axe-core/axe.min.js')).read()
-PAGES = ['index', 'services', 'tumor-models', 'publications', 'about', 'team', 'blog',
-         'blog-mrna-liver-depot-study-design', 'contact', 'careers']
-import os
-for extra in ['terms', 'privacy', 'accessibility']:
-    if os.path.exists(f'{extra}.html'):
-        PAGES.append(extra)
+import glob
+PAGES = sorted(os.path.basename(f)[:-5] for f in glob.glob('*.html'))
 
 CUSTOM = r"""
 () => {

@@ -79,6 +79,7 @@ body{margin:0}
 @media (max-width:680px){.ftr-grid{grid-template-columns:minmax(0,1fr)}.ftr{padding:56px 0 32px}}
 
 /* accessibility (WCAG 2.1 AA audit) */
+.ap h1,.ap h2,.ap h3{overflow-wrap:break-word;hyphens:auto}
 .ap a[href^="mailto:"]{overflow-wrap:anywhere}
 .ap .lead a,.ap .side a,.ap .member,.ap .who a{display:inline-block;padding:3px 0}
 .ftr-base .legal-links{display:flex;flex-wrap:wrap;gap:8px 24px}
@@ -97,7 +98,7 @@ body{margin:0}
 <header class="top">
   <div class="wrap hdr">
     <a href="index.html" aria-label="Alpha Preclinical home"><img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
-    <nav aria-label="Main"><ul class="nav"><li><a href="index.html#expertise">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html" aria-current="page">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    <nav aria-label="Main"><ul class="nav"><li><a href="expertise.html">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html" aria-current="page">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
     <a class="btn btn-light" href="contact.html">Request a study quote</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg></button>
   </div>
   <div class="wrap top-body">
@@ -127,33 +128,33 @@ body{margin:0}
     </div>
 
     
-      <a class="feature" data-item="posts" data-topic="Study design" href="blog-mrna-liver-depot-study-design.html">
+      <a class="feature" data-item="posts" data-topic="Study design" href="blog-how-to-scope-in-vivo-efficacy-study.html">
         <div class="art"><span>Featured image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C120 20 300 110 420 60 S560 30 600 46 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 116 C130 84 290 156 420 116 S560 92 600 104 L600 200 L0 200 Z" fill="#4B98D2"></path><path d="M0 166 C140 142 300 194 430 166 S560 152 600 158 L600 200 L0 200 Z" fill="#1E58A0"></path></svg></div>
         <div>
           <span class="tag">Study design</span>
           <h2>How to scope your first in vivo efficacy study</h2>
           <p>The questions to answer before choosing a model, group size or endpoint, and how they change your timeline and budget.</p>
-          <p class="meta">Barak Yahalom, DVM, 6 min read</p>
+          <p class="meta">Barak Yahalom, DVM, 3 min read</p>
         </div>
       </a>
     
 
     <div class="grid">
       
-        <a class="post" data-item="posts" data-topic="Tumor models" href="blog-mrna-liver-depot-study-design.html">
+        <a class="post" data-item="posts" data-topic="Tumor models" href="blog-caliper-vs-ivis-tumor-burden.html">
           <div class="art"><span>Image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z" fill="#4B98D2"></path></svg></div>
           <span class="tag" style="justify-self:start">Tumor models</span>
           <h3>Caliper or IVIS? Choosing how to measure tumor burden</h3>
           <p>When bioluminescent imaging earns its cost, and when caliper measurements are enough.</p>
-          <p class="draft">Barak Yahalom, DVM, 6 min read</p>
+          <p class="draft">Barak Yahalom, DVM, 3 min read</p>
         </a>
       
-        <a class="post" data-item="posts" data-topic="Metabolic disease" href="blog-mrna-liver-depot-study-design.html">
+        <a class="post" data-item="posts" data-topic="Metabolic disease" href="blog-diet-induced-vs-genetic-type-2-diabetes-models.html">
           <div class="art"><span>Image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z" fill="#4B98D2"></path></svg></div>
           <span class="tag" style="justify-self:start">Metabolic disease</span>
           <h3>Diet-induced versus genetic models of type 2 diabetes</h3>
           <p>What each model can and cannot tell you about a metabolic drug candidate.</p>
-          <p class="draft">Joan Flanagan, PhD, 6 min read</p>
+          <p class="draft">Joan Flanagan, PhD, 3 min read</p>
         </a>
       
         <a class="post" data-item="posts" data-topic="Gene therapy" href="blog-mrna-liver-depot-study-design.html">
@@ -161,31 +162,31 @@ body{margin:0}
           <span class="tag" style="justify-self:start">Gene therapy</span>
           <h3>What an mRNA liver depot study looks like in practice</h3>
           <p>Lessons from published Fabry disease and hemophilia B studies our scientists co-authored.</p>
-          <p class="draft">Barak Yahalom, DVM, 6 min read</p>
+          <p class="draft">Barak Yahalom, DVM, 3 min read</p>
         </a>
       
-        <a class="post" data-item="posts" data-topic="Lab services" href="blog-mrna-liver-depot-study-design.html">
+        <a class="post" data-item="posts" data-topic="Lab services" href="blog-flow-cytometry-immunophenotyping-in-vivo-studies.html">
           <div class="art"><span>Image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z" fill="#4B98D2"></path></svg></div>
           <span class="tag" style="justify-self:start">Lab services</span>
           <h3>Getting more from every animal with in-house flow cytometry</h3>
           <p>Adding immunophenotyping to an in vivo study without shipping samples.</p>
-          <p class="draft">Cindy Hopper, 6 min read</p>
+          <p class="draft">Cindy Hopper, 3 min read</p>
         </a>
       
-        <a class="post" data-item="posts" data-topic="Study design" href="blog-mrna-liver-depot-study-design.html">
+        <a class="post" data-item="posts" data-topic="Study design" href="blog-alzet-osmotic-pump-continuous-dosing.html">
           <div class="art"><span>Image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z" fill="#4B98D2"></path></svg></div>
           <span class="tag" style="justify-self:start">Study design</span>
           <h3>Continuous dosing with Alzet pumps: when and why</h3>
           <p>Choosing between bolus dosing and continuous subcutaneous or ICV delivery.</p>
-          <p class="draft">Gil Chacon, 5 min read</p>
+          <p class="draft">Gil Chacon, 3 min read</p>
         </a>
       
-        <a class="post" data-item="posts" data-topic="Autoimmune disease" href="blog-mrna-liver-depot-study-design.html">
+        <a class="post" data-item="posts" data-topic="Autoimmune disease" href="blog-rat-models-type-1-diabetes.html">
           <div class="art"><span>Image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z" fill="#4B98D2"></path></svg></div>
           <span class="tag" style="justify-self:start">Autoimmune disease</span>
           <h3>Spontaneous rat models of type 1 diabetes, explained</h3>
           <p>How the LEW.1WR1 and related models are used to test prevention strategies.</p>
-          <p class="draft">Joan Flanagan, PhD, 5 min read</p>
+          <p class="draft">Joan Flanagan, PhD, 3 min read</p>
         </a>
       
     </div>
@@ -199,7 +200,7 @@ body{margin:0}
         <img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:96px;height:auto;display:block">
         <address>Alpha Preclinical LLC<br>722 Plantation Street<br>Worcester, MA 01605<br><a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a></address>
       </div>
-      <div><h2>Expertise</h2><ul><li><a href="index.html#expertise">PK/PD</a></li><li><a href="index.html#expertise">Gene therapy</a></li><li><a href="index.html#expertise">Autoimmune disease</a></li><li><a href="index.html#expertise">Metabolic disease</a></li><li><a href="index.html#expertise">Inflammation and fibrosis</a></li><li><a href="tumor-models.html">Tumor models</a></li></ul></div>
+      <div><h2>Expertise</h2><ul><li><a href="expertise.html#pk-pd">PK/PD</a></li><li><a href="expertise.html#gene-therapy">Gene therapy</a></li><li><a href="expertise.html#autoimmune">Autoimmune disease</a></li><li><a href="expertise.html#metabolic">Metabolic disease</a></li><li><a href="expertise.html#fibrosis">Inflammation and fibrosis</a></li><li><a href="tumor-models.html">Tumor models</a></li></ul></div>
       <div><h2>Services</h2><ul><li><a href="services.html#ivis">IVIS imaging</a></li><li><a href="services.html#surgery">Surgical services</a></li><li><a href="services.html#colony">Colony management</a></li><li><a href="services.html#in-vitro">In vitro laboratory</a></li><li><a href="services.html#support">Study support</a></li></ul></div>
       <div><h2>Company</h2><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     </nav>

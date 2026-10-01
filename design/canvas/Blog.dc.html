@@ -75,6 +75,7 @@ body{margin:0}
 @media (max-width:680px){.ftr-grid{grid-template-columns:minmax(0,1fr)}.ftr{padding:56px 0 32px}}
 
 /* accessibility (WCAG 2.1 AA audit) */
+.ap h1,.ap h2,.ap h3{overflow-wrap:break-word;hyphens:auto}
 .ap a[href^="mailto:"]{overflow-wrap:anywhere}
 .ap .lead a,.ap .side a,.ap .member,.ap .who a{display:inline-block;padding:3px 0}
 .ftr-base .legal-links{display:flex;flex-wrap:wrap;gap:8px 24px}
@@ -90,7 +91,7 @@ body{margin:0}
 <header class="top">
   <div class="wrap hdr">
     <a href="Main.dc.html" aria-label="Alpha Preclinical home"><img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
-    <nav aria-label="Main"><ul class="nav"><li><a href="Main.dc.html#expertise">Expertise</a></li><li><a href="Services.dc.html">Services</a></li><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html" aria-current="page">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></nav>
+    <nav aria-label="Main"><ul class="nav"><li><a href="Expertise.dc.html">Expertise</a></li><li><a href="Services.dc.html">Services</a></li><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html" aria-current="page">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></nav>
     <a class="btn btn-light" href="Contact.dc.html">Request a study quote</a>
   </div>
   <div class="wrap top-body">
@@ -148,7 +149,7 @@ body{margin:0}
         <img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:96px;height:auto;display:block">
         <address>Alpha Preclinical LLC<br>722 Plantation Street<br>Worcester, MA 01605<br><a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a></address>
       </div>
-      <div><h2>Expertise</h2><ul><li><a href="Main.dc.html#expertise">PK/PD</a></li><li><a href="Main.dc.html#expertise">Gene therapy</a></li><li><a href="Main.dc.html#expertise">Autoimmune disease</a></li><li><a href="Main.dc.html#expertise">Metabolic disease</a></li><li><a href="Main.dc.html#expertise">Inflammation and fibrosis</a></li><li><a href="Model.dc.html">Tumor models</a></li></ul></div>
+      <div><h2>Expertise</h2><ul><li><a href="Expertise.dc.html#pk-pd">PK/PD</a></li><li><a href="Expertise.dc.html#gene-therapy">Gene therapy</a></li><li><a href="Expertise.dc.html#autoimmune">Autoimmune disease</a></li><li><a href="Expertise.dc.html#metabolic">Metabolic disease</a></li><li><a href="Expertise.dc.html#fibrosis">Inflammation and fibrosis</a></li><li><a href="Model.dc.html">Tumor models</a></li></ul></div>
       <div><h2>Services</h2><ul><li><a href="Services.dc.html#ivis">IVIS imaging</a></li><li><a href="Services.dc.html#surgery">Surgical services</a></li><li><a href="Services.dc.html#colony">Colony management</a></li><li><a href="Services.dc.html#in-vitro">In vitro laboratory</a></li><li><a href="Services.dc.html#support">Study support</a></li></ul></div>
       <div><h2>Company</h2><ul><li><a href="About.dc.html">About</a></li><li><a href="Team.dc.html">Team</a></li><li><a href="Publications.dc.html">Publications</a></li><li><a href="Blog.dc.html">Blog</a></li><li><a href="Careers.dc.html">Careers</a></li><li><a href="Contact.dc.html">Contact</a></li></ul></div>
     </nav>
@@ -162,13 +163,13 @@ class Component extends DCLogic {
   constructor(props) { super(props); this.state = { topic: 'All' }; }
   renderVals() {
     const all = [
-      { topic: 'Study design', title: 'How to scope your first in vivo efficacy study', dek: 'The questions to answer before choosing a model, group size or endpoint, and how they change your timeline and budget.', author: 'Barak Yahalom, DVM', read: '6 min read' },
-      { topic: 'Tumor models', title: 'Caliper or IVIS? Choosing how to measure tumor burden', dek: 'When bioluminescent imaging earns its cost, and when caliper measurements are enough.', author: 'Barak Yahalom, DVM', read: '6 min read' },
-      { topic: 'Metabolic disease', title: 'Diet-induced versus genetic models of type 2 diabetes', dek: 'What each model can and cannot tell you about a metabolic drug candidate.', author: 'Joan Flanagan, PhD', read: '6 min read' },
-      { topic: 'Gene therapy', title: 'What an mRNA liver depot study looks like in practice', dek: 'Lessons from published Fabry disease and hemophilia B studies our scientists co-authored.', author: 'Barak Yahalom, DVM', read: '6 min read' },
-      { topic: 'Lab services', title: 'Getting more from every animal with in-house flow cytometry', dek: 'Adding immunophenotyping to an in vivo study without shipping samples.', author: 'Cindy Hopper', read: '6 min read' },
-      { topic: 'Study design', title: 'Continuous dosing with Alzet pumps: when and why', dek: 'Choosing between bolus dosing and continuous subcutaneous or ICV delivery.', author: 'Gil Chacon', read: '5 min read' },
-      { topic: 'Autoimmune disease', title: 'Spontaneous rat models of type 1 diabetes, explained', dek: 'How the LEW.1WR1 and related models are used to test prevention strategies.', author: 'Joan Flanagan, PhD', read: '5 min read' }
+      { topic: 'Study design', title: 'How to scope your first in vivo efficacy study', dek: 'The questions to answer before choosing a model, group size or endpoint, and how they change your timeline and budget.', author: 'Barak Yahalom, DVM', read: '3 min read' },
+      { topic: 'Tumor models', title: 'Caliper or IVIS? Choosing how to measure tumor burden', dek: 'When bioluminescent imaging earns its cost, and when caliper measurements are enough.', author: 'Barak Yahalom, DVM', read: '3 min read' },
+      { topic: 'Metabolic disease', title: 'Diet-induced versus genetic models of type 2 diabetes', dek: 'What each model can and cannot tell you about a metabolic drug candidate.', author: 'Joan Flanagan, PhD', read: '3 min read' },
+      { topic: 'Gene therapy', title: 'What an mRNA liver depot study looks like in practice', dek: 'Lessons from published Fabry disease and hemophilia B studies our scientists co-authored.', author: 'Barak Yahalom, DVM', read: '3 min read' },
+      { topic: 'Lab services', title: 'Getting more from every animal with in-house flow cytometry', dek: 'Adding immunophenotyping to an in vivo study without shipping samples.', author: 'Cindy Hopper', read: '3 min read' },
+      { topic: 'Study design', title: 'Continuous dosing with Alzet pumps: when and why', dek: 'Choosing between bolus dosing and continuous subcutaneous or ICV delivery.', author: 'Gil Chacon', read: '3 min read' },
+      { topic: 'Autoimmune disease', title: 'Spontaneous rat models of type 1 diabetes, explained', dek: 'How the LEW.1WR1 and related models are used to test prevention strategies.', author: 'Joan Flanagan, PhD', read: '3 min read' }
     ];
     const topics = ['All', 'Study design', 'Tumor models', 'Metabolic disease', 'Gene therapy', 'Autoimmune disease', 'Lab services'];
     const t = this.state.topic;

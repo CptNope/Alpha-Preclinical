@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Designing In Vivo mRNA-LNP Studies | Alpha Preclinical</title>
-<meta name="description" content="How preclinical studies of mRNA-LNP protein replacement are designed, using published Fabry disease and hemophilia B studies as worked examples.">
-<meta property="og:title" content="Designing In Vivo mRNA-LNP Studies | Alpha Preclinical">
-<meta property="og:description" content="How preclinical studies of mRNA-LNP protein replacement are designed, using published Fabry disease and hemophilia B studies as worked examples.">
+<title>How to Scope an In Vivo Efficacy Study | Alpha Preclinical</title>
+<meta name="description" content="Plan your first in vivo efficacy study: define the decision, pick the model and endpoints, size groups and set a timeline before you request a CRO quote.">
+<meta property="og:title" content="How to Scope an In Vivo Efficacy Study | Alpha Preclinical">
+<meta property="og:description" content="Plan your first in vivo efficacy study: define the decision, pick the model and endpoints, size groups and set a timeline before you request a CRO quote.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="assets/img/building-sign.jpg">
 <link rel="icon" href="assets/img/logo-color.png">
@@ -162,7 +162,7 @@ td:first-child{font-weight:600;width:38%}
 .ap .btn{max-width:100%;text-align:center;line-height:1.2}
 </style>
 <link rel="stylesheet" href="assets/css/site.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What an mRNA liver depot study looks like in practice", "author": {"@type": "Person", "name": "Barak Yahalom", "honorificSuffix": "DVM", "jobTitle": "Chief Executive Officer and Chief Scientific Officer"}, "reviewedBy": {"@type": "Person", "name": "Joan Flanagan", "honorificSuffix": "PhD"}, "publisher": {"@type": "Organization", "name": "Alpha Preclinical LLC"}, "citation": ["DeRosa F, et al. Therapeutic efficacy in a hemophilia B model using a biosynthetic mRNA liver depot system. Gene Therapy. 2016;23(10):699-707.", "DeRosa F, et al. Improved efficacy in a Fabry disease model using a systemic mRNA liver depot system as compared to enzyme replacement therapy. Molecular Therapy. 2019;27(4):878-889."]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to scope your first in vivo efficacy study", "author": {"@type": "Person", "name": "Barak Yahalom", "jobTitle": "CEO and Chief Scientific Officer"}, "reviewedBy": {"@type": "Person", "name": "Joan Flanagan"}, "publisher": {"@type": "Organization", "name": "Alpha Preclinical LLC"}, "keywords": "in vivo efficacy study", "citation": ["https://arriveguidelines.org/arrive-guidelines"]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -179,10 +179,10 @@ td:first-child{font-weight:600;width:38%}
 <main id="main">
 <div class="wrap head">
   <div class="head-main">
-    <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="index.html">Home</a></li><li><a href="blog.html">Blog</a></li><li aria-current="page">Gene therapy</li></ol></nav>
-    <span class="tag">Gene therapy</span>
-    <h1>What an mRNA liver depot study looks like in practice</h1>
-    <p class="dek">How preclinical studies of mRNA protein replacement are designed, using two published studies our CEO co-authored as worked examples.</p>
+    <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="index.html">Home</a></li><li><a href="blog.html">Blog</a></li><li aria-current="page">Study design</li></ol></nav>
+    <span class="tag">Study design</span>
+    <h1>How to scope your first in vivo efficacy study</h1>
+    <p class="dek">Plan your first in vivo efficacy study: define the decision, pick the model and endpoints, size groups and set a timeline before you request a CRO quote.</p>
     <div class="byline">
       <div class="who"><img src="assets/img/team/barak-yahalom.jpg" alt=""><div><b><a href="team.html#barak-yahalom">Barak Yahalom, DVM</a></b><small>CEO and Chief Scientific Officer</small></div></div>
       <div class="who"><img src="assets/img/team/joan-flanagan.jpg" alt=""><div><small>Scientific review by</small><b><a href="team.html#joan-flanagan">Joan Flanagan, PhD</a></b></div></div>
@@ -190,77 +190,62 @@ td:first-child{font-weight:600;width:38%}
     </div>
   </div>
   <figure class="hero-img">
-    <img src="assets/img/lab-biosafety-cabinet.jpg" alt="Alpha scientist preparing samples in a biosafety cabinet">
-    <figcaption>Sample preparation in the Alpha laboratory, Worcester, Massachusetts.</figcaption>
+    <img src="assets/img/team-group.jpg" alt="The Alpha Preclinical team outside the Worcester facility">
+    <figcaption>The Alpha study team, Worcester, Massachusetts.</figcaption>
   </figure>
 </div>
 
 <div class="wrap body">
   <aside class="toc" aria-label="On this page">
     <h2>On this page</h2>
-    <ol>
-      <li><a href="#examples">The two worked examples</a></li>
-      <li><a href="#models">Use more than one model</a></li>
-      <li><a href="#protein">Measure the protein</a></li>
-      <li><a href="#endpoint">Choose a clinical endpoint</a></li>
-      <li><a href="#soc">Include the standard of care</a></li>
-      <li><a href="#repeat">Plan for repeat dosing</a></li>
-      <li><a href="#refs">References</a></li>
-    </ol>
+    <ol><li><a href="#start-with-the-decision-not-the-experiment">Start with the decision, not the experiment</a></li><li><a href="#know-your-exposure-before-you-test-efficacy">Know your exposure before you test efficacy</a></li><li><a href="#choose-the-model-that-matches-your-mechanism">Choose the model that matches your mechanism</a></li><li><a href="#decide-the-endpoints-and-the-group-size-together">Decide the endpoints and the group size together</a></li><li><a href="#build-in-rigor-from-the-start">Build in rigor from the start</a></li><li><a href="#what-to-send-a-cro-for-an-accurate-quote">What to send a CRO for an accurate quote</a></li><li><a href="#refs">Sources</a></li></ol>
     <div class="share"><h2 style="margin:0">Share</h2><a href="#share-linkedin">LinkedIn</a><a href="#share-email">Email</a><a href="#copy">Copy link</a></div>
   </aside>
 
   <article>
     <div class="summary">
       <h2>In short</h2>
-      <ul>
-        <li>Screen formulations and doses in wild-type animals, then prove efficacy in a disease model.</li>
-        <li>Build a protein time course into every study: it sets the dosing interval.</li>
-        <li>Pair protein levels with an endpoint a clinician would recognize, and compare against the standard of care.</li>
-      </ul>
+      <ul><li>Name the decision the study informs before choosing anything else.</li><li>Confirm exposure with a short PK study, then match the model to your mechanism.</li><li>Set the primary endpoint, group size and controls together, and design for ARRIVE 2.0.</li></ul>
     </div>
 
-    <p class="lede">An mRNA liver depot uses the liver as a factory. Lipid nanoparticles (LNPs) carry mRNA to liver cells after an intravenous dose, the cells make the missing protein, and it circulates through the body.</p>
-    <p>I co-authored two published studies that show how preclinical programs prove this approach works. Here is what they teach about designing an in vivo study for your own mRNA program.</p>
-
-    <h2 id="examples">The two worked examples</h2>
-    <p>In hemophilia B, mRNA encoding human factor IX was delivered in LNPs made with the lipidoid C12-200. In factor IX knockout mice, a single dose produced therapeutic factor IX levels and markedly reduced blood loss after a surgical injury.<sup><a href="#ref1">1</a></sup></p>
-    <p>In Fabry disease, mRNA encoding human alpha-galactosidase A was delivered the same way to knockout mice lacking the enzyme. A single dose cleared more of the toxic lipid Gb3 from the heart and kidney than enzyme replacement therapy, and monthly mRNA dosing matched weekly enzyme replacement over two months.<sup><a href="#ref2">2</a></sup></p>
-
-    <h2 id="models">1. Use more than one model</h2>
-    <p>Both programs moved through the same sequence of models, each answering a different question.</p>
-    <table>
-      <thead><tr><th scope="col">Model</th><th scope="col">Question it answers</th></tr></thead>
-      <tbody>
-        <tr><td>Wild-type mice</td><td>How much protein does a dose produce, and for how long?</td></tr>
-        <tr><td>Knockout disease mice</td><td>Does the protein correct the disease?</td></tr>
-        <tr><td>Non-human primates</td><td>Does expression translate to a larger species?</td></tr>
-      </tbody>
-    </table>
-
-    <h2 id="protein">2. Measure the protein, not just the outcome</h2>
-    <p>The primary readout of an mRNA study is the protein your mRNA is supposed to make. Plan serial blood samples to build a time course after each dose, measured by ELISA or an activity assay.</p>
-    <p>That time course makes the depot visible: in the Fabry study, enzyme made from mRNA circulated far longer than infused enzyme.<sup><a href="#ref2">2</a></sup> It also sets the dosing interval for longer studies.</p>
-    <div class="callout"><b>From the lab</b><p>[Barak to add one sentence from experience, for example how sampling schedules are planned around blood volume limits in mice.]</p></div>
-
-    <h2 id="endpoint">3. Choose a disease endpoint that matters clinically</h2>
-    <ul class="list">
-      <li><b>Hemophilia B:</b> blood loss after a standardized surgical injury, a direct test of whether clotting is restored.<sup><a href="#ref1">1</a></sup></li>
-      <li><b>Fabry disease:</b> Gb3 and lyso-Gb3 in the tissues that fail in patients, the heart and kidney.<sup><a href="#ref2">2</a></sup></li>
-    </ul>
-
-    <h2 id="soc">4. Include the standard of care</h2>
-    <p>The Fabry study's most persuasive result is the head-to-head comparison with enzyme replacement therapy. If an approved therapy exists, include it as a comparator arm. Matching or beating the current standard is what investors and partners want to see.</p>
-
-    <h2 id="repeat">5. Plan for repeat dosing and tolerability</h2>
-    <p>mRNA therapy for a chronic disease means repeat doses. Design at least one arm that doses repeatedly, and track body weight, clinical observations, liver enzymes and protein levels across doses.</p>
+    <p class="lede">The most expensive in vivo study is the one that answers the wrong question. Before you compare CRO quotes, spend an hour on five decisions that set the model, group size, endpoints, timeline and budget. Get them right and the quote you receive will match the study you need.</p>
+<h2 id="start-with-the-decision-not-the-experiment">1. Start with the decision, not the experiment</h2>
+<p>Write one sentence that names the decision this study informs. "Should we advance compound A over compound B into IND-enabling work?" leads to a very different design than "Does our lead show any activity in vivo?"</p>
+<p>A go/no-go decision needs a clear primary endpoint and enough animals to detect the effect size that would change your mind. An exploratory question can tolerate smaller groups and more endpoints. Naming the decision first keeps the design honest.</p>
+<h2 id="know-your-exposure-before-you-test-efficacy">2. Know your exposure before you test efficacy</h2>
+<p>An efficacy study that fails because the compound never reached its target tells you nothing about the biology. If you don't yet know how your molecule behaves in the species you plan to use, run a short pharmacokinetic study first.</p>
+<p>A small PK study answers three questions: what dose and route give exposure above your in vitro potency, how long that exposure lasts, and whether the formulation is tolerated. Those answers set the dose levels and dosing frequency for the efficacy study. Many programs save weeks by pairing a PK satellite group with the efficacy arm.</p>
+<h2 id="choose-the-model-that-matches-your-mechanism">3. Choose the model that matches your mechanism</h2>
+<p>No animal model reproduces a human disease completely. The right model is the one that shares the biology your drug acts on. Ask of any candidate model:</p>
+<ul class="list">
+<li>Does it express the target, and is the pathway active?</li>
+<li>Does the disease develop on a timeline that fits your budget?</li>
+<li>Has a reference compound worked in it, so you have a positive control?</li>
+<li>Is the readout you care about measurable in this species?</li>
+</ul>
+<p>Induced models (a diet, a chemical, an implanted tumor) are usually faster and more uniform. Spontaneous and genetic models often reflect human disease more closely but take longer and vary more between animals. Your CRO should be able to explain why it recommends one over the other.</p>
+<h2 id="decide-the-endpoints-and-the-group-size-together">4. Decide the endpoints and the group size together</h2>
+<p>Pick one primary endpoint that answers the decision from step one. Secondary endpoints are welcome, but each adds cost, and too many invite chasing noise.</p>
+<p>Group size follows from that primary endpoint: how variable it is in this model, and how large an effect you need to detect. A power calculation using variability from prior studies in the same model is the standard approach. Underpowered studies are a common reason preclinical results fail to repeat.</p>
+<p>Plan the controls at the same time. Most efficacy studies need a vehicle group and, where one exists, a positive control. Without them, a negative result can't tell you whether the drug failed or the model did.</p>
+<h2 id="build-in-rigor-from-the-start">5. Build in rigor from the start</h2>
+<p>The <a href="https://arriveguidelines.org/arrive-guidelines" rel="noopener">ARRIVE 2.0 guidelines</a> list ten essential items every animal study should report, including sample size, inclusion and exclusion criteria, randomization, blinding and statistical methods. Designing for them up front costs little and makes your data far more convincing to investors, partners and regulators.</p>
+<p>In practice that means randomizing animals to groups after baseline measurements, blinding whoever scores the outcome where possible, and writing down exclusion criteria before the study starts.</p>
+<h2 id="what-to-send-a-cro-for-an-accurate-quote">What to send a CRO for an accurate quote</h2>
+<p>A quote is only as good as the brief behind it. Include:</p>
+<ul class="list">
+<li>The decision the study informs</li>
+<li>Compound or modality, route, and any PK or tolerability data you have</li>
+<li>Preferred model, or the mechanism if you want a recommendation</li>
+<li>Primary and secondary endpoints</li>
+<li>Number of test articles and dose levels</li>
+<li>Your target start date and when you need data</li>
+</ul>
+<p>If you're not sure about some of these, say so. A good CRO partner will help you fill the gaps before quoting rather than after.</p>
 
     <section class="refs" id="refs" aria-labelledby="refs-h">
-      <h2 id="refs-h">References</h2>
-      <ol>
-        <li id="ref1">DeRosa F, Guild B, Karve S, Smith L, Love K, Dorkin JR, Kauffman KJ, Zhang J, <span class="team">Yahalom B</span>, Anderson DG, Heartlein MW. Therapeutic efficacy in a hemophilia B model using a biosynthetic mRNA liver depot system. <i>Gene Therapy</i>. 2016;23(10):699–707.</li>
-        <li id="ref2">DeRosa F, Smith L, Shen Y, Huang Y, Pan J, Xie H, <span class="team">Yahalom B</span>, Heartlein MW. Improved efficacy in a Fabry disease model using a systemic mRNA liver depot system as compared to enzyme replacement therapy. <i>Molecular Therapy</i>. 2019;27(4):878–889.</li>
-      </ol>
+      <h2 id="refs-h">Sources</h2>
+      <ol><li><a href="https://arriveguidelines.org/arrive-guidelines" rel="noopener">ARRIVE 2.0 guidelines</a></li></ol>
     </section>
 
     <div class="review">
@@ -273,44 +258,27 @@ td:first-child{font-weight:600;width:38%}
       <div>
         <h2 id="author-h">Barak Yahalom, DVM</h2>
         <p class="role">CEO and Chief Scientific Officer, Alpha Preclinical</p>
-        <p>Barak has more than 20 years of scientific and veterinary experience in biotechnology and preclinical research. Before co-founding Alpha, he directed in vivo pharmacology at several biotech companies and held senior roles at Boston Children's Hospital and Biomere.</p>
+        <p>Barak has more than 20 years of scientific and veterinary experience in biotechnology and preclinical research. Before co-founding Alpha, he directed in vivo pharmacology at several biotech companies and held senior roles at Boston Children&#x27;s Hospital and Biomere.</p>
         <div class="creds"><span>DVM, Hebrew University of Jerusalem</span><span>20+ years in preclinical research</span><span>8 peer-reviewed publications</span><span>Sideromics Scientific Advisory Board</span></div>
-        <a class="more" href="team.html#barak-yahalom">Full profile and publications</a>
+        <a class="more" href="team.html#barak-yahalom">Full profile</a>
       </div>
     </section>
   </article>
   <div></div>
 </div>
 
-<section class="research" aria-labelledby="res-h">
-  <div class="wrap">
-    <h2 id="res-h">Related research from our team</h2>
-    <p class="sub">Peer-reviewed papers on mRNA delivery and gene therapy co-authored by Alpha scientists and collaborators.</p>
-    <ul class="papers">
-      <li class="paper"><p class="jr">Molecular Therapy, 2019</p><h3><a href="publications.html">Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy</a></h3><p class="by">DeRosa F, Smith L, Shen Y, Huang Y, Pan J, Xie H, <b>Yahalom B</b>, Heartlein MW</p></li>
-      <li class="paper"><p class="jr">Gene Therapy, 2016</p><h3><a href="publications.html">Therapeutic Efficacy in a Hemophilia B Model Using a Biosynthetic mRNA Liver Depot System</a></h3><p class="by">DeRosa F, Guild B, Karve S, Smith L, Love K, Dorkin JR, Kauffman KJ, Zhang J, <b>Yahalom B</b>, Anderson DG, Heartlein MW</p></li>
-      <li class="paper"><p class="jr">[Journal, year]</p><h3><a href="publications.html">Mechanistic model for improved performance of mRNA–LNPs formulated under turbulent mixing conditions</a></h3><p class="by">Mosesso R, Randall K, Vaidya A, Tang J, Northen T, Deliot A, Sun M, Goldman R, Lyons A, Liu L, Karve S, DeRosa F</p></li>
-    </ul>
-    <a class="all" href="publications.html">All 16 publications</a>
-  </div>
-</section>
-
 <section class="related" aria-labelledby="rel-h">
   <div class="wrap">
     <h2 id="rel-h">Keep reading</h2>
-    <div class="posts">
-      <a class="post" href="blog-how-to-scope-in-vivo-efficacy-study.html"><span class="tag">Study design</span><h3>How to scope your first in vivo efficacy study</h3><p>Barak Yahalom, DVM, 3 min read</p></a>
-      <a class="post" href="blog-flow-cytometry-immunophenotyping-in-vivo-studies.html"><span class="tag">Lab services</span><h3>Getting more from every animal with in-house flow cytometry</h3><p>Cindy Hopper, 3 min read</p></a>
-      <a class="post" href="blog-alzet-osmotic-pump-continuous-dosing.html"><span class="tag">Study design</span><h3>Continuous dosing with Alzet pumps: when and why</h3><p>Gil Chacon, 3 min read</p></a>
-    </div>
+    <div class="posts"><a class="post" href="blog-flow-cytometry-immunophenotyping-in-vivo-studies.html"><span class="tag">Lab services</span><h3>Getting more from every animal with in-house flow cytometry</h3><p>Cindy Hopper, 3 min read</p></a><a class="post" href="blog-alzet-osmotic-pump-continuous-dosing.html"><span class="tag">Study design</span><h3>Continuous dosing with Alzet pumps: when and why</h3><p>Gil Chacon, 3 min read</p></a><a class="post" href="blog-rat-models-type-1-diabetes.html"><span class="tag">Autoimmune disease</span><h3>Spontaneous rat models of type 1 diabetes, explained</h3><p>Joan Flanagan, PhD, 3 min read</p></a></div>
   </div>
 </section>
 
 <div class="wrap">
   <section class="cta" aria-labelledby="cta-h">
     <div>
-      <h2 id="cta-h">Planning an mRNA or gene therapy study?</h2>
-      <p>Talk with the scientist who wrote this article about models, endpoints and timelines for your program.</p>
+      <h2 id="cta-h">Planning your first efficacy study?</h2>
+      <p>Talk with Barak and the Alpha team about models, endpoints and timelines for your program.</p>
       <a class="btn btn-light" href="contact.html">Request a study quote</a>
     </div>
     <img src="assets/img/building-sign.jpg" alt="Alpha Preclinical sign at 722 Plantation Street, Worcester">

@@ -203,6 +203,7 @@ body{margin:0}
 }
 
 /* accessibility (WCAG 2.1 AA audit) */
+.ap h1,.ap h2,.ap h3{overflow-wrap:break-word;hyphens:auto}
 .ap a[href^="mailto:"]{overflow-wrap:anywhere}
 .ap .lead a,.ap .side a,.ap .member,.ap .who a{display:inline-block;padding:3px 0}
 .ftr-base .legal-links{display:flex;flex-wrap:wrap;gap:8px 24px}
@@ -230,7 +231,7 @@ body{margin:0}
   <div class="wrap hdr">
     <a href="#top" aria-label="Alpha Preclinical home"><img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:84px;height:auto;display:block"></a>
     <nav aria-label="Main">
-      <ul class="nav"><li><a href="#expertise">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <ul class="nav"><li><a href="expertise.html">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
     </nav>
     <a class="btn btn-light" href="contact.html">Request a study quote</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg></button>
     
@@ -270,15 +271,15 @@ body{margin:0}
   <div class="wrap">
     <div class="sec-head">
       <h2 id="exp-h">Disease models and study expertise</h2>
-      <p>Validated rodent models and study designs across six therapeutic areas. Need a model from the literature or a custom variation? We build it with you.</p>
+      <div><p>Validated rodent models and study designs across six therapeutic areas. Need a model from the literature or a custom variation? We build it with you.</p><p style="margin-top:18px"><a href="expertise.html" style="font-weight:600;text-decoration:none">Explore all expertise</a></p></div>
     </div>
     <ul class="models">
-      <li><a class="model" href="#pk-pd"><h3>PK/PD</h3><div><p>Pharmacokinetic and pharmacodynamic studies for lead optimization, dose selection and exposure-response.</p><small class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt="">Led by Barak Yahalom, DVM</small></div><span>View studies</span></a></li>
-      <li><a class="model" href="#gene-therapy"><h3>Gene therapy</h3><div><p>In vivo delivery, expression and efficacy studies for viral and non-viral gene therapy programs.</p><small class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt="">Led by Barak Yahalom, DVM</small></div><span>View studies</span></a></li>
-      <li><a class="model" href="#autoimmune"><h3>Autoimmune disease</h3><div><p>Induced and spontaneous models with flow cytometry immunophenotyping and cytokine readouts.</p><small class="lead"><img src="assets/img/team/joan-flanagan.jpg" alt="">Led by Joan Flanagan, PhD</small></div><span>View models</span></a></li>
-      <li><a class="model" href="#metabolic"><h3>Metabolic disease</h3><div><p>Diet-induced and genetic models of obesity, diabetes and liver disease, with serum chemistry in house.</p><small class="lead"><img src="assets/img/team/joan-flanagan.jpg" alt="">Led by Joan Flanagan, PhD</small></div><span>View models</span></a></li>
-      <li><a class="model" href="#fibrosis"><h3>Inflammation and fibrosis</h3><div><p>Acute inflammation and organ fibrosis models, with histology and immunohistochemistry endpoints.</p><small class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt="">Led by Barak Yahalom, DVM</small></div><span>View models</span></a></li>
-      <li><a class="model" href="tumor-models.html"><h3>Tumor models</h3><div><p>Syngeneic and xenograft efficacy studies, tracked by caliper and by bioluminescent IVIS imaging.</p><small class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt="">Led by Barak Yahalom, DVM</small></div><span>View models</span></a></li>
+      <li><a class="model" href="expertise.html#pk-pd"><h3>PK/PD</h3><div><p>Pharmacokinetic and pharmacodynamic studies for lead optimization, dose selection and exposure-response.</p><small class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt="">Led by Barak Yahalom, DVM</small></div><span>View studies</span></a></li>
+      <li><a class="model" href="expertise.html#gene-therapy"><h3>Gene therapy</h3><div><p>In vivo delivery, expression and efficacy studies for viral and non-viral gene therapy programs.</p><small class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt="">Led by Barak Yahalom, DVM</small></div><span>View studies</span></a></li>
+      <li><a class="model" href="expertise.html#autoimmune"><h3>Autoimmune disease</h3><div><p>Induced and spontaneous models with flow cytometry immunophenotyping and cytokine readouts.</p><small class="lead"><img src="assets/img/team/joan-flanagan.jpg" alt="">Led by Joan Flanagan, PhD</small></div><span>View models</span></a></li>
+      <li><a class="model" href="expertise.html#metabolic"><h3>Metabolic disease</h3><div><p>Diet-induced and genetic models of obesity, diabetes and liver disease, with serum chemistry in house.</p><small class="lead"><img src="assets/img/team/joan-flanagan.jpg" alt="">Led by Joan Flanagan, PhD</small></div><span>View models</span></a></li>
+      <li><a class="model" href="expertise.html#fibrosis"><h3>Inflammation and fibrosis</h3><div><p>Acute inflammation and organ fibrosis models, with histology and immunohistochemistry endpoints.</p><small class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt="">Led by Barak Yahalom, DVM</small></div><span>View models</span></a></li>
+      <li><a class="model" href="expertise.html#tumor"><h3>Tumor models</h3><div><p>Syngeneic and xenograft efficacy studies, tracked by caliper and by bioluminescent IVIS imaging.</p><small class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt="">Led by Barak Yahalom, DVM</small></div><span>View models</span></a></li>
     </ul>
   </div>
 </section>
@@ -423,7 +424,7 @@ body{margin:0}
         <img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:96px;height:auto;display:block">
         <address>Alpha Preclinical LLC<br>722 Plantation Street<br>Worcester, MA 01605<br><a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a></address>
       </div>
-      <div><h2>Expertise</h2><ul><li><a href="index.html#expertise">PK/PD</a></li><li><a href="index.html#expertise">Gene therapy</a></li><li><a href="index.html#expertise">Autoimmune disease</a></li><li><a href="index.html#expertise">Metabolic disease</a></li><li><a href="index.html#expertise">Inflammation and fibrosis</a></li><li><a href="tumor-models.html">Tumor models</a></li></ul></div>
+      <div><h2>Expertise</h2><ul><li><a href="expertise.html#pk-pd">PK/PD</a></li><li><a href="expertise.html#gene-therapy">Gene therapy</a></li><li><a href="expertise.html#autoimmune">Autoimmune disease</a></li><li><a href="expertise.html#metabolic">Metabolic disease</a></li><li><a href="expertise.html#fibrosis">Inflammation and fibrosis</a></li><li><a href="tumor-models.html">Tumor models</a></li></ul></div>
       <div><h2>Services</h2><ul><li><a href="services.html#ivis">IVIS imaging</a></li><li><a href="services.html#surgery">Surgical services</a></li><li><a href="services.html#colony">Colony management</a></li><li><a href="services.html#in-vitro">In vitro laboratory</a></li><li><a href="services.html#support">Study support</a></li></ul></div>
       <div><h2>Company</h2><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     </nav>

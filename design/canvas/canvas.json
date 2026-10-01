@@ -56,7 +56,7 @@
     },
     "Model.dc.html": {
       "expand": "fill",
-      "h": 3605,
+      "h": 3731,
       "title": "Disease model page template",
       "w": 1440,
       "x": 1520,
@@ -110,6 +110,14 @@
       "h": 3159,
       "title": "Accessibility statement",
       "expand": "fill"
+    },
+    "Expertise.dc.html": {
+      "x": 19760,
+      "y": 0,
+      "w": 1440,
+      "h": 7511,
+      "title": "Expertise",
+      "expand": "fill"
     }
   },
   "createdOnFiles": {
@@ -140,6 +148,7 @@
     "Careers.dc.html",
     "BlogPost.dc.html",
     "Services.dc.html",
+    "Expertise.dc.html",
     "Privacy.dc.html",
     "Terms.dc.html",
     "Accessibility.dc.html"
