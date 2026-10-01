@@ -164,6 +164,11 @@ td:first-child{font-weight:600;width:38%}
 .inline-cta{margin:40px 0;padding:28px 32px;border-radius:14px;background:var(--mist);border-left:4px solid var(--current)}
 .ap .inline-cta p{margin:0;font-size:17px;line-height:1.55;color:var(--navy)}
 .inline-cta .area-cta{margin-top:16px}
+.author-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:16px !important}
+.author-links .more{margin-top:0 !important}
+.ap .li{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);font-size:14px;font-weight:600;text-decoration:none;color:var(--tide)}
+.ap .li::after{content:"\2197";content:"\2197" / "";font-size:13px}
+.ap .li:hover{border-color:var(--tide);color:var(--navy)}
 </style>
 </helmet>
 <div class="ap">
@@ -280,7 +285,7 @@ td:first-child{font-weight:600;width:38%}
         <p class="role">CEO and Chief Scientific Officer, Alpha Preclinical</p>
         <p>Barak has more than 20 years of scientific and veterinary experience in biotechnology and preclinical research. Before co-founding Alpha, he directed in vivo pharmacology at several biotech companies and held senior roles at Boston Children's Hospital and Biomere.</p>
         <div class="creds"><span>DVM, Hebrew University of Jerusalem</span><span>20+ years in preclinical research</span><span>8 peer-reviewed publications</span><span>Sideromics Scientific Advisory Board</span></div>
-        <a class="more" href="Team.dc.html#barak-yahalom">Full profile and publications</a>
+        <p class="author-links"><a class="more" href="Team.dc.html#barak-yahalom">Full profile and publications</a><a class="li" href="https://www.linkedin.com/in/barak-yahalom-dvm-8631089/" target="_blank" rel="noopener" aria-label="Barak Yahalom on LinkedIn (opens in new tab)">LinkedIn</a></p>
       </div>
     </section>
   </article>
@@ -327,7 +332,7 @@ td:first-child{font-weight:600;width:38%}
     <nav class="ftr-grid" aria-label="Footer">
       <div>
         <img src="/_blob/5bedb9f60c7733d86df9882fb9203c7e" alt="Alpha Preclinical" style="width:96px;height:auto;display:block">
-        <address>Alpha Preclinical LLC<br>722 Plantation Street<br>Worcester, MA 01605<br><a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a></address>
+        <address>Alpha Preclinical LLC<br>722 Plantation Street<br>Worcester, MA 01605<br><a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a><br><a href="https://www.linkedin.com/company/alpha-preclinical" target="_blank" rel="noopener" aria-label="Alpha Preclinical on LinkedIn (opens in new tab)">LinkedIn</a></address>
       </div>
       <div><h2>Expertise</h2><ul><li><a href="Expertise.dc.html#pk-pd">PK/PD</a></li><li><a href="Expertise.dc.html#gene-therapy">Gene therapy</a></li><li><a href="Expertise.dc.html#autoimmune">Autoimmune disease</a></li><li><a href="Expertise.dc.html#metabolic">Metabolic disease</a></li><li><a href="Expertise.dc.html#fibrosis">Inflammation and fibrosis</a></li><li><a href="Model.dc.html">Tumor models</a></li></ul></div>
       <div><h2>Services</h2><ul><li><a href="Services.dc.html#ivis">IVIS imaging</a></li><li><a href="Services.dc.html#surgery">Surgical services</a></li><li><a href="Services.dc.html#colony">Colony management</a></li><li><a href="Services.dc.html#in-vitro">In vitro laboratory</a></li><li><a href="Services.dc.html#support">Study support</a></li></ul></div>
@@ -338,7 +343,7 @@ td:first-child{font-weight:600;width:38%}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7547}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7555}}'>
 class Component extends DCLogic {
   renderVals() { return {}; }
 }

@@ -138,23 +138,25 @@ Every page is designed and built. The six expertise areas are sections of `exper
 
 ## Pages
 
-| Page | File | Interactive in preview | What it does |
-| --- | --- | --- | --- |
-| Home | `index.html` | FAQ accordion, mobile menu, count-up stats | A short front door to the full pages: hero with animated strata, 6 expertise areas with leads, 4 service tiles, study process with a "talk to a scientist" CTA, 2 featured papers with headline stats, the team in one row, FAQ, quote CTA |
-| Services | `services.html` | Jump links to each service | Study types, then IVIS imaging, surgical services, colony management, in vitro laboratory and study support, each with its lead and full detail from the old site |
-| Expertise | `expertise.html` | Jump links to each area | All six therapeutic areas: overview, the models from the old site in a table, who leads it, related papers and blog posts |
-| Tumor models | `tumor-models.html` | — | Template for each disease-model page: models table, in-house endpoints, study team, related expertise |
-| Publications | `publications.html` | Filter by research area | All 16 papers grouped by area, Alpha authors called out |
-| About | `about.html` | — | Company story, key facts, values, facility, leadership |
-| Team | `team.html` | Photo swap on hover | Group photo, leadership and founding team profiles with education, prior roles, affiliations and the areas each person leads |
-| Blog | `blog.html` | Filter by topic | Index of the seven launch posts, all linked |
-| Blog post (designed) | `blog-mrna-liver-depot-study-design.html` | — | Single-post template built for E-E-A-T (see below) |
-| Blog posts (generated) | `blog-how-to-scope-in-vivo-efficacy-study.html`, `blog-caliper-vs-ivis-tumor-burden.html`, `blog-diet-induced-vs-genetic-type-2-diabetes-models.html`, `blog-flow-cytometry-immunophenotyping-in-vivo-studies.html`, `blog-alzet-osmotic-pump-continuous-dosing.html`, `blog-rat-models-type-1-diabetes.html` | — | The other six drafts on the same template: author and reviewer, contents, key takeaways, sources, related Alpha papers, quote CTA, `Article` schema |
-| Contact | `contact.html` | Demo form with validation | Quote form with study-type picker, contact details, building photo, branded map |
-| Privacy policy | `privacy.html` | — | **Draft for legal review.** What the forms collect, how it is used and shared, retention, rights |
-| Terms of use | `terms.html` | — | **Draft for legal review.** Site use, studies governed by separate agreements, IP, disclaimers, Massachusetts law |
-| Accessibility statement | `accessibility.html` | — | WCAG 2.1 AA commitment, what was done, how it was tested, known limitations, how to get help |
-| Careers | `careers.html` | Role filter, accordion, demo application form | Culture, four open roles, application form with resume upload |
+20 pages, listed in navigation order. Every page also has the mobile menu, the drifting wave header with its Pause button, scroll-in motion, the "Request a study quote" header button and the footer (with the company LinkedIn).
+
+| Page | File | Interactive in preview | What's on it | Calls to action | Schema and E-E-A-T |
+| --- | --- | --- | --- | --- | --- |
+| Home | `index.html` | FAQ accordion, count-up stats | A short front door to the full pages: hero, 6 expertise areas with leads, 4 service tiles, how a study runs, 2 featured papers with headline stats, the team in one row, FAQ | Hero quote button; "Talk to a scientist" after the process; closing quote band | `Organization`, `FAQPage` |
+| Expertise | `expertise.html` | Jump links to each area | All six therapeutic areas: overview, the models from the old site in a table, the lead scientist, related papers and blog posts | "Plan your … study" under each area (study type preset); closing band | Lead named on every area |
+| Services | `services.html` | Jump links to each service | Study types, then IVIS imaging, surgical services, colony management, in vitro laboratory and study support, each with its lead | "Add … to your study" under each service (study type preset); closing band | Lead named on every service |
+| Tumor models | `tumor-models.html` | — | Deep-dive template for one area: models table, in-house endpoints, study team, related expertise | Closing quote band | Study team named |
+| Publications | `publications.html` | Filter by research area | All 16 papers grouped by area, Alpha authors called out, journal and year; **Read PDF**, **PubMed** (15 of 16) and **Free full text** on PubMed Central (5) for each paper | "Want the authors on your study?" band | `ScholarlyArticle` list with PMID, PubMed, PMC and DOI links |
+| About | `about.html` | — | Company story, key facts, values, facility, leadership | Closing quote band | Founding date, leadership |
+| Team | `team.html` | Photo swap on hover | Group photo, leadership and founding team profiles with education, prior roles, affiliations, the areas each person leads, and **LinkedIn** for Barak, Joan and Ashley | "Put this team on your program" band; careers link | `Person` list with job titles and LinkedIn `sameAs` |
+| Blog | `blog.html` | Filter by topic | Index of the seven launch posts, all linked | "Ask a scientist" band | — |
+| Blog post (designed) | `blog-mrna-liver-depot-study-design.html` | — | Single-post template built for E-E-A-T (see below) | Mid-article "Talk to a scientist" box; closing band | `Article`; author and reviewer; author LinkedIn; related papers link to PDFs |
+| Blog posts (generated) | `blog-how-to-scope-in-vivo-efficacy-study.html`, `blog-caliper-vs-ivis-tumor-burden.html`, `blog-diet-induced-vs-genetic-type-2-diabetes-models.html`, `blog-flow-cytometry-immunophenotyping-in-vivo-studies.html`, `blog-alzet-osmotic-pump-continuous-dosing.html`, `blog-rat-models-type-1-diabetes.html` | — | The other six drafts on the same template: author and reviewer, contents, key takeaways, sources, related Alpha papers | Mid-article box (topic preset) and closing band | Same as the designed post; LinkedIn where the author has one |
+| Careers | `careers.html` | Role filter, accordion, demo application form | Culture, four open roles, application form with resume upload | "Apply for this role" preselects the role | — |
+| Contact | `contact.html` | Demo form with validation; study type preset from `?study=` | Quote form with study-type picker, contact details, building photo, branded map | Destination of every study CTA | `Organization` address |
+| Privacy policy | `privacy.html` | — | **Draft for legal review.** What the forms collect, how it is used and shared, retention, rights | — | — |
+| Terms of use | `terms.html` | — | **Draft for legal review.** Site use, studies governed by separate agreements, IP, disclaimers, Massachusetts law | — | — |
+| Accessibility statement | `accessibility.html` | — | WCAG 2.1 AA commitment, what was done, how it was tested, known limitations, how to get help | — | — |
 
 ---
 
@@ -395,9 +397,9 @@ flowchart TD
 | Header / footer (same on every page) | `parts/header.html`, `parts/footer.html` (Navigation block) |
 | Hero with strata | Block pattern: Cover or Group with inline SVG bands |
 | Expertise list with leads | Pattern + a relationship field from each service page to a Team member |
-| Publications | Custom post type `publication` (area taxonomy, authors, journal, year, DOI, PDF) with a Query Loop |
+| Publications | Custom post type `publication` (area taxonomy, authors, journal, year, DOI, PMID, PMCID, PDF) with a Query Loop |
 | Blog post | `single.html` template; author box from user profile; `Article` schema via SEO plugin |
-| Team profiles | Custom post type `team_member`; `Person` schema with `sameAs` (ORCID, Google Scholar, LinkedIn) |
+| Team profiles | Custom post type `team_member`; `Person` schema with `sameAs` (LinkedIn now; add ORCID and Google Scholar) |
 | Contact and careers forms | Gravity Forms or Fluent Forms; route study type to the right inbox |
 | Open roles | Custom post type `job` with `JobPosting` schema |
 
@@ -444,9 +446,11 @@ AXE_PATH=path/to/axe.min.js python3 docs/a11y-audit.py http://localhost:8766 aud
 ### Content to collect
 
 - [ ] Original full-resolution photos (current images were pulled from Wix at 1,000 px)
-- [ ] Journal, year, volume and DOI for each publication
+- [ ] Volume and pages for each publication (journal, year, PMID and DOI are now in `Publications.dc.html`; the C57BL/6NCrl-lb paper is a FASEB meeting abstract with no PubMed record)
 - [ ] Copy the 16 PDFs into the theme or media library before the old site goes offline (links currently point at `alphapreclinical.com/_files/ugd/…`), and confirm the client may host publisher versions; link the DOI where it can't
 - [ ] ORCID / Google Scholar links for Barak and Joan
+- [ ] LinkedIn profiles for Cindy Hopper and Gil Chacon (their old bio pages show a LinkedIn icon with no link; a "Cindy Hopper, UMass Chan" profile exists but isn't confirmed as her)
+- [ ] Confirm the author list on the Diabetologia 2004 paper (PubMed may list Anis Y first)
 - [ ] Real lab photos for each therapeutic area
 - [ ] Confirm the model lists on the Expertise page are current (copied from the old site)
 - [ ] Author review of each blog post, plus one first-hand detail per post
@@ -458,7 +462,7 @@ AXE_PATH=path/to/axe.min.js python3 docs/a11y-audit.py http://localhost:8766 aud
 - [ ] Screen-reader pass with VoiceOver and NVDA on staging
 - [ ] Share links on blog posts (placeholders)
 - [ ] Real form handling and spam protection
-- [ ] `JobPosting`, `Person` and `ScholarlyArticle` schema
+- [ ] `JobPosting` schema (`Person` and `ScholarlyArticle` are done)
 - [ ] XML sitemap and redirects from old Wix URLs (`/experetise`, `/services`, `/about-us`, `/pk-pd`, …)
 
 ---

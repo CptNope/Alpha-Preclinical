@@ -26,12 +26,14 @@ E = html.escape
 PEOPLE = {
     'Barak Yahalom, DVM': {
         'img': 'assets/img/team/barak-yahalom.jpg', 'anchor': 'barak-yahalom',
+        'linkedin': 'https://www.linkedin.com/in/barak-yahalom-dvm-8631089/',
         'role': 'CEO and Chief Scientific Officer',
         'bio': "Barak has more than 20 years of scientific and veterinary experience in biotechnology and preclinical research. Before co-founding Alpha, he directed in vivo pharmacology at several biotech companies and held senior roles at Boston Children's Hospital and Biomere.",
         'creds': ['DVM, Hebrew University of Jerusalem', '20+ years in preclinical research', '8 peer-reviewed publications', 'Sideromics Scientific Advisory Board'],
         'first': 'Barak'},
     'Joan Flanagan, PhD': {
         'img': 'assets/img/team/joan-flanagan.jpg', 'anchor': 'joan-flanagan',
+        'linkedin': 'https://www.linkedin.com/in/joan-flanagan-phd-62368911/',
         'role': 'President and Chief Operating Officer',
         'bio': 'Joan brings more than 20 years of operating experience in in vivo preclinical contract research, with roles of increasing responsibility at Biomedical Research Models and Charles River Laboratories before co-founding Alpha.',
         'creds': ['PhD, Molecular Biology and Biochemistry, UMass Medical School', '20+ years in preclinical CROs', '5 peer-reviewed publications', 'Massachusetts Society for Medical Research'],
@@ -198,7 +200,9 @@ def main():
         author_box = (f'<section class="author" aria-labelledby="author-h">\n      <img src="{a["img"]}" alt="{E(author.split(",")[0])}">\n      <div>\n'
                       f'        <h2 id="author-h">{E(author)}</h2>\n        <p class="role">{E(a["role"])}, Alpha Preclinical</p>\n'
                       f'        <p>{E(a["bio"])}</p>\n        <div class="creds">' + ''.join(f'<span>{E(c)}</span>' for c in a['creds']) + '</div>\n'
-                      f'        <a class="more" href="team.html#{a["anchor"]}">Full profile</a>\n      </div>\n    </section>')
+                      f'        <p class="author-links"><a class="more" href="team.html#{a["anchor"]}">Full profile</a>'
+                      + (f'<a class="li" href="{a["linkedin"]}" target="_blank" rel="noopener" aria-label="{E(author.split(",")[0])} on LinkedIn (opens in new tab)">LinkedIn</a>' if a.get('linkedin') else '')
+                      + '</p>\n      </div>\n    </section>')
         # mid-article CTA before the third section heading (or the last one in short posts)
         STUDY = {'Tumor models': 'Tumor models', 'Metabolic disease': 'Metabolic disease',
                  'Autoimmune disease': 'Autoimmune disease', 'Gene therapy': 'Gene therapy',

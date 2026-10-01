@@ -92,6 +92,7 @@ ORG_LD = {
     "url": "https://www.alphapreclinical.com/",
     "logo": "https://www.alphapreclinical.com/assets/img/logo-color.png",
     "email": "info@alphapreclinical.com",
+    "sameAs": ["https://www.linkedin.com/company/alpha-preclinical"],
     "foundingDate": "2020",
     "address": {"@type": "PostalAddress", "streetAddress": "722 Plantation Street",
                 "addressLocality": "Worcester", "addressRegion": "MA",
@@ -186,17 +187,40 @@ def page_publications(s, src):
     for name in order:
         papers = [p for p in P if p[0] == name]
         lis = []
-        for area, title, others, alpha, journal, pdf in papers:
+        for area, title, others, alpha, journal, pdf, pmid, pmcid, doi in papers:
             j = f"<i>{E(journal)}</i>" if journal else ""
+            links = (f'<a class="pdf" href="{E(pdf)}" target="_blank" rel="noopener" aria-label="Read PDF: {E(title)} (opens in new tab)">Read PDF</a>')
+            if pmid:
+                links += (f'<a class="pdf nih" href="https://pubmed.ncbi.nlm.nih.gov/{pmid}/" target="_blank" rel="noopener" '
+                          f'aria-label="PubMed record: {E(title)} (opens in new tab)">PubMed</a>')
+            if pmcid:
+                links += (f'<a class="pdf nih" href="https://pmc.ncbi.nlm.nih.gov/articles/{pmcid}/" target="_blank" rel="noopener" '
+                          f'aria-label="Free full text on PubMed Central: {E(title)} (opens in new tab)">Free full text</a>')
             lis.append(f'<li class="paper"><h3>{E(title)}</h3><p class="by">{E(others)}</p>'
                        f'<p class="meta"><span class="alpha">Alpha authors: {E(alpha)}</span>{j}</p>'
-                       f'<a class="pdf" href="{E(pdf)}" target="_blank" rel="noopener" aria-label="Read PDF: {E(title)} (opens in new tab)">Read PDF</a></li>')
+                       f'<div class="links">{links}</div></li>')
         n = len(papers)
         groups.append(f'<section class="group" data-item="pubs" data-topic="{E(name)}"><div><h2>{E(name)}</h2>'
                       f'<p class="count">{n} paper{"s" if n != 1 else ""}</p></div>'
                       f'<ol class="list">{"".join(lis)}</ol></section>')
     s = replace_region(s, '<sc-for list="{{groups}}"', "</sc-for>", "\n    ".join(groups), last=True)
-    return s, []
+    # Scholarly articles, each tied to its PubMed / DOI record
+    def article(p):
+        area, title, others, alpha, journal, pdf, pmid, pmcid, doi = p
+        jname, _, year = journal.rpartition(", ")
+        a = {"@type": "ScholarlyArticle", "headline": title, "author": [x.strip() for x in others.split(",")][:10],
+             "isPartOf": {"@type": "Periodical", "name": jname or journal}, "datePublished": year, "url": pdf,
+             "about": area}
+        same = []
+        if pmid: same.append(f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/")
+        if pmcid: same.append(f"https://pmc.ncbi.nlm.nih.gov/articles/{pmcid}/")
+        if doi: same.append(f"https://doi.org/{doi}")
+        if same: a["sameAs"] = same
+        if pmid: a["identifier"] = {"@type": "PropertyValue", "propertyID": "PMID", "value": pmid}
+        return a
+    ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "Alpha Preclinical publications",
+          "itemListElement": [{"@type": "ListItem", "position": i + 1, "item": article(p)} for i, p in enumerate(P)]}
+    return s, [ld]
 
 
 def page_blog(s, src):
@@ -285,7 +309,26 @@ def page_post(s, src):
     return s, [ARTICLE_LD]
 
 
-HANDLERS = {"Main.dc.html": page_main, "Publications.dc.html": page_publications,
+def page_team(s, src):
+    people = []
+    for m in re.finditer(r'<article class="person" id="([a-z-]+)">(.*?)</article>', s, re.S):
+        pid, body = m.groups()
+        name = re.sub(r"<.*?>", "", re.search(r"<h3>(.*?)</h3>", body).group(1))
+        role = re.search(r'<p class="role">(.*?)</p>', body).group(1)
+        base, _, suffix = name.partition(", ")
+        p = {"@type": "Person", "@id": f"team.html#{pid}", "name": base, "jobTitle": html.unescape(role),
+             "worksFor": {"@type": "Organization", "name": "Alpha Preclinical"}, "url": f"team.html#{pid}"}
+        if suffix:
+            p["honorificSuffix"] = suffix
+        li = re.search(r'<a class="li" href="([^"]+)"', body)
+        if li:
+            p["sameAs"] = [li.group(1)]
+        people.append(p)
+    return s, [{"@context": "https://schema.org", "@type": "ItemList", "name": "Alpha Preclinical team",
+                "itemListElement": [{"@type": "ListItem", "position": i + 1, "item": p} for i, p in enumerate(people)]}]
+
+
+HANDLERS = {"Main.dc.html": page_main, "Team.dc.html": page_team, "Publications.dc.html": page_publications,
             "Blog.dc.html": page_blog, "Contact.dc.html": page_contact,
             "Careers.dc.html": page_careers, "BlogPost.dc.html": page_post}
 
