@@ -411,6 +411,8 @@ def convert(name, outname):
     page = helmet + "\n" + body
     for blob, f in BLOBS.items():
         page = page.replace(f"/_blob/{blob}", f"assets/img/{f}")
+    # images published beside the artboards (project/img/...) live in assets/img/ on the site
+    page = page.replace('src="img/', 'src="assets/img/')
     for a, b in PAGES.items():
         page = page.replace(f'href="{a}', f'href="{b}')
     # Main's own menu button becomes the shared one; other pages get one injected

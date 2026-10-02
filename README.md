@@ -484,7 +484,7 @@ AXE_PATH=path/to/axe.min.js python3 docs/a11y-audit.py http://localhost:8766 aud
 - [ ] Response time for accessibility requests (Accessibility Statement)
 - [ ] Screen-reader pass with VoiceOver and NVDA on staging
 - [ ] Share links on blog posts (placeholders)
-- [ ] Correct the text in the "How to scope" infographic (`assets/img/blog/scope-in-vivo-efficacy-study-*.jpg`) before launch: "setts dose levels", "To too many secondary endpoints 'inviting noise'", "Too many secondary endpoints to impact", "Model shares biology as faster/more uniform", "convincing data to investors" and the footer "Illustration for 'Alpha Preclinical' Blog Post"; the logo is a drawn approximation, not the real mark. Re-export at 2000 and 1200 px wide with the same file names
+- [ ] Correct the text in the "How to scope" infographic (`assets/img/blog/scope-in-vivo-efficacy-study-*.jpg`) before launch: "setts dose levels", "To too many secondary endpoints 'inviting noise'", "Too many secondary endpoints to impact", "Model shares biology as faster/more uniform", "convincing data to investors" and the footer "Illustration for 'Alpha Preclinical' Blog Post"; the logo is a drawn approximation, not the real mark. Re-export at 2000 and 1200 px wide with the same file names (the 1200 px copy is also the featured card on the Blog page, and in `design/canvas/img/blog/` for the canvas)
 - [ ] Real form handling and spam protection
 - [ ] `JobPosting` schema (`Person` and `ScholarlyArticle` are done)
 - [ ] XML sitemap and redirects from old Wix URLs (`/experetise`, `/services`, `/about-us`, `/pk-pd`, …)

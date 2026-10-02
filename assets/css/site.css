@@ -128,6 +128,7 @@ html { scroll-behavior: smooth; }
   .ap .model:hover span::after, .ap .svc-tile:hover .go::after, .ap .more-links a:hover::after, .ap .area-cta:hover::after { transform: translateX(4px); }
   .ap .member .face img:not(.alt) { transition: transform .5s var(--ap-ease); }
   .ap .member:hover .face img { transform: scale(1.03); }
+  .ap .feature:hover .art.has-img img { transform: scale(1.02); }
 }
 @media (hover: none) { .ap .svc-tile:hover { transform: none; box-shadow: none; } }
 /* Current page stays marked in the desktop nav without hover support */
