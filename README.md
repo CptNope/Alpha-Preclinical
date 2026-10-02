@@ -85,18 +85,32 @@ flowchart LR
 
 ## Motion
 
-All motion is decorative, built from the strata wave idea, and switched off entirely when a visitor's device asks for reduced motion (or JavaScript is off). It lives in `assets/css/site.css` and `assets/js/site.js`, so the design canvas shows the resting state.
+All motion is decorative, built from the strata wave idea, uses one easing curve, and is switched off entirely when a visitor's device asks for reduced motion (or JavaScript is off). It lives in `assets/css/site.css` and `assets/js/site.js`, so the design canvas shows the resting state.
 
-| Motion | Where | Notes |
-| --- | --- | --- |
-| Drifting wave bands | Every page header | Continuous, so each has a Pause button (WCAG 2.2.2) |
-| Header content rises in | Every page, on load | Under 1 second, staggered |
-| Sections fade up as they scroll into view | Cards, lists, steps, papers, team, bands | Staggered across rows; anything that receives keyboard focus shows at once |
-| Contour lines draw left to right | CTA bands and the closing CTA | One-time, about 2.5 seconds |
-| Process connector lines draw in | Home, "How a study runs" | Follows each step in |
-| Numbers count up | Home hero stats, "16 papers" | Real number stays in the markup and in an `aria-label` |
-| Photos settle from a slight zoom | Revealed sections with photos | |
-| Hover: cards lift, nav underline grows, arrows nudge | Site-wide | |
+```mermaid
+stateDiagram-v2
+    [*] --> Below: page loads
+    Below --> In: scrolls up into view
+    In --> Above: leaves past the top edge
+    In --> Below: leaves past the bottom edge
+    Above --> In: scrolled back down to
+    Below --> In: scrolled back up to
+    note right of In: fade + rise, stagger across rows,\nlines draw, numbers count
+```
+
+| Motion | Where | Desktop | Phone |
+| --- | --- | --- | --- |
+| Drifting wave bands | Every page header | Continuous, with a Pause button (WCAG 2.2.2) | Same |
+| Header content rises in, then drifts up and softens as you scroll past | Every page | 90 px parallax, fades no lower than 30% | 40 px parallax |
+| Sections play in as they arrive and back out toward the edge they leave by | Cards, lists, steps, papers, team, bands | 26 px travel, 0.75 s, up to 4-step stagger | 16 px, 0.55 s, 2-step stagger |
+| Contour lines draw in, rewind on exit | CTA bands, closing CTA | 2.4 s | Same |
+| Process connectors draw after each step | Home | Yes | Hidden in the stacked layout |
+| Numbers count up each time they arrive | Home hero stats, "16 papers" | Real number stays in an `aria-label` | Same |
+| Photos settle from a slight zoom | Revealed sections with photos | Yes | Off |
+| FAQ answers, open roles and the mobile menu ease open | Home, Careers, every page | Yes | Menu items stagger in, with the quote button |
+| Hover: cards lift, nav underline grows, arrows nudge, faces zoom slightly | Site-wide | Mouse and trackpad only | Off, so taps don't leave cards stuck |
+
+Keyboard focus always reveals the section it lands in, and the mobile menu closes with Escape.
 
 ---
 

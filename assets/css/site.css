@@ -46,12 +46,16 @@ h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; }
 }
 html { scroll-behavior: smooth; }
 
-/* ---------- Motion layer (only when site.js adds .has-motion: JS on, no reduced-motion) ---------- */
+/* ---------- Motion layer (only when site.js adds .has-motion: JS on, no reduced-motion) ----------
+   One easing family for everything: a soft "settle" curve, in the spirit of the drifting strata. */
+:root { --ap-ease: cubic-bezier(.2, .7, .2, 1); --ap-rise: 26px; --ap-in: .75s; --ap-out: .45s; }
+@media (max-width: 680px) { :root { --ap-rise: 16px; --ap-in: .55s; --ap-out: .35s; } }
 
 /* Page headers rise in on load */
 @keyframes ap-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes ap-fade { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 .has-motion .hero-body > div > *, .has-motion .hero-aside > div, .has-motion .top-body > *, .has-motion .head-main > * {
-  animation: ap-rise .7s cubic-bezier(.2, .7, .2, 1) both;
+  animation: ap-rise .7s var(--ap-ease) both;
 }
 .has-motion .hero-body > div > :nth-child(2), .has-motion .top-body > :nth-child(2), .has-motion .head-main > :nth-child(2) { animation-delay: .08s; }
 .has-motion .hero-body > div > :nth-child(3), .has-motion .top-body > :nth-child(3), .has-motion .head-main > :nth-child(3) { animation-delay: .16s; }
@@ -59,42 +63,77 @@ html { scroll-behavior: smooth; }
 .has-motion .hero-aside > div:nth-child(1) { animation-delay: .3s; }
 .has-motion .hero-aside > div:nth-child(2) { animation-delay: .4s; }
 .has-motion .hero-aside > div:nth-child(3) { animation-delay: .5s; }
+.has-motion .hero-body, .has-motion .top-body { will-change: transform, opacity; }
 
-/* Sections reveal as they scroll into view */
+/* Sections play in as they arrive and back out toward the edge they leave by */
 .has-motion .reveal {
-  opacity: 0; transform: translateY(26px);
-  transition: opacity .7s ease, transform .8s cubic-bezier(.2, .7, .2, 1);
+  opacity: 0; transform: translateY(var(--ap-rise));
+  transition: opacity var(--ap-out) ease, transform var(--ap-out) ease;
+}
+.has-motion .reveal[data-out="above"] { transform: translateY(calc(var(--ap-rise) * -1)); }
+.has-motion .reveal.is-in {
+  opacity: 1; transform: none;
+  transition: opacity var(--ap-in) ease, transform calc(var(--ap-in) + .1s) var(--ap-ease);
   transition-delay: var(--d, 0s);
 }
-.has-motion .reveal.is-in { opacity: 1; transform: none; }
-.has-motion .svc-tile.reveal.is-in:hover, .has-motion .post.reveal.is-in:hover { transform: translateY(-4px); transition-delay: 0s; }
 
-/* Process: the connector between steps draws in after each step appears */
-.has-motion .step.reveal::after { transform: scaleX(0); transform-origin: left center; transition: transform .9s ease calc(var(--d, 0s) + .35s); }
-.has-motion .step.reveal.is-in::after { transform: none; }
+/* Process: connectors draw in after each step, retract when it leaves */
+.has-motion .step.reveal::after { transform: scaleX(0); transform-origin: left center; transition: transform .3s ease; }
+.has-motion .step.reveal.is-in::after { transform: none; transition: transform .9s ease calc(var(--d, 0s) + .35s); }
 
-/* Contour lines in CTA bands draw from left to right */
-.has-motion .draw { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s cubic-bezier(.45, 0, .2, 1) .2s; }
-.has-motion .draw:nth-child(2) { transition-delay: .5s; }
-.has-motion .is-in .draw { stroke-dashoffset: 0; }
+/* Contour lines draw left to right; they rewind quickly when the band leaves */
+.has-motion .draw { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .4s ease; }
+.has-motion .is-in .draw { stroke-dashoffset: 0; transition: stroke-dashoffset 2.4s cubic-bezier(.45, 0, .2, 1) .2s; }
+.has-motion .is-in .draw:nth-child(2) { transition-delay: .5s; }
 
-/* Photos settle into place */
-.has-motion .reveal img:not(.alt) { transform: scale(1.05); transition: transform 1.4s cubic-bezier(.2, .7, .2, 1); }
-.has-motion .reveal.is-in img:not(.alt) { transform: none; }
+/* Photos settle from a slight zoom (desktop only: costly and fussy on phones) */
+@media (min-width: 681px) {
+  .has-motion .reveal img:not(.alt) { transform: scale(1.05); transition: transform .5s ease; }
+  .has-motion .reveal.is-in img:not(.alt) { transform: none; transition: transform 1.4s var(--ap-ease); }
+}
 
-/* Hover: cards lift, nav links get a wave-blue underline, arrows nudge */
-.ap .post, .ap .feature, .ap .person, .ap .member { transition: transform .25s ease, box-shadow .25s ease; }
-.ap .post:hover, .ap .feature:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -24px rgba(15, 51, 96, .45); }
+/* Accordions and the mobile menu ease in instead of snapping */
+.has-motion .q .ans:not([hidden]), .has-motion .role-body:not([hidden]) { animation: ap-fade .35s var(--ap-ease); }
+.ap .q .ico { transition: transform .3s var(--ap-ease), background-color .2s ease, color .2s ease; }
+.ap .q button[aria-expanded="true"] .ico { transform: rotate(180deg); background: var(--abyss, #0F3360); color: #fff; border-color: transparent; }
+@media (max-width: 1080px) {
+  .has-motion .hdr .nav.is-open li { animation: ap-fade .35s var(--ap-ease) both; }
+  .has-motion .hdr .nav.is-open li:nth-child(2) { animation-delay: .03s; }
+  .has-motion .hdr .nav.is-open li:nth-child(3) { animation-delay: .06s; }
+  .has-motion .hdr .nav.is-open li:nth-child(4) { animation-delay: .09s; }
+  .has-motion .hdr .nav.is-open li:nth-child(5) { animation-delay: .12s; }
+  .has-motion .hdr .nav.is-open li:nth-child(6) { animation-delay: .15s; }
+  .has-motion .hdr .nav.is-open li:nth-child(7) { animation-delay: .18s; }
+  .has-motion .hdr .nav.is-open li:nth-child(n+8) { animation-delay: .21s; }
+  /* the quote button joins the open menu, so phones always have the main CTA */
+  .hdr:has(.nav.is-open) > .btn { display: inline-flex !important; order: 4; width: 100%; margin: 4px 0 20px; }
+  .has-motion .hdr:has(.nav.is-open) > .btn { animation: ap-fade .35s var(--ap-ease) .24s both; }
+}
+
+/* Hover, only for real pointers (a tap shouldn't leave cards "stuck" lifted) */
 .ap .post .art, .ap .feature .art { overflow: hidden; }
-.ap .post .art svg, .ap .feature .art svg { transition: transform .6s ease; }
-.ap .post:hover .art svg, .ap .feature:hover .art svg { transform: translateX(-6%) scaleX(1.12); }
-.ap .nav a { background: linear-gradient(currentColor, currentColor) no-repeat 0 calc(100% - 4px) / 0 1.5px; transition: background-size .25s ease, color .2s ease; }
-.ap .nav a:hover, .ap .nav a[aria-current="page"] { background-size: 100% 1.5px; }
 .ap .model span::after, .ap .svc-tile .go::after, .ap .more-links a::after { content: " \2192"; content: " \2192" / ""; display: inline-block; transition: transform .2s ease; }
-.ap .model:hover span::after, .ap .svc-tile:hover .go::after, .ap .more-links a:hover::after { transform: translateX(4px); }
+@media (hover: hover) and (pointer: fine) {
+  .ap .post, .ap .feature, .ap .svc-tile { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .ap .post:hover, .ap .feature:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -24px rgba(15, 51, 96, .45); }
+  .has-motion .svc-tile.reveal.is-in:hover, .has-motion .post.reveal.is-in:hover { transform: translateY(-4px); transition-delay: 0s; }
+  .ap .post .art svg, .ap .feature .art svg { transition: transform .6s ease; }
+  .ap .post:hover .art svg, .ap .feature:hover .art svg { transform: translateX(-6%) scaleX(1.12); }
+  .ap .nav a { background: linear-gradient(currentColor, currentColor) no-repeat 0 calc(100% - 4px) / 0 1.5px; transition: background-size .25s ease, color .2s ease; }
+  .ap .nav a:hover, .ap .nav a[aria-current="page"] { background-size: 100% 1.5px; }
+  .ap .model:hover span::after, .ap .svc-tile:hover .go::after, .ap .more-links a:hover::after, .ap .area-cta:hover::after { transform: translateX(4px); }
+  .ap .member .face img:not(.alt) { transition: transform .5s var(--ap-ease); }
+  .ap .member:hover .face img { transform: scale(1.03); }
+}
+@media (hover: none) { .ap .svc-tile:hover { transform: none; box-shadow: none; } }
+/* Current page stays marked in the desktop nav without hover support */
+.ap .nav a[aria-current="page"] { text-decoration: none; }
 
 @media (prefers-reduced-motion: reduce) {
-  .ap .post, .ap .feature, .ap .svc-tile, .ap .nav a, .ap .post .art svg { transition: none !important; }
+  .ap .post, .ap .feature, .ap .svc-tile, .ap .nav a, .ap .post .art svg, .ap .q .ico { transition: none !important; }
   .ap .post:hover, .ap .feature:hover, .ap .svc-tile:hover { transform: none !important; }
 }
-@media print { .has-motion .reveal, .has-motion .draw { opacity: 1 !important; transform: none !important; stroke-dashoffset: 0 !important; } }
+@media print {
+  .has-motion .reveal, .has-motion .draw { opacity: 1 !important; transform: none !important; stroke-dashoffset: 0 !important; }
+  .has-motion .hero-body, .has-motion .top-body { opacity: 1 !important; transform: none !important; }
+}

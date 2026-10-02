@@ -252,6 +252,10 @@ body{margin:0}
 @media (max-width:680px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .sec{padding:108px 0}.sec-head{margin-bottom:56px}.ap .model{padding-top:24px;padding-bottom:24px}
 @media (max-width:680px){.sec{padding:72px 0}.sec-head{margin-bottom:40px}}
+@media (max-width:680px){.svc-tiles{gap:12px}.ap .svc-tile{display:grid;grid-template-columns:36px minmax(0,1fr);gap:4px 16px;padding:20px}.svc-ico{grid-row:span 3;width:36px;height:36px}.svc-tile h3{font-size:20px}.svc-tile p{font-size:15px}}
+.ap .team .member{display:grid;gap:12px;align-content:start;padding:0}
+.member small{display:block;line-height:1.4;margin-top:4px}
+@media (max-width:680px){.team .team-cta{grid-column:auto;aspect-ratio:4/5;padding:18px}.team-cta p{font-size:18px}}
 </style>
 </helmet>
 <div class="ap">
@@ -374,11 +378,10 @@ body{margin:0}
       <p class="more-links"><a href="Team.dc.html">Meet the team</a><a href="About.dc.html">About Alpha</a></p>
     </div>
     <div class="team">
-      <a class="member" href="Team.dc.html#ashley-kolofsky"><div class="face"><img src="/_blob/4902e50d4f6db0edc079f4555cedece8" alt="Ashley Kolofsky"><img class="alt" src="/_blob/d2a6749285f43cca6b8e2205d889e9d9" alt=""></div><div><b>Ashley Kolofsky</b><small>Study Team Supervisor</small></div></a>
       <a class="member" href="Team.dc.html#barak-yahalom"><div class="face"><img src="/_blob/c9d31a9dcb31363d7c0a0ba388f59670" alt="Barak Yahalom"><img class="alt" src="/_blob/90d2010c3308d1f32d45b081d74dee0b" alt=""></div><div><b>Barak Yahalom, DVM</b><small>CEO and Chief Scientific Officer</small></div></a>
+      <a class="member" href="Team.dc.html#joan-flanagan"><div class="face"><img src="/_blob/590caa59917513c5891b761a02b75807" alt="Joan Flanagan"><img class="alt" src="/_blob/1aa762b21513362591f4458523ce3c40" alt=""></div><div><b>Joan Flanagan, PhD</b><small>President and COO</small></div></a>      <a class="member" href="Team.dc.html#ashley-kolofsky"><div class="face"><img src="/_blob/4902e50d4f6db0edc079f4555cedece8" alt="Ashley Kolofsky"><img class="alt" src="/_blob/d2a6749285f43cca6b8e2205d889e9d9" alt=""></div><div><b>Ashley Kolofsky</b><small>Study Team Supervisor</small></div></a>
       <a class="member" href="Team.dc.html#cindy-hopper"><div class="face"><img src="/_blob/22a259045205d87350a7c4a2d4743305" alt="Cindy Hopper"><img class="alt" src="/_blob/7ef4fed6780a103583e1f7c2db5e78b4" alt=""></div><div><b>Cindy Hopper</b><small>Founding Scientist, In Vitro</small></div></a>
       <a class="member" href="Team.dc.html#gil-chacon"><div class="face"><img src="/_blob/96ff2bcfb76710fba07fe859fbc51e0d" alt="Gil Chacon"><img class="alt" src="/_blob/7fa90d189bc6591ba8d59455844bd6db" alt=""></div><div><b>Gil Chacon</b><small>In Vivo and Surgical Support</small></div></a>
-      <a class="member" href="Team.dc.html#joan-flanagan"><div class="face"><img src="/_blob/590caa59917513c5891b761a02b75807" alt="Joan Flanagan"><img class="alt" src="/_blob/1aa762b21513362591f4458523ce3c40" alt=""></div><div><b>Joan Flanagan, PhD</b><small>President and COO</small></div></a>
       <div class="team-cta" id="careers"><p>We're growing. Bring your research experience to Worcester.</p><a href="Careers.dc.html">See open roles</a></div>
     </div>
   </div>
@@ -433,7 +436,7 @@ body{margin:0}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7492}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7487}}'>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { open: 0 }; }
   renderVals() {
