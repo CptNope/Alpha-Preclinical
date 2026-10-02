@@ -3,6 +3,10 @@
 
 [hidden] { display: none !important; }
 
+/* Blog infographics show whole, never cropped like photos */
+.ap .hero-img.infographic img { aspect-ratio: auto; height: auto; object-fit: contain; background: #EEF5FB; }
+.ap .hero-img.infographic figcaption a { font-weight: 600; white-space: nowrap; }
+
 /* Long scientific terms wrap instead of overflowing narrow screens (WCAG 1.4.10, 1.4.12) */
 h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; }
 
