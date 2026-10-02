@@ -176,6 +176,7 @@ td:first-child{font-weight:600;width:38%}
 .post .tag{align-self:flex-start}
 .post p{margin-top:auto !important;padding-top:8px}
 @media (max-width:680px){.ap .post{padding:20px}.posts{gap:16px}}
+.ap .hero-img.infographic img{aspect-ratio:auto;height:auto;object-fit:contain;background:#EEF5FB}
 </style>
 </helmet>
 <div class="ap">
@@ -202,9 +203,9 @@ td:first-child{font-weight:600;width:38%}
       <p class="dates"><b>Published</b> [Date]<br><b>Updated</b> [Date], 3 min read</p>
     </div>
   </div>
-  <figure class="hero-img">
-    <img src="/_blob/4b5391a4eda08ec8242ae09059e6a7e3" alt="Alpha scientist preparing samples in a biosafety cabinet">
-    <figcaption>Sample preparation in the Alpha laboratory, Worcester, Massachusetts.</figcaption>
+  <figure class="hero-img infographic">
+    <img src="img/blog/mrna-liver-depot-hero-1200.jpg" srcset="img/blog/mrna-liver-depot-hero-1200.jpg 1200w, img/blog/mrna-liver-depot-hero-1698.jpg 1698w" sizes="(max-width: 1080px) 100vw, 820px" width="1698" height="926" fetchpriority="high" alt="Illustration: two scientists discuss results beside a screen showing mRNA in a lipid nanoparticle delivered to the liver, which produces protein, with a chart of protein levels over time.">
+    <figcaption>An mRNA liver depot: lipid nanoparticles deliver mRNA to the liver, which then produces the therapeutic protein.</figcaption>
   </figure>
 </div>
 
@@ -350,7 +351,7 @@ td:first-child{font-weight:600;width:38%}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7765}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7803}}'>
 class Component extends DCLogic {
   renderVals() { return {}; }
 }

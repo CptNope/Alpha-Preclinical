@@ -207,10 +207,11 @@ def main():
         else:
             fig = f'<figure class="hero-img">\n    <img src="{img}" alt="{E(alt)}">\n    <figcaption>{E(cap)}</figcaption>\n  </figure>'
         s = re.sub(r'<figure class="hero-img[^"]*">.*?</figure>', lambda m: fig, s, count=1, flags=re.S)
-        share_img = f"{info['src']}-{info.get('sizes', (1200, 2000))[1]}.jpg" if info else None
+        share_img = f"{info['src']}-{info.get('sizes', (1200, 2000))[1]}.jpg" if info else 'assets/img/building-sign.jpg'
         if share_img:
             s = re.sub(r'(<meta property="og:image" content=")[^"]*', lambda m: m.group(1) + share_img, s)
-            s = re.sub(r'("@type": "Article", )', lambda m: m.group(1) + f'"image": "{share_img}", ', s, count=1)
+            if info:
+                s = re.sub(r'("@type": "Article", )', lambda m: m.group(1) + f'"image": "{share_img}", ', s, count=1)
         # contents list
         toc_html = ''.join(f'<li><a href="#{sid}">{E(t)}</a></li>' for sid, t in toc)
         if sources:

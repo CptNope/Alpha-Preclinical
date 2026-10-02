@@ -350,7 +350,11 @@ def page_careers(s, src):
 
 
 def page_post(s, src):
-    return s, [ARTICLE_LD]
+    ld = dict(ARTICLE_LD)
+    hero = re.search(r'<figure class="hero-img infographic">\s*<img[^>]*?srcset="([^"]+)"', s)
+    if hero:
+        ld["image"] = "assets/" + hero.group(1).split(",")[-1].strip().split(" ")[0]
+    return s, [ld]
 
 
 def page_team(s, src):
@@ -418,6 +422,10 @@ def convert(name, outname):
         page = page.replace(f"/_blob/{blob}", f"assets/img/{f}")
     # images published beside the artboards (project/img/...) live in assets/img/ on the site
     page = page.replace('src="img/', 'src="assets/img/')
+    page = re.sub(r'srcset="([^"]*)"', lambda m: 'srcset="' + re.sub(r'(^|, )img/', r'\1assets/img/', m.group(1)) + '"', page)
+    # a post's illustrated hero is also its share image
+    hero = re.search(r'<figure class="hero-img infographic">\s*<img src="([^"]+)"[^>]*?srcset="([^"]+)"', page)
+    share = hero.group(2).split(",")[-1].strip().split(" ")[0] if hero else None
     for a, b in PAGES.items():
         page = page.replace(f'href="{a}', f'href="{b}')
     # Main's own menu button becomes the shared one; other pages get one injected
@@ -440,7 +448,7 @@ def convert(name, outname):
 <meta property="og:title" content="{E(TITLES[outname])}">
 <meta property="og:description" content="{E(META[outname])}">
 <meta property="og:type" content="{'article' if outname.startswith('blog-') else 'website'}">
-<meta property="og:image" content="assets/img/building-sign.jpg">
+<meta property="og:image" content="{share or 'assets/img/building-sign.jpg'}">
 <link rel="icon" href="assets/img/logo-color.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
