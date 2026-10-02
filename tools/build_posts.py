@@ -59,9 +59,9 @@ REVIEWER = {'Barak Yahalom, DVM': 'Joan Flanagan, PhD', 'Joan Flanagan, PhD': 'B
 # Per-post presentation details not in the drafts
 POSTS = {
     1: {'topic': 'Study design', 'img': ('assets/img/team-group.jpg', 'The Alpha Preclinical team outside the Worcester facility', 'The Alpha study team, Worcester, Massachusetts.'),
-        'infographic': {'src': 'assets/img/blog/scope-in-vivo-efficacy-study', 'w': 2000, 'h': 1091,
-                        'alt': 'Infographic: how to scope your in vivo efficacy study in five steps. 1, start with the decision, not the experiment. 2, know your exposure with a short PK study before testing efficacy. 3, choose the model that matches your mechanism: induced, spontaneous or genetic. 4, decide endpoints and group size together, with vehicle and positive controls. 5, build in rigor from the start with the ARRIVE 2.0 guidelines, randomization and blinding. It ends with a checklist of what to send a CRO for an accurate quote. Each step is explained in full in the article below.',
-                        'caption': 'The five steps in this guide at a glance.'},
+        'infographic': {'src': 'assets/img/blog/scope-in-vivo-efficacy-study-hero', 'w': 2000, 'h': 1091, 'full_link': False,
+                        'alt': 'Illustration: a scientist in a lab coat and a colleague in a business suit high-five in front of a screen of study charts, beside laboratory equipment.',
+                        'caption': 'A well-scoped study gives scientists and decision-makers results they can act on.'},
         'summary': ['Name the decision the study informs before choosing anything else.', 'Confirm exposure with a short PK study, then match the model to your mechanism.', 'Set the primary endpoint, group size and controls together, and design for ARRIVE 2.0.'],
         'papers': [], 'cta': 'Planning your first efficacy study?'},
     2: {'topic': 'Tumor models', 'img': ('assets/img/lab-biosafety-cabinet.jpg', 'Alpha scientist preparing samples in a biosafety cabinet', 'Sample preparation in the Alpha laboratory, Worcester, Massachusetts.'),
@@ -194,8 +194,9 @@ def main():
             src = info['src']
             fig = (f'<figure class="hero-img infographic">\n    <img src="{src}-1200.jpg" srcset="{src}-1200.jpg 1200w, {src}-2000.jpg 2000w" '
                    f'sizes="(max-width: 1080px) 100vw, 820px" width="{info["w"]}" height="{info["h"]}" fetchpriority="high" alt="{E(info["alt"])}">\n'
-                   f'    <figcaption>{E(info["caption"])} <a href="{src}-2000.jpg" target="_blank" rel="noopener" '
-                   f'aria-label="Open the infographic full size (opens in new tab)">Open full size</a></figcaption>\n  </figure>')
+                   f'    <figcaption>{E(info["caption"])}'
+                   + (f' <a href="{src}-2000.jpg" target="_blank" rel="noopener" aria-label="Open the image full size (opens in new tab)">Open full size</a>' if info.get('full_link', True) else '')
+                   + '</figcaption>\n  </figure>')
         else:
             fig = f'<figure class="hero-img">\n    <img src="{img}" alt="{E(alt)}">\n    <figcaption>{E(cap)}</figcaption>\n  </figure>'
         s = re.sub(r'<figure class="hero-img[^"]*">.*?</figure>', lambda m: fig, s, count=1, flags=re.S)
