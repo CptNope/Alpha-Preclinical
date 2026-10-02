@@ -59,7 +59,7 @@ REVIEWER = {'Barak Yahalom, DVM': 'Joan Flanagan, PhD', 'Joan Flanagan, PhD': 'B
 # Per-post presentation details not in the drafts
 POSTS = {
     1: {'topic': 'Study design', 'img': ('assets/img/team-group.jpg', 'The Alpha Preclinical team outside the Worcester facility', 'The Alpha study team, Worcester, Massachusetts.'),
-        'infographic': {'src': 'assets/img/blog/scope-in-vivo-efficacy-study-hero', 'w': 2000, 'h': 1091, 'full_link': False,
+        'infographic': {'src': 'assets/img/blog/scope-in-vivo-efficacy-study-hero', 'w': 1672, 'h': 941, 'sizes': (1200, 1672), 'full_link': False,
                         'alt': 'Illustration: a scientist in a lab coat and a colleague in a business suit high-five in front of a screen of study charts, beside laboratory equipment.',
                         'caption': 'A well-scoped study gives scientists and decision-makers results they can act on.'},
         'summary': ['Name the decision the study informs before choosing anything else.', 'Confirm exposure with a short PK study, then match the model to your mechanism.', 'Set the primary endpoint, group size and controls together, and design for ARRIVE 2.0.'],
