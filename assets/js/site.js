@@ -3,15 +3,34 @@
 (function () {
   'use strict';
 
-  // Mobile menu
+  // Mobile menu: a full-screen panel with the header row kept on top.
+  // Escape, a link tap or the close button closes it; focus returns to the button.
+  var ICON_OPEN = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg>';
+  var ICON_CLOSE = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"></path></svg>';
   document.querySelectorAll('[data-menu]').forEach(function (btn) {
-    var nav = btn.closest('.hdr') && btn.closest('.hdr').querySelector('.nav');
+    var hdr = btn.closest('.hdr');
+    var nav = hdr && hdr.querySelector('.nav');
     if (!nav) return;
-    btn.addEventListener('click', function () {
-      var open = nav.classList.toggle('is-open');
+    if (!nav.id) nav.id = 'site-menu';
+    btn.setAttribute('aria-controls', nav.id);
+    btn.innerHTML = ICON_OPEN;
+    if (!hdr.querySelector('.menu-meta')) {
+      var meta = document.createElement('p');
+      meta.className = 'menu-meta';
+      meta.innerHTML = '<a href="mailto:info@alphapreclinical.com">info@alphapreclinical.com</a><br>722 Plantation Street, Worcester, MA';
+      hdr.appendChild(meta);
+    }
+    function set(open) {
+      nav.classList.toggle('is-open', open);
+      hdr.classList.toggle('is-menu', open);
+      document.documentElement.classList.toggle('menu-open', open);
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    });
+      btn.innerHTML = open ? ICON_CLOSE : ICON_OPEN;
+    }
+    btn.addEventListener('click', function () { set(!nav.classList.contains('is-open')); });
+    nav.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+    window.matchMedia('(min-width: 1081px)').addEventListener('change', function (m) { if (m.matches) set(false); });
   });
 
   // Accordions (FAQ, open roles): one open at a time within a list

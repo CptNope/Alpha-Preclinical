@@ -30,16 +30,52 @@ h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; }
 }
 .menu-toggle:hover { border-color: #fff; }
 .menu-toggle:focus-visible { outline: 3px solid #4B98D2; outline-offset: 3px; }
+.menu-meta { display: none; }
 
 @media (max-width: 1080px) {
   .menu-toggle { display: inline-flex; }
   .hdr { position: relative; flex-wrap: wrap; }
   .hdr nav { order: 3; width: 100%; }
-  .hdr .nav.is-open {
-    display: flex !important; flex-direction: column; gap: 0;
-    padding: 8px 0 16px; border-top: 1px solid rgba(185, 204, 227, .25); margin-top: 16px;
+  .menu-toggle svg { width: 20px; height: 20px; }
+
+  /* Open menu: a full-screen panel. The header row (logo + close) stays on top,
+     links are large with hairline dividers, the quote button and contact sit below. */
+  html.menu-open { overflow: hidden; }
+  .ap .hdr.is-menu {
+    position: fixed; inset: 0; z-index: 60; max-width: none; margin: 0;
+    align-content: flex-start; overflow-y: auto; overscroll-behavior: contain;
+    background: #0F3360;
+    padding-top: 24px; padding-bottom: 32px;
   }
-  .hdr .nav.is-open a { display: block; padding: 12px 0; font-size: 18px; }
+  .ap .hdr.is-menu nav { flex: 1 1 100%; }
+  .ap .hdr .nav.is-open {
+    display: flex !important; flex-direction: column; gap: 0;
+    margin-top: 28px; padding: 0; border-top: 1px solid rgba(185, 204, 227, .22);
+  }
+  .ap .hdr .nav.is-open li { border-bottom: 1px solid rgba(185, 204, 227, .22); }
+  .ap .hdr .nav.is-open a {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 16px 0; min-height: 56px;
+    font-family: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600; font-size: 24px; letter-spacing: -.01em; line-height: 1.15;
+    color: #fff; background: none;
+  }
+  .ap .hdr .nav.is-open a::after { content: ""; width: 8px; height: 8px; border-radius: 999px; background: transparent; flex: none; }
+  .ap .hdr .nav.is-open a[aria-current="page"] { color: #88C6EE; }
+  .ap .hdr .nav.is-open a[aria-current="page"]::after { background: #88C6EE; }
+  .ap .hdr .nav.is-open a:hover { color: #88C6EE; }
+  .ap .hdr.is-menu > .btn { display: inline-flex !important; order: 4; width: 100%; margin: 28px 0 0; min-height: 56px; font-size: 17px; }
+  .ap .hdr .menu-meta { display: none; }
+  .ap .hdr.is-menu .menu-meta {
+    display: block; order: 5; width: 100%; margin: 24px 0 0;
+    color: #B9CCE3; font-size: 15px; line-height: 1.6;
+  }
+  .ap .hdr.is-menu .menu-meta a { color: #fff; text-decoration: none; display: inline-block; padding: 4px 0; }
+  .ap .hdr.is-menu .menu-toggle { border-color: rgba(255, 255, 255, .7); }
+}
+@media (max-width: 680px) {
+  .ap .hdr.is-menu { padding-top: 10px; }
+  .ap .hdr .nav.is-open a { font-size: 22px; min-height: 52px; padding: 14px 0; }
 }
 
 /* Filter buttons keep their pressed look when toggled by script */
@@ -57,6 +93,7 @@ html { scroll-behavior: smooth; }
 
 /* Page headers rise in on load */
 @keyframes ap-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes ap-panel { from { opacity: 0; } to { opacity: 1; } }
 @keyframes ap-fade { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 .has-motion .hero-body > div > *, .has-motion .hero-aside > div, .has-motion .top-body > *, .has-motion .head-main > * {
   animation: ap-rise .7s var(--ap-ease) both;
@@ -101,7 +138,8 @@ html { scroll-behavior: smooth; }
 .ap .q .ico { transition: transform .3s var(--ap-ease), background-color .2s ease, color .2s ease; }
 .ap .q button[aria-expanded="true"] .ico { transform: rotate(180deg); background: var(--abyss, #0F3360); color: #fff; border-color: transparent; }
 @media (max-width: 1080px) {
-  .has-motion .hdr .nav.is-open li { animation: ap-fade .35s var(--ap-ease) both; }
+  .has-motion .hdr.is-menu { animation: ap-panel .25s ease both; }
+  .has-motion .hdr .nav.is-open li { animation: ap-fade .4s var(--ap-ease) both; }
   .has-motion .hdr .nav.is-open li:nth-child(2) { animation-delay: .03s; }
   .has-motion .hdr .nav.is-open li:nth-child(3) { animation-delay: .06s; }
   .has-motion .hdr .nav.is-open li:nth-child(4) { animation-delay: .09s; }
@@ -109,9 +147,7 @@ html { scroll-behavior: smooth; }
   .has-motion .hdr .nav.is-open li:nth-child(6) { animation-delay: .15s; }
   .has-motion .hdr .nav.is-open li:nth-child(7) { animation-delay: .18s; }
   .has-motion .hdr .nav.is-open li:nth-child(n+8) { animation-delay: .21s; }
-  /* the quote button joins the open menu, so phones always have the main CTA */
-  .hdr:has(.nav.is-open) > .btn { display: inline-flex !important; order: 4; width: 100%; margin: 4px 0 20px; }
-  .has-motion .hdr:has(.nav.is-open) > .btn { animation: ap-fade .35s var(--ap-ease) .24s both; }
+  .has-motion .hdr.is-menu > .btn, .has-motion .hdr.is-menu .menu-meta { animation: ap-fade .4s var(--ap-ease) .24s both; }
 }
 
 /* Hover, only for real pointers (a tap shouldn't leave cards "stuck" lifted) */

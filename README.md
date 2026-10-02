@@ -107,7 +107,7 @@ stateDiagram-v2
 | Process connectors draw after each step | Home | Yes | Hidden in the stacked layout |
 | Numbers count up each time they arrive | Home hero stats, "16 papers" | Real number stays in an `aria-label` | Same |
 | Photos settle from a slight zoom | Revealed sections with photos | Yes | Off |
-| FAQ answers, open roles and the mobile menu ease open | Home, Careers, every page | Yes | Menu items stagger in, with the quote button |
+| FAQ answers, open roles and the mobile menu ease open | Home, Careers, every page | Yes | Full-screen menu: links stagger in, then the quote button and contact details; X closes, page behind does not scroll |
 | Hover: cards lift, nav underline grows, arrows nudge, faces zoom slightly | Site-wide | Mouse and trackpad only | Off, so taps don't leave cards stuck |
 
 Keyboard focus always reveals the section it lands in, and the mobile menu closes with Escape.
@@ -156,7 +156,7 @@ Every page is designed and built. The six expertise areas are sections of `exper
 
 | Page | File | Interactive in preview | What's on it | Calls to action | Schema and E-E-A-T |
 | --- | --- | --- | --- | --- | --- |
-| Home | `index.html` | FAQ accordion, count-up stats | A short front door to the full pages: hero, 6 expertise areas with leads, 4 service tiles, how a study runs, 2 featured papers with headline stats, the team in one row, FAQ | Hero quote button; "Talk to a scientist" after the process; closing quote band | `Organization`, `FAQPage` |
+| Home | `index.html` | FAQ accordion, count-up stats | A short front door to the full pages: hero, 6 expertise areas with leads, 4 service tiles, how a study runs, 3 featured papers (gene therapy, type 1 diabetes, anesthesia) with headline stats, the team in one row, FAQ | Hero quote button; "Talk to a scientist" after the process; closing quote band | `Organization`, `FAQPage` |
 | Expertise | `expertise.html` | Jump links to each area | All six therapeutic areas: overview, the models from the old site in a table, the lead scientist, related papers and blog posts | "Plan your … study" under each area (study type preset); closing band | Lead named on every area |
 | Services | `services.html` | Jump links to each service | Study types, then IVIS imaging, surgical services, colony management, in vitro laboratory and study support, each with its lead | "Add … to your study" under each service (study type preset); closing band | Lead named on every service |
 | Tumor models | `tumor-models.html` | — | Deep-dive template for one area: models table, in-house endpoints, study team, related expertise | Closing quote band | Study team named |
