@@ -173,6 +173,13 @@ td:first-child{font-weight:600;width:38%}
 .ap .li{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);font-size:14px;font-weight:600;text-decoration:none;color:var(--tide)}
 .ap .li::after{content:"\2197";content:"\2197" / "";font-size:13px}
 .ap .li:hover{border-color:var(--tide);color:var(--navy)}
+/* keep-reading cards: framed and padded like the blog index */
+.posts{gap:24px}
+.ap .post{display:flex;flex-direction:column;gap:12px;height:100%;padding:24px;background:#fff;border:1.5px solid var(--line);border-radius:14px;transition:border-color .25s ease}
+.ap .post:hover{border-color:var(--current)}
+.post .tag{align-self:flex-start}
+.post p{margin-top:auto !important;padding-top:8px}
+@media (max-width:680px){.ap .post{padding:20px}.posts{gap:16px}}
 </style>
 <link rel="stylesheet" href="assets/css/site.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Continuous dosing with Alzet pumps: when and why", "author": {"@type": "Person", "name": "Gil Chacon", "jobTitle": "In Vivo Studies, Surgical Support and Training"}, "reviewedBy": {"@type": "Person", "name": "Barak Yahalom"}, "publisher": {"@type": "Organization", "name": "Alpha Preclinical LLC"}, "keywords": "Alzet osmotic pump", "citation": ["https://alzet.com/products/alzet_pumps/how-does-it-work/", "https://alzet.com/products/ALZET_pumps/specifications/"]}</script>

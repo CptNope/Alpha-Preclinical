@@ -94,6 +94,16 @@ body{margin:0}
 .band{position:relative;overflow:hidden}.band>*{position:relative;z-index:1}.band>.band-lines{position:absolute;left:0;right:0;bottom:0;width:100%;height:48px;z-index:0;pointer-events:none}.band-lines path{fill:none;stroke:rgba(136,198,238,.3);stroke-width:1.5}
 .art.has-img{aspect-ratio:1200/655;background:#EEF5FB;border:1.5px solid var(--line)}
 .art.has-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+/* cards: framed, image full-bleed on top, text inset, meta aligned to the bottom */
+.grid{gap:40px 32px}
+.ap .post{display:flex;flex-direction:column;gap:0;height:100%;background:#fff;border:1.5px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .25s ease}
+.ap .post:hover{border-color:var(--current)}
+.post .art{border-radius:0}
+.post .tag{align-self:flex-start;margin:24px 24px 0}
+.post h3{margin:14px 24px 0}
+.post p{margin:10px 24px 0}
+.post p.draft{margin:auto 0 0;padding:20px 24px 24px}
+@media (max-width:680px){.grid{gap:24px}.post .tag{margin:20px 20px 0}.post h3{margin:12px 20px 0;font-size:21px}.post p{margin:8px 20px 0}.post p.draft{margin:auto 0 0;padding:16px 20px 20px}.post .art{aspect-ratio:16/9}}
 </style>
 </helmet>
 <div class="ap">
@@ -173,7 +183,7 @@ body{margin:0}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3258}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3379}}'>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { topic: 'All' }; }
   renderVals() {
