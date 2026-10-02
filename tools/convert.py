@@ -281,6 +281,11 @@ def page_blog(s, src):
     cards = []
     for p in posts[1:]:
         c = tpl
+        # card art: the post's image if it has one, otherwise the placeholder waves
+        keep, drop = ("p.img", "p.noImg") if p.get("img") else ("p.noImg", "p.img")
+        c = re.sub(r'<sc-if value="\{\{' + re.escape(drop) + r'\}\}"[^>]*>.*?</sc-if>', "", c, count=1, flags=re.S)
+        c = re.sub(r'<sc-if value="\{\{' + re.escape(keep) + r'\}\}"[^>]*>(.*?)</sc-if>', lambda m: m.group(1), c, count=1, flags=re.S)
+        c = c.replace("{{p.img}}", E(p.get("img", "")))
         for k in ("topic", "title", "dek", "author", "read"):
             c = c.replace("{{p.%s}}" % k, E(p[k]))
         c = c.replace('<a class="post"', f'<a class="post" data-item="posts" data-topic="{E(p["topic"])}"', 1)

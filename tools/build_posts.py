@@ -65,6 +65,9 @@ POSTS = {
         'summary': ['Name the decision the study informs before choosing anything else.', 'Confirm exposure with a short PK study, then match the model to your mechanism.', 'Set the primary endpoint, group size and controls together, and design for ARRIVE 2.0.'],
         'papers': [], 'cta': 'Planning your first efficacy study?'},
     2: {'topic': 'Tumor models', 'img': ('assets/img/lab-biosafety-cabinet.jpg', 'Alpha scientist preparing samples in a biosafety cabinet', 'Sample preparation in the Alpha laboratory, Worcester, Massachusetts.'),
+        'infographic': {'src': 'assets/img/blog/caliper-vs-ivis-hero', 'w': 1672, 'h': 941, 'sizes': (1200, 1672), 'full_link': False,
+                        'alt': 'Illustration: one scientist measures tumors with digital calipers while a colleague presents a bioluminescence imaging system and its heat-map results on a monitor.',
+                        'caption': 'Calipers and bioluminescence imaging measure tumor burden in different ways, and suit different models.'},
         'summary': ['Calipers are enough for most subcutaneous tumors if every group is measured the same way.', 'Orthotopic and metastatic models need bioluminescence imaging.', 'Run a luciferin kinetic curve per model and keep the imaging schedule constant.'],
         'papers': [], 'cta': 'Planning an oncology study?'},
     3: {'topic': 'Metabolic disease', 'img': ('assets/img/lab-biosafety-cabinet.jpg', 'Alpha scientist preparing samples in a biosafety cabinet', 'Sample preparation in the Alpha laboratory, Worcester, Massachusetts.'),
@@ -192,15 +195,16 @@ def main():
         info = cfg.get('infographic')
         if info:
             src = info['src']
-            fig = (f'<figure class="hero-img infographic">\n    <img src="{src}-1200.jpg" srcset="{src}-1200.jpg 1200w, {src}-2000.jpg 2000w" '
+            lo, hi = info.get('sizes', (1200, 2000))
+            fig = (f'<figure class="hero-img infographic">\n    <img src="{src}-{lo}.jpg" srcset="{src}-{lo}.jpg {lo}w, {src}-{hi}.jpg {hi}w" '
                    f'sizes="(max-width: 1080px) 100vw, 820px" width="{info["w"]}" height="{info["h"]}" fetchpriority="high" alt="{E(info["alt"])}">\n'
                    f'    <figcaption>{E(info["caption"])}'
-                   + (f' <a href="{src}-2000.jpg" target="_blank" rel="noopener" aria-label="Open the image full size (opens in new tab)">Open full size</a>' if info.get('full_link', True) else '')
+                   + (f' <a href="{src}-{hi}.jpg" target="_blank" rel="noopener" aria-label="Open the image full size (opens in new tab)">Open full size</a>' if info.get('full_link', True) else '')
                    + '</figcaption>\n  </figure>')
         else:
             fig = f'<figure class="hero-img">\n    <img src="{img}" alt="{E(alt)}">\n    <figcaption>{E(cap)}</figcaption>\n  </figure>'
         s = re.sub(r'<figure class="hero-img[^"]*">.*?</figure>', lambda m: fig, s, count=1, flags=re.S)
-        share_img = f"{info['src']}-2000.jpg" if info else None
+        share_img = f"{info['src']}-{info.get('sizes', (1200, 2000))[1]}.jpg" if info else None
         if share_img:
             s = re.sub(r'(<meta property="og:image" content=")[^"]*', lambda m: m.group(1) + share_img, s)
             s = re.sub(r'("@type": "Article", )', lambda m: m.group(1) + f'"image": "{share_img}", ', s, count=1)

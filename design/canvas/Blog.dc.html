@@ -104,6 +104,8 @@ body{margin:0}
 .post p{margin:10px 24px 0}
 .post p.draft{margin:auto 0 0;padding:20px 24px 24px}
 @media (max-width:680px){.grid{gap:24px}.post .tag{margin:20px 20px 0}.post h3{margin:12px 20px 0;font-size:21px}.post p{margin:8px 20px 0}.post p.draft{margin:auto 0 0;padding:16px 20px 20px}.post .art{aspect-ratio:16/9}}
+.post .art{aspect-ratio:16/9}
+.post .art.has-img{aspect-ratio:16/9;border:0}
 </style>
 </helmet>
 <div class="ap">
@@ -151,7 +153,7 @@ body{margin:0}
     <div class="grid">
       <sc-for list="{{posts}}" as="p" hint-placeholder-count="6">
         <a class="post" href="BlogPost.dc.html">
-          <div class="art"><span>Image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z" fill="#4B98D2"></path></svg></div>
+          <sc-if value="{{p.img}}" hint-placeholder-val="{{false}}"><div class="art has-img"><img src="{{p.img}}" width="1200" height="675" alt="" loading="lazy"></div></sc-if><sc-if value="{{p.noImg}}" hint-placeholder-val="{{true}}"><div class="art"><span>Image</span><svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z" fill="#88C6EE"></path><path d="M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z" fill="#4B98D2"></path></svg></div></sc-if>
           <span class="tag" style="justify-self:start">{{p.topic}}</span>
           <h3>{{p.title}}</h3>
           <p>{{p.dek}}</p>
@@ -183,13 +185,13 @@ body{margin:0}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3379}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3303}}'>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { topic: 'All' }; }
   renderVals() {
     const all = [
       { topic: 'Study design', title: 'How to scope your first in vivo efficacy study', dek: 'The questions to answer before choosing a model, group size or endpoint, and how they change your timeline and budget.', author: 'Barak Yahalom, DVM', read: '3 min read' },
-      { topic: 'Tumor models', title: 'Caliper or IVIS? Choosing how to measure tumor burden', dek: 'When bioluminescent imaging earns its cost, and when caliper measurements are enough.', author: 'Barak Yahalom, DVM', read: '3 min read' },
+      { topic: 'Tumor models', img: 'img/blog/caliper-vs-ivis-hero-1200.jpg', title: 'Caliper or IVIS? Choosing how to measure tumor burden', dek: 'When bioluminescent imaging earns its cost, and when caliper measurements are enough.', author: 'Barak Yahalom, DVM', read: '3 min read' },
       { topic: 'Metabolic disease', title: 'Diet-induced versus genetic models of type 2 diabetes', dek: 'What each model can and cannot tell you about a metabolic drug candidate.', author: 'Joan Flanagan, PhD', read: '3 min read' },
       { topic: 'Gene therapy', title: 'What an mRNA liver depot study looks like in practice', dek: 'Lessons from published Fabry disease and hemophilia B studies our scientists co-authored.', author: 'Barak Yahalom, DVM', read: '3 min read' },
       { topic: 'Lab services', title: 'Getting more from every animal with in-house flow cytometry', dek: 'Adding immunophenotyping to an in vivo study without shipping samples.', author: 'Cindy Hopper', read: '3 min read' },
@@ -200,7 +202,7 @@ class Component extends DCLogic {
     const t = this.state.topic;
     const list = all.filter((p) => t === 'All' || p.topic === t);
     const filters = topics.map((label) => ({ label, pressed: t === label ? 'true' : 'false', pick: () => this.setState({ topic: label }) }));
-    return { filters, feature: list[0] || {}, showFeature: list.length > 0, posts: list.slice(1), isEmpty: list.length === 0 };
+    return { filters, feature: list[0] || {}, showFeature: list.length > 0, posts: list.slice(1).map((p) => ({ ...p, noImg: !p.img })), isEmpty: list.length === 0 };
   }
 }
 </script>
