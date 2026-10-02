@@ -223,7 +223,7 @@ def page_publications(s, src):
                 ids += f'<div><dt>PMID</dt><dd>{pmid}</dd></div>'
             if pmcid:
                 ids += f'<div><dt>PMCID</dt><dd>{pmcid}</dd></div>'
-            lis.append(f'<li class="paper"><h3>{E(title)}</h3><p class="by">{E(others)}</p>'
+            lis.append(f'<li class="paper"><h3><a class="t" href="{E(pdf)}" target="_blank" rel="noopener" aria-label="{E(title)} (PDF, opens in new tab)">{E(title)}</a></h3><p class="by">{E(others)}</p>'
                        f'<p class="cite"><i>{E(journal)}</i>. {E(citation(date, volume, issue, pages, epub))}</p>'
                        f'<dl class="ids">{ids}</dl>'
                        f'<p class="meta"><span class="alpha">Alpha authors: {E(alpha)}</span></p>'

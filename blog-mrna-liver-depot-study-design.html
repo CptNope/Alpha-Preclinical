@@ -181,6 +181,11 @@ td:first-child{font-weight:600;width:38%}
 .post p{margin-top:auto !important;padding-top:8px}
 @media (max-width:680px){.ap .post{padding:20px}.posts{gap:16px}}
 .ap .hero-img.infographic img{aspect-ratio:auto;height:auto;object-fit:contain;background:#EEF5FB}
+.share-copy{all:unset;box-sizing:border-box;justify-self:start;cursor:pointer;font-weight:600;color:var(--tide);padding:3px 0}
+.share-copy:hover{color:var(--navy)}
+.share-copy:focus-visible{outline:3px solid var(--current);outline-offset:3px;border-radius:4px}
+.share-status{font-size:14px;color:var(--muted);min-height:1.2em}
+.ap .share a{display:inline-block;padding:3px 0;justify-self:start}
 </style>
 <link rel="stylesheet" href="assets/css/site.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What an mRNA liver depot study looks like in practice", "author": {"@type": "Person", "name": "Barak Yahalom", "honorificSuffix": "DVM", "jobTitle": "Chief Executive Officer and Chief Scientific Officer"}, "reviewedBy": {"@type": "Person", "name": "Joan Flanagan", "honorificSuffix": "PhD"}, "publisher": {"@type": "Organization", "name": "Alpha Preclinical LLC"}, "citation": ["DeRosa F, et al. Therapeutic efficacy in a hemophilia B model using a biosynthetic mRNA liver depot system. Gene Therapy. 2016;23(10):699-707.", "DeRosa F, et al. Improved efficacy in a Fabry disease model using a systemic mRNA liver depot system as compared to enzyme replacement therapy. Molecular Therapy. 2019;27(4):878-889."], "image": "assets/img/blog/mrna-liver-depot-hero-1698.jpg"}</script>
@@ -229,7 +234,7 @@ td:first-child{font-weight:600;width:38%}
       <li><a href="#repeat">Plan for repeat dosing</a></li>
       <li><a href="#refs">References</a></li>
     </ol>
-    <div class="share"><h2 style="margin:0">Share</h2><a href="#share-linkedin">LinkedIn</a><a href="#share-email">Email</a><a href="#copy">Copy link</a></div>
+    <div class="share"><h2 style="margin:0">Share</h2><a href="https://www.linkedin.com/sharing/share-offsite/" data-share="linkedin" target="_blank" rel="noopener" aria-label="Share on LinkedIn (opens in new tab)">LinkedIn</a><a href="mailto:" data-share="email">Email</a><button type="button" class="share-copy" data-share="copy">Copy link</button><span class="share-status" role="status"></span></div>
   </aside>
 
   <article>

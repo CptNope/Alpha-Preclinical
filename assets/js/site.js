@@ -33,6 +33,26 @@
     window.matchMedia('(min-width: 1081px)').addEventListener('change', function (m) { if (m.matches) set(false); });
   });
 
+  // Share links on posts: built from the page's own address, so they work on any domain
+  (function () {
+    var url = window.location.href.split('#')[0];
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : document.title;
+    document.querySelectorAll('[data-share="linkedin"]').forEach(function (a) {
+      a.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+    });
+    document.querySelectorAll('[data-share="email"]').forEach(function (a) {
+      a.href = 'mailto:?subject=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(title + '\n\n' + url);
+    });
+    document.querySelectorAll('[data-share="copy"]').forEach(function (b) {
+      var status = b.parentNode.querySelector('.share-status');
+      b.addEventListener('click', function () {
+        var done = function (ok) { if (status) status.textContent = ok ? 'Link copied' : 'Copy failed. The address is in your browser bar.'; };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(function () { done(true); }, function () { done(false); });
+        else done(false);
+      });
+    });
+  })();
+
   // Accordions (FAQ, open roles): one open at a time within a list
   document.querySelectorAll('[data-accordion]').forEach(function (btn) {
     btn.addEventListener('click', function () {

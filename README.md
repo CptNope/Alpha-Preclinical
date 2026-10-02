@@ -11,7 +11,7 @@ This repo holds three things:
 **Live preview:** https://cptnope.github.io/Alpha-Preclinical/ (once GitHub Pages is serving `main`)
 
 > [!IMPORTANT]
-> This is a **review build**, not the production site. Forms validate and confirm on screen but send nothing, blog share links are placeholders, publication PDFs are still served from the old site, and several items still need client confirmation (see [Open items](#open-items-before-launch)).
+> This is a **review build**, not the production site. Forms validate and confirm on screen but send nothing, publication PDFs are still served from the old site, and several items still need client confirmation (see [Open items](#open-items-before-launch)).
 
 ---
 
@@ -160,7 +160,7 @@ Every page is designed and built. The six expertise areas are sections of `exper
 | Expertise | `expertise.html` | Jump links to each area | All six therapeutic areas: overview, the models from the old site in a table, the lead scientist, related papers and blog posts | "Plan your … study" under each area (study type preset); closing band | Lead named on every area |
 | Services | `services.html` | Jump links to each service | Study types, then IVIS imaging, surgical services, colony management, in vitro laboratory and study support, each with its lead | "Add … to your study" under each service (study type preset); closing band | Lead named on every service |
 | Tumor models | `tumor-models.html` | — | Deep-dive template for one area: models table, in-house endpoints, study team, related expertise | Closing quote band | Study team named |
-| Publications | `publications.html` | Filter by research area | All 16 papers grouped by area with a full NLM-style citation (journal, issue date, volume, issue, pages, epub date), DOI link, PMID and PMCID, Alpha authors called out; **Read PDF**, **PubMed** (15 of 16) and **Free full text** on PubMed Central (8) | "Want the authors on your study?" band | `ScholarlyArticle` list with authors, volume, issue, pagination, date, and DOI / PMID / PMCID identifiers |
+| Publications | `publications.html` | Filter by research area | All 16 papers grouped by area with a full NLM-style citation (journal, issue date, volume, issue, pages, epub date), DOI link, PMID and PMCID, Alpha authors called out; each title and **Read PDF** open the paper, plus **PubMed** (15 of 16) and **Free full text** on PubMed Central (8) | "Want the authors on your study?" band | `ScholarlyArticle` list with authors, volume, issue, pagination, date, and DOI / PMID / PMCID identifiers |
 | About | `about.html` | — | Company story, key facts, values, facility, leadership | Closing quote band | Founding date, leadership |
 | Team | `team.html` | Photo swap on hover | Group photo, leadership and founding team profiles with education, prior roles, affiliations, the areas each person leads, bios rewritten for E-E-A-T (role and client value first, then experience and credentials, then published research by journal and year), **Selected publications** for Barak and Joan, **LinkedIn** for Barak, Joan and Ashley, and **PubMed** for Barak (8 papers) and Joan (4) | "Put this team on your program" band; careers link | `Person` list with description, job title, image, `alumniOf`, `knowsAbout`, `memberOf` and LinkedIn `sameAs` |
 | Blog | `blog.html` | Filter by topic | Index of the seven launch posts, all linked | "Ask a scientist" band | — |
@@ -483,7 +483,6 @@ AXE_PATH=path/to/axe.min.js python3 docs/a11y-audit.py http://localhost:8766 aud
 - [ ] Attorney review of the draft Privacy Policy and Terms of Use (bracketed items depend on the final analytics, form and hosting tools)
 - [ ] Response time for accessibility requests (Accessibility Statement)
 - [ ] Screen-reader pass with VoiceOver and NVDA on staging
-- [ ] Share links on blog posts (placeholders)
 - [ ] Real form handling and spam protection
 - [ ] `JobPosting` schema (`Person` and `ScholarlyArticle` are done)
 - [ ] XML sitemap and redirects from old Wix URLs (`/experetise`, `/services`, `/about-us`, `/pk-pd`, …)
