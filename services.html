@@ -128,7 +128,7 @@ body{margin:0}
 <header class="top">
   <div class="wrap hdr">
     <a href="index.html" aria-label="Alpha Preclinical home"><img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
-    <nav aria-label="Main"><ul class="nav"><li><a href="expertise.html">Expertise</a></li><li><a href="services.html" aria-current="page">Services</a></li><li><a href="publications.html">Publications</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    <nav aria-label="Main"><ul class="nav"><li class="has-sub" data-sub><a class="top-link" href="expertise.html">Expertise</a><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-expertise"><span class="sr-only">Expertise menu</span><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="sub sub-wide" id="sub-expertise"><div class="sub-intro"><p class="sub-title">Disease models and study expertise</p><p>Six therapeutic areas, each led by a senior scientist who has published in it or run it for years.</p><a class="sub-all" href="expertise.html">All expertise</a></div><ul class="sub-list"><li><a href="expertise.html#pk-pd"><b>PK/PD</b><span>Routes, samples, imaging</span></a></li><li><a href="expertise.html#gene-therapy"><b>Gene therapy</b><span>Nucleic acid delivery</span></a></li><li><a href="expertise.html#autoimmune"><b>Autoimmune disease</b><span>SLE, T1D, EAE, IBD, RA</span></a></li><li><a href="expertise.html#metabolic"><b>Metabolic disease</b><span>Obesity, T2D, NASH, lipids</span></a></li><li><a href="expertise.html#fibrosis"><b>Inflammation and fibrosis</b><span>OA, fibrosis, LPS</span></a></li><li><a href="tumor-models.html"><b>Tumor models</b><span>Subcutaneous, orthotopic, IVIS</span></a></li></ul><a class="sub-feature" href="contact.html#form"><img src="assets/img/lab-biosafety-cabinet.jpg" alt="" loading="lazy" width="560" height="373"><b>Need a model that isn't listed?</b><span>We set up models from the literature.</span></a></div></li><li class="has-sub" data-sub><a class="top-link" href="services.html" aria-current="page">Services</a><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-services"><span class="sr-only">Services menu</span><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="sub sub-wide" id="sub-services"><div class="sub-intro"><p class="sub-title">Services under one roof</p><p>Formulation, dosing, surgery, imaging and lab analysis, run by the team that runs your study.</p><a class="sub-all" href="services.html">All services</a></div><ul class="sub-list"><li><a href="services.html#study-types"><b>Study types</b><span>PK/PD, proof of concept, efficacy</span></a></li><li><a href="services.html#ivis"><b>IVIS imaging</b><span>Bioluminescence and fluorescence</span></a></li><li><a href="services.html#surgery"><b>Surgical services</b><span>USDA-compliant suite, staff DVM</span></a></li><li><a href="services.html#colony"><b>Colony management</b><span>Custom breeding programs</span></a></li><li><a href="services.html#in-vitro"><b>In vitro laboratory</b><span>Flow cytometry, ELISA, histology</span></a></li><li><a href="services.html#support"><b>Study support</b><span>Formulation and test materials</span></a></li></ul><a class="sub-feature" href="contact.html"><img src="assets/img/building-sign.jpg" alt="" loading="lazy" width="560" height="373"><b>722 Plantation Street, Worcester</b><span>Our vivarium and labs. Come and see them.</span></a></div></li><li><a href="publications.html">Publications</a></li><li class="has-sub" data-sub><a class="top-link" href="about.html">About</a><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-about"><span class="sr-only">About menu</span><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="sub" id="sub-about"><ul class="sub-list"><li><a href="about.html"><b>About Alpha</b><span>Our story, values and facility</span></a></li><li><a href="team.html"><b>Team</b><span>The scientists who run your study</span></a></li><li><a href="careers.html"><b>Careers</b><span>Open roles in Worcester</span></a></li></ul></div></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
     <a class="btn btn-light" href="contact.html">Request a study quote</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg></button>
   </div>
   <div class="wrap top-body">
@@ -151,7 +151,7 @@ body{margin:0}
 </header>
 
 <main id="main">
-<section class="sec" aria-labelledby="int-h">
+<section class="sec" id="study-types" aria-labelledby="int-h">
   <div class="wrap">
     <div class="intro">
       <h2 class="h2" id="int-h">Preclinical in vivo contract research</h2>
@@ -172,12 +172,11 @@ body{margin:0}
   </div>
 </section>
 
-<section class="sec sec-mist" aria-label="Services">
+<section class="area area-mist" aria-labelledby="ivis-h">
   <div class="wrap">
-
     <article class="svc" id="ivis">
       <div>
-        <h2>IVIS imaging</h2>
+        <h2 id="ivis-h">IVIS imaging</h2>
         <p class="desc">Our Spectrum IVIS imager captures bioluminescence and fluorescence in live, whole-body images or in tissues ex vivo.</p>
         <div class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt=""><div><small>Led by</small><b><a href="team.html#barak-yahalom">Barak Yahalom, DVM</a></b></div></div>
         <a class="area-cta" href="contact.html?study=IVIS%20imaging%2C%20surgery%20or%20lab%20services#form">Add IVIS imaging to your study</a>
@@ -192,10 +191,13 @@ body{margin:0}
         <p class="related">Related: <a href="tumor-models.html">Tumor models</a></p>
       </div>
     </article>
-
-    <article class="svc" id="surgery">
+  </div>
+</section>
+<section class="area area-paper" aria-labelledby="surgery-h">
+  <div class="wrap">
+    <article class="svc flip" id="surgery">
       <div>
-        <h2>Surgical services</h2>
+        <h2 id="surgery-h">Surgical services</h2>
         <p class="desc">Our team is trained to perform surgery in small and large animal species, using aseptic and sterile technique that prevents complications and supports a smoother recovery.</p>
         <div class="lead"><span class="pair"><img src="assets/img/team/barak-yahalom.jpg" alt=""><img src="assets/img/team/gil-chacon.jpg" alt=""></span><div><small>Led by</small><b><a href="team.html#barak-yahalom">Barak Yahalom, DVM</a> and <a href="team.html#gil-chacon">Gil Chacon</a></b></div></div>
         <a class="area-cta" href="contact.html?study=IVIS%20imaging%2C%20surgery%20or%20lab%20services#form">Plan surgical work with our DVM</a>
@@ -212,10 +214,13 @@ body{margin:0}
         <p class="related">Related: <a href="blog-alzet-osmotic-pump-continuous-dosing.html">Continuous dosing with Alzet pumps</a></p>
       </div>
     </article>
-
+  </div>
+</section>
+<section class="area area-deep" aria-labelledby="colony-h">
+  <div class="wrap">
     <article class="svc" id="colony">
       <div>
-        <h2>Colony management</h2>
+        <h2 id="colony-h">Colony management</h2>
         <p class="desc">Our staff are highly trained in rodent breeding and reproduction, and build custom colony management programs around your study needs.</p>
         <div class="lead"><img src="assets/img/team/ashley-kolofsky.jpg" alt=""><div><small>Led by</small><b><a href="team.html#ashley-kolofsky">Ashley Kolofsky</a></b></div></div>
         <a class="area-cta" href="contact.html?study=IVIS%20imaging%2C%20surgery%20or%20lab%20services#form">Set up a breeding colony</a>
@@ -228,10 +233,13 @@ body{margin:0}
         </ul></div>
       </div>
     </article>
-
-    <article class="svc" id="in-vitro">
+  </div>
+</section>
+<section class="area area-mist" aria-labelledby="in-vitro-h">
+  <div class="wrap">
+    <article class="svc full" id="in-vitro">
       <div>
-        <h2>In vitro laboratory</h2>
+        <h2 id="in-vitro-h">In vitro laboratory</h2>
         <p class="desc">Biomarker and cellular analysis on the samples your in vivo study generates, without shipping them out.</p>
         <div class="lead"><img src="assets/img/team/cindy-hopper.jpg" alt=""><div><small>Led by</small><b><a href="team.html#cindy-hopper">Cindy Hopper</a></b></div></div>
         <a class="area-cta" href="contact.html?study=IVIS%20imaging%2C%20surgery%20or%20lab%20services#form">Add lab readouts to your study</a>
@@ -256,10 +264,13 @@ body{margin:0}
         <p class="related">Related: <a href="blog-flow-cytometry-immunophenotyping-in-vivo-studies.html">Getting more from every animal with in-house flow cytometry</a></p>
       </div>
     </article>
-
-    <article class="svc" id="support">
+  </div>
+</section>
+<section class="area area-paper" aria-labelledby="support-h">
+  <div class="wrap">
+    <article class="svc flip" id="support">
       <div>
-        <h2>Study support</h2>
+        <h2 id="support-h">Study support</h2>
         <p class="desc">The preparation that makes a study run cleanly, handled by the same team that doses and observes your animals.</p>
       </div>
       <div class="detail">
@@ -269,7 +280,6 @@ body{margin:0}
         </ul></div>
       </div>
     </article>
-
   </div>
 </section>
 

@@ -157,7 +157,7 @@ body{margin:0}
 
 /* cta + footer */
 .cta{position:relative;background:var(--abyss);color:#fff;overflow:hidden;text-align:center;padding:136px 0 128px}
-.cta h2{font-size:clamp(38px,5vw,64px);line-height:1;letter-spacing:-.03em;max-width:15ch;margin:0 auto}
+.cta h2{font-size:clamp(38px,5vw,64px);line-height:1;letter-spacing:-.03em;max-width:21ch;margin:0 auto}
 .cta p{color:var(--on-abyss);font-size:19px;margin:24px auto 0;max-width:34em}
 .cta .hero-ctas{justify-content:center}
 .cta svg{position:absolute;left:0;right:0;width:100%;height:120px}
@@ -260,6 +260,131 @@ body{margin:0}
 .ap .team .member{display:grid;gap:12px;align-content:start;padding:0}
 .member small{display:block;line-height:1.4;margin-top:4px}
 @media (max-width:680px){.team .team-cta{grid-column:auto;aspect-ratio:4/5;padding:18px}.team-cta p{font-size:18px}}
+
+/* ===== Homepage v3 (client review, Nov 2026): the alpha hero and varied section layouts ===== */
+/* Hero: the logo's alpha, enlarged, filled by the strata rising inside it */
+.hero-body{grid-template-columns:minmax(0,8fr) minmax(0,4fr);grid-template-areas:"copy fig" "aside aside";align-items:center;gap:40px 56px;padding-top:40px}
+.hero-copy{grid-area:copy}
+.hero h1{max-width:none;font-size:clamp(40px,4.6vw,68px);hyphens:manual}
+.alpha-fig{grid-area:fig;margin:0;justify-self:end;width:100%;max-width:400px}
+.alpha-fig svg{display:block;width:100%;height:auto;aspect-ratio:108/130;overflow:visible}
+.alpha-edge{stroke:rgba(136,198,238,.7);stroke-width:.6}
+.ab{animation:adrift linear infinite}
+.ab1{animation-duration:14s}.ab2{animation-duration:11s;animation-direction:reverse}.ab3{animation-duration:17s}.ab4{animation-duration:12s;animation-direction:reverse}.ab5{animation-duration:20s}
+@keyframes adrift{from{transform:translateX(0)}to{transform:translateX(-108px)}}
+.motion-paused .ab,.motion-paused .step-wave path{animation-play-state:paused}
+.hero-aside{grid-area:aside;border-top:0;padding-top:0;margin:8px 0 0;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 40px}
+.hero-aside div{grid-template-columns:minmax(0,1fr);gap:6px;align-items:start}
+.hero-aside dt{font-size:44px;line-height:1}
+.hero-aside dd{font-size:16px;max-width:22em}
+@media (prefers-reduced-motion:reduce){.ab{animation:none}}
+
+/* Expertise: the heading column stays in view while the areas scroll past */
+.exp-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
+.exp-aside{position:sticky;top:40px;display:grid;gap:24px;justify-items:start}
+.exp-aside h2{font-size:clamp(32px,3.4vw,46px);line-height:1.05;letter-spacing:-.025em;hyphens:manual}
+.exp-aside p{color:var(--muted);font-size:19px}
+.exp-grid .models{border-top:0;display:grid;gap:8px}
+.exp-grid .models li{border-bottom:0}
+.ap .exp-grid .model{border-radius:14px}
+.ap .exp-grid .model:hover{padding-left:24px;padding-right:24px}
+.ap .exp-grid .model{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"h go" "d d";gap:10px 24px;padding:28px 8px}
+.ap .exp-grid .model h3{grid-area:h}
+.ap .exp-grid .model > div{grid-area:d}
+.ap .exp-grid .model span{grid-area:go}
+
+/* Services: the lab photograph bleeds off the left edge, services on the deep field */
+.svc-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--abyss);color:#fff;min-height:720px}
+.svc-photo-col{position:relative;overflow:hidden}
+.svc-photo-col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 50%;display:block}
+.svc-body{padding:112px max(40px,calc((100vw - 1240px) / 2 + 40px)) 112px 72px;display:flex;flex-direction:column;gap:20px}
+.svc-body h2{font-size:clamp(34px,4vw,52px);line-height:1.04;letter-spacing:-.025em;color:#fff}
+.svc-intro{color:var(--on-abyss);font-size:19px;max-width:30em}
+.svc-rows{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:4px}
+.ap .svc-row{display:grid;grid-template-columns:44px minmax(0,1fr);gap:18px;align-items:start;padding:18px 16px 18px 12px;margin-left:-12px;border-radius:14px;color:#fff;text-decoration:none;transition:background-color .2s ease}
+.ap .svc-row:hover{background:rgba(255,255,255,.07);color:#fff}
+.svc-row .svc-ico{stroke:var(--shallows);width:40px;height:40px}
+.svc-row b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:23px;line-height:1.2}
+.svc-row span span{display:block;color:var(--on-abyss);font-size:16px;margin-top:4px}
+.ap .svc-body .more-links a{color:var(--shallows)}
+.ap .svc-body .more-links a:hover{color:#fff}
+
+/* How a study runs: the strata, one stage per layer, stepping deeper and to the right */
+.strata-steps{background:var(--paper);padding-top:120px}
+.steps-head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:40px;align-items:end;margin-bottom:56px}
+.steps-head h2{font-size:clamp(34px,4vw,52px);line-height:1.04;letter-spacing:-.025em}
+.steps-head p{color:var(--muted);font-size:19px;max-width:30em}
+.strata-list{list-style:none;margin:0;padding:0}
+.stratum{position:relative;padding:28px 0 64px}
+.step-wave{position:absolute;left:0;right:0;top:-47px;width:100%;height:48px;display:block}
+.stratum-body{max-width:520px}
+.stratum h3{font-size:clamp(28px,3vw,42px);line-height:1.05;letter-spacing:-.02em;margin-bottom:12px}
+.stratum p{font-size:17px;line-height:1.6;max-width:34em}
+.st1{background:#EEF5FB;color:var(--navy);margin-top:48px}
+.st2{background:#88C6EE;color:#0B2747}.st2 .stratum-body{margin-left:16%}
+.st3{background:#4B98D2;color:#0B2747}.st3 .stratum-body{margin-left:32%}
+.st4{background:#1E58A0;color:#fff}.st4 .stratum-body{margin-left:48%}
+.st5{background:#0F3360;color:#fff;padding:40px 0 112px}
+.st5 .mid-cta{margin-top:0;border-radius:0;padding-top:24px;padding-bottom:0;background:none}
+.st1 p{color:var(--muted)}
+.has-motion .step-wave path{animation:drift linear infinite}
+.w-st1 path{animation-duration:60s!important}.w-st2 path{animation-duration:48s!important;animation-direction:reverse!important}.w-st3 path{animation-duration:54s!important}.w-st4 path{animation-duration:44s!important;animation-direction:reverse!important}.w-st5 path{animation-duration:66s!important}
+
+/* Publications: the count as a figure, three papers led by their journal */
+.pubs-top{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center;margin-bottom:80px}
+.pub-big{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:clamp(160px,22vw,320px);line-height:.8;letter-spacing:-.06em;color:var(--tide)}
+.pubs-top h2{font-size:clamp(34px,4vw,52px);line-height:1.04;letter-spacing:-.025em}
+.pubs-top .intro{color:var(--muted);font-size:19px;margin:20px 0 32px;max-width:32em}
+.paper-cols{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}
+.paper-col{display:flex;flex-direction:column;gap:12px}
+.paper-col::before{content:"";display:block;width:56px;height:4px;border-radius:2px;background:var(--current);margin-bottom:12px}
+.paper-col .jr{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:26px;line-height:1.1;letter-spacing:-.015em;color:var(--tide)}
+.paper-col .jr span{font-style:italic}
+.paper-col h3{font-size:20px;line-height:1.3;letter-spacing:-.01em}
+.ap .paper-col h3 a{color:var(--navy);text-decoration:none}
+.ap .paper-col h3 a:hover{color:var(--tide);text-decoration:underline;text-underline-offset:3px}
+.paper-col .by{color:var(--muted);font-size:15px;line-height:1.5}
+.paper-col .by b{color:var(--navy);font-weight:600}
+.paper-col .area{margin-top:4px;font-size:15px;font-weight:600;color:var(--tide)}
+
+/* People: the real team photograph, wide, with the heading set on it */
+.team-photo{position:relative;margin:0 0 48px;border-radius:14px;overflow:hidden;aspect-ratio:21/9;background:var(--abyss)}
+.team-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+.team-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:140px 48px 40px;background:linear-gradient(to top,rgba(11,39,71,.92) 0%,rgba(11,39,71,.75) 45%,rgba(11,39,71,0) 100%);color:#fff;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:12px 48px;align-items:end}
+.team-photo h2{font-size:clamp(28px,3vw,42px);line-height:1.05;letter-spacing:-.025em;color:#fff;grid-row:span 2}
+.team-photo figcaption p{color:#E3ECF6;font-size:17px}
+.ap .team-photo .more-links a{color:var(--shallows)}
+.ap .team-photo .more-links a:hover{color:#fff}
+
+@media (max-width:1080px){
+  .hero-body{grid-template-columns:minmax(0,1fr) minmax(0,.62fr);grid-template-areas:"copy fig" "aside aside"}
+  .exp-grid,.pubs-top,.steps-head{grid-template-columns:minmax(0,1fr);gap:40px}
+  .exp-aside{position:static}
+  .svc-split{grid-template-columns:minmax(0,1fr)}
+  .svc-photo-col{aspect-ratio:16/9}
+  .svc-body{padding:72px 40px}
+  .paper-cols{grid-template-columns:minmax(0,1fr);gap:40px}
+  .st2 .stratum-body{margin-left:8%}.st3 .stratum-body{margin-left:16%}.st4 .stratum-body{margin-left:24%}
+  .team-photo{aspect-ratio:auto;display:flex;flex-direction:column;background:var(--abyss)}
+  .team-photo img{position:static;aspect-ratio:16/9;height:auto}
+  .team-photo figcaption{position:static;background:var(--abyss);padding:32px;grid-template-columns:minmax(0,1fr)}
+  .team-photo h2{grid-row:auto}
+}
+@media (max-width:680px){
+  .hero-body{grid-template-columns:minmax(0,1fr);grid-template-areas:"copy" "fig" "aside";gap:32px}
+  .alpha-fig{max-width:220px;justify-self:start}
+  .hero-aside{grid-template-columns:minmax(0,1fr);gap:18px}
+  .hero-aside div{grid-template-columns:96px minmax(0,1fr);align-items:baseline;gap:16px}
+  .hero-aside dt{font-size:30px}
+  .svc-body{padding:56px 16px}
+  .strata-steps{padding-top:72px}
+  .stratum{padding:20px 0 48px}
+  .st2 .stratum-body{margin-left:0}.st3 .stratum-body{margin-left:0}.st4 .stratum-body{margin-left:0}
+  .st5 .mid-cta{padding:16px 16px 0}
+  .pub-big{font-size:140px}
+  .pubs-top{margin-bottom:48px}
+  .team-photo figcaption{padding:24px 20px}
+}
 </style>
 <link rel="stylesheet" href="assets/css/site.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Alpha Preclinical LLC", "url": "https://www.alphapreclinical.com/", "logo": "https://www.alphapreclinical.com/assets/img/logo-color.png", "email": "info@alphapreclinical.com", "sameAs": ["https://www.linkedin.com/company/alpha-preclinical"], "foundingDate": "2020", "address": {"@type": "PostalAddress", "streetAddress": "722 Plantation Street", "addressLocality": "Worcester", "addressRegion": "MA", "postalCode": "01605", "addressCountry": "US"}}</script>
@@ -273,14 +398,14 @@ body{margin:0}
   <div class="wrap hdr">
     <a href="#top" aria-label="Alpha Preclinical home"><img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:84px;height:auto;display:block"></a>
     <nav aria-label="Main">
-      <ul class="nav"><li><a href="expertise.html">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="publications.html">Publications</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <ul class="nav"><li class="has-sub" data-sub><a class="top-link" href="expertise.html">Expertise</a><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-expertise"><span class="sr-only">Expertise menu</span><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="sub sub-wide" id="sub-expertise"><div class="sub-intro"><p class="sub-title">Disease models and study expertise</p><p>Six therapeutic areas, each led by a senior scientist who has published in it or run it for years.</p><a class="sub-all" href="expertise.html">All expertise</a></div><ul class="sub-list"><li><a href="expertise.html#pk-pd"><b>PK/PD</b><span>Routes, samples, imaging</span></a></li><li><a href="expertise.html#gene-therapy"><b>Gene therapy</b><span>Nucleic acid delivery</span></a></li><li><a href="expertise.html#autoimmune"><b>Autoimmune disease</b><span>SLE, T1D, EAE, IBD, RA</span></a></li><li><a href="expertise.html#metabolic"><b>Metabolic disease</b><span>Obesity, T2D, NASH, lipids</span></a></li><li><a href="expertise.html#fibrosis"><b>Inflammation and fibrosis</b><span>OA, fibrosis, LPS</span></a></li><li><a href="tumor-models.html"><b>Tumor models</b><span>Subcutaneous, orthotopic, IVIS</span></a></li></ul><a class="sub-feature" href="contact.html#form"><img src="assets/img/lab-biosafety-cabinet.jpg" alt="" loading="lazy" width="560" height="373"><b>Need a model that isn't listed?</b><span>We set up models from the literature.</span></a></div></li><li class="has-sub" data-sub><a class="top-link" href="services.html">Services</a><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-services"><span class="sr-only">Services menu</span><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="sub sub-wide" id="sub-services"><div class="sub-intro"><p class="sub-title">Services under one roof</p><p>Formulation, dosing, surgery, imaging and lab analysis, run by the team that runs your study.</p><a class="sub-all" href="services.html">All services</a></div><ul class="sub-list"><li><a href="services.html#study-types"><b>Study types</b><span>PK/PD, proof of concept, efficacy</span></a></li><li><a href="services.html#ivis"><b>IVIS imaging</b><span>Bioluminescence and fluorescence</span></a></li><li><a href="services.html#surgery"><b>Surgical services</b><span>USDA-compliant suite, staff DVM</span></a></li><li><a href="services.html#colony"><b>Colony management</b><span>Custom breeding programs</span></a></li><li><a href="services.html#in-vitro"><b>In vitro laboratory</b><span>Flow cytometry, ELISA, histology</span></a></li><li><a href="services.html#support"><b>Study support</b><span>Formulation and test materials</span></a></li></ul><a class="sub-feature" href="contact.html"><img src="assets/img/building-sign.jpg" alt="" loading="lazy" width="560" height="373"><b>722 Plantation Street, Worcester</b><span>Our vivarium and labs. Come and see them.</span></a></div></li><li><a href="publications.html">Publications</a></li><li class="has-sub" data-sub><a class="top-link" href="about.html">About</a><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-about"><span class="sr-only">About menu</span><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="sub" id="sub-about"><ul class="sub-list"><li><a href="about.html"><b>About Alpha</b><span>Our story, values and facility</span></a></li><li><a href="team.html"><b>Team</b><span>The scientists who run your study</span></a></li><li><a href="careers.html"><b>Careers</b><span>Open roles in Worcester</span></a></li></ul></div></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul>
     </nav>
     <a class="btn btn-light" href="contact.html">Request a study quote</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg></button>
     
   </div>
 
   <div class="wrap hero-body" id="top">
-    <div>
+    <div class="hero-copy">
       <h1>Preclinical in vivo research, designed around your program</h1>
       <p class="lead">Alpha Preclinical is a Worcester, Massachusetts contract research organization for PK/PD, efficacy and proof-of-concept studies. Senior scientists work with your team to design each study, then deliver it on time and on budget.</p>
       <div class="hero-ctas">
@@ -288,6 +413,16 @@ body{margin:0}
         <a class="btn btn-ghost-dark" href="#expertise">Browse disease models</a>
       </div>
     </div>
+    <figure class="alpha-fig" aria-hidden="true">
+      <svg viewBox="0 0 108 130" preserveAspectRatio="xMidYMid meet" focusable="false">
+        <defs><clipPath id="alpha-clip"><path d="M102.3 2.0C101.8 1.8 101.4 1.3 100.0 2.0C98.6 2.7 96.8 3.8 94.1 6.1C91.4 8.4 86.2 13.2 83.7 15.8C81.1 18.3 80.0 19.2 78.6 21.4C77.2 23.6 76.5 24.2 75.2 28.9C73.8 33.7 71.5 46.1 70.6 50.0C69.6 53.9 69.9 52.1 69.5 52.2C69.1 52.4 69.3 52.8 68.3 50.9C67.4 49.0 65.7 43.9 63.9 40.8C62.2 37.7 59.6 34.5 57.8 32.3C55.9 30.2 54.7 29.1 52.8 27.9C50.8 26.7 47.6 25.7 45.8 25.2C44.0 24.6 43.6 24.7 41.9 24.7C40.2 24.6 37.6 24.7 35.8 24.9C33.9 25.1 32.6 25.4 31.1 25.8C29.6 26.2 28.8 26.3 26.7 27.4C24.6 28.5 21.0 30.4 18.6 32.4C16.2 34.5 14.0 37.0 12.1 39.8C10.2 42.5 8.4 45.4 7.0 48.8C5.6 52.3 4.3 56.5 3.5 60.4C2.7 64.4 2.1 68.6 1.9 72.6C1.7 76.6 1.8 80.3 2.2 84.6C2.7 88.8 3.9 94.5 4.8 98.2C5.8 101.8 6.3 103.7 7.8 106.6C9.3 109.5 11.7 113.0 13.8 115.4C15.8 117.9 18.2 119.8 20.3 121.3C22.4 122.9 24.0 123.7 26.2 124.6C28.5 125.5 31.3 126.3 33.8 126.8C36.4 127.2 38.9 127.3 41.6 127.2C44.2 127.0 47.4 126.5 49.8 125.9C52.3 125.3 54.0 124.7 56.3 123.6C58.7 122.4 61.8 120.6 63.9 119.0C66.0 117.4 67.3 116.1 68.9 114.2C70.5 112.3 72.5 108.8 73.4 107.6C74.3 106.4 74.1 106.9 74.4 107.1C74.8 107.2 74.6 106.2 75.4 108.5C76.2 110.8 78.2 118.6 79.1 121.0C79.9 123.4 79.7 122.2 80.6 123.1C81.4 123.9 83.0 125.4 84.2 126.1C85.3 126.8 86.4 127.1 87.7 127.2C88.9 127.4 90.3 127.4 91.8 127.0C93.2 126.6 95.1 125.7 96.4 124.8C97.7 124.0 98.4 123.4 99.5 121.8C100.6 120.1 101.9 117.2 102.8 114.9C103.6 112.6 104.1 110.5 104.4 107.8C104.7 105.0 104.8 101.0 104.7 98.2C104.5 95.5 103.8 92.6 103.3 91.3C102.9 90.1 102.4 90.5 101.9 90.6C101.5 90.7 101.0 89.8 100.6 91.8C100.1 93.9 99.7 100.4 99.2 103.1C98.7 105.7 98.2 106.5 97.7 107.7C97.1 108.9 96.6 109.6 95.7 110.3C94.8 111.0 93.6 111.7 92.2 111.8C90.9 112.0 89.0 111.6 87.8 111.1C86.5 110.6 86.1 110.8 85.0 108.8C83.9 106.7 81.9 101.4 80.9 98.8C79.9 96.1 78.8 95.8 79.2 92.7C79.5 89.5 80.4 90.3 82.9 79.8C85.4 69.2 91.8 39.0 94.1 29.1C96.4 19.2 95.4 24.0 96.8 20.5C98.3 17.0 101.7 10.8 102.8 7.9C103.8 5.1 103.2 4.5 103.2 3.5C103.1 2.5 102.9 2.2 102.3 2.0ZM39.8 34.0C41.2 33.9 42.9 34.0 44.2 34.2C45.5 34.5 46.6 34.9 47.7 35.3C48.7 35.8 49.7 36.3 50.6 37.1C51.5 37.8 51.8 37.7 53.2 39.9C54.7 42.2 57.2 45.9 59.3 50.6C61.5 55.3 65.9 61.2 66.2 68.2C66.4 75.1 62.3 86.3 60.8 92.4C59.2 98.6 57.9 101.9 56.6 105.1C55.3 108.3 54.1 109.9 52.9 111.7C51.8 113.4 50.8 114.6 49.7 115.7C48.5 116.8 47.1 117.7 45.8 118.3C44.5 118.9 43.2 119.2 41.8 119.3C40.5 119.4 38.9 119.3 37.8 119.0C36.6 118.7 35.8 118.5 34.8 117.8C33.7 117.0 32.1 115.8 31.2 114.8C30.2 113.7 29.7 112.9 28.9 111.3C28.1 109.8 27.1 107.5 26.4 105.5C25.7 103.5 25.1 101.3 24.6 99.1C24.1 96.8 23.8 94.9 23.5 92.0C23.2 89.1 22.9 86.8 22.9 81.9C22.9 77.0 23.2 67.5 23.6 62.7C23.9 57.8 24.5 55.7 25.0 53.0C25.5 50.3 25.9 48.4 26.7 46.4C27.4 44.4 28.3 42.5 29.3 40.9C30.4 39.3 31.8 37.8 32.8 36.8C33.9 35.8 34.7 35.4 35.8 34.9C37.0 34.5 38.4 34.1 39.8 34.0Z" clip-rule="evenodd"></path></clipPath></defs>
+        <g clip-path="url(#alpha-clip)">
+          <rect x="0" y="0" width="108" height="130" fill="#EEF5FB"></rect>
+          <g class="a-lift"><g class="a-rise"><path class="ab ab1" d="M0 58 C13.5 51 40.5 65 54 58 S94.5 65 108 58 S148.5 65 162 58 S202.5 65 216 58 S256.5 65 270 58 S310.5 65 324 58 L324 140 L0 140 Z" fill="#88C6EE"></path><path class="ab ab2" d="M0 72 C13.5 65 40.5 79 54 72 S94.5 79 108 72 S148.5 79 162 72 S202.5 79 216 72 S256.5 79 270 72 S310.5 79 324 72 L324 140 L0 140 Z" fill="#69AEE1"></path><path class="ab ab3" d="M0 86 C13.5 79 40.5 93 54 86 S94.5 93 108 86 S148.5 93 162 86 S202.5 93 216 86 S256.5 93 270 86 S310.5 93 324 86 L324 140 L0 140 Z" fill="#4B98D2"></path><path class="ab ab4" d="M0 100 C13.5 93 40.5 107 54 100 S94.5 107 108 100 S148.5 107 162 100 S202.5 107 216 100 S256.5 107 270 100 S310.5 107 324 100 L324 140 L0 140 Z" fill="#3279BD"></path><path class="ab ab5" d="M0 114 C13.5 108 40.5 120 54 114 S94.5 120 108 114 S148.5 120 162 114 S202.5 120 216 114 S256.5 120 270 114 S310.5 120 324 114 L324 140 L0 140 Z" fill="#1E58A0"></path></g></g>
+        </g>
+        <path class="alpha-edge" d="M102.3 2.0C101.8 1.8 101.4 1.3 100.0 2.0C98.6 2.7 96.8 3.8 94.1 6.1C91.4 8.4 86.2 13.2 83.7 15.8C81.1 18.3 80.0 19.2 78.6 21.4C77.2 23.6 76.5 24.2 75.2 28.9C73.8 33.7 71.5 46.1 70.6 50.0C69.6 53.9 69.9 52.1 69.5 52.2C69.1 52.4 69.3 52.8 68.3 50.9C67.4 49.0 65.7 43.9 63.9 40.8C62.2 37.7 59.6 34.5 57.8 32.3C55.9 30.2 54.7 29.1 52.8 27.9C50.8 26.7 47.6 25.7 45.8 25.2C44.0 24.6 43.6 24.7 41.9 24.7C40.2 24.6 37.6 24.7 35.8 24.9C33.9 25.1 32.6 25.4 31.1 25.8C29.6 26.2 28.8 26.3 26.7 27.4C24.6 28.5 21.0 30.4 18.6 32.4C16.2 34.5 14.0 37.0 12.1 39.8C10.2 42.5 8.4 45.4 7.0 48.8C5.6 52.3 4.3 56.5 3.5 60.4C2.7 64.4 2.1 68.6 1.9 72.6C1.7 76.6 1.8 80.3 2.2 84.6C2.7 88.8 3.9 94.5 4.8 98.2C5.8 101.8 6.3 103.7 7.8 106.6C9.3 109.5 11.7 113.0 13.8 115.4C15.8 117.9 18.2 119.8 20.3 121.3C22.4 122.9 24.0 123.7 26.2 124.6C28.5 125.5 31.3 126.3 33.8 126.8C36.4 127.2 38.9 127.3 41.6 127.2C44.2 127.0 47.4 126.5 49.8 125.9C52.3 125.3 54.0 124.7 56.3 123.6C58.7 122.4 61.8 120.6 63.9 119.0C66.0 117.4 67.3 116.1 68.9 114.2C70.5 112.3 72.5 108.8 73.4 107.6C74.3 106.4 74.1 106.9 74.4 107.1C74.8 107.2 74.6 106.2 75.4 108.5C76.2 110.8 78.2 118.6 79.1 121.0C79.9 123.4 79.7 122.2 80.6 123.1C81.4 123.9 83.0 125.4 84.2 126.1C85.3 126.8 86.4 127.1 87.7 127.2C88.9 127.4 90.3 127.4 91.8 127.0C93.2 126.6 95.1 125.7 96.4 124.8C97.7 124.0 98.4 123.4 99.5 121.8C100.6 120.1 101.9 117.2 102.8 114.9C103.6 112.6 104.1 110.5 104.4 107.8C104.7 105.0 104.8 101.0 104.7 98.2C104.5 95.5 103.8 92.6 103.3 91.3C102.9 90.1 102.4 90.5 101.9 90.6C101.5 90.7 101.0 89.8 100.6 91.8C100.1 93.9 99.7 100.4 99.2 103.1C98.7 105.7 98.2 106.5 97.7 107.7C97.1 108.9 96.6 109.6 95.7 110.3C94.8 111.0 93.6 111.7 92.2 111.8C90.9 112.0 89.0 111.6 87.8 111.1C86.5 110.6 86.1 110.8 85.0 108.8C83.9 106.7 81.9 101.4 80.9 98.8C79.9 96.1 78.8 95.8 79.2 92.7C79.5 89.5 80.4 90.3 82.9 79.8C85.4 69.2 91.8 39.0 94.1 29.1C96.4 19.2 95.4 24.0 96.8 20.5C98.3 17.0 101.7 10.8 102.8 7.9C103.8 5.1 103.2 4.5 103.2 3.5C103.1 2.5 102.9 2.2 102.3 2.0ZM39.8 34.0C41.2 33.9 42.9 34.0 44.2 34.2C45.5 34.5 46.6 34.9 47.7 35.3C48.7 35.8 49.7 36.3 50.6 37.1C51.5 37.8 51.8 37.7 53.2 39.9C54.7 42.2 57.2 45.9 59.3 50.6C61.5 55.3 65.9 61.2 66.2 68.2C66.4 75.1 62.3 86.3 60.8 92.4C59.2 98.6 57.9 101.9 56.6 105.1C55.3 108.3 54.1 109.9 52.9 111.7C51.8 113.4 50.8 114.6 49.7 115.7C48.5 116.8 47.1 117.7 45.8 118.3C44.5 118.9 43.2 119.2 41.8 119.3C40.5 119.4 38.9 119.3 37.8 119.0C36.6 118.7 35.8 118.5 34.8 117.8C33.7 117.0 32.1 115.8 31.2 114.8C30.2 113.7 29.7 112.9 28.9 111.3C28.1 109.8 27.1 107.5 26.4 105.5C25.7 103.5 25.1 101.3 24.6 99.1C24.1 96.8 23.8 94.9 23.5 92.0C23.2 89.1 22.9 86.8 22.9 81.9C22.9 77.0 23.2 67.5 23.6 62.7C23.9 57.8 24.5 55.7 25.0 53.0C25.5 50.3 25.9 48.4 26.7 46.4C27.4 44.4 28.3 42.5 29.3 40.9C30.4 39.3 31.8 37.8 32.8 36.8C33.9 35.8 34.7 35.4 35.8 34.9C37.0 34.5 38.4 34.1 39.8 34.0Z" fill="none" fill-rule="evenodd"></path>
+      </svg>
+    </figure>
     <dl class="hero-aside">
       <div><dt><span data-count="20">20</span>+ yrs</dt><dd>Average research experience of our scientists, from academia to large pharma</dd></div>
       <div><dt><span data-count="15">15</span>+ yrs</dt><dd>Average industry experience of our technical staff</dd></div>
@@ -309,11 +444,12 @@ body{margin:0}
 
 <main id="main">
 
-<section class="sec" id="expertise" aria-labelledby="exp-h">
-  <div class="wrap">
-    <div class="sec-head">
+<section class="sec exp-sec" id="expertise" aria-labelledby="exp-h">
+  <div class="wrap exp-grid">
+    <div class="exp-aside">
       <h2 id="exp-h">Disease models and study expertise</h2>
-      <div><p>Validated rodent models and study designs across six therapeutic areas. Need a model from the literature or a custom variation? We build it with you.</p><p style="margin-top:18px"><a href="expertise.html" style="font-weight:600;text-decoration:none">Explore all expertise</a></p></div>
+      <p>Validated rodent models and study designs across six therapeutic areas. Need a model from the literature or a custom variation? We build it with you.</p>
+      <a class="btn btn-primary" href="expertise.html">Explore all expertise</a>
     </div>
     <ul class="models">
       <li><a class="model" href="expertise.html#pk-pd"><h3>PK/PD</h3><div><p>Pharmacokinetic and pharmacodynamic studies for lead optimization, dose selection and exposure-response.</p><small class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt="">Led by Barak Yahalom, DVM</small></div><span>View studies</span></a></li>
@@ -326,35 +462,36 @@ body{margin:0}
   </div>
 </section>
 
-<section class="sec sec-mist" id="capabilities" aria-labelledby="cap-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="cap-h">Services that support every study</h2>
-      <div><p>Formulation, dosing, surgery, imaging and lab analysis happen under one roof, so your data come back consistent and your timeline stays intact.</p><p style="margin-top:18px"><a href="services.html" style="font-weight:600;text-decoration:none">See all services</a></p></div>
-    </div>
-    <ul class="svc-tiles">
-      <li><a class="svc-tile" href="services.html#ivis"><svg class="svc-ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="6"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8"/></svg><h3>IVIS imaging</h3><p>Live, whole-body bioluminescence and fluorescence imaging, or ex vivo tissue.</p><span class="go">Details</span></a></li>
-      <li><a class="svc-tile" href="services.html#surgery"><svg class="svc-ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26 22 10l4 4L10 30H6z"/><path d="M19 13l4 4"/><path d="M22 4l6 6"/></svg><h3>Surgical services</h3><p>Aseptic surgery in a USDA-compliant suite led by a staff DVM, including Alzet pumps and ICV.</p><span class="go">Details</span></a></li>
-      <li><a class="svc-tile" href="services.html#colony"><svg class="svc-ico" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="6" width="24" height="8" rx="2"/><rect x="4" y="18" width="24" height="8" rx="2"/><path d="M9 10h4M9 22h4"/></svg><h3>Colony management</h3><p>Custom breeding programs with a dedicated project manager for data and records.</p><span class="go">Details</span></a></li>
-      <li><a class="svc-tile" href="services.html#in-vitro"><svg class="svc-ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M12 4v10L5 26a2 2 0 0 0 1.8 3h18.4A2 2 0 0 0 27 26l-7-12V4"/><path d="M10 4h12M8.5 20h15"/></svg><h3>In vitro laboratory</h3><p>Flow cytometry, ELISA, serum chemistry and histology on your study samples, in house.</p><span class="go">Details</span></a></li>
+<section class="svc-split" id="capabilities" aria-labelledby="cap-h">
+  <div class="svc-photo-col">
+    <img src="assets/img/lab-biosafety-cabinet.jpg" alt="An Alpha Preclinical scientist pipetting in a biosafety cabinet" loading="lazy" width="1000" height="666">
+  </div>
+  <div class="svc-body">
+    <h2 id="cap-h">Services that support every study</h2>
+    <p class="svc-intro">Formulation, dosing, surgery, imaging and lab analysis happen under one roof, so your data come back consistent and your timeline stays intact.</p>
+    <ul class="svc-rows">
+      <li><a class="svc-row" href="services.html#ivis"><svg class="svc-ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="6"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8"/></svg><span><b>IVIS imaging</b><span>Live, whole-body bioluminescence and fluorescence imaging, or ex vivo tissue.</span></span></a></li>
+      <li><a class="svc-row" href="services.html#surgery"><svg class="svc-ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26 22 10l4 4L10 30H6z"/><path d="M19 13l4 4"/><path d="M22 4l6 6"/></svg><span><b>Surgical services</b><span>Aseptic surgery in a USDA-compliant suite led by a staff DVM, including Alzet pumps and ICV.</span></span></a></li>
+      <li><a class="svc-row" href="services.html#colony"><svg class="svc-ico" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="6" width="24" height="8" rx="2"/><rect x="4" y="18" width="24" height="8" rx="2"/><path d="M9 10h4M9 22h4"/></svg><span><b>Colony management</b><span>Custom breeding programs with a dedicated project manager for data and records.</span></span></a></li>
+      <li><a class="svc-row" href="services.html#in-vitro"><svg class="svc-ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M12 4v10L5 26a2 2 0 0 0 1.8 3h18.4A2 2 0 0 0 27 26l-7-12V4"/><path d="M10 4h12M8.5 20h15"/></svg><span><b>In vitro laboratory</b><span>Flow cytometry, ELISA, serum chemistry and histology on your study samples, in house.</span></span></a></li>
     </ul>
+    <p class="more-links"><a href="services.html">See all services</a></p>
   </div>
 </section>
 
-<section class="sec" aria-labelledby="proc-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="proc-h">How a study runs with Alpha</h2>
-      <p>One scientific point of contact from first call to final report, and clear communication at every step.</p>
-    </div>
-    <ol class="steps">
-      <li class="step"><h3>Scope the question</h3><p>We talk through your compound, target and decision point, and recommend the model and endpoints that answer it.</p></li>
-      <li class="step"><h3>Design the protocol</h3><p>You receive a study design, timeline and quote. We prepare formulations, vehicles and induction reagents.</p></li>
-      <li class="step"><h3>Run the study</h3><p>Dosing, imaging, sampling and in-life observations, with progress updates on the schedule you choose.</p></li>
-      <li class="step"><h3>Report the data</h3><p>Analyzed results, raw data and a review call with the scientist who ran your study.</p></li>
-    </ol>
-    <div class="mid-cta">
-      <svg class="mid-lines" viewBox="0 0 1160 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 C145 4 435 36 580 20 S1015 4 1160 20"></path><path d="M0 36 C160 24 420 48 580 36 S1000 24 1160 36"></path></svg>
+<section class="strata-steps" aria-labelledby="proc-h">
+  <div class="wrap steps-head">
+    <h2 id="proc-h">How a study runs with Alpha</h2>
+    <p>One scientific point of contact from first call to final report. Each stage goes one layer deeper.</p>
+  </div>
+  <ol class="strata-list">
+  <li class="stratum st1"><svg class="step-wave w-st1" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 26 C90 12 270 40 360 26 S630 40 720 26 S990 40 1080 26 S1350 40 1440 26 S1710 40 1800 26 S2070 40 2160 26 S2430 40 2520 26 S2790 40 2880 26 L2880 48 L0 48 Z" fill="#EEF5FB"></path></svg><div class="wrap"><div class="stratum-body"><h3>Scope the question</h3><p>We talk through your compound, target and decision point, and recommend the model and endpoints that answer it.</p></div></div></li>
+  <li class="stratum st2"><svg class="step-wave w-st2" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 26 C90 12 270 40 360 26 S630 40 720 26 S990 40 1080 26 S1350 40 1440 26 S1710 40 1800 26 S2070 40 2160 26 S2430 40 2520 26 S2790 40 2880 26 L2880 48 L0 48 Z" fill="#88C6EE"></path></svg><div class="wrap"><div class="stratum-body"><h3>Design the protocol</h3><p>You receive a study design, timeline and quote. We prepare formulations, vehicles and induction reagents.</p></div></div></li>
+  <li class="stratum st3"><svg class="step-wave w-st3" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 26 C90 12 270 40 360 26 S630 40 720 26 S990 40 1080 26 S1350 40 1440 26 S1710 40 1800 26 S2070 40 2160 26 S2430 40 2520 26 S2790 40 2880 26 L2880 48 L0 48 Z" fill="#4B98D2"></path></svg><div class="wrap"><div class="stratum-body"><h3>Run the study</h3><p>Dosing, imaging, sampling and in-life observations, with progress updates on the schedule you choose.</p></div></div></li>
+  <li class="stratum st4"><svg class="step-wave w-st4" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 26 C90 12 270 40 360 26 S630 40 720 26 S990 40 1080 26 S1350 40 1440 26 S1710 40 1800 26 S2070 40 2160 26 S2430 40 2520 26 S2790 40 2880 26 L2880 48 L0 48 Z" fill="#1E58A0"></path></svg><div class="wrap"><div class="stratum-body"><h3>Report the data</h3><p>Analyzed results, raw data and a review call with the scientist who ran your study.</p></div></div></li>
+  </ol>
+  <div class="stratum st5"><svg class="step-wave w-st5" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 26 C90 12 270 40 360 26 S630 40 720 26 S990 40 1080 26 S1350 40 1440 26 S1710 40 1800 26 S2070 40 2160 26 S2430 40 2520 26 S2790 40 2880 26 L2880 48 L0 48 Z" fill="#0F3360"></path></svg>
+    <div class="wrap mid-cta">
       <div><h3>Start with step one</h3><p>Tell us your compound, target and decision point. A senior scientist will recommend the model and endpoints that answer it.</p></div>
       <a class="btn btn-light" href="contact.html#form">Talk to a scientist</a>
     </div>
@@ -362,31 +499,31 @@ body{margin:0}
 </section>
 
 <section class="sec pubs-sec" id="publications" aria-labelledby="pub-h">
-  <div class="wrap pubs">
-    <div>
-      <h2 id="pub-h">Our scientists publish the models they run</h2>
-      <p class="intro">Alpha's scientists and their collaborators have published 16 peer-reviewed papers on the disease models, delivery systems and methods behind your studies.</p>
-      <dl class="pub-stats">
-        <div><dt><span data-count="16">16</span></dt><dd>peer-reviewed papers</dd></div>
-        <div><dt><span data-count="5">5</span></dt><dd>research areas, from gene therapy to type 1 diabetes</dd></div>
-      </dl>
-      <a class="btn btn-primary" href="publications.html" style="margin-top:36px">Browse all publications</a>
+  <div class="wrap">
+    <div class="pubs-top">
+      <p class="pub-big" aria-hidden="true"><span data-count="16">16</span></p>
+      <div>
+        <h2 id="pub-h">Our scientists publish the models they run</h2>
+        <p class="intro">Alpha's scientists and their collaborators have published 16 peer-reviewed papers, across five research areas, on the disease models, delivery systems and methods behind your studies.</p>
+        <a class="btn btn-primary" href="publications.html">Browse all publications</a>
+      </div>
     </div>
-    <ol class="paper-list">
-      <li class="paper"><span class="area-tag">Gene therapy</span><h3><a href="https://www.alphapreclinical.com/_files/ugd/095141_ab7b5981358e44b2b14ca12986013d89.pdf" target="_blank" rel="noopener" aria-label="Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy (PDF, opens in new tab)">Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy</a></h3><p class="by">DeRosa F, Smith L, Shen Y, Huang Y, Pan J, Xie H, <b>Yahalom B</b>, Heartlein MW</p><p class="journal">Molecular Therapy, 2019</p></li>
-      <li class="paper"><span class="area-tag">Type 1 diabetes</span><h3><a href="https://www.alphapreclinical.com/_files/ugd/095141_5c6416f48fcd4f968efebb0cef77b638.pdf" target="_blank" rel="noopener" aria-label="LEW.1WR1 Rats Develop Autoimmune Diabetes Spontaneously and in Response to Environmental Perturbation (PDF, opens in new tab)">LEW.1WR1 Rats Develop Autoimmune Diabetes Spontaneously and in Response to Environmental Perturbation</a></h3><p class="by">Mordes JP, Guberski DL, Leif JH, Woda BA, <b>Flanagan JF</b>, Greiner DL, Kislauskis EH, Tirabassi RS</p><p class="journal">Diabetes, 2005</p></li>
-      <li class="paper"><span class="area-tag">Anesthesia and analgesia</span><h3><a href="https://www.alphapreclinical.com/_files/ugd/095141_c7585c435efe4ec38be8a88c9ef5346f.pdf" target="_blank" rel="noopener" aria-label="Spinal Anesthesia in Infant Rats: Development of a Model and Assessment of Neurologic Outcomes (PDF, opens in new tab)">Spinal Anesthesia in Infant Rats: Development of a Model and Assessment of Neurologic Outcomes</a></h3><p class="by"><b>Yahalom B</b>, Athiraman U, Soriano SG, Zurakowski D, Carpino EA, Corfas G, Berde CB</p><p class="journal">Anesthesiology, 2011</p></li>
+    <ol class="paper-cols">
+      <li class="paper-col"><p class="jr"><span>Molecular Therapy</span> 2019</p><h3><a href="https://www.alphapreclinical.com/_files/ugd/095141_ab7b5981358e44b2b14ca12986013d89.pdf" target="_blank" rel="noopener" aria-label="Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy (PDF, opens in new tab)">Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy</a></h3><p class="by">DeRosa F, Smith L, Shen Y, Huang Y, Pan J, Xie H, <b>Yahalom B</b>, Heartlein MW</p><p class="area">Gene therapy</p></li><li class="paper-col"><p class="jr"><span>Diabetes</span> 2005</p><h3><a href="https://www.alphapreclinical.com/_files/ugd/095141_5c6416f48fcd4f968efebb0cef77b638.pdf" target="_blank" rel="noopener" aria-label="LEW.1WR1 Rats Develop Autoimmune Diabetes Spontaneously and in Response to Environmental Perturbation (PDF, opens in new tab)">LEW.1WR1 Rats Develop Autoimmune Diabetes Spontaneously and in Response to Environmental Perturbation</a></h3><p class="by">Mordes JP, Guberski DL, Leif JH, Woda BA, <b>Flanagan JF</b>, Greiner DL, Kislauskis EH, Tirabassi RS</p><p class="area">Type 1 diabetes</p></li><li class="paper-col"><p class="jr"><span>Anesthesiology</span> 2011</p><h3><a href="https://www.alphapreclinical.com/_files/ugd/095141_c7585c435efe4ec38be8a88c9ef5346f.pdf" target="_blank" rel="noopener" aria-label="Spinal Anesthesia in Infant Rats: Development of a Model and Assessment of Neurologic Outcomes (PDF, opens in new tab)">Spinal Anesthesia in Infant Rats: Development of a Model and Assessment of Neurologic Outcomes</a></h3><p class="by"><b>Yahalom B</b>, Athiraman U, Soriano SG, Zurakowski D, Carpino EA, Corfas G, Berde CB</p><p class="area">Anesthesia and analgesia</p></li>
     </ol>
   </div>
 </section>
 
 <section class="sec sec-mist" id="about" aria-labelledby="ppl-h">
   <div class="wrap people">
-    <div class="people-head">
-      <h2 id="ppl-h">Senior scientists who treat your program as their own</h2>
-      <p class="intro">Founded in 2020 and US owned, Alpha was built to give biotech and pharma teams the attention of a partner with the capacity of a CRO.</p>
-      <p class="more-links"><a href="team.html">Meet the team</a><a href="about.html">About Alpha</a></p>
-    </div>
+    <figure class="team-photo">
+      <img src="assets/img/team-group.jpg" alt="The Alpha Preclinical team outside the Worcester facility" loading="lazy" width="1000" height="666">
+      <figcaption>
+        <h2 id="ppl-h">Senior scientists who treat your program as their own</h2>
+        <p>Founded in 2020 and US owned, Alpha was built to give biotech and pharma teams the attention of a partner with the capacity of a CRO.</p>
+        <p class="more-links"><a href="team.html">Meet the team</a><a href="about.html">About Alpha</a></p>
+      </figcaption>
+    </figure>
     <div class="team">
       <a class="member" href="team.html#barak-yahalom"><div class="face"><img src="assets/img/team/barak-yahalom.jpg" alt="Barak Yahalom"><img class="alt" src="assets/img/team/barak-yahalom-alt.jpg" alt=""></div><div><b>Barak Yahalom, DVM</b><small>CEO and Chief Scientific Officer</small></div></a>
       <a class="member" href="team.html#joan-flanagan"><div class="face"><img src="assets/img/team/joan-flanagan.jpg" alt="Joan Flanagan"><img class="alt" src="assets/img/team/joan-flanagan-alt.jpg" alt=""></div><div><b>Joan Flanagan, PhD</b><small>President and COO</small></div></a>      <a class="member" href="team.html#ashley-kolofsky"><div class="face"><img src="assets/img/team/ashley-kolofsky.jpg" alt="Ashley Kolofsky"><img class="alt" src="assets/img/team/ashley-kolofsky-alt.jpg" alt=""></div><div><b>Ashley Kolofsky</b><small>Study Team Supervisor</small></div></a>

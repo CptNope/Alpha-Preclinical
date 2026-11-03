@@ -403,6 +403,94 @@ HANDLERS = {"Main.dc.html": page_main, "Team.dc.html": page_team, "Publications.
             "Blog.dc.html": page_blog, "Contact.dc.html": page_contact,
             "Careers.dc.html": page_careers, "BlogPost.dc.html": page_post}
 
+# Main navigation with dropdowns (client review, Nov 2026: "drop down menus, especially
+# for Expertise and Services"). Every page's own <ul class="nav"> is replaced with this,
+# so the canvas artboards keep their simple list. Hooks: [data-sub] in site.js.
+NAV_TOP = [
+    # (label, href, sub-menu key or None, pages that count as this section)
+    ("Expertise", "expertise.html", "expertise", {"expertise.html", "tumor-models.html"}),
+    ("Services", "services.html", "services", {"services.html"}),
+    ("Publications", "publications.html", None, {"publications.html"}),
+    ("About", "about.html", "about", {"about.html", "team.html", "careers.html"}),
+    ("Blog", "blog.html", None, {"blog.html"}),
+    ("Contact", "contact.html", None, {"contact.html"}),
+]
+NAV_SUB = {
+    "expertise": {
+        "intro": ("Disease models and study expertise", "Six therapeutic areas, each led by a senior scientist who has published in it or run it for years.", "expertise.html", "All expertise"),
+        "items": [
+            ("PK/PD", "Routes, samples, imaging", "expertise.html#pk-pd"),
+            ("Gene therapy", "Nucleic acid delivery", "expertise.html#gene-therapy"),
+            ("Autoimmune disease", "SLE, T1D, EAE, IBD, RA", "expertise.html#autoimmune"),
+            ("Metabolic disease", "Obesity, T2D, NASH, lipids", "expertise.html#metabolic"),
+            ("Inflammation and fibrosis", "OA, fibrosis, LPS", "expertise.html#fibrosis"),
+            ("Tumor models", "Subcutaneous, orthotopic, IVIS", "tumor-models.html"),
+        ],
+        "feature": ("assets/img/lab-biosafety-cabinet.jpg", "Need a model that isn't listed?", "We set up models from the literature.", "contact.html#form"),
+    },
+    "services": {
+        "intro": ("Services under one roof", "Formulation, dosing, surgery, imaging and lab analysis, run by the team that runs your study.", "services.html", "All services"),
+        "items": [
+            ("Study types", "PK/PD, proof of concept, efficacy", "services.html#study-types"),
+            ("IVIS imaging", "Bioluminescence and fluorescence", "services.html#ivis"),
+            ("Surgical services", "USDA-compliant suite, staff DVM", "services.html#surgery"),
+            ("Colony management", "Custom breeding programs", "services.html#colony"),
+            ("In vitro laboratory", "Flow cytometry, ELISA, histology", "services.html#in-vitro"),
+            ("Study support", "Formulation and test materials", "services.html#support"),
+        ],
+        "feature": ("assets/img/building-sign.jpg", "722 Plantation Street, Worcester", "Our vivarium and labs. Come and see them.", "contact.html"),
+    },
+    "about": {
+        "intro": None,
+        "items": [
+            ("About Alpha", "Our story, values and facility", "about.html"),
+            ("Team", "The scientists who run your study", "team.html"),
+            ("Careers", "Open roles in Worcester", "careers.html"),
+        ],
+        "feature": None,
+    },
+}
+CHEVRON = ('<svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false">'
+           '<path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" '
+           'stroke-linecap="round" stroke-linejoin="round"></path></svg>')
+
+
+def build_nav(outname):
+    out = []
+    for label, href, key, section in NAV_TOP:
+        cur = ' aria-current="page"' if outname == href else ""
+        in_sec = outname in section and not cur
+        cls = ["has-sub"] if key else []
+        if in_sec:
+            cls.append("in-section")
+        li_cls = f' class="{" ".join(cls)}"' if cls else ""
+        if not key:
+            out.append(f'<li{li_cls}><a href="{href}"{cur}>{label}</a></li>')
+            continue
+        sub = NAV_SUB[key]
+        sid = f"sub-{key}"
+        parts = [f'<li{li_cls} data-sub><a class="top-link" href="{href}"{cur}>{label}</a>'
+                 f'<button class="sub-toggle" type="button" aria-expanded="false" aria-controls="{sid}">'
+                 f'<span class="sr-only">{label} menu</span>{CHEVRON}</button>'
+                 f'<div class="sub{" sub-wide" if sub["intro"] else ""}" id="{sid}">']
+        if sub["intro"]:
+            t, p, h, a = sub["intro"]
+            parts.append(f'<div class="sub-intro"><p class="sub-title">{t}</p><p>{p}</p>'
+                         f'<a class="sub-all" href="{h}">{a}</a></div>')
+        parts.append('<ul class="sub-list">')
+        for name, note, h in sub["items"]:
+            c = ' aria-current="page"' if h == outname else ""
+            parts.append(f'<li><a href="{h}"{c}><b>{name}</b><span>{note}</span></a></li>')
+        parts.append("</ul>")
+        if sub["feature"]:
+            img, t, p, h = sub["feature"]
+            parts.append(f'<a class="sub-feature" href="{h}"><img src="{img}" alt="" loading="lazy" width="560" height="373">'
+                         f'<b>{t}</b><span>{p}</span></a>')
+        parts.append("</div></li>")
+        out.append("".join(parts))
+    return '<ul class="nav">' + "".join(out) + "</ul>"
+
+
 MENU_BTN = ('<button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu>'
             '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" '
             'stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg></button>')
@@ -428,6 +516,8 @@ def convert(name, outname):
     share = hero.group(2).split(",")[-1].strip().split(" ")[0] if hero else None
     for a, b in PAGES.items():
         page = page.replace(f'href="{a}', f'href="{b}')
+    # the header's flat link list becomes the shared navigation with dropdowns
+    page = re.sub(r'<ul class="nav">.*?</ul>', lambda m: build_nav(outname), page, count=1, flags=re.S)
     # Main's own menu button becomes the shared one; other pages get one injected
     page = re.sub(r'<button class="menu-btn".*?</button>', "", page, flags=re.S)
     page = re.sub(r'(<a class="btn btn-light" href="[^"]*"[^>]*>Request a study quote</a>)(\s*</div>)',
