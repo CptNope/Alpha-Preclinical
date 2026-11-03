@@ -65,7 +65,17 @@ flowchart LR
 
 ## Navigation order
 
-**Expertise · Services · Publications · About · Team · Blog · Careers · Contact**, the same in the header, the mobile menu and the footer's Company column. It follows a buyer's questions in order: *can you run my model* (Expertise, Services), *can I trust the science* (Publications), *who are you* (About, Team), then supporting content, hiring and contact. "Request a study quote" stays as the header button on every page.
+**Expertise ▾ · Services ▾ · Publications · About ▾ · Blog · Contact**, the same in the header and the mobile menu (the footer keeps its full link columns). It follows a buyer's questions in order: *can you run my model* (Expertise, Services), *can I trust the science* (Publications), *who are you* (About, with Team and Careers inside it), then supporting content and contact. "Request a study quote" stays as the header button on every page.
+
+The three dropdowns are built by `build_nav()` in `tools/convert.py`, so the artboards keep a plain link list:
+
+| Menu | Opens to |
+| --- | --- |
+| Expertise | Intro and "All expertise", the six areas with a one-line note each, and a lab photo linking to "Need a model that isn't listed?" |
+| Services | Intro and "All services", study types plus the five services, and the building photo linking to Contact |
+| About | About Alpha, Team, Careers |
+
+A mouse opens a menu on hover; the chevron button beside each label opens it for keyboard and touch (`aria-expanded`), Escape closes it and returns focus to the button. In the mobile menu each section expands in place.
 
 ## Calls to action
 
@@ -82,6 +92,16 @@ flowchart LR
     TM["Team"] -- "Put this team on your program" --> F
     AB["About, Model, Services, Expertise"] -- "closing band" --> F
 ```
+
+## Client review, November 2026
+
+Feedback from Chris at Alpha on the first draft, and what changed:
+
+| Feedback | Change |
+| --- | --- |
+| Drop-down menus in the header, especially Expertise and Services | Dropdown navigation on every page (see [Navigation order](#navigation-order)) |
+| Palette and blue wave are good but a little generic; needs a visual "wow" | The homepage hero now carries the logo's own alpha, traced from the logo and enlarged, with the strata bands rising into it on arrival, drifting, and filling it further as the visitor scrolls. The colours are unchanged |
+| More variation in page layouts; pages feel repetitive when scrolling | Homepage: every section now has its own composition (expertise beside a heading column that stays in view, services beside a full-height lab photo on the deep blue, "How a study runs" as stacked strata that step deeper and to the right, publications led by the count and by each journal, the team photo with the heading set on it). Expertise and Services: one section per area, alternating mist, white and deep blue grounds, the text column swapping sides, and wide picture-led layouts for metabolic disease, tumor models and the in vitro lab (`tools/area_layouts.py`) |
 
 ## Motion
 

@@ -148,7 +148,7 @@ body{margin:0}
 <header class="top">
   <div class="wrap hdr">
     <a href="index.html" aria-label="Alpha Preclinical home"><img src="assets/img/logo-white.png" alt="Alpha Preclinical" style="width:72px;height:auto;display:block"></a>
-    <nav aria-label="Main"><ul class="nav"><li><a href="expertise.html" aria-current="page">Expertise</a></li><li><a href="services.html">Services</a></li><li><a href="publications.html">Publications</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    <nav aria-label="Main"><ul class="nav"><li class="has-sub" data-sub><a class="top-link" href="expertise.html" aria-current="page">Expertise</a><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-expertise"><span class="sr-only">Expertise menu</span><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="sub sub-wide" id="sub-expertise"><div class="sub-intro"><p class="sub-title">Disease models and study expertise</p><p>Six therapeutic areas, each led by a senior scientist who has published in it or run it for years.</p><a class="sub-all" href="expertise.html">All expertise</a></div><ul class="sub-list"><li><a href="expertise.html#pk-pd"><b>PK/PD</b><span>Routes, samples, imaging</span></a></li><li><a href="expertise.html#gene-therapy"><b>Gene therapy</b><span>Nucleic acid delivery</span></a></li><li><a href="expertise.html#autoimmune"><b>Autoimmune disease</b><span>SLE, T1D, EAE, IBD, RA</span></a></li><li><a href="expertise.html#metabolic"><b>Metabolic disease</b><span>Obesity, T2D, NASH, lipids</span></a></li><li><a href="expertise.html#fibrosis"><b>Inflammation and fibrosis</b><span>OA, fibrosis, LPS</span></a></li><li><a href="tumor-models.html"><b>Tumor models</b><span>Subcutaneous, orthotopic, IVIS</span></a></li></ul><a class="sub-feature" href="contact.html#form"><img src="assets/img/lab-biosafety-cabinet.jpg" alt="" loading="lazy" width="560" height="373"><b>Need a model that isn't listed?</b><span>We set up models from the literature.</span></a></div></li><li class="has-sub" data-sub><a class="top-link" href="services.html">Services</a><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-services"><span class="sr-only">Services menu</span><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="sub sub-wide" id="sub-services"><div class="sub-intro"><p class="sub-title">Services under one roof</p><p>Formulation, dosing, surgery, imaging and lab analysis, run by the team that runs your study.</p><a class="sub-all" href="services.html">All services</a></div><ul class="sub-list"><li><a href="services.html#study-types"><b>Study types</b><span>PK/PD, proof of concept, efficacy</span></a></li><li><a href="services.html#ivis"><b>IVIS imaging</b><span>Bioluminescence and fluorescence</span></a></li><li><a href="services.html#surgery"><b>Surgical services</b><span>USDA-compliant suite, staff DVM</span></a></li><li><a href="services.html#colony"><b>Colony management</b><span>Custom breeding programs</span></a></li><li><a href="services.html#in-vitro"><b>In vitro laboratory</b><span>Flow cytometry, ELISA, histology</span></a></li><li><a href="services.html#support"><b>Study support</b><span>Formulation and test materials</span></a></li></ul><a class="sub-feature" href="contact.html"><img src="assets/img/building-sign.jpg" alt="" loading="lazy" width="560" height="373"><b>722 Plantation Street, Worcester</b><span>Our vivarium and labs. Come and see them.</span></a></div></li><li><a href="publications.html">Publications</a></li><li class="has-sub" data-sub><a class="top-link" href="about.html">About</a><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-about"><span class="sr-only">About menu</span><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="sub" id="sub-about"><ul class="sub-list"><li><a href="about.html"><b>About Alpha</b><span>Our story, values and facility</span></a></li><li><a href="team.html"><b>Team</b><span>The scientists who run your study</span></a></li><li><a href="careers.html"><b>Careers</b><span>Open roles in Worcester</span></a></li></ul></div></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
     <a class="btn btn-light" href="contact.html">Request a study quote</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg></button>
   </div>
   <div class="wrap top-body">
@@ -171,11 +171,11 @@ body{margin:0}
 </header>
 
 <main id="main">
-<section class="sec sec-mist" aria-label="Areas of expertise">
+<section class="area area-mist" aria-labelledby="pk-pd-h">
   <div class="wrap">
     <article class="svc" id="pk-pd">
       <div>
-        <h2>PK/PD</h2>
+        <h2 id="pk-pd-h">PK/PD</h2>
         <p class="desc">Well-run pharmacokinetic and pharmacodynamic studies tell you how much of your compound reaches its target, for how long, and with what effect. We run them primarily in rodents, with capacity for most common laboratory species.</p>
         <div class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt=""><div><small>Led by</small><b><a href="team.html#barak-yahalom">Barak Yahalom, DVM</a></b></div></div>
         <a class="area-cta" href="contact.html?study=PK%2FPD#form">Plan your PK/PD study</a>
@@ -186,9 +186,13 @@ body{margin:0}
         <div class="reads"><h3>Read more on the blog</h3><ul><li><a href="blog-how-to-scope-in-vivo-efficacy-study.html">How to scope your first in vivo efficacy study</a></li><li><a href="blog-alzet-osmotic-pump-continuous-dosing.html">Continuous dosing with Alzet pumps: when and why</a></li></ul></div>
       </div>
     </article>
-    <article class="svc" id="gene-therapy">
+  </div>
+</section>
+<section class="area area-paper" aria-labelledby="gene-therapy-h">
+  <div class="wrap">
+    <article class="svc flip" id="gene-therapy">
       <div>
-        <h2>Gene therapy</h2>
+        <h2 id="gene-therapy-h">Gene therapy</h2>
         <p class="desc">Gene therapy modifies or replaces faulty genes to treat, cure or prevent disease. Our scientists have worked with nucleic acid delivery for more than a decade, across many carriers, vectors and routes of administration.</p>
         <div class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt=""><div><small>Led by</small><b><a href="team.html#barak-yahalom">Barak Yahalom, DVM</a></b></div></div>
         <a class="area-cta" href="contact.html?study=Gene%20therapy#form">Plan your gene therapy study</a>
@@ -199,9 +203,13 @@ body{margin:0}
         <div class="reads"><h3>Read more on the blog</h3><ul><li><a href="blog-mrna-liver-depot-study-design.html">What an mRNA liver depot study looks like in practice</a></li></ul></div>
       </div>
     </article>
+  </div>
+</section>
+<section class="area area-deep" aria-labelledby="autoimmune-h">
+  <div class="wrap">
     <article class="svc" id="autoimmune">
       <div>
-        <h2>Autoimmune disease</h2>
+        <h2 id="autoimmune-h">Autoimmune disease</h2>
         <p class="desc">Each autoimmune disease has its own mechanism, but all are a malfunction of the immune system, driven by genes together with environment, lifestyle and infection. We run both spontaneous and induced rodent models.</p>
         <div class="lead"><img src="assets/img/team/joan-flanagan.jpg" alt=""><div><small>Led by</small><b><a href="team.html#joan-flanagan">Joan Flanagan, PhD</a></b></div></div>
         <a class="area-cta" href="contact.html?study=Autoimmune%20disease#form">Plan your autoimmune study</a>
@@ -212,22 +220,31 @@ body{margin:0}
         <div class="reads"><h3>Read more on the blog</h3><ul><li><a href="blog-rat-models-type-1-diabetes.html">Spontaneous rat models of type 1 diabetes, explained</a></li><li><a href="blog-flow-cytometry-immunophenotyping-in-vivo-studies.html">Getting more from every animal with in-house flow cytometry</a></li></ul></div>
       </div>
     </article>
-    <article class="svc" id="metabolic">
+  </div>
+</section>
+<section class="area area-mist" aria-labelledby="metabolic-h">
+  <div class="wrap">
+    <article class="svc wide" id="metabolic">
       <div>
-        <h2>Metabolic disease</h2>
+        <h2 id="metabolic-h">Metabolic disease</h2>
         <p class="desc">Metabolic diseases disrupt how cells process or transport proteins, carbohydrates and lipids. Our team draws on years of diabetes research and close ties with specialists in the field to evaluate metabolic drug candidates thoroughly.</p>
         <div class="lead"><img src="assets/img/team/joan-flanagan.jpg" alt=""><div><small>Led by</small><b><a href="team.html#joan-flanagan">Joan Flanagan, PhD</a></b></div></div>
         <a class="area-cta" href="contact.html?study=Metabolic%20disease#form">Plan your metabolic study</a>
       </div>
+      <figure class="area-media"><img src="assets/img/blog/diet-vs-genetic-t2d-hero-1200.jpg" alt="" width="1200" height="675" loading="lazy"></figure>
       <div class="detail">
         <table class="mtable"><thead><tr><th scope="col">Disease</th><th scope="col">Models</th></tr></thead><tbody><tr><td>Obesity</td><td>Diet-induced obesity (DIO) rodents, ob/ob mice</td></tr><tr><td>Type 2 diabetes</td><td>db/db mice and ZDF rats, including wound healing studies</td></tr><tr><td>Fatty liver disease</td><td>NAFLD and NASH models</td></tr><tr><td>Lipid disorders</td><td>High-fat diet-induced dyslipidemia and hypercholesterolemia</td></tr></tbody></table>
         <div class="pubs"><h3>Related research by our scientists</h3><ul><li><a href="https://www.alphapreclinical.com/_files/ugd/095141_bd1413ed7182424aab63ad6f1a938f40.pdf" target="_blank" rel="noopener" aria-label="The BBZDR/Wor Rat Model for Investigating the Complications of Type 2 Diabetes Mellitus (PDF, opens in new tab)">The BBZDR/Wor Rat Model for Investigating the Complications of Type 2 Diabetes Mellitus</a><span>Tirabassi RS, Flanagan JF, et al.</span></li><li><a href="https://www.alphapreclinical.com/_files/ugd/095141_4f715cbd371b4461961a30800e5b069d.pdf" target="_blank" rel="noopener" aria-label="The C57BL/6NCrl-lb Mouse: A New Model for Metabolic Syndrome (PDF, opens in new tab)">The C57BL/6NCrl-lb Mouse: A New Model for Metabolic Syndrome</a><span>Owens DR, … Flanagan J</span></li><li><a href="https://www.alphapreclinical.com/_files/ugd/095141_53c8193dbdb64ad6836bf1fbcf2efa18.pdf" target="_blank" rel="noopener" aria-label="Antidiabetic effect of novel modulating peptides of G-protein-coupled kinase in experimental models of diabetes (PDF, opens in new tab)">Antidiabetic effect of novel modulating peptides of G-protein-coupled kinase in experimental models of diabetes</a><span>Leshem O, … Yahalom B, et al.</span></li></ul></div>
         <div class="reads"><h3>Read more on the blog</h3><ul><li><a href="blog-diet-induced-vs-genetic-type-2-diabetes-models.html">Diet-induced versus genetic models of type 2 diabetes</a></li></ul></div>
       </div>
     </article>
-    <article class="svc" id="fibrosis">
+  </div>
+</section>
+<section class="area area-paper" aria-labelledby="fibrosis-h">
+  <div class="wrap">
+    <article class="svc flip" id="fibrosis">
       <div>
-        <h2>Inflammation and fibrosis</h2>
+        <h2 id="fibrosis-h">Inflammation and fibrosis</h2>
         <p class="desc">Rodent models of inflammation and inflammatory pain are widely used to study how tissue injury leads to persistent pain and disease. We provide complete evaluations of anti-inflammatory and anti-fibrotic compounds.</p>
         <div class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt=""><div><small>Led by</small><b><a href="team.html#barak-yahalom">Barak Yahalom, DVM</a></b></div></div>
         <a class="area-cta" href="contact.html?study=Inflammation%20and%20fibrosis#form">Plan your inflammation or fibrosis study</a>
@@ -238,13 +255,18 @@ body{margin:0}
         <div class="reads"><h3>Read more on the blog</h3><ul><li><a href="blog-flow-cytometry-immunophenotyping-in-vivo-studies.html">Getting more from every animal with in-house flow cytometry</a></li></ul></div>
       </div>
     </article>
-    <article class="svc" id="tumor">
+  </div>
+</section>
+<section class="area area-deep" aria-labelledby="tumor-h">
+  <div class="wrap">
+    <article class="svc wide media-right" id="tumor">
       <div>
-        <h2>Tumor models</h2>
+        <h2 id="tumor-h">Tumor models</h2>
         <p class="desc">Using commercially available murine and human cell lines, we build subcutaneous and orthotopic tumor models for anti-tumor activity, dose response and tumor progression studies.</p>
         <div class="lead"><img src="assets/img/team/barak-yahalom.jpg" alt=""><div><small>Led by</small><b><a href="team.html#barak-yahalom">Barak Yahalom, DVM</a></b></div></div>
         <a class="area-cta" href="contact.html?study=Tumor%20models#form">Plan your oncology study</a>
       </div>
+      <figure class="area-media"><img src="assets/img/blog/caliper-vs-ivis-hero-1200.jpg" alt="" width="1200" height="675" loading="lazy"></figure>
       <div class="detail">
         <table class="mtable"><thead><tr><th scope="col">Model</th><th scope="col">Used for</th></tr></thead><tbody><tr><td>Subcutaneous</td><td>Pharmacodynamic target activity, anti-tumor efficacy and dose response</td></tr><tr><td>Orthotopic</td><td>Tumor progression in the organ of origin</td></tr><tr><td>Imaging</td><td>In-life and ex vivo Spectrum IVIS bioluminescence (luciferase)</td></tr></tbody></table>
         <p class="more"><a class="btn btn-primary" href="tumor-models.html">See tumor models in detail</a></p>
