@@ -36,6 +36,8 @@ function alpha_site_defaults() {
 		'staging_private'   => '',
 		'review_notify'     => '',
 		'reviewer_domains'  => 'alphapreclinical.com',
+		'mail_from'         => '',
+		'mail_from_name'    => '',
 	);
 }
 
@@ -96,6 +98,9 @@ function alpha_sanitize_site( $input ) {
 			case 'review_notify':
 				$out[ $key ] = sanitize_email( $val );
 				break;
+			case 'mail_from':
+				$out[ $key ] = sanitize_email( $val );
+				break;
 			case 'reviewer_domains':
 				$out[ $key ] = strtolower( preg_replace( '/[^A-Za-z0-9.,\s-]/', '', (string) $val ) );
 				break;
@@ -151,6 +156,8 @@ function alpha_render_settings_page() {
 		'staging_mode'    => array( __( 'Staging mode', 'alpha-preclinical' ), 'checkbox', __( 'Hides the site from search engines, shows a staging banner and turns on the Content review page. Turn off at launch.', 'alpha-preclinical' ) ),
 		'staging_private' => array( __( 'Private staging', 'alpha-preclinical' ), 'checkbox', __( 'Only logged-in users can see the site (staging mode only).', 'alpha-preclinical' ) ),
 		'review_notify'   => array( __( 'Email review answers to', 'alpha-preclinical' ), 'email', __( 'Gets a note each time someone saves answers on the Content review page. Empty = the site admin email.', 'alpha-preclinical' ) ),
+		'mail_from'      => array( __( 'Send site email from', 'alpha-preclinical' ), 'email', __( 'Address on a domain verified with your email service (Cloudways Elastic Email), e.g. noreply@alphapreclinical.com. Empty = WordPress default (wordpress@ this site), which an unverified domain cannot send from.', 'alpha-preclinical' ) ),
+		'mail_from_name' => array( __( 'Sender name', 'alpha-preclinical' ), 'text', __( 'Shown as the sender, e.g. Alpha Preclinical. Empty = the site title.', 'alpha-preclinical' ) ),
 		'reviewer_domains' => array( __( 'Reviewers can invite', 'alpha-preclinical' ), 'text', __( 'Email domains reviewers may invite to the Content review, comma separated (e.g. alphapreclinical.com). Empty = only administrators add reviewers.', 'alpha-preclinical' ) ),
 		'redirects'     => array( __( 'Extra redirects', 'alpha-preclinical' ), 'textarea', __( 'One per line: /old-path = /new-path/. Added to the built-in Wix redirects (inc/redirects.php).', 'alpha-preclinical' ) ),
 	);
@@ -201,3 +208,31 @@ function alpha_route_inbox( $study ) {
 	}
 	return $default;
 }
+
+/**
+ * Site email (forms, invitations, password links) goes out from the address in
+ * Settings › Alpha Preclinical, which must be on a domain the mail service has verified.
+ *
+ * @param string $from Default from address.
+ * @return string
+ */
+function alpha_mail_from( $from ) {
+	$set = alpha_site( 'mail_from' );
+	return is_email( $set ) ? $set : $from;
+}
+add_filter( 'wp_mail_from', 'alpha_mail_from' );
+
+/**
+ * Sender name for site email.
+ *
+ * @param string $name Default name.
+ * @return string
+ */
+function alpha_mail_from_name( $name ) {
+	if ( ! is_email( alpha_site( 'mail_from' ) ) ) {
+		return $name;
+	}
+	$set = alpha_site( 'mail_from_name' );
+	return '' !== $set ? $set : wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
+}
+add_filter( 'wp_mail_from_name', 'alpha_mail_from_name' );
