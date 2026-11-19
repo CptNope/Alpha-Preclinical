@@ -1,0 +1,236 @@
+{
+ "v": 3,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-19T18:45:00Z"
+ },
+ "title": "Alpha Preclinical Brand Book",
+ "launch": {
+  "view": "canvas",
+  "page": "book"
+ },
+ "pages": [
+  {
+   "id": "book",
+   "name": "Brand book"
+  },
+  {
+   "id": "stationery",
+   "name": "Stationery & email"
+  },
+  {
+   "id": "linkedin",
+   "name": "LinkedIn"
+  }
+ ],
+ "boards": {
+  "Main.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1056,
+   "h": 816,
+   "title": "01 Cover",
+   "page": "book"
+  },
+  "Brand.dc.html": {
+   "x": 1136,
+   "y": 0,
+   "w": 1056,
+   "h": 816,
+   "title": "02 Brand",
+   "page": "book"
+  },
+  "Logo.dc.html": {
+   "x": 2272,
+   "y": 0,
+   "w": 1056,
+   "h": 816,
+   "title": "03 Logo",
+   "page": "book"
+  },
+  "Colour.dc.html": {
+   "x": 0,
+   "y": 936,
+   "w": 1056,
+   "h": 816,
+   "title": "04 Colour",
+   "page": "book"
+  },
+  "Type.dc.html": {
+   "x": 1136,
+   "y": 936,
+   "w": 1056,
+   "h": 816,
+   "title": "05 Typography",
+   "page": "book"
+  },
+  "Strata.dc.html": {
+   "x": 2272,
+   "y": 936,
+   "w": 1056,
+   "h": 816,
+   "title": "06 Strata motif",
+   "page": "book"
+  },
+  "Photography.dc.html": {
+   "x": 0,
+   "y": 1872,
+   "w": 1056,
+   "h": 816,
+   "title": "07 Photography",
+   "page": "book"
+  },
+  "Voice.dc.html": {
+   "x": 1136,
+   "y": 1872,
+   "w": 1056,
+   "h": 816,
+   "title": "08 Voice",
+   "page": "book"
+  },
+  "Applications.dc.html": {
+   "x": 2272,
+   "y": 1872,
+   "w": 1056,
+   "h": 816,
+   "title": "09 Templates",
+   "page": "book"
+  },
+  "BusinessCardFront.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 360,
+   "h": 216,
+   "title": "Business card \u00b7 front",
+   "page": "stationery"
+  },
+  "BusinessCardBack.dc.html": {
+   "x": 440,
+   "y": 0,
+   "w": 360,
+   "h": 216,
+   "title": "Business card \u00b7 back",
+   "page": "stationery"
+  },
+  "Letterhead.dc.html": {
+   "x": 0,
+   "y": 336,
+   "w": 816,
+   "h": 1056,
+   "title": "Letterhead \u00b7 US Letter",
+   "page": "stationery"
+  },
+  "EmailSignature.dc.html": {
+   "x": 896,
+   "y": 336,
+   "w": 640,
+   "h": 240,
+   "title": "Email signature",
+   "page": "stationery"
+  },
+  "LinkedInCompanyBanner.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1128,
+   "h": 191,
+   "title": "Company page banner \u00b7 1128\u00d7191",
+   "page": "linkedin"
+  },
+  "LinkedInProfileBanner.dc.html": {
+   "x": 0,
+   "y": 311,
+   "w": 1584,
+   "h": 396,
+   "title": "Profile banner \u00b7 1584\u00d7396",
+   "page": "linkedin"
+  },
+  "LinkedInPublication.dc.html": {
+   "x": 0,
+   "y": 827,
+   "w": 1200,
+   "h": 1200,
+   "title": "Post \u00b7 publication \u00b7 1200\u00d71200",
+   "page": "linkedin"
+  },
+  "LinkedInHiring.dc.html": {
+   "x": 1280,
+   "y": 827,
+   "w": 1200,
+   "h": 1200,
+   "title": "Post \u00b7 we're hiring \u00b7 1200\u00d71200",
+   "page": "linkedin"
+  },
+  "LinkedInBlogLink.dc.html": {
+   "x": 2560,
+   "y": 827,
+   "w": 1200,
+   "h": 627,
+   "title": "Link image \u00b7 blog \u00b7 1200\u00d7627",
+   "page": "linkedin"
+  },
+  "LinkedInAvatar.dc.html": {
+   "x": 2560,
+   "y": 1574,
+   "w": 400,
+   "h": 400,
+   "title": "Page avatar \u00b7 400\u00d7400",
+   "page": "linkedin"
+  }
+ },
+ "order": [
+  "Main.dc.html",
+  "Brand.dc.html",
+  "Logo.dc.html",
+  "Colour.dc.html",
+  "Type.dc.html",
+  "Strata.dc.html",
+  "Photography.dc.html",
+  "Voice.dc.html",
+  "Applications.dc.html",
+  "BusinessCardFront.dc.html",
+  "BusinessCardBack.dc.html",
+  "Letterhead.dc.html",
+  "EmailSignature.dc.html",
+  "LinkedInCompanyBanner.dc.html",
+  "LinkedInProfileBanner.dc.html",
+  "LinkedInPublication.dc.html",
+  "LinkedInHiring.dc.html",
+  "LinkedInBlogLink.dc.html",
+  "LinkedInAvatar.dc.html"
+ ],
+ "notes": {
+  "cardnote": {
+   "x": 920,
+   "y": 0,
+   "w": 360,
+   "text": "Business cards are 3.75 \u00d7 2.25 in: 2 \u00d7 3.5 in trim plus 0.125 in bleed all round. Keep text 0.25 in inside the trim. Export PDF and send to the printer with 'includes bleed'.",
+   "page": "stationery",
+   "fill": "blue"
+  },
+  "signote": {
+   "x": 896,
+   "y": 636,
+   "w": 440,
+   "text": "Email signature: the paste-ready HTML file is in the chat. It uses Arial, since email apps don't load web fonts, and links the logo from the live site.",
+   "page": "stationery",
+   "fill": "blue"
+  },
+  "linote": {
+   "x": 1700,
+   "y": 0,
+   "w": 420,
+   "text": "LinkedIn covers the lower-left of banners with the logo or profile photo, so text sits to the right. Export PNG at 2\u00d7 for sharpness.",
+   "page": "linkedin",
+   "fill": "blue"
+  }
+ },
+ "designSystems": [
+  {
+   "title": "Alpha Preclinical",
+   "namespace": "alphapreclinical",
+   "artifact": "https://claude.ai/artifact/NSjFGaQNKM3HTrfqNfb5hb",
+   "version": null,
+   "copiedAt": "2026-11-19T18:43:48Z"
+  }
+ ]
+}

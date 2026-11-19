@@ -10,6 +10,8 @@ This repo holds three things:
 
 **Live preview:** https://cptnope.github.io/Alpha-Preclinical/ (once GitHub Pages is serving `main`)
 
+**Project overview:** https://cptnope.github.io/Alpha-Preclinical/overview/ — one hub with a top bar linking the design system, the brand book (business cards, letterhead, email signature, LinkedIn templates), the example site and the open decisions. Rebuild it with `python3 tools/build_overview.py` after changing the design system or brand book.
+
 > [!IMPORTANT]
 > This is a **review build**, not the production site. Forms validate and confirm on screen but send nothing, publication PDFs are still served from the old site, and several items still need client confirmation (see [Open items](#open-items-before-launch)).
 
@@ -230,6 +232,9 @@ flowchart LR
 │   └── design-system/                   # tokens.json, README.md (brand book), Cover preview
 ├── content/blog-posts.md                # all 7 blog drafts with SEO fields and sources
 ├── wordpress/alpha-preclinical/         # production block theme (see its README)
+├── overview/                            # project hub: design system, brand book, site, decisions (generated)
+├── design/brand-book/                   # brand book pages + templates (.dc.html) and email-signature.html
+├── tools/build_overview.py              # builds overview/ from design/design-system and design/brand-book
 ├── tools/export_wp.py                   # exports pages, papers, team, roles, posts as theme seed content
 ├── tools/convert.py                     # regenerates the HTML pages from design/canvas
 ├── tools/build_posts.py                 # builds the six other posts from content/blog-posts.md
