@@ -104,7 +104,7 @@
   },
   "span": {
    "type": "string",
-   "default": "© 2026 Alpha Preclinical LLC"
+   "default": "© 2026 Alpha Preclinical LLC · Website designed and maintained by <a href=\"https://jeremyanderson.tech\">jeremyanderson.tech</a>"
   },
   "legal_links": {
    "type": "string",
