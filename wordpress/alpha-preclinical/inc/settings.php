@@ -32,6 +32,9 @@ function alpha_site_defaults() {
 		'a11y_response'     => '',
 		'tagline'           => 'Tailored in vivo research for your innovation.',
 		'redirects'         => '',
+		'staging_mode'      => '',
+		'staging_private'   => '',
+		'review_notify'     => '',
 	);
 }
 
@@ -85,6 +88,13 @@ function alpha_sanitize_site( $input ) {
 			case 'map_url':
 				$out[ $key ] = esc_url_raw( $val );
 				break;
+			case 'staging_mode':
+			case 'staging_private':
+				$out[ $key ] = empty( $val ) ? '' : '1';
+				break;
+			case 'review_notify':
+				$out[ $key ] = sanitize_email( $val );
+				break;
 			case 'routing':
 			case 'redirects':
 				$out[ $key ] = sanitize_textarea_field( $val );
@@ -134,6 +144,9 @@ function alpha_render_settings_page() {
 		'routing'       => array( __( 'Route by study type', 'alpha-preclinical' ), 'textarea', __( 'One per line: Study type = email@example.com. Unlisted types go to the default inbox.', 'alpha-preclinical' ) ),
 		'careers_inbox' => array( __( 'Job applications go to', 'alpha-preclinical' ), 'email', __( 'Empty = the default quote inbox.', 'alpha-preclinical' ) ),
 		'a11y_response' => array( __( 'Accessibility response time', 'alpha-preclinical' ), 'text', __( 'Shown on the Accessibility statement, e.g. "within 2 business days".', 'alpha-preclinical' ) ),
+		'staging_mode'    => array( __( 'Staging mode', 'alpha-preclinical' ), 'checkbox', __( 'Hides the site from search engines, shows a staging banner and turns on the Content review page. Turn off at launch.', 'alpha-preclinical' ) ),
+		'staging_private' => array( __( 'Private staging', 'alpha-preclinical' ), 'checkbox', __( 'Only logged-in users can see the site (staging mode only).', 'alpha-preclinical' ) ),
+		'review_notify'   => array( __( 'Email review answers to', 'alpha-preclinical' ), 'email', __( 'Gets a note each time someone saves answers on the Content review page. Empty = the site admin email.', 'alpha-preclinical' ) ),
 		'redirects'     => array( __( 'Extra redirects', 'alpha-preclinical' ), 'textarea', __( 'One per line: /old-path = /new-path/. Added to the built-in Wix redirects (inc/redirects.php).', 'alpha-preclinical' ) ),
 	);
 	echo '<div class="wrap"><h1>' . esc_html__( 'Alpha Preclinical site details', 'alpha-preclinical' ) . '</h1>';
@@ -144,7 +157,9 @@ function alpha_render_settings_page() {
 		list( $label, $type, $help ) = $field;
 		$id = 'alpha-site-' . $key;
 		echo '<tr><th scope="row"><label for="' . esc_attr( $id ) . '">' . esc_html( $label ) . '</label></th><td>';
-		if ( 'textarea' === $type ) {
+		if ( 'checkbox' === $type ) {
+			echo '<label><input type="checkbox" id="' . esc_attr( $id ) . '" name="alpha_site[' . esc_attr( $key ) . ']" value="1"' . checked( '1', $opts[ $key ], false ) . '> ' . esc_html__( 'On', 'alpha-preclinical' ) . '</label>';
+		} elseif ( 'textarea' === $type ) {
 			echo '<textarea class="large-text code" rows="6" id="' . esc_attr( $id ) . '" name="alpha_site[' . esc_attr( $key ) . ']">' . esc_textarea( $opts[ $key ] ) . '</textarea>';
 		} else {
 			echo '<input class="regular-text" type="' . esc_attr( $type ) . '" id="' . esc_attr( $id ) . '" name="alpha_site[' . esc_attr( $key ) . ']" value="' . esc_attr( $opts[ $key ] ) . '">';

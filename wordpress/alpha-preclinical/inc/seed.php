@@ -310,6 +310,27 @@ function alpha_seed_run( $opts = array(), $log = null ) {
 	if ( isset( $ids['privacy-policy'] ) ) {
 		update_option( 'wp_page_for_privacy_policy', $ids['privacy-policy'] );
 	}
+	// The Content review page (staging only; the block shows nothing useful once staging is off).
+	if ( empty( $opts['skip_review'] ) ) {
+		$review = alpha_seed_upsert(
+			array(
+				'post_type'    => 'page',
+				'post_name'    => 'content-review',
+				'post_title'   => 'Content review',
+				'post_excerpt' => 'Answer the open questions so the site is ready to launch.',
+				'post_content' => '<!-- wp:alpha/content-review {"align":"wide"} /-->',
+				'menu_order'   => 99,
+			),
+			true
+		);
+		if ( $review ) {
+			update_post_meta( $review, 'short_title', 'Content review' );
+		}
+		$site                 = wp_parse_args( (array) get_option( 'alpha_site', array() ), alpha_site_defaults() );
+		$site['staging_mode'] = '1';
+		update_option( 'alpha_site', $site );
+		$log( 'Content review page created; staging mode on (turn it off at launch).' );
+	}
 	update_option( 'blogname', 'Alpha Preclinical' );
 	update_option( 'blogdescription', alpha_site( 'tagline' ) );
 	update_option( 'permalink_structure', '/blog/%postname%/' );
@@ -372,6 +393,49 @@ function alpha_migrate_pdfs( $log = null ) {
 
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
 	/**
+	 * Create a Client reviewer account and email them a link to set a password.
+	 *
+	 * ## OPTIONS
+	 *
+	 * <email>
+	 * : Their email address.
+	 *
+	 * [--name=<name>]
+	 * : Display name, e.g. "Chris".
+	 *
+	 * @param array $args       Positional args.
+	 * @param array $assoc_args Flags.
+	 */
+	function alpha_cli_add_reviewer( $args, $assoc_args ) {
+		$email = sanitize_email( $args[0] );
+		if ( ! is_email( $email ) ) {
+			WP_CLI::error( 'Not a valid email address.' );
+		}
+		$user = get_user_by( 'email', $email );
+		if ( $user ) {
+			$user->add_role( 'alpha_reviewer' );
+			WP_CLI::success( 'Existing user given the Client reviewer role.' );
+			return;
+		}
+		$name = isset( $assoc_args['name'] ) ? sanitize_text_field( $assoc_args['name'] ) : strstr( $email, '@', true );
+		$id   = wp_insert_user(
+			array(
+				'user_login'   => sanitize_user( strstr( $email, '@', true ), true ) . wp_rand( 10, 99 ),
+				'user_email'   => $email,
+				'display_name' => $name,
+				'first_name'   => $name,
+				'user_pass'    => wp_generate_password( 24 ),
+				'role'         => 'alpha_reviewer',
+			)
+		);
+		if ( is_wp_error( $id ) ) {
+			WP_CLI::error( $id->get_error_message() );
+		}
+		wp_new_user_notification( $id, null, 'user' );
+		WP_CLI::success( "Client reviewer created (user $id); they were emailed a link to set their password." );
+	}
+
+	/**
 	 * Alpha Preclinical site setup.
 	 */
 	class Alpha_CLI {
@@ -411,6 +475,7 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 		}
 	}
 	WP_CLI::add_command( 'alpha', 'Alpha_CLI' );
+	WP_CLI::add_command( 'alpha add-reviewer', 'alpha_cli_add_reviewer' );
 }
 
 /**

@@ -277,6 +277,7 @@ def build_site():
                 '- Every bespoke component is a custom block whose content can be bound to data (Block Bindings API).\n'
                 '- Publications, team members and open roles are their own content types; site details and quote routing are in one settings page.\n'
                 '- The approved content imports in one step (`wp alpha seed`), and old Wix URLs and PDF links redirect.\n\n'
+                'On staging, Alpha\'s team logs in and answers the open questions on a **Content review** page; many answers update the staging site as soon as they are saved.\n\n'
                 'Details and setup: [theme README](../wordpress/alpha-preclinical/README.md). Next step: staging on Cloudways for the client to review.')))
     return page('site.html', 'Example site', 'The approved design as a working preview, and where the production build stands.', body, toc)
 
@@ -316,6 +317,7 @@ CHECK = [
         ('WordPress block theme with the approved content ready to import', True),
         ('Quote and application forms with spam protection and routing', True),
         ('Redirects from old Wix URLs and PDF links', True),
+        ('Content review page on staging, where Alpha answers these questions', True),
         ('Staging site on Cloudways for client review', False),
         ('Move the 16 publication PDFs off Wix (wp alpha migrate-pdfs)', False),
         ('SMTP so form email is delivered', False),
@@ -337,7 +339,7 @@ def build_checklist():
             for i, (t, d) in enumerate(items))
         secs.append(section(anchor, title, f'<ul class="ov-check">{lis}</ul>', f'Owner: <b>{E(owner)}</b> · {done} of {len(items)} done'))
         toc.append((anchor, title))
-    note = '<p class="ov-note">Ticks you add here are saved in this browser only. The shared checklist for Alpha to fill in is the content checklist doc Jeremy sent.</p>'
+    note = '<p class="ov-note">Ticks you add here are saved in this browser only. Once the staging site is up, Alpha answers these on its Content review page, and many answers update the site directly.</p>'
     return page('checklist.html', 'Decisions and open items', 'What still needs a decision, a file or an approval before launch, and who owns it.',
                 note + ''.join(secs), toc)
 

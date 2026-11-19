@@ -2,3 +2,4 @@
 # design inspector output (local only)
 .taste-skill/
 tools/__pycache__/
+dist/

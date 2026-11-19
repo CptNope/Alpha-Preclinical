@@ -89,7 +89,7 @@
 	}
 
 	// Register edit UIs for the server-registered blocks.
-	var names = [ 'strata-band', 'hero-alpha', 'page-header', 'contour', 'lead-chip', 'stat', 'cta-band', 'filter-chips', 'quote-form', 'contact-card', 'person-card', 'person-links', 'meta-list', 'breadcrumbs' ];
+	var names = [ 'strata-band', 'hero-alpha', 'page-header', 'contour', 'lead-chip', 'stat', 'cta-band', 'filter-chips', 'quote-form', 'contact-card', 'person-card', 'person-links', 'meta-list', 'breadcrumbs', 'content-review' ];
 	names.forEach( function ( n ) {
 		var name = 'alpha/' + n;
 		wp.blocks.registerBlockType( name, {

@@ -414,7 +414,7 @@ def export_publications():
     for i, row in enumerate(P):
         d = dict(zip(keys, row))
         # citation author lists on the site are full names; keep them, comma separated
-        d['alpha_authors'] = d['alpha_authors'] if d['alpha_authors'] != 'None listed' else ''
+        d['alpha_authors'] = '' if d['alpha_authors'].lower().startswith('none') else d['alpha_authors']
         d['legacy_pdf'] = d['pdf_url']
         d['featured'] = d['pmid'] in featured
         d['menu_order'] = i

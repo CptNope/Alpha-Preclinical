@@ -1,0 +1,29 @@
+name: Theme
+
+on:
+  push:
+    branches: [main]
+    paths: ['wordpress/**', 'tools/package_theme.sh', '.github/workflows/theme.yml']
+  pull_request:
+    paths: ['wordpress/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: PHP lint
+        run: find wordpress -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: JSON check
+        run: for f in wordpress/alpha-preclinical/theme.json wordpress/alpha-preclinical/styles/*/*.json wordpress/alpha-preclinical/blocks/*/block.json wordpress/alpha-preclinical/seed/*.json; do python3 -m json.tool "$f" > /dev/null; done
+      - name: Package
+        id: pkg
+        run: echo "zip=$(tools/package_theme.sh)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: alpha-preclinical-theme
+          path: ${{ steps.pkg.outputs.zip }}

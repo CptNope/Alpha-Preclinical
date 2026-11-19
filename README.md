@@ -498,6 +498,7 @@ AXE_PATH=path/to/axe.min.js python3 docs/a11y-audit.py http://localhost:8766 aud
 - [ ] Screen-reader pass with VoiceOver and NVDA on staging
 - [x] Real form handling and spam protection (`alpha/quote-form`: nonce, honeypot, rate limit, routing by study type, saved Inquiries)
 - [ ] SMTP on Cloudways so form mail is delivered; set the quote inboxes and routing
+- [x] Content review page on staging (`/content-review/`) where Alpha answers the open questions; see the theme README › Put it on staging
 - [x] `JobPosting` schema on each role page (`Person`, `ScholarlyArticle`, `FAQPage`, `BreadcrumbList` too)
 - [x] Redirects from old Wix URLs and PDF links (`inc/redirects.php`, plus extras in settings)
 - [ ] Crawl the live Wix site for any old URLs not in the redirect map; XML sitemap from the SEO plugin

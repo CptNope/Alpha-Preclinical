@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/content-review",
+	"title": "Content review",
+	"category": "alpha",
+	"icon": "clipboard",
+	"description": "Staging only: the open questions and approvals for logged-in Client reviewers. Saving updates the site where an answer maps to site data.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"intro": { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "align": [ "wide" ] },
+	"render": "file:./render.php"
+}

@@ -75,8 +75,8 @@ alpha-preclinical/
 ├── style.css, theme.json, functions.php, screenshot.png
 ├── styles/sections/   section styles: abyss, mist, paper, footer (Group block styles)
 ├── styles/blocks/     button styles: light, ghost-dark, arrow; list "rows"; table "specs"
-├── blocks/            16 alpha/* blocks (block.json + render.php)
-├── inc/               post types, bindings, blocks, forms, schema, redirects, settings, seed importer
+├── blocks/            17 alpha/* blocks (block.json + render.php), incl. the staging-only content review
+├── inc/               post types, bindings, blocks, forms, schema, redirects, settings, staging, review, seed importer
 ├── templates/         front-page, page, page-wide, page-legal, home (blog), single, single-team_member,
 │                      single-job, single-publication, archive, search, index, 404
 ├── parts/             header, footer, page-header, post-header
@@ -85,30 +85,44 @@ alpha-preclinical/
 └── seed/              the approved content, exported from the static site by tools/export_wp.py
 ```
 
-## Set up a site (staging on Cloudways)
+## Put it on staging (Cloudways)
 
-1. Install WordPress 6.9+, upload `wordpress/alpha-preclinical/` to `wp-content/themes/`, activate it.
-2. Import the approved content:
+1. **Make the zip:** `tools/package_theme.sh` → `dist/alpha-preclinical-<version>.zip`. GitHub Actions also builds it on every push (Actions › Theme › artifact).
+2. **Create the app:** a WordPress application on your Cloudways server (WordPress 6.9+, PHP 8.1+). Turn on SSL for the staging domain.
+3. **Install the theme:** Appearance › Themes › Add New › Upload Theme, then activate.
+4. **Import the content:** SSH into the app (Cloudways › Master credentials), `cd public_html`, then:
    ```bash
-   wp alpha seed                # team, 16 papers, 4 roles, 13 pages, 7 blog drafts, reading settings
-   wp alpha migrate-pdfs        # while Wix is still online: PDFs → media library
+   wp alpha seed                 # pages, team, papers, roles, blog drafts; turns staging mode on
+   wp alpha migrate-pdfs         # copy the 16 PDFs off Wix while it's still up
    ```
-   (or **Tools › Alpha Preclinical setup** as an administrator). Re-running updates items by slug; `--skip-existing` leaves edited items alone.
-3. Fill in **Settings › Alpha Preclinical**: quote inboxes and routing by study type, phone (if wanted), accessibility response time, extra redirects.
-4. Install an SMTP plugin (or Cloudways' SMTP add-on) so form mail is delivered. Every submission is also saved under **Inquiries** in case mail fails.
-5. Install Rank Math or Yoast. The importer pre-fills each blog post's SEO title, description and focus keyword for both. The theme prints Organization, Person, ScholarlyArticle, JobPosting, FAQPage and BreadcrumbList; let the SEO plugin handle `Article` and the XML sitemap.
-6. Blog posts import as **drafts**. Each author reviews theirs and adds one first-hand detail, then publish one every 1–2 weeks.
+   No SSH? Use **Tools › Alpha Preclinical setup** instead.
+5. **Lock it down:** in **Settings › Alpha Preclinical**, tick **Private staging** so only logged-in people can see the site. Staging mode already hides it from search engines and shows a banner.
+6. **Mail:** turn on Cloudways' SMTP add-on (or an SMTP plugin) so form and review emails arrive. Set **Email review answers to** if they should go somewhere other than the admin email.
+7. **Invite Alpha:** give each person a **Client reviewer** account:
+   ```bash
+   wp alpha add-reviewer chris@alphapreclinical.com --name="Chris"
+   ```
+   (or Users › Add New with the role "Client reviewer"). They get an email to set a password and land on **/content-review/** when they log in.
+8. **SEO plugin:** install Rank Math or Yoast. The import pre-fills each post's SEO title, description and focus keyword.
 
-To refresh the seed after editing the static site or `content/blog-posts.md`:
+### The Content review page
 
-```bash
-python3 tools/export_wp.py
-```
+`/content-review/` (the `alpha/content-review` block, staging only) lists every open question in six sections: Team, Expertise and publications, Contact and forms, Careers, Blog posts, and Legal, brand and files. Reviewers answer what they can and save each section. Progress is saved per question, with who and when.
+
+- **Answers marked "Updates the site" change staging as soon as they're saved:** job titles, ORCID, Scholar and LinkedIn links, the phone number, quote inbox and per-study routing, the careers inbox, the accessibility response time, which roles are listed, whether the three LNP papers show, and Joan's Becker line.
+- **Everything else is recorded for you to act on:** bio and blog approvals with notes, who leads fibrosis, tumor models and IVIS, model-list changes, the editorial policy, legal status, card details, and uploaded photos, logos and documents (saved to the media library).
+- **Review the answers** in **Tools › Content review** (table plus CSV export). Each save also emails a summary.
+- **Security:** each section save checks a nonce and the `alpha_review` capability. Uploads accept images, PDF, AI, EPS, Word and zip only (no SVG). Fields the form didn't send are left as they were.
+
+### At launch
+
+Untick **Staging mode** (this closes the review page and lets search engines in). Delete or demote the reviewer accounts, point the domain at the app, check redirects, and submit the sitemap.
 
 ## Tested
 
 On WordPress 6.9 (SQLite) with the imported content:
 
+- Staging: reviewer login lands on the review page and is kept out of the dashboard; saves update phone, routing, titles, roles and papers on the site; untouched fields are left alone; bad nonce → 403, logged out → 400, reviewer can't export the CSV; a PHP file renamed as an image is rejected; private staging sends visitors to the login; with staging off the review page closes. axe: no violations on the review page.
 - All 20 URLs render with no PHP notices; `/experetise` and old `/_files/ugd/…` PDF links redirect (301).
 - All 1,259 blocks in the seed pages, posts, team bios, templates, parts and patterns pass core block validation (`@wordpress/blocks` + `@wordpress/block-library`), so nothing opens as "invalid block" in the editor.
 - Bindings resolve on the front end: 16 publication cards with citations and IDs, 5 team cards, live counts; empty bound buttons are removed.
