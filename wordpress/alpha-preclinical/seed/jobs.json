@@ -1,0 +1,38 @@
+[
+ {
+  "title": "Senior Research Technician, In Vivo",
+  "team": "In vivo",
+  "summary": "Contribute across the full lifecycle of contracted studies: execute client projects, perform in vivo procedures and support in vitro work alongside our scientists.",
+  "requirements": "Experience at a contract research organization\nStrong in vivo technical skills\nSelf-motivated, organized and detail oriented",
+  "employment_type": "FULL_TIME",
+  "location": "Worcester, MA",
+  "menu_order": 0
+ },
+ {
+  "title": "Scientist, In Vivo Study Director",
+  "team": "In vivo",
+  "summary": "Lead contract research projects from start to finish: coordinate and manage studies, ensure effective execution, and interpret and report study data to clients.",
+  "requirements": "Experience at a contract research organization\nStudy design, data interpretation and reporting experience\nSelf-motivated, with clear client communication",
+  "employment_type": "FULL_TIME",
+  "location": "Worcester, MA",
+  "menu_order": 1
+ },
+ {
+  "title": "Research Associate, In Vivo",
+  "team": "In vivo",
+  "summary": "Perform in vivo animal procedures, some in vitro laboratory work and facility operations, under the direct supervision of our study team.",
+  "requirements": "CRO or other relevant animal research experience\nWillingness to learn new techniques\nSelf-motivated and dependable",
+  "employment_type": "FULL_TIME",
+  "location": "Worcester, MA",
+  "menu_order": 2
+ },
+ {
+  "title": "Research Associate, In Vitro",
+  "team": "In vitro",
+  "summary": "Perform in vitro laboratory procedures and support facility operations, under the supervision of our in vitro lead.",
+  "requirements": "CRO or other relevant laboratory experience\nFamiliarity with assays such as ELISA, flow cytometry or cell culture\nSelf-motivated and detail oriented",
+  "employment_type": "FULL_TIME",
+  "location": "Worcester, MA",
+  "menu_order": 3
+ }
+]

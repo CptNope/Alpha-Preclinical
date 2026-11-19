@@ -1,0 +1,43 @@
+<!-- wp:template-part {"slug":"header","area":"header","tagName":"div"} /-->
+
+<!-- wp:template-part {"slug":"page-header","tagName":"div","className":"alpha-page-header-part"} /-->
+
+<!-- wp:group {"tagName":"main","anchor":"main","align":"full","className":"alpha-section","layout":{"type":"constrained"}} -->
+<main class="wp-block-group alignfull alpha-section" id="main"><!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide">
+
+<!-- wp:query {"queryId":11,"query":{"perPage":12,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"className":"alpha-posts"} -->
+<div class="wp-block-query alpha-posts"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+<!-- wp:group {"className":"alpha-post-card","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alpha-post-card"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","sizeSlug":"large"} /-->
+
+<!-- wp:post-terms {"term":"category","className":"alpha-post-card__topic"} /-->
+
+<!-- wp:post-title {"level":2,"isLink":true,"className":"alpha-post-card__title"} /-->
+
+<!-- wp:post-excerpt {"excerptLength":30} /-->
+
+<!-- wp:paragraph {"className":"alpha-post-card__by","metadata":{"bindings":{"content":{"source":"alpha/person","args":{"key":"name","field":"author_member"}}}}} -->
+<p class="alpha-post-card__by"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+
+<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+<!-- wp:query-pagination-previous /-->
+<!-- wp:query-pagination-numbers /-->
+<!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>New posts are on the way. In the meantime, ask a scientist anything about your study.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:alpha/cta-band {"heading":"Have a question about your model?","text":"Our scientists answer study design questions every day. Ask one.","buttonText":"Ask a scientist","secondaryText":"","align":"full"} /-->
+
+<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"div"} /-->

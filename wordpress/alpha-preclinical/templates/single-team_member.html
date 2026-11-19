@@ -1,0 +1,39 @@
+<!-- wp:template-part {"slug":"header","area":"header","tagName":"div"} /-->
+
+<!-- wp:alpha/page-header {"align":"full","metadata":{"bindings":{"lead":{"source":"alpha/person","args":{"key":"job_title"}}}}} /-->
+
+<!-- wp:group {"tagName":"main","anchor":"main","align":"full","className":"alpha-section","layout":{"type":"constrained"}} -->
+<main class="wp-block-group alignfull alpha-section" id="main"><!-- wp:columns {"align":"wide","className":"alpha-profile"} -->
+<div class="wp-block-columns alignwide alpha-profile"><!-- wp:column {"width":"34%"} -->
+<div class="wp-block-column" style="flex-basis:34%"><!-- wp:post-featured-image {"aspectRatio":"4/5","sizeSlug":"large"} /-->
+
+<!-- wp:alpha/person-links /-->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Leads</h3>
+<!-- /wp:heading -->
+
+<!-- wp:alpha/meta-list {"source":"person","key":"leads"} /-->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Experience</h3>
+<!-- /wp:heading -->
+
+<!-- wp:alpha/meta-list {"source":"person","key":"highlights"} /-->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Education</h3>
+<!-- /wp:heading -->
+
+<!-- wp:alpha/meta-list {"source":"person","key":"education"} /--></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":"66%"} -->
+<div class="wp-block-column" style="flex-basis:66%"><!-- wp:post-content {"layout":{"type":"constrained","contentSize":"720px"}} /--></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></main>
+<!-- /wp:group -->
+
+<!-- wp:alpha/cta-band {"heading":"Put this team on your program","text":"Tell us what you need to show. The people who designed these models will run your study.","align":"full"} /-->
+
+<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"div"} /-->

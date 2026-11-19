@@ -7,15 +7,15 @@
   .contour{fill:none;stroke:var(--shallows);stroke-width:1.5}
   .slab{rx:var(--radius-m)}
   .txt{position:absolute;left:48px;bottom:44px;width:420px}
-  .name{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;font-weight:600;font-size:64px;line-height:.95;letter-spacing:-.03em;color:var(--navy);margin:0}
-  .tag{font-family:"Figtree","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:1.4;color:var(--ink-muted);margin:16px 0 0}
+  .name{font-family:var(--font-display);font-weight:600;font-size:64px;line-height:.95;letter-spacing:-.03em;color:var(--navy);margin:0}
+  .tag{font-family:var(--font-sans);font-size:14px;line-height:1.4;color:var(--ink-muted);margin:16px 0 0}
 </style>
 <div class="cover">
   <svg width="960" height="300" viewBox="0 0 960 300" aria-hidden="true">
-    <!-- blocks: abyss slab 456x300 (radius-m corner), tide/current/shallows wave bands cut from it
-         arrangement: one tall slab bleeding off top and right, bands stacked bottom-up like the alpha's fill
-         pattern: literal motif (wave) — the logo's alpha is filled with layered wave strata, so the bands ARE the pattern; one shallows contour line as the web divider motif
-         scales: band offsets 40px (space-4) and 24px (space-3); slab corner radius-m -->
+    <!-- blocks: abyss slab 476x340 (radius-m corner) with tide, current, shallows and mist strata cut across its foot
+         arrangement: one tall slab bleeding off the top and right, bands stacked bottom-up like the fill of the logo's alpha
+         pattern: literal motif (wave), because the README's one signature shape is the strata, layered flat wave bands; one shallows contour line echoes the section-divider use
+         scales: band offsets of about space-4 (40px) and space-3 (24px); slab corner radius-m; contour 1.5px as in ContourDivider -->
     <rect class="abyss slab" x="504" y="-20" width="476" height="340"/>
     <path class="tide" d="M504 150 C 600 110, 690 210, 790 170 S 930 110, 960 128 L960 300 L504 300 Z"/>
     <path class="current" d="M504 198 C 610 160, 700 248, 800 214 S 930 166, 960 180 L960 300 L504 300 Z"/>
@@ -25,6 +25,6 @@
   </svg>
   <div class="txt">
     <h1 class="name">Alpha<br>Preclinical</h1>
-    <p class="tag">Tailored in vivo research for your innovation. Worcester, Massachusetts.</p>
+    <p class="tag">Preclinical in vivo research, run by published scientists. Worcester, Massachusetts.</p>
   </div>
 </div>

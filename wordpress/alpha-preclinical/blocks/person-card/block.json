@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/person-card",
+	"title": "Team member card",
+	"category": "alpha",
+	"icon": "admin-users",
+	"description": "Portrait, name and role, linking to the profile. Inside a Query Loop it shows that person; elsewhere set the slug.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"slug": {
+			"type": "string",
+			"default": ""
+		},
+		"titleField": {
+			"type": "string",
+			"enum": [
+				"short_title",
+				"job_title"
+			],
+			"default": "short_title"
+		},
+		"showLeads": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"render": "file:./render.php",
+	"usesContext": [
+		"postId",
+		"postType"
+	]
+}

@@ -1,0 +1,126 @@
+# Alpha Preclinical — WordPress block theme
+
+The production build of the client-approved November 2026 design, as a full-site-editing block theme. **Requires WordPress 6.9+** (custom blocks are bound with the Block Bindings API, which supports custom-block attributes from 6.9) and PHP 7.4+.
+
+## How it's built
+
+```mermaid
+flowchart LR
+    subgraph Data
+      S["Site details<br/>Settings › Alpha Preclinical"]
+      P["Publications CPT<br/>DOI, PMID, PMCID, PDF…"]
+      T["Team CPT<br/>titles, links, PMIDs"]
+      J["Open roles CPT"]
+    end
+    subgraph Sources["Block Bindings sources (inc/bindings.php)"]
+      AS["alpha/site"]
+      AP["alpha/publication"]
+      AT["alpha/person"]
+      AJ["alpha/job"]
+      AQ["alpha/study"]
+      PM["core/post-meta"]
+    end
+    subgraph Blocks
+      CB["Core blocks<br/>heading, paragraph, button, details"]
+      AB["alpha/* blocks<br/>stat, lead chip, quote band, page header…"]
+    end
+    S --> AS
+    P --> AP
+    T --> AT
+    J --> AJ
+    AS & AP & AT & AJ & AQ & PM --> CB & AB
+    AB --> SC["Schema for exactly<br/>what rendered (inc/schema.php)"]
+```
+
+- **Every bespoke component is a dynamic `alpha/*` block** (`blocks/*/block.json` + `render.php`), rendered on the server so markup, accessibility and schema live in one place.
+- **Their content attributes are bindable.** `inc/bindings.php` registers them through `block_bindings_supported_attributes` (WordPress 6.9), so a stat can count publications live, a "Led by" chip can take its people from a source, a page header can take its lead from a team member's job title.
+- **Data lives in post types and settings**, never in markup: publications, team members and open roles are custom post types with registered meta; contact facts, quote routing and the accessibility response time are in **Settings › Alpha Preclinical**.
+- **Core blocks stay core** (headings, paragraphs, buttons, details): they're bound to the same sources, so editors keep the normal editing tools. A bound block whose value is empty is removed (a paper with no PMCID shows no "Free full text" button).
+- **No build step.** `assets/js/editor.js` uses the `wp.*` globals: it gives each alpha block a live server preview with sidebar controls generated from its attributes, registers the binding sources in the editor, and adds meta panels.
+
+### Custom blocks
+
+| Block | What it is | Bindable attributes |
+| --- | --- | --- |
+| `alpha/strata-band` | Drifting wave bands with a Pause button (hero, page, thin) | — |
+| `alpha/hero-alpha` | The logo's alpha filled by rising strata (homepage) | — |
+| `alpha/page-header` | Breadcrumbs, H1, lead, strata band | `heading`, `lead` |
+| `alpha/contour` | One wave line divider that draws in | — |
+| `alpha/lead-chip` | "Led by" with photos, linked to profiles | `members`, `label` |
+| `alpha/stat` | Count-up number with an accessible label | `value`, `suffix`, `label` |
+| `alpha/faq` + `alpha/faq-item` | Accordion that prints FAQPage schema | `question`, `answer` |
+| `alpha/cta-band` | Closing quote band | `heading`, `text`, `buttonText`, `buttonUrl`, … |
+| `alpha/filter-chips` | Filters the next Query Loop by term, announces results | — |
+| `alpha/quote-form` | Quote form or job application (nonce, honeypot, rate limit, routing) | — |
+| `alpha/contact-card` | Email, phone, address | `email`, `address`, `phone` |
+| `alpha/person-card` | Team portrait card with hover photo | `slug` |
+| `alpha/person-links` | LinkedIn, ORCID, Scholar, PubMed (exact PMIDs) | `linkedin`, `orcid`, `scholar`, `pubmed` |
+| `alpha/meta-list` | List from a multi-line field (education, requirements…) | — |
+| `alpha/breadcrumbs` | Breadcrumbs + BreadcrumbList schema | `current` |
+
+### Binding sources
+
+| Source | Keys | Example |
+| --- | --- | --- |
+| `alpha/site` | `email`, `email_link`, `phone_link`, `address`, `publication_count`, `team_count`, `quote_url`, `copyright`, `a11y_promise`, … | Footer address; "16 papers" stat |
+| `alpha/publication` | `title_link`, `authors` (Alpha authors bold), `citation`, `ids`, `pdf_url`, `pubmed_url`, `pmc_url`, `doi_url` | Publication cards in a Query Loop |
+| `alpha/person` | `name`, `name_link`, `job_title`, `short_title`, `bio`, `linkedin`, `pubmed_url`, … (`slug` or `field` arg) | Blog byline and author box |
+| `alpha/job` | `title`, `summary`, `team`, `location`, `apply_url` | Role rows (bound `core/details` summary) |
+| `alpha/study` | `url`, `label` with `study` arg | "Plan your PK/PD study" → `/contact/?study=PK%2FPD#form` |
+
+## Files
+
+```text
+alpha-preclinical/
+├── style.css, theme.json, functions.php, screenshot.png
+├── styles/sections/   section styles: abyss, mist, paper, footer (Group block styles)
+├── styles/blocks/     button styles: light, ghost-dark, arrow; list "rows"; table "specs"
+├── blocks/            16 alpha/* blocks (block.json + render.php)
+├── inc/               post types, bindings, blocks, forms, schema, redirects, settings, seed importer
+├── templates/         front-page, page, page-wide, page-legal, home (blog), single, single-team_member,
+│                      single-job, single-publication, archive, search, index, 404
+├── parts/             header, footer, page-header, post-header
+├── patterns/          header, footer + 11 section patterns for the inserter
+├── assets/            theme.css, theme.js (motion, filters, forms), editor.js, fonts (self-hosted woff2), img
+└── seed/              the approved content, exported from the static site by tools/export_wp.py
+```
+
+## Set up a site (staging on Cloudways)
+
+1. Install WordPress 6.9+, upload `wordpress/alpha-preclinical/` to `wp-content/themes/`, activate it.
+2. Import the approved content:
+   ```bash
+   wp alpha seed                # team, 16 papers, 4 roles, 13 pages, 7 blog drafts, reading settings
+   wp alpha migrate-pdfs        # while Wix is still online: PDFs → media library
+   ```
+   (or **Tools › Alpha Preclinical setup** as an administrator). Re-running updates items by slug; `--skip-existing` leaves edited items alone.
+3. Fill in **Settings › Alpha Preclinical**: quote inboxes and routing by study type, phone (if wanted), accessibility response time, extra redirects.
+4. Install an SMTP plugin (or Cloudways' SMTP add-on) so form mail is delivered. Every submission is also saved under **Inquiries** in case mail fails.
+5. Install Rank Math or Yoast. The importer pre-fills each blog post's SEO title, description and focus keyword for both. The theme prints Organization, Person, ScholarlyArticle, JobPosting, FAQPage and BreadcrumbList; let the SEO plugin handle `Article` and the XML sitemap.
+6. Blog posts import as **drafts**. Each author reviews theirs and adds one first-hand detail, then publish one every 1–2 weeks.
+
+To refresh the seed after editing the static site or `content/blog-posts.md`:
+
+```bash
+python3 tools/export_wp.py
+```
+
+## Tested
+
+On WordPress 6.9 (SQLite) with the imported content:
+
+- All 20 URLs render with no PHP notices; `/experetise` and old `/_files/ugd/…` PDF links redirect (301).
+- All 1,259 blocks in the seed pages, posts, team bios, templates, parts and patterns pass core block validation (`@wordpress/blocks` + `@wordpress/block-library`), so nothing opens as "invalid block" in the editor.
+- Bindings resolve on the front end: 16 publication cards with citations and IDs, 5 team cards, live counts; empty bound buttons are removed.
+- Every alpha block renders through the editor's block-renderer REST endpoint.
+- Quote form: valid submission saved and routed; bad nonce rejected; honeypot silently dropped; off-site `return_to` refused; résumé upload accepts PDF/Word only and is deleted after sending.
+- axe-core (WCAG 2.1 A/AA, contrast excluded in jsdom): no violations on 11 key pages.
+
+Still to do on staging: a real-browser pass (contrast, motion, mobile menu), VoiceOver and NVDA, and mail delivery.
+
+## Security notes
+
+- Every form handler verifies a nonce before reading input. The public quote form adds a honeypot, a minimum fill time and a per-visitor rate limit. Admin actions (import, PDF migration) check `manage_options` and `check_admin_referer`.
+- `$_GET` is read only to preselect form options and show a status message, never to change state.
+- Uploads are type-checked with `wp_check_filetype_and_ext`, capped at 5 MB, emailed, then deleted.
+- Content types are registered in the theme because this is a single-site, agency-maintained theme. If Alpha might ever switch themes, move `inc/post-types.php` into a small site plugin unchanged.

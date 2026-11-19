@@ -1,0 +1,40 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/person-links",
+	"title": "Profile links",
+	"category": "alpha",
+	"icon": "admin-links",
+	"description": "LinkedIn, ORCID, Google Scholar and a PubMed search of exactly this person's papers. Set Field to author_member on blog posts to show the author's links.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"linkedin": {
+			"type": "string",
+			"default": ""
+		},
+		"orcid": {
+			"type": "string",
+			"default": ""
+		},
+		"scholar": {
+			"type": "string",
+			"default": ""
+		},
+		"pubmed": {
+			"type": "string",
+			"default": ""
+		},
+		"field": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"render": "file:./render.php",
+	"usesContext": [
+		"postId",
+		"postType"
+	]
+}

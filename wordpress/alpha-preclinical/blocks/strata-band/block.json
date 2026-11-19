@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/strata-band",
+	"title": "Strata band",
+	"category": "alpha",
+	"icon": "chart-area",
+	"description": "The drifting wave bands at the foot of a page header, with a Pause button (WCAG 2.2.2).",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"variant": {
+			"type": "string",
+			"enum": [
+				"hero",
+				"page",
+				"thin"
+			],
+			"default": "page"
+		},
+		"meltInto": {
+			"type": "string",
+			"enum": [
+				"paper",
+				"mist",
+				"abyss"
+			],
+			"default": "paper"
+		},
+		"showPause": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"full"
+		],
+		"anchor": true
+	},
+	"render": "file:./render.php"
+}

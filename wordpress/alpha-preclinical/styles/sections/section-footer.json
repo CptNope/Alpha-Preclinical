@@ -1,0 +1,43 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "Footer ground",
+	"slug": "section-footer",
+	"blockTypes": [
+		"core/group"
+	],
+	"styles": {
+		"color": {
+			"background": "var:preset|color|abyss-deep",
+			"text": "var:preset|color|ink-on-abyss"
+		},
+		"typography": {
+			"fontSize": "15px"
+		},
+		"elements": {
+			"heading": {
+				"color": {
+					"text": "var:preset|color|paper"
+				},
+				"typography": {
+					"fontFamily": "var:preset|font-family|sans",
+					"fontSize": "15px",
+					"letterSpacing": "0"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "var:preset|color|ink-on-abyss"
+				},
+				"typography": {
+					"textDecoration": "none"
+				},
+				":hover": {
+					"color": {
+						"text": "var:preset|color|paper"
+					}
+				}
+			}
+		}
+	}
+}

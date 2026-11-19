@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "Arrow link",
+	"slug": "arrow",
+	"blockTypes": [
+		"core/button"
+	],
+	"styles": {
+		"color": {
+			"background": "transparent",
+			"text": "var:preset|color|tide"
+		},
+		"spacing": {
+			"padding": {
+				"left": "0",
+				"right": "0",
+				"top": "8px",
+				"bottom": "8px"
+			}
+		},
+		":hover": {
+			"color": {
+				"background": "transparent",
+				"text": "var:preset|color|navy"
+			}
+		}
+	}
+}

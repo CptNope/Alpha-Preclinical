@@ -1,0 +1,10 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "Ruled rows",
+	"slug": "rows",
+	"blockTypes": [
+		"core/list"
+	],
+	"styles": {}
+}

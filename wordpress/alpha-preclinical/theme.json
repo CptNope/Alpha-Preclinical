@@ -1,0 +1,168 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "Alpha Preclinical",
+	"settings": {
+		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
+		"layout": { "contentSize": "720px", "wideSize": "1240px" },
+		"color": {
+			"custom": false,
+			"customGradient": false,
+			"customDuotone": false,
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"defaultDuotone": false,
+			"gradients": [],
+			"duotone": [],
+			"palette": [
+				{ "slug": "navy", "name": "Navy (ink)", "color": "#1F2858" },
+				{ "slug": "abyss", "name": "Abyss (dark surface)", "color": "#0F3360" },
+				{ "slug": "abyss-deep", "name": "Abyss deep (footer)", "color": "#0B2747" },
+				{ "slug": "tide", "name": "Tide (action)", "color": "#1E58A0" },
+				{ "slug": "strata-4", "name": "Strata 4", "color": "#3279BD" },
+				{ "slug": "current", "name": "Current", "color": "#4B98D2" },
+				{ "slug": "strata-2", "name": "Strata 2", "color": "#69AEE1" },
+				{ "slug": "shallows", "name": "Shallows", "color": "#88C6EE" },
+				{ "slug": "mist", "name": "Mist", "color": "#EEF5FB" },
+				{ "slug": "paper", "name": "Paper", "color": "#FFFFFF" },
+				{ "slug": "ink-muted", "name": "Muted text", "color": "#4A5878" },
+				{ "slug": "ink-on-abyss", "name": "Muted text on abyss", "color": "#B9CCE3" },
+				{ "slug": "line", "name": "Line", "color": "#D3E0EE" },
+				{ "slug": "field-border", "name": "Field border", "color": "#7D8FAE" },
+				{ "slug": "error", "name": "Error", "color": "#B3261E" }
+			]
+		},
+		"shadow": {
+			"defaultPresets": false,
+			"presets": [
+				{ "slug": "lift", "name": "Lift", "shadow": "0 18px 40px -18px rgba(15,51,96,0.35)" },
+				{ "slug": "menu", "name": "Menu", "shadow": "0 24px 60px -24px rgba(11,39,71,0.55), 0 4px 14px -6px rgba(11,39,71,0.25)" }
+			]
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"customFontSize": false,
+			"dropCap": false,
+			"fluid": { "minViewportWidth": "360px", "maxViewportWidth": "1240px" },
+			"fontFamilies": [
+				{
+					"slug": "display",
+					"name": "Bricolage Grotesque",
+					"fontFamily": "\"Bricolage Grotesque\", \"Helvetica Neue\", Arial, sans-serif",
+					"fontFace": [
+						{ "fontFamily": "Bricolage Grotesque", "fontStyle": "normal", "fontWeight": "600", "fontDisplay": "swap", "src": [ "file:./assets/fonts/BricolageGrotesque-SemiBold.woff2" ] }
+					]
+				},
+				{
+					"slug": "sans",
+					"name": "Figtree",
+					"fontFamily": "\"Figtree\", \"Helvetica Neue\", Arial, sans-serif",
+					"fontFace": [
+						{ "fontFamily": "Figtree", "fontStyle": "normal", "fontWeight": "400", "fontDisplay": "swap", "src": [ "file:./assets/fonts/Figtree-400.woff2" ] },
+						{ "fontFamily": "Figtree", "fontStyle": "italic", "fontWeight": "400", "fontDisplay": "swap", "src": [ "file:./assets/fonts/Figtree-400-Italic.woff2" ] },
+						{ "fontFamily": "Figtree", "fontStyle": "normal", "fontWeight": "500", "fontDisplay": "swap", "src": [ "file:./assets/fonts/Figtree-500.woff2" ] },
+						{ "fontFamily": "Figtree", "fontStyle": "normal", "fontWeight": "600", "fontDisplay": "swap", "src": [ "file:./assets/fonts/Figtree-600.woff2" ] }
+					]
+				}
+			],
+			"fontSizes": [
+				{ "slug": "small", "name": "Small", "size": "14px", "fluid": false },
+				{ "slug": "body", "name": "Body", "size": "17px", "fluid": false },
+				{ "slug": "lead", "name": "Lead", "size": "20px", "fluid": { "min": "18px", "max": "20px" } },
+				{ "slug": "heading-s", "name": "Heading S", "size": "23px", "fluid": { "min": "20px", "max": "23px" } },
+				{ "slug": "heading-m", "name": "Heading M", "size": "34px", "fluid": { "min": "28px", "max": "34px" } },
+				{ "slug": "display-l", "name": "Display L", "size": "52px", "fluid": { "min": "34px", "max": "52px" } },
+				{ "slug": "display-xl", "name": "Display XL", "size": "76px", "fluid": { "min": "40px", "max": "84px" } }
+			]
+		},
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"units": [ "px", "rem", "%", "vw" ],
+			"spacingSizes": [
+				{ "slug": "1", "name": "1 (8px)", "size": "8px" },
+				{ "slug": "2", "name": "2 (16px)", "size": "16px" },
+				{ "slug": "3", "name": "3 (24px)", "size": "24px" },
+				{ "slug": "4", "name": "4 (40px)", "size": "clamp(16px, 4vw, 40px)" },
+				{ "slug": "5", "name": "5 (72px)", "size": "clamp(40px, 6vw, 72px)" },
+				{ "slug": "6", "name": "6 (section)", "size": "clamp(72px, 10vw, 128px)" }
+			]
+		},
+		"custom": {
+			"radius": { "s": "6px", "m": "14px", "pill": "999px" },
+			"ease": "cubic-bezier(.2,.7,.2,1)",
+			"focus": "3px solid #4B98D2"
+		},
+		"blocks": {
+			"core/button": { "border": { "radius": false } },
+			"core/heading": { "typography": { "fontSizes": [] } }
+		}
+	},
+	"styles": {
+		"color": { "background": "var:preset|color|paper", "text": "var:preset|color|navy" },
+		"typography": {
+			"fontFamily": "var:preset|font-family|sans",
+			"fontSize": "var:preset|font-size|body",
+			"lineHeight": "1.6"
+		},
+		"spacing": {
+			"padding": { "left": "var:preset|spacing|4", "right": "var:preset|spacing|4" },
+			"blockGap": "var:preset|spacing|3"
+		},
+		"elements": {
+			"heading": {
+				"color": { "text": "inherit" },
+				"typography": { "fontFamily": "var:preset|font-family|display", "fontWeight": "600", "letterSpacing": "-0.025em", "lineHeight": "1.05" }
+			},
+			"h1": { "typography": { "fontSize": "var:preset|font-size|display-l", "lineHeight": "1.02", "letterSpacing": "-0.03em" } },
+			"h2": { "typography": { "fontSize": "var:preset|font-size|display-l", "lineHeight": "1.04" } },
+			"h3": { "typography": { "fontSize": "var:preset|font-size|heading-s", "lineHeight": "1.25", "letterSpacing": "-0.01em" } },
+			"h4": { "typography": { "fontSize": "var:preset|font-size|lead", "lineHeight": "1.3", "letterSpacing": "-0.005em" } },
+			"h5": { "typography": { "fontFamily": "var:preset|font-family|sans", "fontSize": "var:preset|font-size|body", "letterSpacing": "0" } },
+			"h6": { "typography": { "fontFamily": "var:preset|font-family|sans", "fontSize": "var:preset|font-size|small", "letterSpacing": "0" } },
+			"link": {
+				"color": { "text": "var:preset|color|tide" },
+				"typography": { "textDecoration": "underline" },
+				":hover": { "color": { "text": "var:preset|color|navy" } },
+				":focus": { "outline": { "color": "var:preset|color|current", "offset": "3px", "style": "solid", "width": "3px" } }
+			},
+			"button": {
+				"border": { "radius": "999px", "width": "0" },
+				"color": { "background": "var:preset|color|tide", "text": "var:preset|color|paper" },
+				"typography": { "fontFamily": "var:preset|font-family|sans", "fontWeight": "600", "fontSize": "16px", "lineHeight": "1.2" },
+				"spacing": { "padding": { "top": "16px", "bottom": "16px", "left": "28px", "right": "28px" } },
+				":hover": { "color": { "background": "var:preset|color|navy", "text": "var:preset|color|paper" } },
+				":focus": { "outline": { "color": "var:preset|color|current", "offset": "3px", "style": "solid", "width": "3px" } }
+			},
+			"caption": {
+				"color": { "text": "var:preset|color|ink-muted" },
+				"typography": { "fontSize": "var:preset|font-size|small", "fontWeight": "500" }
+			},
+			"cite": { "typography": { "fontStyle": "normal", "fontSize": "var:preset|font-size|small" } }
+		},
+		"blocks": {
+			"core/image": { "border": { "radius": "14px" } },
+			"core/post-featured-image": { "border": { "radius": "14px" } },
+			"core/separator": { "color": { "text": "var:preset|color|line" }, "border": { "width": "1.5px" } },
+			"core/table": { "typography": { "fontSize": "16px" } },
+			"core/quote": {
+				"border": { "left": { "color": "var:preset|color|current", "width": "3px", "style": "solid" } },
+				"spacing": { "padding": { "left": "var:preset|spacing|3" } },
+				"typography": { "fontSize": "var:preset|font-size|lead" }
+			},
+			"core/navigation": { "typography": { "fontSize": "16px", "fontWeight": "500" } },
+			"core/post-title": { "typography": { "fontWeight": "600" } },
+			"core/site-title": { "typography": { "fontFamily": "var:preset|font-family|display", "fontWeight": "600" } }
+		}
+	},
+	"templateParts": [
+		{ "name": "header", "title": "Header", "area": "header" },
+		{ "name": "footer", "title": "Footer", "area": "footer" },
+		{ "name": "page-header", "title": "Page header (strata band)", "area": "uncategorized" },
+		{ "name": "post-header", "title": "Blog post header", "area": "uncategorized" }
+	],
+	"customTemplates": [
+		{ "name": "page-wide", "title": "Page: full width sections", "postTypes": [ "page" ] },
+		{ "name": "page-legal", "title": "Page: legal / long text", "postTypes": [ "page" ] }
+	]
+}
