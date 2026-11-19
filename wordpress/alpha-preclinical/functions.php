@@ -12,7 +12,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ALPHA_THEME_VERSION', '1.2.2' );
+define( 'ALPHA_THEME_VERSION', '1.2.3' );
 define( 'ALPHA_THEME_DIR', get_template_directory() );
 define( 'ALPHA_THEME_URI', get_template_directory_uri() );
 define( 'ALPHA_MIN_WP', '6.9' );
@@ -48,6 +48,7 @@ require_once ALPHA_THEME_DIR . '/inc/schema.php';
 require_once ALPHA_THEME_DIR . '/inc/redirects.php';
 require_once ALPHA_THEME_DIR . '/inc/staging.php';
 require_once ALPHA_THEME_DIR . '/inc/review.php';
+require_once ALPHA_THEME_DIR . '/inc/review-invite.php';
 require_once ALPHA_THEME_DIR . '/inc/seed.php';
 
 /**

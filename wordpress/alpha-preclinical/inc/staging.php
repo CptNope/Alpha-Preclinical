@@ -54,7 +54,10 @@ add_action( 'init', 'alpha_register_reviewer_role' );
  * @return string
  */
 function alpha_reviewer_login_redirect( $redirect, $request, $user ) {
-	if ( $user instanceof WP_User && in_array( 'alpha_reviewer', (array) $user->roles, true ) && empty( $request ) ) {
+	// Reviewers go to the review unless they followed a link to a specific front-end page
+	// (the default login target is the dashboard, which reviewers don't use).
+	$to_admin = empty( $request ) || 0 === strpos( $request, admin_url() );
+	if ( $user instanceof WP_User && in_array( 'alpha_reviewer', (array) $user->roles, true ) && $to_admin && alpha_is_staging() ) {
 		return alpha_review_url();
 	}
 	return $redirect;

@@ -60,3 +60,21 @@
 .alpha-review__draft-body { max-height: 420px; overflow: auto; padding: 16px 20px; margin-top: 8px; border-radius: 10px; background: var(--alpha-mist); font-size: 15px; }
 .alpha-review__files { font-size: 14px; }
 .alpha-review__actions { position: sticky; bottom: 0; margin: 0; padding: 16px 0; background: linear-gradient(transparent, #fff 30%); }
+/* Invite a colleague (content review) */
+.alpha-invite { margin-top: 64px; padding: 32px; border-radius: 14px; background: var(--alpha-mist); }
+.alpha-invite h2 { font-family: var(--wp--preset--font-family--display); font-size: 28px; margin: 0 0 8px; }
+.alpha-invite h3 { font-size: 17px; margin: 28px 0 10px; }
+.alpha-invite__intro { color: var(--alpha-muted); max-width: 46em; margin: 0 0 20px; }
+.alpha-invite__form { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; max-width: 720px; }
+.alpha-invite__form p { margin: 0 0 16px; display: grid; gap: 6px; }
+.alpha-invite__email { grid-column: 1 / -1; }
+.alpha-invite__form label { font-weight: 600; font-size: 15px; }
+.alpha-invite__form input { min-height: 48px; padding: 0 14px; border: 1.5px solid var(--wp--preset--color--field-border); border-radius: 10px; background: #fff; font: inherit; }
+.alpha-invite__form input:focus-visible { outline: 3px solid var(--alpha-current); outline-offset: 2px; }
+.alpha-invite__msg { margin: 0 0 20px; padding: 12px 16px; border-radius: 10px; font-weight: 600; }
+.alpha-invite__msg--ok { background: #E6F4EA; color: #1E5E2F; }
+.alpha-invite__msg--warn { background: #FFF4D6; color: #6B4E00; }
+.alpha-invite__msg--err { background: #FDECEC; color: #8A1C1C; }
+.alpha-invite__people { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.alpha-invite__people span { color: var(--alpha-muted); margin-left: 6px; }
+@media (max-width: 680px) { .alpha-invite { padding: 22px; } .alpha-invite__form { grid-template-columns: 1fr; } }

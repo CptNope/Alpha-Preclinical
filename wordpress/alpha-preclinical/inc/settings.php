@@ -35,6 +35,7 @@ function alpha_site_defaults() {
 		'staging_mode'      => '',
 		'staging_private'   => '',
 		'review_notify'     => '',
+		'reviewer_domains'  => 'alphapreclinical.com',
 	);
 }
 
@@ -95,6 +96,9 @@ function alpha_sanitize_site( $input ) {
 			case 'review_notify':
 				$out[ $key ] = sanitize_email( $val );
 				break;
+			case 'reviewer_domains':
+				$out[ $key ] = strtolower( preg_replace( '/[^A-Za-z0-9.,\s-]/', '', (string) $val ) );
+				break;
 			case 'routing':
 			case 'redirects':
 				$out[ $key ] = sanitize_textarea_field( $val );
@@ -147,6 +151,7 @@ function alpha_render_settings_page() {
 		'staging_mode'    => array( __( 'Staging mode', 'alpha-preclinical' ), 'checkbox', __( 'Hides the site from search engines, shows a staging banner and turns on the Content review page. Turn off at launch.', 'alpha-preclinical' ) ),
 		'staging_private' => array( __( 'Private staging', 'alpha-preclinical' ), 'checkbox', __( 'Only logged-in users can see the site (staging mode only).', 'alpha-preclinical' ) ),
 		'review_notify'   => array( __( 'Email review answers to', 'alpha-preclinical' ), 'email', __( 'Gets a note each time someone saves answers on the Content review page. Empty = the site admin email.', 'alpha-preclinical' ) ),
+		'reviewer_domains' => array( __( 'Reviewers can invite', 'alpha-preclinical' ), 'text', __( 'Email domains reviewers may invite to the Content review, comma separated (e.g. alphapreclinical.com). Empty = only administrators add reviewers.', 'alpha-preclinical' ) ),
 		'redirects'     => array( __( 'Extra redirects', 'alpha-preclinical' ), 'textarea', __( 'One per line: /old-path = /new-path/. Added to the built-in Wix redirects (inc/redirects.php).', 'alpha-preclinical' ) ),
 	);
 	echo '<div class="wrap"><h1>' . esc_html__( 'Alpha Preclinical site details', 'alpha-preclinical' ) . '</h1>';
