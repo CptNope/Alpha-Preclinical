@@ -1,0 +1,166 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/services-in-vitro",
+ "title": "Services: in vitro",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Services.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "In vitro laboratory"
+  },
+  "desc": {
+   "type": "string",
+   "default": "Biomarker and cellular analysis on the samples your in vivo study generates, without shipping them out."
+  },
+  "img_img": {
+   "type": "string",
+   "default": "assets/img/team/cindy-hopper.jpg"
+  },
+  "div": {
+   "type": "string",
+   "default": "<small>Led by</small><b><a href=\"/team/#cindy-hopper\">Cindy Hopper</a></b>"
+  },
+  "area_cta_url": {
+   "type": "string",
+   "default": "/contact/?study=IVIS%20imaging%2C%20surgery%20or%20lab%20services#form"
+  },
+  "area_cta": {
+   "type": "string",
+   "default": "Add lab readouts to your study"
+  },
+  "h3": {
+   "type": "string",
+   "default": "Assays and analysis"
+  },
+  "li_items": {
+   "type": "array",
+   "default": [
+    {
+     "li": "Biomarker assay development, performance and troubleshooting<span>Including cytokine and molecular ELISA assays</span>"
+    },
+    {
+     "li": "Complete blood count (CBC) differentials"
+    },
+    {
+     "li": "Serum chemistry"
+    },
+    {
+     "li": "Histology and immunohistochemistry"
+    }
+   ]
+  },
+  "div_items": {
+   "type": "array",
+   "default": [
+    {
+     "h3": "Flow cytometry",
+     "li_items_2": [
+      {
+       "li": "Multicolor flow cytometry development and performance<span>On many cell types, including virus and T cell stimulation assays</span>"
+      },
+      {
+       "li": "T and B cell immunophenotyping"
+      },
+      {
+       "li": "Data analysis in FlowJo"
+      }
+     ]
+    },
+    {
+     "h3": "Cells",
+     "li_items_2": [
+      {
+       "li": "Primary cell collection, isolation and preparation<span>Fresh or frozen suspensions and lysates, including hepatocytes, non-parenchymal cells and microsomes from liver, lung tissue and PBMCs</span>"
+      },
+      {
+       "li": "Magnetic bead sorting of immune cell types"
+      },
+      {
+       "li": "Culture of primary and immortalized cell lines"
+      }
+     ]
+    }
+   ]
+  },
+  "related": {
+   "type": "string",
+   "default": "Related: <a href=\"/blog/flow-cytometry-immunophenotyping-in-vivo-studies/\">Getting more from every animal with in-house flow cytometry</a>"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "desc": {
+   "type": "html",
+   "label": "Desc"
+  },
+  "img_img": {
+   "type": "image",
+   "label": "Img image"
+  },
+  "div": {
+   "type": "html",
+   "label": "Content"
+  },
+  "area_cta_url": {
+   "type": "url",
+   "label": "Area cta link"
+  },
+  "area_cta": {
+   "type": "html",
+   "label": "Area cta"
+  },
+  "h3": {
+   "type": "html",
+   "label": "Title"
+  },
+  "li_items": {
+   "type": "items",
+   "label": "List item (list)",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "div_items": {
+   "type": "items",
+   "label": "Content (list)",
+   "fields": {
+    "h3": {
+     "type": "html",
+     "label": "Title"
+    },
+    "li_items_2": {
+     "type": "items",
+     "label": "List item (list) 2",
+     "fields": {
+      "li": {
+       "type": "html",
+       "label": "List item"
+      }
+     }
+    }
+   }
+  },
+  "related": {
+   "type": "html",
+   "label": "Related"
+  }
+ }
+}

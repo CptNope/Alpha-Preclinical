@@ -430,8 +430,10 @@ def export_team():
     ns = {}
     exec(people_src, ns)
     PEOPLE = {k.split(',')[0]: v for k, v in ns['PEOPLE'].items()}
-    short = {'barak-yahalom': 'CEO & CSO', 'joan-flanagan': 'President & COO', 'cindy-hopper': 'Founding Scientist',
-             'gil-chacon': 'In vivo & surgical', 'ashley-kolofsky': 'Study team supervisor'}
+    # card titles exactly as on the approved homepage cards
+    short = {'barak-yahalom': 'CEO and Chief Scientific Officer', 'joan-flanagan': 'President and COO',
+             'ashley-kolofsky': 'Study Team Supervisor', 'cindy-hopper': 'Founding Scientist, In Vitro',
+             'gil-chacon': 'In Vivo and Surgical Support'}
     out = []
     for i, art in enumerate(soup.select('article.person')):
         slug = art['id']

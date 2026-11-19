@@ -639,7 +639,13 @@ function alpha_review_save() {
 		);
 	}
 
-	$back = add_query_arg( 'saved', $section, alpha_review_url() ) . '#review-' . $section;
+	$back = add_query_arg(
+		array(
+			'saved'       => $section,
+			'alpha_nonce' => wp_create_nonce( 'alpha_review_saved' ),
+		),
+		alpha_review_url()
+	) . '#review-' . $section;
 	wp_safe_redirect( $back );
 	exit;
 }

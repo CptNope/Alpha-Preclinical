@@ -56,10 +56,20 @@ function alpha_handle_form() {
 	$anchor = 'careers' === $type ? '#apply' : '#form';
 
 	$fail = static function ( $code ) use ( $return, $anchor ) {
-		wp_safe_redirect( add_query_arg( 'alpha_form', $code, $return ) . $anchor );
+		wp_safe_redirect(
+			add_query_arg(
+				array(
+					'alpha_form'  => $code,
+					'alpha_nonce' => wp_create_nonce( 'alpha_form_result' ),
+				),
+				$return
+			) . $anchor
+		);
 		exit;
 	};
 
+	// Permission: these are public forms (visitors are not logged in), so the checks are
+	// the nonce, the honeypot and fill time, and the rate limit below.
 	if ( ! wp_verify_nonce( $nonce, 'alpha_form_' . $type ) ) {
 		$fail( 'error' );
 	}
@@ -157,7 +167,21 @@ function alpha_handle_form() {
 		wp_delete_file( $file );
 	}
 
-	$fail( 'sent' );
+	// Success: the confirmation panel can show the visitor's email and role.
+	$token = function_exists( 'alpha_form_remember_done' ) ? alpha_form_remember_done( $f['email'], $f['role'] ) : '';
+	wp_safe_redirect(
+		add_query_arg(
+			array_filter(
+				array(
+					'alpha_form'  => 'sent',
+					'alpha_ref'   => $token,
+					'alpha_nonce' => wp_create_nonce( 'alpha_form_result' ),
+				)
+			),
+			$return
+		) . $anchor
+	);
+	exit;
 }
 add_action( 'admin_post_alpha_form', 'alpha_handle_form' );
 add_action( 'admin_post_nopriv_alpha_form', 'alpha_handle_form' );

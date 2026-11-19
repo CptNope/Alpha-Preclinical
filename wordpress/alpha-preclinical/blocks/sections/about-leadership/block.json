@@ -1,0 +1,85 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/about-leadership",
+ "title": "About: leadership",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: About.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Leadership"
+  },
+  "lead_p": {
+   "type": "string",
+   "default": "Alpha is led by a veterinarian and a molecular biologist with more than 40 years of preclinical experience between them."
+  },
+  "leader_items": {
+   "type": "array",
+   "default": [
+    {
+     "leader_url": "/team/#barak-yahalom",
+     "img_img": "assets/img/team/barak-yahalom.jpg",
+     "img_alt": "Barak Yahalom",
+     "div": "<b>Barak Yahalom, DVM</b><small>Chief Executive Officer and Chief Scientific Officer</small>"
+    },
+    {
+     "leader_url": "/team/#joan-flanagan",
+     "img_img": "assets/img/team/joan-flanagan.jpg",
+     "img_alt": "Joan Flanagan",
+     "div": "<b>Joan Flanagan, PhD</b><small>President and Chief Operating Officer</small>"
+    }
+   ]
+  },
+  "p": {
+   "type": "string",
+   "default": "<a href=\"/team/\" style=\"font-weight:600\">Meet the full team</a>"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "lead_p": {
+   "type": "html",
+   "label": "Intro"
+  },
+  "leader_items": {
+   "type": "items",
+   "label": "Leader (list)",
+   "fields": {
+    "leader_url": {
+     "type": "url",
+     "label": "Leader link"
+    },
+    "img_img": {
+     "type": "image",
+     "label": "Img image"
+    },
+    "img_alt": {
+     "type": "text",
+     "label": "Img image description (alt text)"
+    },
+    "div": {
+     "type": "html",
+     "label": "Content"
+    }
+   }
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  }
+ }
+}

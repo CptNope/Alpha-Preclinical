@@ -1,0 +1,105 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/home-faq",
+ "title": "Home: faq",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Home.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Questions from research teams"
+  },
+  "p": {
+   "type": "string",
+   "default": "Don't see yours? <a href=\"/contact/\">Ask a scientist</a> and a member of our team will follow up."
+  },
+  "button": {
+   "type": "string",
+   "default": "<span>What kinds of studies does Alpha Preclinical run?</span><span aria-hidden=\"true\" class=\"ico\">−</span>"
+  },
+  "ans": {
+   "type": "string",
+   "default": "We specialize in early preclinical in vivo research: PK/PD and lead optimization, feasibility and proof-of-concept, efficacy, and iterative testing, supported by imaging, surgery and in vitro analysis."
+  },
+  "q_items": {
+   "type": "array",
+   "default": [
+    {
+     "button_aria_controls": "faq-1",
+     "button": "<span>Can you run a custom or literature-based model?</span><span aria-hidden=\"true\" class=\"ico\">+</span>",
+     "ans_id": "faq-1",
+     "ans": "Yes. Our scientists regularly adapt existing models or set up a model from a published paper, and we confirm the design with you before any animals are enrolled."
+    },
+    {
+     "button_aria_controls": "faq-2",
+     "button": "<span>Which in vitro readouts can you add to an in vivo study?</span><span aria-hidden=\"true\" class=\"ico\">+</span>",
+     "ans_id": "faq-2",
+     "ans": "Flow cytometry (including T and B cell immunophenotyping and stimulation assays), ELISA and cytokine panels, CBC differentials, serum chemistry, primary cell isolation, cell culture and immunohistochemistry."
+    },
+    {
+     "button_aria_controls": "faq-3",
+     "button": "<span>Where is Alpha Preclinical located?</span><span aria-hidden=\"true\" class=\"ico\">+</span>",
+     "ans_id": "faq-3",
+     "ans": "Our vivarium and laboratories are at 722 Plantation Street in Worcester, Massachusetts, within easy reach of the Boston and Cambridge biotech community."
+    },
+    {
+     "button_aria_controls": "faq-4",
+     "button": "<span>How do I get a study quote?</span><span aria-hidden=\"true\" class=\"ico\">+</span>",
+     "ans_id": "faq-4",
+     "ans": "Send us your compound, target and timeline through the quote form. A senior scientist will follow up to scope the study and send a design and quote."
+    }
+   ]
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "button": {
+   "type": "html",
+   "label": "Button text"
+  },
+  "ans": {
+   "type": "html",
+   "label": "Answer"
+  },
+  "q_items": {
+   "type": "items",
+   "label": "Question (list)",
+   "fields": {
+    "button_aria_controls": {
+     "type": "text",
+     "label": "Button aria controls"
+    },
+    "button": {
+     "type": "html",
+     "label": "Button text"
+    },
+    "ans_id": {
+     "type": "text",
+     "label": "Ans id"
+    },
+    "ans": {
+     "type": "html",
+     "label": "Answer"
+    }
+   }
+  }
+ }
+}

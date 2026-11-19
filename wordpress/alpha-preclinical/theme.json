@@ -51,7 +51,7 @@
 					"name": "Bricolage Grotesque",
 					"fontFamily": "\"Bricolage Grotesque\", \"Helvetica Neue\", Arial, sans-serif",
 					"fontFace": [
-						{ "fontFamily": "Bricolage Grotesque", "fontStyle": "normal", "fontWeight": "600", "fontDisplay": "swap", "src": [ "file:./assets/fonts/BricolageGrotesque-SemiBold.woff2" ] }
+						{ "fontFamily": "Bricolage Grotesque", "fontStyle": "normal", "fontWeight": "200 800", "fontDisplay": "swap", "src": [ "file:./assets/fonts/BricolageGrotesque-Variable.woff2" ] }
 					]
 				},
 				{
@@ -60,7 +60,6 @@
 					"fontFamily": "\"Figtree\", \"Helvetica Neue\", Arial, sans-serif",
 					"fontFace": [
 						{ "fontFamily": "Figtree", "fontStyle": "normal", "fontWeight": "400", "fontDisplay": "swap", "src": [ "file:./assets/fonts/Figtree-400.woff2" ] },
-						{ "fontFamily": "Figtree", "fontStyle": "italic", "fontWeight": "400", "fontDisplay": "swap", "src": [ "file:./assets/fonts/Figtree-400-Italic.woff2" ] },
 						{ "fontFamily": "Figtree", "fontStyle": "normal", "fontWeight": "500", "fontDisplay": "swap", "src": [ "file:./assets/fonts/Figtree-500.woff2" ] },
 						{ "fontFamily": "Figtree", "fontStyle": "normal", "fontWeight": "600", "fontDisplay": "swap", "src": [ "file:./assets/fonts/Figtree-600.woff2" ] }
 					]

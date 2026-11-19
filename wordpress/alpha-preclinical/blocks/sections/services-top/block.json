@@ -1,0 +1,86 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/services-top",
+ "title": "Services: top",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Services.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "nav_aria_label": {
+   "type": "string",
+   "default": "Breadcrumb"
+  },
+  "li": {
+   "type": "string",
+   "default": "<a href=\"/\">Home</a>"
+  },
+  "li_2": {
+   "type": "string",
+   "default": "Services"
+  },
+  "h1": {
+   "type": "string",
+   "default": "Preclinical in vivo research, with every support service under one roof"
+  },
+  "lead_in": {
+   "type": "string",
+   "default": "From formulation and dosing to surgery, imaging and laboratory analysis, the work behind your study happens in our Worcester facility, run by the people who designed it."
+  },
+  "img_img": {
+   "type": "string",
+   "default": "assets/img/lab-biosafety-cabinet.jpg"
+  },
+  "img_alt": {
+   "type": "string",
+   "default": "Alpha scientist preparing samples in a biosafety cabinet"
+  },
+  "motion_toggle": {
+   "type": "string",
+   "default": "Pause animation"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "header",
+ "alphaFields": {
+  "nav_aria_label": {
+   "type": "text",
+   "label": "Nav screen reader label"
+  },
+  "li": {
+   "type": "html",
+   "label": "List item"
+  },
+  "li_2": {
+   "type": "html",
+   "label": "List item 2"
+  },
+  "h1": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "lead_in": {
+   "type": "html",
+   "label": "Lead in"
+  },
+  "img_img": {
+   "type": "image",
+   "label": "Img image"
+  },
+  "img_alt": {
+   "type": "text",
+   "label": "Img image description (alt text)"
+  },
+  "motion_toggle": {
+   "type": "html",
+   "label": "Animation button text"
+  }
+ }
+}

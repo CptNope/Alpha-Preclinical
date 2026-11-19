@@ -1,0 +1,87 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/post-research",
+ "title": "Post research",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: blog post, blog post, blog post.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Related research from our team"
+  },
+  "sub": {
+   "type": "string",
+   "default": "Peer-reviewed papers on this topic co-authored by Alpha scientists."
+  },
+  "paper_items": {
+   "type": "array",
+   "default": [
+    {
+     "jr": "Peer-reviewed publication",
+     "h3": "<a aria-label=\"Spinal Anesthesia in Infant Rats: Development of a Model and Assessment of Neurologic Outcomes (PDF, opens in new tab)\" href=\"https://www.alphapreclinical.com/_files/ugd/095141_c7585c435efe4ec38be8a88c9ef5346f.pdf\" rel=\"noopener\" target=\"_blank\">Spinal Anesthesia in Infant Rats: Development of a Model and Assessment of Neurologic Outcomes</a>",
+     "by": "<b>Yahalom B</b>, Athiraman UK, Soriano S, Zurakowski D, Corfas G, Carpino E, Berde CB"
+    },
+    {
+     "jr": "Peer-reviewed publication",
+     "h3": "<a aria-label=\"Tetrodotoxin-Bupivacaine-Epinephrine Combinations for Prolonged Local Anesthesia (PDF, opens in new tab)\" href=\"https://www.alphapreclinical.com/_files/ugd/095141_83d747a2b3bd4175a264a7e430cd0116.pdf\" rel=\"noopener\" target=\"_blank\">Tetrodotoxin-Bupivacaine-Epinephrine Combinations for Prolonged Local Anesthesia</a>",
+     "by": "Berde CB, Athiraman U, <b>Yahalom B</b>, Zurakowski D, Corfas G, Bognet C"
+    }
+   ]
+  },
+  "all_url": {
+   "type": "string",
+   "default": "/publications/"
+  },
+  "all": {
+   "type": "string",
+   "default": "All 16 publications"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "sub": {
+   "type": "html",
+   "label": "Intro"
+  },
+  "paper_items": {
+   "type": "items",
+   "label": "Paper (list)",
+   "fields": {
+    "jr": {
+     "type": "html",
+     "label": "Journal and year"
+    },
+    "h3": {
+     "type": "html",
+     "label": "Title"
+    },
+    "by": {
+     "type": "html",
+     "label": "Authors"
+    }
+   }
+  },
+  "all_url": {
+   "type": "url",
+   "label": "All link"
+  },
+  "all": {
+   "type": "html",
+   "label": "All"
+  }
+ }
+}

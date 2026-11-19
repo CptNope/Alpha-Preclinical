@@ -10,7 +10,10 @@ defined( 'ABSPATH' ) || exit;
 
 $alpha_type    = isset( $attributes['formType'] ) && 'careers' === $attributes['formType'] ? 'careers' : 'quote';
 $alpha_uid     = wp_unique_id( 'alpha-form-' );
-$alpha_status  = isset( $_GET['alpha_form'] ) ? sanitize_key( wp_unslash( $_GET['alpha_form'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- display-only status flag after redirect.
+$alpha_status = '';
+if ( isset( $_GET['alpha_form'], $_GET['alpha_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['alpha_nonce'] ) ), 'alpha_form_result' ) ) {
+	$alpha_status = sanitize_key( wp_unslash( $_GET['alpha_form'] ) ); // Result of the visitor's own submission (nonce added by alpha_handle_form).
+}
 $alpha_preset  = isset( $_GET['study'] ) ? sanitize_text_field( wp_unslash( $_GET['study'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- preselects an option; no state change.
 $alpha_role    = isset( $_GET['role'] ) ? sanitize_text_field( wp_unslash( $_GET['role'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- preselects an option; no state change.
 $alpha_privacy = get_privacy_policy_url();

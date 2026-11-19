@@ -25,7 +25,12 @@ if ( ! current_user_can( 'alpha_review' ) ) {
 
 $alpha_sections = alpha_review_sections();
 $alpha_answers  = alpha_review_answers();
-$alpha_saved    = isset( $_GET['saved'] ) ? sanitize_key( wp_unslash( $_GET['saved'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- display-only status after redirect.
+// "Saved" notice after the save redirect (nonce added by alpha_review_save; the
+// reviewer capability was checked above).
+$alpha_saved = '';
+if ( isset( $_GET['saved'], $_GET['alpha_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['alpha_nonce'] ) ), 'alpha_review_saved' ) ) {
+	$alpha_saved = sanitize_key( wp_unslash( $_GET['saved'] ) );
+}
 $alpha_total    = 0;
 $alpha_done     = 0;
 $alpha_counts   = array();

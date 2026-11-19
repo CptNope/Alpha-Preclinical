@@ -1,0 +1,46 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/home-cta",
+ "title": "Home: cta",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Home.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Tell us what your program needs to prove next"
+  },
+  "p": {
+   "type": "string",
+   "default": "Share your compound, target and timeline. A senior scientist will reply with a recommended study design and quote."
+  },
+  "hero_ctas": {
+   "type": "string",
+   "default": "<a class=\"btn btn-light\" href=\"/contact/#form\">Request a study quote</a>\n      <a class=\"btn btn-ghost-dark\" href=\"mailto:info@alphapreclinical.com\">Email info@alphapreclinical.com</a>"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "hero_ctas": {
+   "type": "html",
+   "label": "Buttons"
+  }
+ }
+}

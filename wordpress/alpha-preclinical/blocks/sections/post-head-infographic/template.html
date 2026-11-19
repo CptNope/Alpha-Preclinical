@@ -1,0 +1,17 @@
+<div class="wrap head">
+  <div class="head-main">
+    <nav aria-label="{{nav_aria_label}}"><ol class="crumbs">{{#li_items}}<li>{{&li}}</li>{{/li_items}}<li aria-current="page">{{&li}}</li></ol></nav>
+    <span class="tag">{{&tag}}</span>
+    <h1>{{&h1}}</h1>
+    <p class="dek">{{&dek}}</p>
+    <div class="byline">
+      {{#who_items}}<div class="who"><img src="{{@img_img}}" alt=""><div>{{&div}}</div></div>
+      {{/who_items}}
+      <p class="dates">{{&dates}}</p>
+    </div>
+  </div>
+  <figure class="hero-img infographic">
+    <img src="{{@img_img}}" srcset="{{$img_srcset}}" sizes="{{img_sizes}}" width="{{img_width}}" height="{{img_height}}" fetchpriority="high" alt="{{img_alt}}">
+    <figcaption>{{&figcaption}}</figcaption>
+  </figure>
+</div>

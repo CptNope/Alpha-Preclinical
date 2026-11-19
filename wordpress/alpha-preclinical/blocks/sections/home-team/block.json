@@ -1,0 +1,168 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/home-team",
+ "title": "Home: team",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Home.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "img_img": {
+   "type": "string",
+   "default": "assets/img/team-group.jpg"
+  },
+  "img_alt": {
+   "type": "string",
+   "default": "The Alpha Preclinical team outside the Worcester facility"
+  },
+  "img_width": {
+   "type": "string",
+   "default": "1000"
+  },
+  "img_height": {
+   "type": "string",
+   "default": "666"
+  },
+  "h2": {
+   "type": "string",
+   "default": "Senior scientists who treat your program as their own"
+  },
+  "p": {
+   "type": "string",
+   "default": "Founded in 2020 and US owned, Alpha was built to give biotech and pharma teams the attention of a partner with the capacity of a CRO."
+  },
+  "more_links": {
+   "type": "string",
+   "default": "<a href=\"/team/\">Meet the team</a><a href=\"/about/\">About Alpha</a>"
+  },
+  "member_items": {
+   "type": "array",
+   "default": [
+    {
+     "member_url": "/team/#barak-yahalom",
+     "img_img": "assets/img/team/barak-yahalom.jpg",
+     "img_alt": "Barak Yahalom",
+     "alt_img": "assets/img/team/barak-yahalom-alt.jpg",
+     "div": "<b>Barak Yahalom, DVM</b><small>CEO and Chief Scientific Officer</small>"
+    },
+    {
+     "member_url": "/team/#joan-flanagan",
+     "img_img": "assets/img/team/joan-flanagan.jpg",
+     "img_alt": "Joan Flanagan",
+     "alt_img": "assets/img/team/joan-flanagan-alt.jpg",
+     "div": "<b>Joan Flanagan, PhD</b><small>President and COO</small>"
+    },
+    {
+     "member_url": "/team/#ashley-kolofsky",
+     "img_img": "assets/img/team/ashley-kolofsky.jpg",
+     "img_alt": "Ashley Kolofsky",
+     "alt_img": "assets/img/team/ashley-kolofsky-alt.jpg",
+     "div": "<b>Ashley Kolofsky</b><small>Study Team Supervisor</small>"
+    },
+    {
+     "member_url": "/team/#cindy-hopper",
+     "img_img": "assets/img/team/cindy-hopper.jpg",
+     "img_alt": "Cindy Hopper",
+     "alt_img": "assets/img/team/cindy-hopper-alt.jpg",
+     "div": "<b>Cindy Hopper</b><small>Founding Scientist, In Vitro</small>"
+    },
+    {
+     "member_url": "/team/#gil-chacon",
+     "img_img": "assets/img/team/gil-chacon.jpg",
+     "img_alt": "Gil Chacon",
+     "alt_img": "assets/img/team/gil-chacon-alt.jpg",
+     "div": "<b>Gil Chacon</b><small>In Vivo and Surgical Support</small>"
+    }
+   ]
+  },
+  "p_2": {
+   "type": "string",
+   "default": "We're growing. Bring your research experience to Worcester."
+  },
+  "a_url": {
+   "type": "string",
+   "default": "/careers/"
+  },
+  "a": {
+   "type": "string",
+   "default": "See open roles"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "img_img": {
+   "type": "image",
+   "label": "Img image"
+  },
+  "img_alt": {
+   "type": "text",
+   "label": "Img image description (alt text)"
+  },
+  "img_width": {
+   "type": "text",
+   "label": "Img image width"
+  },
+  "img_height": {
+   "type": "text",
+   "label": "Img image height"
+  },
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "more_links": {
+   "type": "html",
+   "label": "Links"
+  },
+  "member_items": {
+   "type": "items",
+   "label": "Member (list)",
+   "fields": {
+    "member_url": {
+     "type": "url",
+     "label": "Member link"
+    },
+    "img_img": {
+     "type": "image",
+     "label": "Img image"
+    },
+    "img_alt": {
+     "type": "text",
+     "label": "Img image description (alt text)"
+    },
+    "alt_img": {
+     "type": "image",
+     "label": "Alt image"
+    },
+    "div": {
+     "type": "html",
+     "label": "Content"
+    }
+   }
+  },
+  "p_2": {
+   "type": "html",
+   "label": "Text 2"
+  },
+  "a_url": {
+   "type": "url",
+   "label": "Link link"
+  },
+  "a": {
+   "type": "html",
+   "label": "Link text"
+  }
+ }
+}

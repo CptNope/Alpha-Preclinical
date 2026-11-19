@@ -1,0 +1,210 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/expertise-pk-pd",
+ "title": "Expertise: pk pd",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Expertise.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "PK/PD"
+  },
+  "desc": {
+   "type": "string",
+   "default": "Well-run pharmacokinetic and pharmacodynamic studies tell you how much of your compound reaches its target, for how long, and with what effect. We run them primarily in rodents, with capacity for most common laboratory species."
+  },
+  "img_img": {
+   "type": "string",
+   "default": "assets/img/team/barak-yahalom.jpg"
+  },
+  "div": {
+   "type": "string",
+   "default": "<small>Led by</small><b><a href=\"/team/#barak-yahalom\">Barak Yahalom, DVM</a></b>"
+  },
+  "area_cta_url": {
+   "type": "string",
+   "default": "/contact/?study=PK%2FPD#form"
+  },
+  "area_cta": {
+   "type": "string",
+   "default": "Plan your PK/PD study"
+  },
+  "th_items": {
+   "type": "array",
+   "default": [
+    {
+     "th": "Capability"
+    },
+    {
+     "th": "What we offer"
+    }
+   ]
+  },
+  "tr_items": {
+   "type": "array",
+   "default": [
+    {
+     "td_items": [
+      {
+       "td": "Routine routes"
+      },
+      {
+       "td": "Intravenous, oral, subcutaneous, intraperitoneal, intramuscular, intradermal, topical, rectal"
+      }
+     ]
+    },
+    {
+     "td_items": [
+      {
+       "td": "Specialized routes"
+      },
+      {
+       "td": "Hydrodynamic IV, intravitreal, intra-articular, Alzet continuous subcutaneous, intrathecal, intratracheal, intracerebroventricular, nebulizer, intrasplenic, portal vein"
+      }
+     ]
+    },
+    {
+     "td_items": [
+      {
+       "td": "Samples"
+      },
+      {
+       "td": "Blood, urine, feces, cerebrospinal fluid, bile"
+      }
+     ]
+    },
+    {
+     "td_items": [
+      {
+       "td": "Imaging"
+      },
+      {
+       "td": "In-life IVIS bioluminescence and fluorescence"
+      }
+     ]
+    }
+   ]
+  },
+  "h3": {
+   "type": "string",
+   "default": "Related research by our scientists"
+  },
+  "li_items": {
+   "type": "array",
+   "default": [
+    {
+     "li": "<a aria-label=\"Spinal Anesthesia in Infant Rats: Development of a Model and Assessment of Neurologic Outcomes (PDF, opens in new tab)\" href=\"https://www.alphapreclinical.com/_files/ugd/095141_c7585c435efe4ec38be8a88c9ef5346f.pdf\" rel=\"noopener\" target=\"_blank\">Spinal Anesthesia in Infant Rats: Development of a Model and Assessment of Neurologic Outcomes</a><span>Yahalom B, et al.</span>"
+    },
+    {
+     "li": "<a aria-label=\"Tetrodotoxin-Bupivacaine-Epinephrine Combinations for Prolonged Local Anesthesia (PDF, opens in new tab)\" href=\"https://www.alphapreclinical.com/_files/ugd/095141_83d747a2b3bd4175a264a7e430cd0116.pdf\" rel=\"noopener\" target=\"_blank\">Tetrodotoxin-Bupivacaine-Epinephrine Combinations for Prolonged Local Anesthesia</a><span>Berde CB, Athiraman U, Yahalom B, et al.</span>"
+    }
+   ]
+  },
+  "h3_2": {
+   "type": "string",
+   "default": "Read more on the blog"
+  },
+  "li_items_2": {
+   "type": "array",
+   "default": [
+    {
+     "li": "<a href=\"/blog/how-to-scope-in-vivo-efficacy-study/\">How to scope your first in vivo efficacy study</a>"
+    },
+    {
+     "li": "<a href=\"/blog/alzet-osmotic-pump-continuous-dosing/\">Continuous dosing with Alzet pumps: when and why</a>"
+    }
+   ]
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "desc": {
+   "type": "html",
+   "label": "Desc"
+  },
+  "img_img": {
+   "type": "image",
+   "label": "Img image"
+  },
+  "div": {
+   "type": "html",
+   "label": "Content"
+  },
+  "area_cta_url": {
+   "type": "url",
+   "label": "Area cta link"
+  },
+  "area_cta": {
+   "type": "html",
+   "label": "Area cta"
+  },
+  "th_items": {
+   "type": "items",
+   "label": "Column heading (list)",
+   "fields": {
+    "th": {
+     "type": "html",
+     "label": "Column heading"
+    }
+   }
+  },
+  "tr_items": {
+   "type": "items",
+   "label": "Tr (list)",
+   "fields": {
+    "td_items": {
+     "type": "items",
+     "label": "Cell (list)",
+     "fields": {
+      "td": {
+       "type": "html",
+       "label": "Cell"
+      }
+     }
+    }
+   }
+  },
+  "h3": {
+   "type": "html",
+   "label": "Title"
+  },
+  "li_items": {
+   "type": "items",
+   "label": "List item (list)",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "h3_2": {
+   "type": "html",
+   "label": "Title 2"
+  },
+  "li_items_2": {
+   "type": "items",
+   "label": "List item (list) 2",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  }
+ }
+}

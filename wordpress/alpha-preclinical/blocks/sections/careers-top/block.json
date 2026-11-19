@@ -1,0 +1,102 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/careers-top",
+ "title": "Careers: top",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Careers.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "nav_aria_label": {
+   "type": "string",
+   "default": "Breadcrumb"
+  },
+  "li": {
+   "type": "string",
+   "default": "<a href=\"/\">Home</a>"
+  },
+  "li_2": {
+   "type": "string",
+   "default": "Careers"
+  },
+  "h1": {
+   "type": "string",
+   "default": "Do research that helps new therapies reach the clinic"
+  },
+  "p": {
+   "type": "string",
+   "default": "Join a small, experienced team where your work shapes real drug development programs, and where you learn from scientists with decades in the field."
+  },
+  "btn_light_url": {
+   "type": "string",
+   "default": "#roles"
+  },
+  "btn_light": {
+   "type": "string",
+   "default": "See open roles"
+  },
+  "img_img": {
+   "type": "string",
+   "default": "assets/img/team-group.jpg"
+  },
+  "img_alt": {
+   "type": "string",
+   "default": "The Alpha Preclinical team outside the Worcester facility"
+  },
+  "motion_toggle": {
+   "type": "string",
+   "default": "Pause animation"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "header",
+ "alphaFields": {
+  "nav_aria_label": {
+   "type": "text",
+   "label": "Nav screen reader label"
+  },
+  "li": {
+   "type": "html",
+   "label": "List item"
+  },
+  "li_2": {
+   "type": "html",
+   "label": "List item 2"
+  },
+  "h1": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "btn_light_url": {
+   "type": "url",
+   "label": "Button link"
+  },
+  "btn_light": {
+   "type": "html",
+   "label": "Button text"
+  },
+  "img_img": {
+   "type": "image",
+   "label": "Img image"
+  },
+  "img_alt": {
+   "type": "text",
+   "label": "Img image description (alt text)"
+  },
+  "motion_toggle": {
+   "type": "html",
+   "label": "Animation button text"
+  }
+ }
+}

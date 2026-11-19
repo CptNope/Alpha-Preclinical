@@ -1,0 +1,137 @@
+{
+ "index": {
+  "skin": "home",
+  "blocks": [
+   "home-hero",
+   "home-expertise",
+   "home-services",
+   "home-steps",
+   "home-publications",
+   "home-team",
+   "home-faq",
+   "home-cta",
+   "site-footer"
+  ]
+ },
+ "expertise": {
+  "skin": "expertise",
+  "blocks": [
+   "expertise-top",
+   "expertise-pk-pd",
+   "expertise-gene-therapy",
+   "expertise-autoimmune",
+   "expertise-metabolic",
+   "expertise-fibrosis",
+   "expertise-tumor",
+   "scientist-cta",
+   "site-footer"
+  ]
+ },
+ "services": {
+  "skin": "services",
+  "blocks": [
+   "services-top",
+   "services-intro",
+   "services-ivis",
+   "services-surgery",
+   "services-colony",
+   "services-in-vitro",
+   "services-support",
+   "scientist-cta",
+   "site-footer"
+  ]
+ },
+ "tumor-models": {
+  "skin": "tumor-models",
+  "blocks": [
+   "page-top-sub",
+   "tumor-models-models",
+   "tumor-models-endpoints",
+   "tumor-models-team",
+   "tumor-models-related",
+   "site-footer"
+  ]
+ },
+ "about": {
+  "skin": "about",
+  "blocks": [
+   "page-top",
+   "about-story",
+   "about-values",
+   "about-facility",
+   "about-leadership",
+   "scientist-cta",
+   "site-footer"
+  ]
+ },
+ "publications": {
+  "skin": "publications",
+  "blocks": [
+   "page-top",
+   "publications-list",
+   "site-footer"
+  ]
+ },
+ "team": {
+  "skin": "team",
+  "blocks": [
+   "page-top-sub",
+   "team-photo",
+   "team-leadership",
+   "team-research",
+   "team-cta",
+   "site-footer"
+  ]
+ },
+ "careers": {
+  "skin": "careers",
+  "blocks": [
+   "careers-top",
+   "careers-why",
+   "careers-roles",
+   "careers-apply",
+   "site-footer"
+  ]
+ },
+ "contact": {
+  "skin": "contact",
+  "blocks": [
+   "page-top",
+   "contact-form",
+   "contact-map",
+   "site-footer"
+  ]
+ },
+ "blog": {
+  "skin": "blog",
+  "blocks": [
+   "page-top",
+   "blog-list",
+   "site-footer"
+  ]
+ },
+ "privacy": {
+  "skin": "legal",
+  "blocks": [
+   "page-top-legal",
+   "privacy-content",
+   "site-footer"
+  ]
+ },
+ "terms": {
+  "skin": "legal",
+  "blocks": [
+   "page-top-legal",
+   "terms-content",
+   "site-footer"
+  ]
+ },
+ "accessibility": {
+  "skin": "legal",
+  "blocks": [
+   "page-top-legal",
+   "accessibility-content",
+   "site-footer"
+  ]
+ }
+}

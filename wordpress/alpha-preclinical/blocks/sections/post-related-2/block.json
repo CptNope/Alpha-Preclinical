@@ -1,0 +1,75 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/post-related-2",
+ "title": "Post related 2",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: blog post.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Keep reading"
+  },
+  "post_items": {
+   "type": "array",
+   "default": [
+    {
+     "post_url": "/blog/how-to-scope-in-vivo-efficacy-study/",
+     "tag": "Study design",
+     "h3": "How to scope your first in vivo efficacy study",
+     "p": "Barak Yahalom, DVM, 3 min read"
+    },
+    {
+     "post_url": "/blog/flow-cytometry-immunophenotyping-in-vivo-studies/",
+     "tag": "Lab services",
+     "h3": "Getting more from every animal with in-house flow cytometry",
+     "p": "Cindy Hopper, 3 min read"
+    },
+    {
+     "post_url": "/blog/alzet-osmotic-pump-continuous-dosing/",
+     "tag": "Study design",
+     "h3": "Continuous dosing with Alzet pumps: when and why",
+     "p": "Gil Chacon, 3 min read"
+    }
+   ]
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "post_items": {
+   "type": "items",
+   "label": "Post (list)",
+   "fields": {
+    "post_url": {
+     "type": "url",
+     "label": "Post link"
+    },
+    "tag": {
+     "type": "html",
+     "label": "Topic tag"
+    },
+    "h3": {
+     "type": "html",
+     "label": "Title"
+    },
+    "p": {
+     "type": "html",
+     "label": "Text"
+    }
+   }
+  }
+ }
+}

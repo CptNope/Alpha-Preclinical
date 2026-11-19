@@ -1,0 +1,13 @@
+<section class="sec" aria-labelledby="faq-h">
+  <div class="wrap faq">
+    <div>
+      <h2 id="faq-h">{{&h2}}</h2>
+      <p style="color:var(--muted);font-size:19px;margin-top:24px;max-width:26em">{{&p}}</p>
+    </div>
+    <div class="faq-list">
+      <div class="q"><button type="button" data-accordion aria-expanded="true" aria-controls="faq-0">{{&button}}</button><p class="ans" id="faq-0">{{&ans}}</p></div>
+      {{#q_items}}<div class="q"><button type="button" data-accordion aria-expanded="false" aria-controls="{{button_aria_controls}}">{{&button}}</button><p class="ans" id="{{ans_id}}" hidden>{{&ans}}</p></div>
+      {{/q_items}}
+    </div>
+  </div>
+</section>

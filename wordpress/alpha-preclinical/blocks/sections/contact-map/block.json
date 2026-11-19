@@ -1,0 +1,78 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/contact-map",
+ "title": "Contact: map",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Contact.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "img_img": {
+   "type": "string",
+   "default": "assets/img/map-722-plantation-st.jpg"
+  },
+  "img_alt": {
+   "type": "string",
+   "default": "Map showing Alpha Preclinical at 722 Plantation Street in the Great Brook Valley area of Worcester, near Route 70 and I-290"
+  },
+  "h2": {
+   "type": "string",
+   "default": "Alpha Preclinical"
+  },
+  "address": {
+   "type": "string",
+   "default": "722 Plantation Street<br/>Worcester, MA 01605"
+  },
+  "a_url": {
+   "type": "string",
+   "default": "https://www.google.com/maps/dir/?api=1&destination=722+Plantation+Street+Worcester+MA+01605"
+  },
+  "a": {
+   "type": "string",
+   "default": "Get directions"
+  },
+  "attrib": {
+   "type": "string",
+   "default": "© OpenStreetMap contributors"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "img_img": {
+   "type": "image",
+   "label": "Img image"
+  },
+  "img_alt": {
+   "type": "text",
+   "label": "Img image description (alt text)"
+  },
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "address": {
+   "type": "html",
+   "label": "Address"
+  },
+  "a_url": {
+   "type": "url",
+   "label": "Link link"
+  },
+  "a": {
+   "type": "html",
+   "label": "Link text"
+  },
+  "attrib": {
+   "type": "html",
+   "label": "Attrib"
+  }
+ }
+}

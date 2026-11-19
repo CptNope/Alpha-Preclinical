@@ -1,0 +1,49 @@
+<div class="wrap">
+    <div class="filters" data-filter-group="posts" data-noun="post" role="group" aria-label="{{filters_aria_label}}">
+      <button type="button" data-filter="All" aria-pressed="true">{{&button}}</button>
+        {{#button_items}}<button type="button" data-filter="{{button_data_filter}}" aria-pressed="false">{{&button}}</button>
+        {{/button_items}}
+    </div>
+
+    
+      <a class="feature" data-item="posts" data-topic="Study design" href="{{@feature_url}}">
+        <div class="art has-img"><img src="{{@img_img}}" width="{{img_width}}" height="{{img_height}}" alt="" loading="eager"></div>
+        <div>
+          <span class="tag">{{&tag}}</span>
+          <h2>{{&h2}}</h2>
+          <p>{{&p}}</p>
+          <p class="meta">{{&meta}}</p>
+        </div>
+      </a>
+    
+
+    <div class="grid">
+      
+        {{#post_items}}<a class="post" data-item="posts" data-topic="{{post_data_topic}}" href="{{@post_url}}">
+          <div class="art has-img"><img src="{{@img_img}}" width="{{img_width}}" height="{{img_height}}" alt="" loading="lazy"></div>
+          <span class="tag" style="justify-self:start">{{&tag}}</span>
+          <h3>{{&h3}}</h3>
+          <p>{{&p}}</p>
+          <p class="draft">{{&draft}}</p>
+        </a>
+      
+        {{/post_items}}
+      
+        {{#post_items_2}}<a class="post" data-item="posts" data-topic="{{post_data_topic}}" href="{{@post_url}}">
+          <div class="art"><span>{{&span}}</span>{{%svg_icon}}</div>
+          <span class="tag" style="justify-self:start">{{&tag}}</span>
+          <h3>{{&h3}}</h3>
+          <p>{{&p}}</p>
+          <p class="draft">{{&draft}}</p>
+        </a>
+      
+        {{/post_items_2}}
+      
+    </div>
+    <p class="empty" data-empty="posts" hidden>{{&empty}}</p>
+    <div class="band" style="margin-top:96px">
+      <svg aria-hidden="true" class="band-lines" preserveAspectRatio="none" viewBox="0 0 1160 56"><path d="M0 22 C145 4 435 40 580 22 S1015 4 1160 22"></path><path d="M0 40 C160 26 420 54 580 40 S1000 26 1160 40"></path></svg>
+      <div><h2>{{&h2_2}}</h2><p>{{&p_2}}</p></div>
+      <a class="btn btn-light" href="{{@btn_light_url}}">{{&btn_light}}</a>
+    </div>
+  </div>

@@ -1,0 +1,20 @@
+<section class="area area-paper" aria-labelledby="surgery-h">
+  <div class="wrap">
+    <article class="svc flip" id="surgery">
+      <div>
+        <h2 id="surgery-h">{{&h2}}</h2>
+        <p class="desc">{{&desc}}</p>
+        <div class="lead"><span class="pair">{{#img_items}}<img src="{{@img_img}}" alt="">{{/img_items}}</span><div>{{&div}}</div></div>
+        <a class="area-cta" href="{{@area_cta_url}}">{{&area_cta}}</a>
+      </div>
+      <div class="detail">
+        {{#div_items}}<div><h3>{{&h3}}</h3><ul>
+          {{#li_items}}<li>{{&li}}</li>
+          {{/li_items}}
+        </ul></div>
+        {{/div_items}}
+        <p class="related">{{&related}}</p>
+      </div>
+    </article>
+  </div>
+</section>

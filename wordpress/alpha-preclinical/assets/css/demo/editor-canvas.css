@@ -1,0 +1,12 @@
+/* Editor canvas: show section previews exactly as on the site; clicks select the block. */
+.editor-styles-wrapper { padding: 0 !important; }
+.alpha-section-preview .ap { pointer-events: none; }
+.alpha-section-preview .ap .strata, .alpha-section-preview .ap [data-motion] { pointer-events: none; }
+.alpha-section-preview .ap [hidden] { display: none !important; }
+.alpha-article-editor { max-width: 760px; margin: 40px auto; padding: 0 24px; }
+.alpha-article-editor__label { font: 600 12px/1.4 -apple-system, sans-serif; color: #50575e; text-transform: uppercase; letter-spacing: .04em; margin: 0 0 12px; }
+.alpha-article { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-size: 18px; line-height: 1.65; color: #1F2858; }
+/* Sections are full width, as on the site. */
+.is-root-container > .alpha-section-preview,
+.is-root-container > .wp-block-alpha-shell { max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; }
+.is-root-container > .alpha-section-preview { margin-top: 0 !important; margin-bottom: 0 !important; }

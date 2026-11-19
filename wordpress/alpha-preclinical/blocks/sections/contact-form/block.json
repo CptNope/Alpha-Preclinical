@@ -1,0 +1,246 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/contact-form",
+ "title": "Contact: form",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Contact.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Send us a message"
+  },
+  "sub": {
+   "type": "string",
+   "default": "Fields marked optional can be left blank. Everything else helps us reply with something useful."
+  },
+  "label": {
+   "type": "string",
+   "default": "First name"
+  },
+  "label_2": {
+   "type": "string",
+   "default": "Last name"
+  },
+  "label_3": {
+   "type": "string",
+   "default": "Company"
+  },
+  "label_4": {
+   "type": "string",
+   "default": "Position <small>(optional)</small>"
+  },
+  "label_5": {
+   "type": "string",
+   "default": "Work email"
+  },
+  "err": {
+   "type": "string",
+   "default": "Enter an email address like name@company.com so we can reply."
+  },
+  "label_6": {
+   "type": "string",
+   "default": "Phone <small>(optional)</small>"
+  },
+  "label_7": {
+   "type": "string",
+   "default": "What do you need help with?"
+  },
+  "label_8": {
+   "type": "string",
+   "default": "Tell us about your program"
+  },
+  "textarea_placeholder": {
+   "type": "string",
+   "default": "Compound or modality, target, the question you need answered, and your timeline"
+  },
+  "btn_primary": {
+   "type": "string",
+   "default": "Send message"
+  },
+  "p": {
+   "type": "string",
+   "default": "We use your details only to respond to this inquiry. See our <a href=\"/privacy-policy/\">privacy policy</a>."
+  },
+  "h3": {
+   "type": "string",
+   "default": "Message sent"
+  },
+  "p_2": {
+   "type": "string",
+   "default": "Thanks for reaching out. A member of our team will reply to <span data-email-out=\"\"></span>."
+  },
+  "button": {
+   "type": "string",
+   "default": "Send another message"
+  },
+  "sr_only": {
+   "type": "string",
+   "default": "Contact details"
+  },
+  "h3_2": {
+   "type": "string",
+   "default": "Email"
+  },
+  "big_url": {
+   "type": "string",
+   "default": "mailto:info@alphapreclinical.com"
+  },
+  "big": {
+   "type": "string",
+   "default": "info@alphapreclinical.com"
+  },
+  "h3_3": {
+   "type": "string",
+   "default": "Visit"
+  },
+  "big_2": {
+   "type": "string",
+   "default": "722 Plantation Street<br/>Worcester, MA 01605"
+  },
+  "h3_4": {
+   "type": "string",
+   "default": "Careers"
+  },
+  "p_3": {
+   "type": "string",
+   "default": "See our <a href=\"/careers/\">open roles</a>, or send your resume to <a href=\"mailto:info@alphapreclinical.com\">info@alphapreclinical.com</a>."
+  },
+  "img_img": {
+   "type": "string",
+   "default": "assets/img/building-sign.jpg"
+  },
+  "img_alt": {
+   "type": "string",
+   "default": "Alpha Preclinical sign at the entrance of 722 Plantation Street"
+  },
+  "figcaption": {
+   "type": "string",
+   "default": "Look for our sign at the entrance off Plantation Street."
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "sub": {
+   "type": "html",
+   "label": "Intro"
+  },
+  "label": {
+   "type": "html",
+   "label": "Label"
+  },
+  "label_2": {
+   "type": "html",
+   "label": "Label 2"
+  },
+  "label_3": {
+   "type": "html",
+   "label": "Label 3"
+  },
+  "label_4": {
+   "type": "html",
+   "label": "Label 4"
+  },
+  "label_5": {
+   "type": "html",
+   "label": "Label 5"
+  },
+  "err": {
+   "type": "html",
+   "label": "Err"
+  },
+  "label_6": {
+   "type": "html",
+   "label": "Label 6"
+  },
+  "label_7": {
+   "type": "html",
+   "label": "Label 7"
+  },
+  "label_8": {
+   "type": "html",
+   "label": "Label 8"
+  },
+  "textarea_placeholder": {
+   "type": "text",
+   "label": "Textarea placeholder"
+  },
+  "btn_primary": {
+   "type": "html",
+   "label": "Button text"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "h3": {
+   "type": "html",
+   "label": "Title"
+  },
+  "p_2": {
+   "type": "html",
+   "label": "Text 2"
+  },
+  "button": {
+   "type": "html",
+   "label": "Button text"
+  },
+  "sr_only": {
+   "type": "html",
+   "label": "Sr only"
+  },
+  "h3_2": {
+   "type": "html",
+   "label": "Title 2"
+  },
+  "big_url": {
+   "type": "url",
+   "label": "Big link"
+  },
+  "big": {
+   "type": "html",
+   "label": "Big"
+  },
+  "h3_3": {
+   "type": "html",
+   "label": "Title 3"
+  },
+  "big_2": {
+   "type": "html",
+   "label": "Big 2"
+  },
+  "h3_4": {
+   "type": "html",
+   "label": "Title 4"
+  },
+  "p_3": {
+   "type": "html",
+   "label": "Text 3"
+  },
+  "img_img": {
+   "type": "image",
+   "label": "Img image"
+  },
+  "img_alt": {
+   "type": "text",
+   "label": "Img image description (alt text)"
+  },
+  "figcaption": {
+   "type": "html",
+   "label": "Caption"
+  }
+ }
+}

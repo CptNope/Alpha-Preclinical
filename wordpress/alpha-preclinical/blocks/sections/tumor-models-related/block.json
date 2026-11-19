@@ -1,0 +1,70 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/tumor-models-related",
+ "title": "Tumor models: related",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Tumor models.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Related expertise"
+  },
+  "related": {
+   "type": "string",
+   "default": "<a href=\"/expertise/#pk-pd\">PK/PD</a><a href=\"/expertise/#gene-therapy\">Gene therapy</a><a href=\"/expertise/#autoimmune\">Autoimmune disease</a><a href=\"/expertise/#metabolic\">Metabolic disease</a><a href=\"/expertise/#fibrosis\">Inflammation and fibrosis</a>"
+  },
+  "h2_2": {
+   "type": "string",
+   "default": "Plan your next oncology study with us"
+  },
+  "p": {
+   "type": "string",
+   "default": "Send your compound, model and timeline. A senior scientist will reply with a study design and quote."
+  },
+  "btn_light_url": {
+   "type": "string",
+   "default": "/contact/"
+  },
+  "btn_light": {
+   "type": "string",
+   "default": "Request a study quote"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "related": {
+   "type": "html",
+   "label": "Related"
+  },
+  "h2_2": {
+   "type": "html",
+   "label": "Heading 2"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "btn_light_url": {
+   "type": "url",
+   "label": "Button link"
+  },
+  "btn_light": {
+   "type": "html",
+   "label": "Button text"
+  }
+ }
+}

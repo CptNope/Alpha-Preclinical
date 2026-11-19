@@ -1,0 +1,38 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/article-callout",
+ "title": "Article callout",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: blog post.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "b": {
+   "type": "string",
+   "default": "From the lab"
+  },
+  "p": {
+   "type": "string",
+   "default": "[Barak to add one sentence from experience, for example how sampling schedules are planned around blood volume limits in mice.]"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "b": {
+   "type": "html",
+   "label": "Bold text"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  }
+ }
+}

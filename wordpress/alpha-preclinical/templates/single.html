@@ -1,37 +1,5 @@
-<!-- wp:template-part {"slug":"header","area":"header","tagName":"div"} /-->
-
-<!-- wp:template-part {"slug":"post-header","tagName":"div"} /-->
-
-<!-- wp:group {"tagName":"main","anchor":"main","className":"alpha-article","style":{"spacing":{"padding":{"top":"var:preset|spacing|5","bottom":"var:preset|spacing|5"}}},"layout":{"type":"constrained","contentSize":"720px","wideSize":"1040px"}} -->
-<main class="wp-block-group alpha-article" id="main" style="padding-top:var(--wp--preset--spacing--5);padding-bottom:var(--wp--preset--spacing--5)"><!-- wp:post-featured-image {"align":"wide","sizeSlug":"large","className":"alpha-article__hero"} /-->
-
-<!-- wp:post-content {"layout":{"type":"constrained","contentSize":"720px"}} /-->
-
-<!-- wp:group {"className":"alpha-author-box","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alpha-author-box"><!-- wp:heading {"level":2,"className":"alpha-author-box__h"} -->
-<h2 class="wp-block-heading alpha-author-box__h">About the author</h2>
-<!-- /wp:heading -->
-
-<!-- wp:columns -->
-<div class="wp-block-columns"><!-- wp:column {"width":"28%"} -->
-<div class="wp-block-column" style="flex-basis:28%"><!-- wp:alpha/person-card {"metadata":{"bindings":{"slug":{"source":"core/post-meta","args":{"key":"author_member"}}}}} /--></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"width":"72%"} -->
-<div class="wp-block-column" style="flex-basis:72%"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"alpha/person","args":{"key":"bio","field":"author_member"}}}}} -->
-<p></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:alpha/person-links {"field":"author_member"} /--></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns --></div>
-<!-- /wp:group -->
-
-<!-- wp:post-navigation-link {"type":"previous","showTitle":true,"linkLabel":true} /-->
-
-<!-- wp:post-navigation-link {"showTitle":true,"linkLabel":true} /--></main>
-<!-- /wp:group -->
-
-<!-- wp:alpha/cta-band {"heading":"Planning a study like this?","text":"Tell us the model, endpoints and timeline. The scientist who wrote this post can help design it.","buttonText":"Talk to a scientist","secondaryText":"","align":"full"} /-->
-
-<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"div"} /-->
+<!-- wp:alpha/shell -->
+<!-- wp:alpha/post-bar /-->
+<!-- wp:post-content /-->
+<!-- wp:alpha/site-footer /-->
+<!-- /wp:alpha/shell -->

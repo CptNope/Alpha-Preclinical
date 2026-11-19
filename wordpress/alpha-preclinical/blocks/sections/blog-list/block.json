@@ -1,0 +1,338 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/blog-list",
+ "title": "Blog: list",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Blog.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "filters_aria_label": {
+   "type": "string",
+   "default": "Filter by topic"
+  },
+  "button": {
+   "type": "string",
+   "default": "All"
+  },
+  "button_items": {
+   "type": "array",
+   "default": [
+    {
+     "button_data_filter": "Study design",
+     "button": "Study design"
+    },
+    {
+     "button_data_filter": "Tumor models",
+     "button": "Tumor models"
+    },
+    {
+     "button_data_filter": "Metabolic disease",
+     "button": "Metabolic disease"
+    },
+    {
+     "button_data_filter": "Gene therapy",
+     "button": "Gene therapy"
+    },
+    {
+     "button_data_filter": "Autoimmune disease",
+     "button": "Autoimmune disease"
+    },
+    {
+     "button_data_filter": "Lab services",
+     "button": "Lab services"
+    }
+   ]
+  },
+  "feature_url": {
+   "type": "string",
+   "default": "/blog/how-to-scope-in-vivo-efficacy-study/"
+  },
+  "img_img": {
+   "type": "string",
+   "default": "assets/img/blog/scope-in-vivo-efficacy-study-hero-1200.jpg"
+  },
+  "img_width": {
+   "type": "string",
+   "default": "1200"
+  },
+  "img_height": {
+   "type": "string",
+   "default": "675"
+  },
+  "tag": {
+   "type": "string",
+   "default": "Study design"
+  },
+  "h2": {
+   "type": "string",
+   "default": "How to scope your first in vivo efficacy study"
+  },
+  "p": {
+   "type": "string",
+   "default": "The questions to answer before choosing a model, group size or endpoint, and how they change your timeline and budget."
+  },
+  "meta": {
+   "type": "string",
+   "default": "Barak Yahalom, DVM, 3 min read"
+  },
+  "post_items": {
+   "type": "array",
+   "default": [
+    {
+     "post_data_topic": "Tumor models",
+     "post_url": "/blog/caliper-vs-ivis-tumor-burden/",
+     "img_img": "assets/img/blog/caliper-vs-ivis-hero-1200.jpg",
+     "img_width": "1200",
+     "img_height": "675",
+     "tag": "Tumor models",
+     "h3": "Caliper or IVIS? Choosing how to measure tumor burden",
+     "p": "When bioluminescent imaging earns its cost, and when caliper measurements are enough.",
+     "draft": "Barak Yahalom, DVM, 3 min read"
+    },
+    {
+     "post_data_topic": "Metabolic disease",
+     "post_url": "/blog/diet-induced-vs-genetic-type-2-diabetes-models/",
+     "img_img": "assets/img/blog/diet-vs-genetic-t2d-hero-1200.jpg",
+     "img_width": "1200",
+     "img_height": "675",
+     "tag": "Metabolic disease",
+     "h3": "Diet-induced versus genetic models of type 2 diabetes",
+     "p": "What each model can and cannot tell you about a metabolic drug candidate.",
+     "draft": "Joan Flanagan, PhD, 3 min read"
+    },
+    {
+     "post_data_topic": "Gene therapy",
+     "post_url": "/blog/mrna-lnp-liver-depot-in-vivo-study-design/",
+     "img_img": "assets/img/blog/mrna-liver-depot-hero-1200.jpg",
+     "img_width": "1200",
+     "img_height": "675",
+     "tag": "Gene therapy",
+     "h3": "What an mRNA liver depot study looks like in practice",
+     "p": "Lessons from published Fabry disease and hemophilia B studies our scientists co-authored.",
+     "draft": "Barak Yahalom, DVM, 3 min read"
+    }
+   ]
+  },
+  "post_items_2": {
+   "type": "array",
+   "default": [
+    {
+     "post_data_topic": "Lab services",
+     "post_url": "/blog/flow-cytometry-immunophenotyping-in-vivo-studies/",
+     "span": "Image",
+     "svg_icon": "<svg aria-hidden=\"true\" preserveAspectRatio=\"none\" viewBox=\"0 0 600 200\"><path d=\"M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z\" fill=\"#88C6EE\"></path><path d=\"M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z\" fill=\"#4B98D2\"></path></svg>",
+     "tag": "Lab services",
+     "h3": "Getting more from every animal with in-house flow cytometry",
+     "p": "Adding immunophenotyping to an in vivo study without shipping samples.",
+     "draft": "Cindy Hopper, 3 min read"
+    },
+    {
+     "post_data_topic": "Study design",
+     "post_url": "/blog/alzet-osmotic-pump-continuous-dosing/",
+     "span": "Image",
+     "svg_icon": "<svg aria-hidden=\"true\" preserveAspectRatio=\"none\" viewBox=\"0 0 600 200\"><path d=\"M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z\" fill=\"#88C6EE\"></path><path d=\"M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z\" fill=\"#4B98D2\"></path></svg>",
+     "tag": "Study design",
+     "h3": "Continuous dosing with Alzet pumps: when and why",
+     "p": "Choosing between bolus dosing and continuous subcutaneous or ICV delivery.",
+     "draft": "Gil Chacon, 3 min read"
+    },
+    {
+     "post_data_topic": "Autoimmune disease",
+     "post_url": "/blog/rat-models-type-1-diabetes/",
+     "span": "Image",
+     "svg_icon": "<svg aria-hidden=\"true\" preserveAspectRatio=\"none\" viewBox=\"0 0 600 200\"><path d=\"M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z\" fill=\"#88C6EE\"></path><path d=\"M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z\" fill=\"#4B98D2\"></path></svg>",
+     "tag": "Autoimmune disease",
+     "h3": "Spontaneous rat models of type 1 diabetes, explained",
+     "p": "How the LEW.1WR1 and related models are used to test prevention strategies.",
+     "draft": "Joan Flanagan, PhD, 3 min read"
+    }
+   ]
+  },
+  "empty": {
+   "type": "string",
+   "default": "No posts in this topic yet. <a href=\"/contact/\">Ask us a question</a> and it may become the next one."
+  },
+  "h2_2": {
+   "type": "string",
+   "default": "Have a study design question?"
+  },
+  "p_2": {
+   "type": "string",
+   "default": "Our posts come from the questions research teams ask us. Ask yours, and a senior scientist will answer directly."
+  },
+  "btn_light_url": {
+   "type": "string",
+   "default": "/contact/#form"
+  },
+  "btn_light": {
+   "type": "string",
+   "default": "Ask a scientist"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "filters_aria_label": {
+   "type": "text",
+   "label": "Filters screen reader label"
+  },
+  "button": {
+   "type": "html",
+   "label": "Button text"
+  },
+  "button_items": {
+   "type": "items",
+   "label": "Button (list)",
+   "fields": {
+    "button_data_filter": {
+     "type": "text",
+     "label": "Button filter value"
+    },
+    "button": {
+     "type": "html",
+     "label": "Button text"
+    }
+   }
+  },
+  "feature_url": {
+   "type": "url",
+   "label": "Feature link"
+  },
+  "img_img": {
+   "type": "image",
+   "label": "Img image"
+  },
+  "img_width": {
+   "type": "text",
+   "label": "Img image width"
+  },
+  "img_height": {
+   "type": "text",
+   "label": "Img image height"
+  },
+  "tag": {
+   "type": "html",
+   "label": "Topic tag"
+  },
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "meta": {
+   "type": "html",
+   "label": "Byline"
+  },
+  "post_items": {
+   "type": "items",
+   "label": "Post (list)",
+   "fields": {
+    "post_data_topic": {
+     "type": "text",
+     "label": "Post filter topic"
+    },
+    "post_url": {
+     "type": "url",
+     "label": "Post link"
+    },
+    "img_img": {
+     "type": "image",
+     "label": "Img image"
+    },
+    "img_width": {
+     "type": "text",
+     "label": "Img image width"
+    },
+    "img_height": {
+     "type": "text",
+     "label": "Img image height"
+    },
+    "tag": {
+     "type": "html",
+     "label": "Topic tag"
+    },
+    "h3": {
+     "type": "html",
+     "label": "Title"
+    },
+    "p": {
+     "type": "html",
+     "label": "Text"
+    },
+    "draft": {
+     "type": "html",
+     "label": "Draft"
+    }
+   }
+  },
+  "post_items_2": {
+   "type": "items",
+   "label": "Post (list) 2",
+   "fields": {
+    "post_data_topic": {
+     "type": "text",
+     "label": "Post filter topic"
+    },
+    "post_url": {
+     "type": "url",
+     "label": "Post link"
+    },
+    "span": {
+     "type": "html",
+     "label": "Label"
+    },
+    "svg_icon": {
+     "type": "svg",
+     "label": "Icon (SVG)"
+    },
+    "tag": {
+     "type": "html",
+     "label": "Topic tag"
+    },
+    "h3": {
+     "type": "html",
+     "label": "Title"
+    },
+    "p": {
+     "type": "html",
+     "label": "Text"
+    },
+    "draft": {
+     "type": "html",
+     "label": "Draft"
+    }
+   }
+  },
+  "empty": {
+   "type": "html",
+   "label": "Note when nothing matches"
+  },
+  "h2_2": {
+   "type": "html",
+   "label": "Heading 2"
+  },
+  "p_2": {
+   "type": "html",
+   "label": "Text 2"
+  },
+  "btn_light_url": {
+   "type": "url",
+   "label": "Button link"
+  },
+  "btn_light": {
+   "type": "html",
+   "label": "Button text"
+  }
+ }
+}

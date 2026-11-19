@@ -1,0 +1,10 @@
+<div class="wrap body">
+  <aside class="toc" aria-label="{{toc_aria_label}}">
+    <h2>{{&h2}}</h2>
+    <ol>{{#li_items}}<li>{{&li}}</li>{{/li_items}}</ol>
+    <div class="share"><h2 style="margin:0">{{&h2_2}}</h2><a href="{{@a_url}}" data-share="linkedin" target="_blank" rel="noopener" aria-label="{{a_aria_label}}">{{&a}}</a><a href="{{@a_url_2}}" data-share="email">{{&a_2}}</a><button type="button" class="share-copy" data-share="copy">{{&share_copy}}</button><span class="share-status" role="status"></span></div>
+  </aside>
+
+  <article>{{>inner}}</article>
+  <div></div>
+</div>

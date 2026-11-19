@@ -1,0 +1,15 @@
+<section class="sec" aria-labelledby="story-h">
+  <div class="wrap">
+    <div class="story">
+      <h2 class="h2" id="story-h">{{&h2}}</h2>
+      <div class="body">
+        {{#p_items}}<p>{{&p}}</p>
+        {{/p_items}}
+      </div>
+    </div>
+    <dl class="facts">
+      {{#div_items}}<div><dt>{{&dt}}</dt><dd>{{&dd}}</dd></div>
+      {{/div_items}}
+    </dl>
+  </div>
+</section>

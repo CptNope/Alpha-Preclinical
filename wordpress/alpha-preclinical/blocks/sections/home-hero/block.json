@@ -1,0 +1,109 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/home-hero",
+ "title": "Home: hero",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Home.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h1": {
+   "type": "string",
+   "default": "Preclinical in vivo research, designed around your program"
+  },
+  "lead": {
+   "type": "string",
+   "default": "Alpha Preclinical is a Worcester, Massachusetts contract research organization for PK/PD, efficacy and proof-of-concept studies. Senior scientists work with your team to design each study, then deliver it on time and on budget."
+  },
+  "hero_ctas": {
+   "type": "string",
+   "default": "<a class=\"btn btn-light\" href=\"/contact/\">Request a study quote</a>\n        <a class=\"btn btn-ghost-dark\" href=\"#expertise\">Browse disease models</a>"
+  },
+  "div_items": {
+   "type": "array",
+   "default": [
+    {
+     "span_data_count": "20",
+     "span": "20",
+     "text": "+ yrs",
+     "dd": "Average research experience of our scientists, from academia to large pharma"
+    },
+    {
+     "span_data_count": "15",
+     "span": "15",
+     "text": "+ yrs",
+     "dd": "Average industry experience of our technical staff"
+    }
+   ]
+  },
+  "dt": {
+   "type": "string",
+   "default": "USDA"
+  },
+  "dd": {
+   "type": "string",
+   "default": "Compliant surgical suite with a staff veterinarian (DVM)"
+  },
+  "motion_toggle": {
+   "type": "string",
+   "default": "Pause animation"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "header",
+ "alphaFields": {
+  "h1": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "lead": {
+   "type": "html",
+   "label": "Intro"
+  },
+  "hero_ctas": {
+   "type": "html",
+   "label": "Buttons"
+  },
+  "div_items": {
+   "type": "items",
+   "label": "Content (list)",
+   "fields": {
+    "span_data_count": {
+     "type": "text",
+     "label": "Label number to count up to"
+    },
+    "span": {
+     "type": "html",
+     "label": "Label"
+    },
+    "text": {
+     "type": "html",
+     "label": "Text"
+    },
+    "dd": {
+     "type": "html",
+     "label": "Value"
+    }
+   }
+  },
+  "dt": {
+   "type": "html",
+   "label": "Term"
+  },
+  "dd": {
+   "type": "html",
+   "label": "Value"
+  },
+  "motion_toggle": {
+   "type": "html",
+   "label": "Animation button text"
+  }
+ }
+}

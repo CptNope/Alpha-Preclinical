@@ -1,0 +1,127 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/article-table-scroll",
+ "title": "Article table scroll",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: blog post, blog post, blog post, blog post, blog post.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "table_scroll_aria_label": {
+   "type": "string",
+   "default": "Subcutaneous, intraperitoneal or brain delivery"
+  },
+  "th_items": {
+   "type": "array",
+   "default": [
+    {
+     "th": "Route"
+    },
+    {
+     "th": "How"
+    },
+    {
+     "th": "Used for"
+    }
+   ]
+  },
+  "tr_items": {
+   "type": "array",
+   "default": [
+    {
+     "td_items": [
+      {
+       "td": "Subcutaneous"
+      },
+      {
+       "td": "Pump placed under the skin of the back through a small incision"
+      },
+      {
+       "td": "Most systemic dosing, the simplest surgery"
+      }
+     ]
+    },
+    {
+     "td_items": [
+      {
+       "td": "Intraperitoneal"
+      },
+      {
+       "td": "Pump placed in the abdominal cavity"
+      },
+      {
+       "td": "Larger pumps in small animals, or faster uptake for some compounds"
+      }
+     ]
+    },
+    {
+     "td_items": [
+      {
+       "td": "Intravenous"
+      },
+      {
+       "td": "Pump connected to a catheter in a vein"
+      },
+      {
+       "td": "Compounds that must reach blood directly"
+      }
+     ]
+    },
+    {
+     "td_items": [
+      {
+       "td": "Intracerebroventricular (ICV)"
+      },
+      {
+       "td": "Pump under the skin, connected by a catheter to a cannula placed in a brain ventricle"
+      },
+      {
+       "td": "Delivery to the brain past the blood-brain barrier"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "table_scroll_aria_label": {
+   "type": "text",
+   "label": "Table scroll screen reader label"
+  },
+  "th_items": {
+   "type": "items",
+   "label": "Column heading (list)",
+   "fields": {
+    "th": {
+     "type": "html",
+     "label": "Column heading"
+    }
+   }
+  },
+  "tr_items": {
+   "type": "items",
+   "label": "Tr (list)",
+   "fields": {
+    "td_items": {
+     "type": "items",
+     "label": "Cell (list)",
+     "fields": {
+      "td": {
+       "type": "html",
+       "label": "Cell"
+      }
+     }
+    }
+   }
+  }
+ }
+}

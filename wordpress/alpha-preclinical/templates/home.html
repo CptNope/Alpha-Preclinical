@@ -1,43 +1,5 @@
-<!-- wp:template-part {"slug":"header","area":"header","tagName":"div"} /-->
-
-<!-- wp:template-part {"slug":"page-header","tagName":"div","className":"alpha-page-header-part"} /-->
-
-<!-- wp:group {"tagName":"main","anchor":"main","align":"full","className":"alpha-section","layout":{"type":"constrained"}} -->
-<main class="wp-block-group alignfull alpha-section" id="main"><!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide"><!-- wp:alpha/filter-chips {"taxonomy":"category","label":"Filter by topic","showCounts":false} /-->
-
-<!-- wp:query {"queryId":11,"query":{"perPage":12,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"className":"alpha-posts"} -->
-<div class="wp-block-query alpha-posts"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
-<!-- wp:group {"className":"alpha-post-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alpha-post-card"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","sizeSlug":"large"} /-->
-
-<!-- wp:post-terms {"term":"category","className":"alpha-post-card__topic"} /-->
-
-<!-- wp:post-title {"level":2,"isLink":true,"className":"alpha-post-card__title"} /-->
-
-<!-- wp:post-excerpt {"excerptLength":30} /-->
-
-<!-- wp:paragraph {"className":"alpha-post-card__by","metadata":{"bindings":{"content":{"source":"alpha/person","args":{"key":"name","field":"author_member"}}}}} -->
-<p class="alpha-post-card__by"></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-<!-- /wp:post-template -->
-
-<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"}} -->
-<!-- wp:query-pagination-previous /-->
-<!-- wp:query-pagination-numbers /-->
-<!-- wp:query-pagination-next /-->
-<!-- /wp:query-pagination -->
-
-<!-- wp:query-no-results -->
-<!-- wp:paragraph -->
-<p>New posts are on the way. In the meantime, ask a scientist anything about your study.</p>
-<!-- /wp:paragraph -->
-<!-- /wp:query-no-results --></div>
-<!-- /wp:query --></div>
-<!-- /wp:group --></main>
-<!-- /wp:group -->
-
-<!-- wp:alpha/cta-band {"heading":"Have a question about your model?","text":"Our scientists answer study design questions every day. Ask one.","buttonText":"Ask a scientist","secondaryText":"","align":"full"} /-->
-
-<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"div"} /-->
+<!-- wp:alpha/shell -->
+<!-- wp:alpha/page-top {"nav_aria_label":"Breadcrumb","li":"\u003ca href=\u0022/\u0022\u003eHome\u003c/a\u003e","li_2":"Blog","h1":"Notes from the vivarium","p":"Practical guidance on study design, model selection and preclinical readouts, written by the scientists who run Alpha's studies.","motion_toggle":"Pause animation"} /-->
+<!-- wp:alpha/blog-list {"filters_aria_label":"Filter by topic","button":"All","button_items":[{"button_data_filter":"Study design","button":"Study design"},{"button_data_filter":"Tumor models","button":"Tumor models"},{"button_data_filter":"Metabolic disease","button":"Metabolic disease"},{"button_data_filter":"Gene therapy","button":"Gene therapy"},{"button_data_filter":"Autoimmune disease","button":"Autoimmune disease"},{"button_data_filter":"Lab services","button":"Lab services"}],"feature_url":"/blog/how-to-scope-in-vivo-efficacy-study/","img_img":"assets/img/blog/scope-in-vivo-efficacy-study-hero-1200.jpg","img_width":"1200","img_height":"675","tag":"Study design","h2":"How to scope your first in vivo efficacy study","p":"The questions to answer before choosing a model, group size or endpoint, and how they change your timeline and budget.","meta":"Barak Yahalom, DVM, 3 min read","post_items":[{"post_data_topic":"Tumor models","post_url":"/blog/caliper-vs-ivis-tumor-burden/","img_img":"assets/img/blog/caliper-vs-ivis-hero-1200.jpg","img_width":"1200","img_height":"675","tag":"Tumor models","h3":"Caliper or IVIS? Choosing how to measure tumor burden","p":"When bioluminescent imaging earns its cost, and when caliper measurements are enough.","draft":"Barak Yahalom, DVM, 3 min read"},{"post_data_topic":"Metabolic disease","post_url":"/blog/diet-induced-vs-genetic-type-2-diabetes-models/","img_img":"assets/img/blog/diet-vs-genetic-t2d-hero-1200.jpg","img_width":"1200","img_height":"675","tag":"Metabolic disease","h3":"Diet-induced versus genetic models of type 2 diabetes","p":"What each model can and cannot tell you about a metabolic drug candidate.","draft":"Joan Flanagan, PhD, 3 min read"},{"post_data_topic":"Gene therapy","post_url":"/blog/mrna-lnp-liver-depot-in-vivo-study-design/","img_img":"assets/img/blog/mrna-liver-depot-hero-1200.jpg","img_width":"1200","img_height":"675","tag":"Gene therapy","h3":"What an mRNA liver depot study looks like in practice","p":"Lessons from published Fabry disease and hemophilia B studies our scientists co-authored.","draft":"Barak Yahalom, DVM, 3 min read"}],"post_items_2":[{"post_data_topic":"Lab services","post_url":"/blog/flow-cytometry-immunophenotyping-in-vivo-studies/","span":"Image","svg_icon":"\u003csvg aria-hidden=\u0022true\u0022 preserveAspectRatio=\u0022none\u0022 viewBox=\u00220 0 600 200\u0022\u003e\u003cpath d=\u0022M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z\u0022 fill=\u0022#88C6EE\u0022\u003e\u003c/path\u003e\u003cpath d=\u0022M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z\u0022 fill=\u0022#4B98D2\u0022\u003e\u003c/path\u003e\u003c/svg\u003e","tag":"Lab services","h3":"Getting more from every animal with in-house flow cytometry","p":"Adding immunophenotyping to an in vivo study without shipping samples.","draft":"Cindy Hopper, 3 min read"},{"post_data_topic":"Study design","post_url":"/blog/alzet-osmotic-pump-continuous-dosing/","span":"Image","svg_icon":"\u003csvg aria-hidden=\u0022true\u0022 preserveAspectRatio=\u0022none\u0022 viewBox=\u00220 0 600 200\u0022\u003e\u003cpath d=\u0022M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z\u0022 fill=\u0022#88C6EE\u0022\u003e\u003c/path\u003e\u003cpath d=\u0022M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z\u0022 fill=\u0022#4B98D2\u0022\u003e\u003c/path\u003e\u003c/svg\u003e","tag":"Study design","h3":"Continuous dosing with Alzet pumps: when and why","p":"Choosing between bolus dosing and continuous subcutaneous or ICV delivery.","draft":"Gil Chacon, 3 min read"},{"post_data_topic":"Autoimmune disease","post_url":"/blog/rat-models-type-1-diabetes/","span":"Image","svg_icon":"\u003csvg aria-hidden=\u0022true\u0022 preserveAspectRatio=\u0022none\u0022 viewBox=\u00220 0 600 200\u0022\u003e\u003cpath d=\u0022M0 90 C120 50 300 140 420 90 S560 60 600 76 L600 200 L0 200 Z\u0022 fill=\u0022#88C6EE\u0022\u003e\u003c/path\u003e\u003cpath d=\u0022M0 146 C130 114 290 186 420 146 S560 122 600 134 L600 200 L0 200 Z\u0022 fill=\u0022#4B98D2\u0022\u003e\u003c/path\u003e\u003c/svg\u003e","tag":"Autoimmune disease","h3":"Spontaneous rat models of type 1 diabetes, explained","p":"How the LEW.1WR1 and related models are used to test prevention strategies.","draft":"Joan Flanagan, PhD, 3 min read"}],"empty":"No posts in this topic yet. \u003ca href=\u0022/contact/\u0022\u003eAsk us a question\u003c/a\u003e and it may become the next one.","h2_2":"Have a study design question?","p_2":"Our posts come from the questions research teams ask us. Ask yours, and a senior scientist will answer directly.","btn_light_url":"/contact/#form","btn_light":"Ask a scientist"} /-->
+<!-- wp:alpha/site-footer /-->
+<!-- /wp:alpha/shell -->

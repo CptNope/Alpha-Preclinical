@@ -1,0 +1,54 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/article-inline-cta",
+ "title": "Article inline cta",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: blog post, blog post, blog post, blog post, blog post, blog post….",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "inline_cta_aria_label": {
+   "type": "string",
+   "default": "Talk to a scientist"
+  },
+  "p": {
+   "type": "string",
+   "default": "<b>Need continuous or brain-targeted dosing?</b> A senior scientist can review your model, dose and endpoints before you commit animals."
+  },
+  "area_cta_url": {
+   "type": "string",
+   "default": "/contact/#form"
+  },
+  "area_cta": {
+   "type": "string",
+   "default": "Talk to a scientist"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "inline_cta_aria_label": {
+   "type": "text",
+   "label": "Inline cta screen reader label"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "area_cta_url": {
+   "type": "url",
+   "label": "Area cta link"
+  },
+  "area_cta": {
+   "type": "html",
+   "label": "Area cta"
+  }
+ }
+}

@@ -12,7 +12,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ALPHA_THEME_VERSION', '1.1.1' );
+define( 'ALPHA_THEME_VERSION', '1.2.0' );
 define( 'ALPHA_THEME_DIR', get_template_directory() );
 define( 'ALPHA_THEME_URI', get_template_directory_uri() );
 define( 'ALPHA_MIN_WP', '6.9' );
@@ -40,6 +40,9 @@ require_once ALPHA_THEME_DIR . '/inc/settings.php';
 require_once ALPHA_THEME_DIR . '/inc/post-types.php';
 require_once ALPHA_THEME_DIR . '/inc/bindings.php';
 require_once ALPHA_THEME_DIR . '/inc/blocks.php';
+require_once ALPHA_THEME_DIR . '/inc/sections.php';
+require_once ALPHA_THEME_DIR . '/inc/section-forms.php';
+require_once ALPHA_THEME_DIR . '/inc/section-data.php';
 require_once ALPHA_THEME_DIR . '/inc/forms.php';
 require_once ALPHA_THEME_DIR . '/inc/schema.php';
 require_once ALPHA_THEME_DIR . '/inc/redirects.php';
@@ -88,7 +91,7 @@ add_action( 'wp_enqueue_scripts', 'alpha_enqueue_assets' );
  * Preload the two fonts used above the fold.
  */
 function alpha_preload_fonts() {
-	foreach ( array( 'BricolageGrotesque-SemiBold.woff2', 'Figtree-400.woff2' ) as $file ) {
+	foreach ( array( 'BricolageGrotesque-Variable.woff2', 'Figtree-400.woff2' ) as $file ) {
 		printf(
 			'<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
 			esc_url( ALPHA_THEME_URI . '/assets/fonts/' . $file )
@@ -101,6 +104,9 @@ add_action( 'wp_head', 'alpha_preload_fonts', 1 );
  * Skip link to the main content (block themes print one only for some templates).
  */
 function alpha_skip_link() {
+	if ( function_exists( 'alpha_uses_shell' ) && alpha_uses_shell() ) {
+		return; // The design's page frame has its own skip link.
+	}
 	echo '<a class="alpha-skip" href="#main">' . esc_html__( 'Skip to main content', 'alpha-preclinical' ) . '</a>';
 }
 add_action( 'wp_body_open', 'alpha_skip_link', 1 );

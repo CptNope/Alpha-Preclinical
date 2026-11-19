@@ -1,0 +1,75 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/tumor-models-endpoints",
+ "title": "Tumor models: endpoints",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Tumor models.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Endpoints measured in house"
+  },
+  "end_items": {
+   "type": "array",
+   "default": [
+    {
+     "h3": "Live imaging",
+     "p": "Whole-body bioluminescence and fluorescence on our Spectrum IVIS, plus ex vivo tissue imaging at termination.",
+     "a_url": "/services/#ivis",
+     "a": "IVIS imaging"
+    },
+    {
+     "h3": "Immune profiling",
+     "p": "Multicolor flow cytometry on tumor, blood and spleen, analyzed in FlowJo, with ELISA and cytokine panels.",
+     "a_url": "/services/#in-vitro",
+     "a": "In vitro laboratory"
+    },
+    {
+     "h3": "Tissue analysis",
+     "p": "Histology and immunohistochemistry on tumors and organs, plus CBC and serum chemistry for tolerability.",
+     "a_url": "/services/#in-vitro",
+     "a": "In vitro laboratory"
+    }
+   ]
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "end_items": {
+   "type": "items",
+   "label": "End (list)",
+   "fields": {
+    "h3": {
+     "type": "html",
+     "label": "Title"
+    },
+    "p": {
+     "type": "html",
+     "label": "Text"
+    },
+    "a_url": {
+     "type": "url",
+     "label": "Link link"
+    },
+    "a": {
+     "type": "html",
+     "label": "Link text"
+    }
+   }
+  }
+ }
+}

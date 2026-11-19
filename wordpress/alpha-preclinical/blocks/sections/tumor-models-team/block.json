@@ -1,0 +1,81 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/tumor-models-team",
+ "title": "Tumor models: team",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Tumor models.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Your study team"
+  },
+  "note": {
+   "type": "string",
+   "default": "The scientists and technicians who design, run and report oncology studies at Alpha."
+  },
+  "li_items": {
+   "type": "array",
+   "default": [
+    {
+     "a_url": "/team/#barak-yahalom",
+     "img_img": "assets/img/team/barak-yahalom.jpg",
+     "span": "<b>Barak Yahalom, DVM</b><small>Lead scientist. Study design, in vivo pharmacology and reporting</small>"
+    },
+    {
+     "a_url": "/team/#gil-chacon",
+     "img_img": "assets/img/team/gil-chacon.jpg",
+     "span": "<b>Gil Chacon</b><small>Tumor implantation, dosing, surgery and imaging</small>"
+    },
+    {
+     "a_url": "/team/#cindy-hopper",
+     "img_img": "assets/img/team/cindy-hopper.jpg",
+     "span": "<b>Cindy Hopper</b><small>Flow cytometry, cytokines and histology endpoints</small>"
+    },
+    {
+     "a_url": "/team/#ashley-kolofsky",
+     "img_img": "assets/img/team/ashley-kolofsky.jpg",
+     "span": "<b>Ashley Kolofsky</b><small>Study scheduling and vivarium operations</small>"
+    }
+   ]
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "note": {
+   "type": "html",
+   "label": "Note"
+  },
+  "li_items": {
+   "type": "items",
+   "label": "List item (list)",
+   "fields": {
+    "a_url": {
+     "type": "url",
+     "label": "Link link"
+    },
+    "img_img": {
+     "type": "image",
+     "label": "Img image"
+    },
+    "span": {
+     "type": "html",
+     "label": "Label"
+    }
+   }
+  }
+ }
+}

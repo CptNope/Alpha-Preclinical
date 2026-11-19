@@ -1,0 +1,20 @@
+<header class="top">
+  {{>nav}}
+  <div class="wrap top-body">
+    <div>
+      <nav aria-label="{{nav_aria_label}}"><ol class="crumbs"><li>{{&li}}</li><li aria-current="page">{{&li_2}}</li></ol></nav>
+      <h1>{{&h1}}</h1>
+      <p class="lead-in">{{&lead_in}}</p>
+    </div>
+    <nav aria-label="{{nav_aria_label_2}}"><ul class="areas-nav">{{#li_items}}<li>{{&li}}</li>{{/li_items}}</ul></nav>
+  </div>
+  <div class="strata" aria-hidden="true">
+    <svg preserveAspectRatio="none" viewBox="0 0 1440 200">
+      <path class="wv wv1" d="M0 70 C180 30 540 110 720 70 S1260 110 1440 70 S1980 110 2160 70 S2700 110 2880 70 L2880 200 L0 200 Z" fill="#1E58A0"></path>
+      <path class="wv wv2" d="M0 110 C180 76 540 144 720 110 S1260 144 1440 110 S1980 144 2160 110 S2700 144 2880 110 L2880 200 L0 200 Z" fill="#4B98D2"></path>
+      <path class="wv wv3" d="M0 144 C180 118 540 170 720 144 S1260 170 1440 144 S1980 170 2160 144 S2700 170 2880 144 L2880 200 L0 200 Z" fill="#88C6EE"></path>
+      <path class="wv wv4" d="M0 174 C180 156 540 192 720 174 S1260 192 1440 174 S1980 192 2160 174 S2700 192 2880 174 L2880 200 L0 200 Z" fill="#FFFFFF"></path>
+    </svg>
+  </div>
+  <button class="motion-toggle" type="button" aria-pressed="false" data-motion>{{&motion_toggle}}</button>
+</header>

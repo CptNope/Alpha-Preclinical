@@ -1,0 +1,54 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/team-cta",
+ "title": "Team: cta",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Team.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Put this team on your program"
+  },
+  "p": {
+   "type": "string",
+   "default": "Every study is designed and run by the scientists above. Tell us what you need to prove, and the right lead will follow up. Researcher yourself? <a class=\"on-dark\" href=\"/careers/\">See open roles</a>."
+  },
+  "btn_light_url": {
+   "type": "string",
+   "default": "/contact/#form"
+  },
+  "btn_light": {
+   "type": "string",
+   "default": "Request a study quote"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "btn_light_url": {
+   "type": "url",
+   "label": "Button link"
+  },
+  "btn_light": {
+   "type": "html",
+   "label": "Button text"
+  }
+ }
+}

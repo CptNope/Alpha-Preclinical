@@ -1,0 +1,134 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/home-steps",
+ "title": "Home: steps",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Home.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "How a study runs with Alpha"
+  },
+  "p": {
+   "type": "string",
+   "default": "One scientific point of contact from first call to final report. Each stage goes one layer deeper."
+  },
+  "h3": {
+   "type": "string",
+   "default": "Scope the question"
+  },
+  "p_2": {
+   "type": "string",
+   "default": "We talk through your compound, target and decision point, and recommend the model and endpoints that answer it."
+  },
+  "h3_2": {
+   "type": "string",
+   "default": "Design the protocol"
+  },
+  "p_3": {
+   "type": "string",
+   "default": "You receive a study design, timeline and quote. We prepare formulations, vehicles and induction reagents."
+  },
+  "h3_3": {
+   "type": "string",
+   "default": "Run the study"
+  },
+  "p_4": {
+   "type": "string",
+   "default": "Dosing, imaging, sampling and in-life observations, with progress updates on the schedule you choose."
+  },
+  "h3_4": {
+   "type": "string",
+   "default": "Report the data"
+  },
+  "p_5": {
+   "type": "string",
+   "default": "Analyzed results, raw data and a review call with the scientist who ran your study."
+  },
+  "h3_5": {
+   "type": "string",
+   "default": "Start with step one"
+  },
+  "p_6": {
+   "type": "string",
+   "default": "Tell us your compound, target and decision point. A senior scientist will recommend the model and endpoints that answer it."
+  },
+  "btn_light_url": {
+   "type": "string",
+   "default": "/contact/#form"
+  },
+  "btn_light": {
+   "type": "string",
+   "default": "Talk to a scientist"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "h3": {
+   "type": "html",
+   "label": "Title"
+  },
+  "p_2": {
+   "type": "html",
+   "label": "Text 2"
+  },
+  "h3_2": {
+   "type": "html",
+   "label": "Title 2"
+  },
+  "p_3": {
+   "type": "html",
+   "label": "Text 3"
+  },
+  "h3_3": {
+   "type": "html",
+   "label": "Title 3"
+  },
+  "p_4": {
+   "type": "html",
+   "label": "Text 4"
+  },
+  "h3_4": {
+   "type": "html",
+   "label": "Title 4"
+  },
+  "p_5": {
+   "type": "html",
+   "label": "Text 5"
+  },
+  "h3_5": {
+   "type": "html",
+   "label": "Title 5"
+  },
+  "p_6": {
+   "type": "html",
+   "label": "Text 6"
+  },
+  "btn_light_url": {
+   "type": "url",
+   "label": "Button link"
+  },
+  "btn_light": {
+   "type": "html",
+   "label": "Button text"
+  }
+ }
+}

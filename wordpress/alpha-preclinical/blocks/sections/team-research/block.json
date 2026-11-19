@@ -1,0 +1,436 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/team-research",
+ "title": "Team: research",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Team.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "grp_h": {
+   "type": "string",
+   "default": "Founding research team"
+  },
+  "img_img": {
+   "type": "string",
+   "default": "assets/img/team/ashley-kolofsky.jpg"
+  },
+  "img_alt": {
+   "type": "string",
+   "default": "Ashley Kolofsky"
+  },
+  "alt_img": {
+   "type": "string",
+   "default": "assets/img/team/ashley-kolofsky-alt.jpg"
+  },
+  "h3": {
+   "type": "string",
+   "default": "Ashley Kolofsky"
+  },
+  "role": {
+   "type": "string",
+   "default": "Study Team Supervisor and Vivarium Operations"
+  },
+  "li_url": {
+   "type": "string",
+   "default": "https://www.linkedin.com/in/ashley-kolofsky-435807196/"
+  },
+  "li_aria_label": {
+   "type": "string",
+   "default": "Ashley Kolofsky on LinkedIn (opens in new tab)"
+  },
+  "li": {
+   "type": "string",
+   "default": "LinkedIn"
+  },
+  "p_items": {
+   "type": "array",
+   "default": [
+    {
+     "p": "Ashley Kolofsky supervises Alpha Preclinical's study team and oversees day-to-day vivarium operations at its Worcester facility. A founding member of the research team since 2020, she coordinates study schedules so that dosing, sampling and observations happen when the protocol says they should, and she leads Alpha's rodent colony management and custom breeding programs."
+    },
+    {
+     "p": "She holds a BS in zoology from the University of Maine, Orono, and completed field studies with the School for Field Studies in Karatu, Tanzania. She brings that grounding in animal biology and welfare to every study, and values applying it to research with a direct human impact."
+    }
+   ]
+  },
+  "h4": {
+   "type": "string",
+   "default": "Leads"
+  },
+  "li_items": {
+   "type": "array",
+   "default": [
+    {
+     "li": "<a href=\"/services/#colony\">Colony management</a>"
+    },
+    {
+     "li": "<a href=\"/services/#colony\">Study scheduling and vivarium operations</a>"
+    }
+   ]
+  },
+  "h4_2": {
+   "type": "string",
+   "default": "Education"
+  },
+  "li_items_2": {
+   "type": "array",
+   "default": [
+    {
+     "li": "BS, Zoology, University of Maine, Orono"
+    },
+    {
+     "li": "Field studies, School for Field Studies, Karatu, Tanzania"
+    }
+   ]
+  },
+  "img_img_2": {
+   "type": "string",
+   "default": "assets/img/team/cindy-hopper.jpg"
+  },
+  "img_alt_2": {
+   "type": "string",
+   "default": "Cindy Hopper"
+  },
+  "alt_img_2": {
+   "type": "string",
+   "default": "assets/img/team/cindy-hopper-alt.jpg"
+  },
+  "h3_2": {
+   "type": "string",
+   "default": "Cindy Hopper"
+  },
+  "role_2": {
+   "type": "string",
+   "default": "Founding Scientist, In Vitro Laboratory Services"
+  },
+  "p_items_2": {
+   "type": "array",
+   "default": [
+    {
+     "p": "Cindy Hopper is a founding scientist at Alpha Preclinical and leads its in vitro laboratory services: multicolor flow cytometry and immunophenotyping, ELISA and cytokine assays, CBC and serum chemistry, primary cell isolation, and histology and immunohistochemistry on the samples clients' in vivo studies generate. Because the lab sits beside the vivarium, samples are processed fresh, on site."
+    },
+    {
+     "p": "She also leads project development, working with client teams to solve the technical problems that stand between a program and its study goals. Cindy earned an associate degree at Quinsigamond Community College and continued her studies at Worcester Polytechnic Institute."
+    },
+    {
+     "p": "She is motivated by biotech's capacity to change what is possible for patients, and by preventive approaches to medicine."
+    }
+   ]
+  },
+  "h4_3": {
+   "type": "string",
+   "default": "Leads"
+  },
+  "li_items_3": {
+   "type": "array",
+   "default": [
+    {
+     "li": "<a href=\"/services/#in-vitro\">In vitro laboratory services</a>"
+    },
+    {
+     "li": "<a href=\"/blog/flow-cytometry-immunophenotyping-in-vivo-studies/\">Flow cytometry and immunophenotyping</a>"
+    }
+   ]
+  },
+  "h4_4": {
+   "type": "string",
+   "default": "Education"
+  },
+  "li_items_4": {
+   "type": "array",
+   "default": [
+    {
+     "li": "AS, Quinsigamond Community College"
+    },
+    {
+     "li": "Continuing studies, Worcester Polytechnic Institute"
+    }
+   ]
+  },
+  "img_img_3": {
+   "type": "string",
+   "default": "assets/img/team/gil-chacon.jpg"
+  },
+  "img_alt_3": {
+   "type": "string",
+   "default": "Gil Chacon"
+  },
+  "alt_img_3": {
+   "type": "string",
+   "default": "assets/img/team/gil-chacon-alt.jpg"
+  },
+  "h3_3": {
+   "type": "string",
+   "default": "Gil Chacon"
+  },
+  "role_3": {
+   "type": "string",
+   "default": "In Vivo Studies, Surgical Support and Training"
+  },
+  "p_items_3": {
+   "type": "array",
+   "default": [
+    {
+     "p": "Gil Chacon executes in vivo studies at Alpha Preclinical, providing technical and surgical support, training staff and keeping the research facility running. He has been part of the founding research team since 2020."
+    },
+    {
+     "p": "Gil has nearly 20 years of experience in preclinical contract research. Before Alpha, he was training and development coordinator at a preclinical CRO, where he made sure staff were fully trained before study assignment, supervised day-to-day study performance, managed assigned programs and maintained the research facility. Over those years he helped build that company's facility operations and study execution, and became proficient in nearly every aspect of in vivo contract research."
+    },
+    {
+     "p": "He is especially motivated by vaccine development research."
+    }
+   ]
+  },
+  "h4_5": {
+   "type": "string",
+   "default": "Supports"
+  },
+  "li_items_5": {
+   "type": "array",
+   "default": [
+    {
+     "li": "<a href=\"/services/#surgery\">Surgical services</a>"
+    },
+    {
+     "li": "<a href=\"/expertise/\">In vivo studies</a>"
+    },
+    {
+     "li": "<a href=\"/careers/\">Staff training</a>"
+    }
+   ]
+  },
+  "h4_6": {
+   "type": "string",
+   "default": "Experience"
+  },
+  "li_items_6": {
+   "type": "array",
+   "default": [
+    {
+     "li": "Nearly 20 years in preclinical research"
+    },
+    {
+     "li": "Former training and development coordinator at a preclinical CRO"
+    }
+   ]
+  },
+  "h4_7": {
+   "type": "string",
+   "default": "Education"
+  },
+  "li_2": {
+   "type": "string",
+   "default": "Second Language Certificate, Worcester State College"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "grp_h": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "img_img": {
+   "type": "image",
+   "label": "Img image"
+  },
+  "img_alt": {
+   "type": "text",
+   "label": "Img image description (alt text)"
+  },
+  "alt_img": {
+   "type": "image",
+   "label": "Alt image"
+  },
+  "h3": {
+   "type": "html",
+   "label": "Title"
+  },
+  "role": {
+   "type": "html",
+   "label": "Job title"
+  },
+  "li_url": {
+   "type": "url",
+   "label": "List item link"
+  },
+  "li_aria_label": {
+   "type": "text",
+   "label": "List item screen reader label"
+  },
+  "li": {
+   "type": "html",
+   "label": "List item"
+  },
+  "p_items": {
+   "type": "items",
+   "label": "Text (list)",
+   "fields": {
+    "p": {
+     "type": "html",
+     "label": "Text"
+    }
+   }
+  },
+  "h4": {
+   "type": "html",
+   "label": "Subheading"
+  },
+  "li_items": {
+   "type": "items",
+   "label": "List item (list)",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "h4_2": {
+   "type": "html",
+   "label": "Subheading 2"
+  },
+  "li_items_2": {
+   "type": "items",
+   "label": "List item (list) 2",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "img_img_2": {
+   "type": "image",
+   "label": "Img image 2"
+  },
+  "img_alt_2": {
+   "type": "text",
+   "label": "Img image description (alt text) 2"
+  },
+  "alt_img_2": {
+   "type": "image",
+   "label": "Alt image 2"
+  },
+  "h3_2": {
+   "type": "html",
+   "label": "Title 2"
+  },
+  "role_2": {
+   "type": "html",
+   "label": "Job title 2"
+  },
+  "p_items_2": {
+   "type": "items",
+   "label": "Text (list) 2",
+   "fields": {
+    "p": {
+     "type": "html",
+     "label": "Text"
+    }
+   }
+  },
+  "h4_3": {
+   "type": "html",
+   "label": "Subheading 3"
+  },
+  "li_items_3": {
+   "type": "items",
+   "label": "List item (list) 3",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "h4_4": {
+   "type": "html",
+   "label": "Subheading 4"
+  },
+  "li_items_4": {
+   "type": "items",
+   "label": "List item (list) 4",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "img_img_3": {
+   "type": "image",
+   "label": "Img image 3"
+  },
+  "img_alt_3": {
+   "type": "text",
+   "label": "Img image description (alt text) 3"
+  },
+  "alt_img_3": {
+   "type": "image",
+   "label": "Alt image 3"
+  },
+  "h3_3": {
+   "type": "html",
+   "label": "Title 3"
+  },
+  "role_3": {
+   "type": "html",
+   "label": "Job title 3"
+  },
+  "p_items_3": {
+   "type": "items",
+   "label": "Text (list) 3",
+   "fields": {
+    "p": {
+     "type": "html",
+     "label": "Text"
+    }
+   }
+  },
+  "h4_5": {
+   "type": "html",
+   "label": "Subheading 5"
+  },
+  "li_items_5": {
+   "type": "items",
+   "label": "List item (list) 5",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "h4_6": {
+   "type": "html",
+   "label": "Subheading 6"
+  },
+  "li_items_6": {
+   "type": "items",
+   "label": "List item (list) 6",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "h4_7": {
+   "type": "html",
+   "label": "Subheading 7"
+  },
+  "li_2": {
+   "type": "html",
+   "label": "List item 2"
+  }
+ }
+}

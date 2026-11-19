@@ -1,0 +1,137 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/home-expertise",
+ "title": "Home: expertise",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Home.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Disease models and study expertise"
+  },
+  "p": {
+   "type": "string",
+   "default": "Validated rodent models and study designs across six therapeutic areas. Need a model from the literature or a custom variation? We build it with you."
+  },
+  "btn_primary_url": {
+   "type": "string",
+   "default": "/expertise/"
+  },
+  "btn_primary": {
+   "type": "string",
+   "default": "Explore all expertise"
+  },
+  "li_items": {
+   "type": "array",
+   "default": [
+    {
+     "model_url": "/expertise/#pk-pd",
+     "h3": "PK/PD",
+     "p": "Pharmacokinetic and pharmacodynamic studies for lead optimization, dose selection and exposure-response.",
+     "img_img": "assets/img/team/barak-yahalom.jpg",
+     "text": "Led by Barak Yahalom, DVM",
+     "span": "View studies"
+    },
+    {
+     "model_url": "/expertise/#gene-therapy",
+     "h3": "Gene therapy",
+     "p": "In vivo delivery, expression and efficacy studies for viral and non-viral gene therapy programs.",
+     "img_img": "assets/img/team/barak-yahalom.jpg",
+     "text": "Led by Barak Yahalom, DVM",
+     "span": "View studies"
+    },
+    {
+     "model_url": "/expertise/#autoimmune",
+     "h3": "Autoimmune disease",
+     "p": "Induced and spontaneous models with flow cytometry immunophenotyping and cytokine readouts.",
+     "img_img": "assets/img/team/joan-flanagan.jpg",
+     "text": "Led by Joan Flanagan, PhD",
+     "span": "View models"
+    },
+    {
+     "model_url": "/expertise/#metabolic",
+     "h3": "Metabolic disease",
+     "p": "Diet-induced and genetic models of obesity, diabetes and liver disease, with serum chemistry in house.",
+     "img_img": "assets/img/team/joan-flanagan.jpg",
+     "text": "Led by Joan Flanagan, PhD",
+     "span": "View models"
+    },
+    {
+     "model_url": "/expertise/#fibrosis",
+     "h3": "Inflammation and fibrosis",
+     "p": "Acute inflammation and organ fibrosis models, with histology and immunohistochemistry endpoints.",
+     "img_img": "assets/img/team/barak-yahalom.jpg",
+     "text": "Led by Barak Yahalom, DVM",
+     "span": "View models"
+    },
+    {
+     "model_url": "/expertise/#tumor",
+     "h3": "Tumor models",
+     "p": "Syngeneic and xenograft efficacy studies, tracked by caliper and by bioluminescent IVIS imaging.",
+     "img_img": "assets/img/team/barak-yahalom.jpg",
+     "text": "Led by Barak Yahalom, DVM",
+     "span": "View models"
+    }
+   ]
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "btn_primary_url": {
+   "type": "url",
+   "label": "Button link"
+  },
+  "btn_primary": {
+   "type": "html",
+   "label": "Button text"
+  },
+  "li_items": {
+   "type": "items",
+   "label": "List item (list)",
+   "fields": {
+    "model_url": {
+     "type": "url",
+     "label": "Model link"
+    },
+    "h3": {
+     "type": "html",
+     "label": "Title"
+    },
+    "p": {
+     "type": "html",
+     "label": "Text"
+    },
+    "img_img": {
+     "type": "image",
+     "label": "Img image"
+    },
+    "text": {
+     "type": "html",
+     "label": "Text"
+    },
+    "span": {
+     "type": "html",
+     "label": "Label"
+    }
+   }
+  }
+ }
+}

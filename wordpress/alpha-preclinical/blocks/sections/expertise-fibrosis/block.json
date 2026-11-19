@@ -1,0 +1,184 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/expertise-fibrosis",
+ "title": "Expertise: fibrosis",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Expertise.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Inflammation and fibrosis"
+  },
+  "desc": {
+   "type": "string",
+   "default": "Rodent models of inflammation and inflammatory pain are widely used to study how tissue injury leads to persistent pain and disease. We provide complete evaluations of anti-inflammatory and anti-fibrotic compounds."
+  },
+  "img_img": {
+   "type": "string",
+   "default": "assets/img/team/barak-yahalom.jpg"
+  },
+  "div": {
+   "type": "string",
+   "default": "<small>Led by</small><b><a href=\"/team/#barak-yahalom\">Barak Yahalom, DVM</a></b>"
+  },
+  "area_cta_url": {
+   "type": "string",
+   "default": "/contact/?study=Inflammation%20and%20fibrosis#form"
+  },
+  "area_cta": {
+   "type": "string",
+   "default": "Plan your inflammation or fibrosis study"
+  },
+  "th_items": {
+   "type": "array",
+   "default": [
+    {
+     "th": "Model"
+    },
+    {
+     "th": "Details"
+    }
+   ]
+  },
+  "tr_items": {
+   "type": "array",
+   "default": [
+    {
+     "td_items": [
+      {
+       "td": "Osteoarthritis"
+      },
+      {
+       "td": "Complete Freund's Adjuvant (CFA)-induced"
+      }
+     ]
+    },
+    {
+     "td_items": [
+      {
+       "td": "Pulmonary fibrosis"
+      },
+      {
+       "td": "Bleomycin-induced"
+      }
+     ]
+    },
+    {
+     "td_items": [
+      {
+       "td": "Systemic inflammation"
+      },
+      {
+       "td": "LPS-induced"
+      }
+     ]
+    },
+    {
+     "td_items": [
+      {
+       "td": "Tissues evaluated"
+      },
+      {
+       "td": "Skin, paw, muscle, joint and visceral organs"
+      }
+     ]
+    }
+   ]
+  },
+  "h3": {
+   "type": "string",
+   "default": "Related research by our scientists"
+  },
+  "li": {
+   "type": "string",
+   "default": "<a aria-label=\"Antinociceptive Effect of Vapocoolant Medium Stream Spray on Hotplate Latency in Rat Pups (PDF, opens in new tab)\" href=\"https://www.alphapreclinical.com/_files/ugd/095141_429bf0f37d9f4601a9efc1b3b3eab065.pdf\" rel=\"noopener\" target=\"_blank\">Antinociceptive Effect of Vapocoolant Medium Stream Spray on Hotplate Latency in Rat Pups</a><span>Sethna NF, Fish B, Yahalom B, et al.</span>"
+  },
+  "h3_2": {
+   "type": "string",
+   "default": "Read more on the blog"
+  },
+  "li_2": {
+   "type": "string",
+   "default": "<a href=\"/blog/flow-cytometry-immunophenotyping-in-vivo-studies/\">Getting more from every animal with in-house flow cytometry</a>"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "desc": {
+   "type": "html",
+   "label": "Desc"
+  },
+  "img_img": {
+   "type": "image",
+   "label": "Img image"
+  },
+  "div": {
+   "type": "html",
+   "label": "Content"
+  },
+  "area_cta_url": {
+   "type": "url",
+   "label": "Area cta link"
+  },
+  "area_cta": {
+   "type": "html",
+   "label": "Area cta"
+  },
+  "th_items": {
+   "type": "items",
+   "label": "Column heading (list)",
+   "fields": {
+    "th": {
+     "type": "html",
+     "label": "Column heading"
+    }
+   }
+  },
+  "tr_items": {
+   "type": "items",
+   "label": "Tr (list)",
+   "fields": {
+    "td_items": {
+     "type": "items",
+     "label": "Cell (list)",
+     "fields": {
+      "td": {
+       "type": "html",
+       "label": "Cell"
+      }
+     }
+    }
+   }
+  },
+  "h3": {
+   "type": "html",
+   "label": "Title"
+  },
+  "li": {
+   "type": "html",
+   "label": "List item"
+  },
+  "h3_2": {
+   "type": "html",
+   "label": "Title 2"
+  },
+  "li_2": {
+   "type": "html",
+   "label": "List item 2"
+  }
+ }
+}

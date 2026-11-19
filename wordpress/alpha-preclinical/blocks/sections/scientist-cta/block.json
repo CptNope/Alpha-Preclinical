@@ -1,0 +1,54 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/scientist-cta",
+ "title": "Talk to a scientist band",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Expertise, Services, About.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Need a model that isn't listed?"
+  },
+  "p": {
+   "type": "string",
+   "default": "We adapt existing models and set up models from the literature. Tell us what you need to show and we'll recommend a design."
+  },
+  "btn_light_url": {
+   "type": "string",
+   "default": "/contact/"
+  },
+  "btn_light": {
+   "type": "string",
+   "default": "Request a study quote"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "btn_light_url": {
+   "type": "url",
+   "label": "Button link"
+  },
+  "btn_light": {
+   "type": "html",
+   "label": "Button text"
+  }
+ }
+}

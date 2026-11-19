@@ -1,0 +1,150 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/careers-apply",
+ "title": "Careers: apply",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Careers.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Apply"
+  },
+  "intro": {
+   "type": "string",
+   "default": "Send your resume and a few lines about your experience. We read every application and will contact you if there's a fit."
+  },
+  "label": {
+   "type": "string",
+   "default": "First name"
+  },
+  "label_2": {
+   "type": "string",
+   "default": "Last name"
+  },
+  "label_3": {
+   "type": "string",
+   "default": "Email"
+  },
+  "err": {
+   "type": "string",
+   "default": "Enter an email address so we can reply."
+  },
+  "label_4": {
+   "type": "string",
+   "default": "Phone <small>(optional)</small>"
+  },
+  "label_5": {
+   "type": "string",
+   "default": "Role"
+  },
+  "label_6": {
+   "type": "string",
+   "default": "Resume <small>(PDF or Word)</small>"
+  },
+  "label_7": {
+   "type": "string",
+   "default": "Tell us about your experience <small>(optional)</small>"
+  },
+  "textarea_placeholder": {
+   "type": "string",
+   "default": "Species, techniques, CRO or lab experience, and what you'd like to do next"
+  },
+  "btn_primary": {
+   "type": "string",
+   "default": "Submit application"
+  },
+  "p": {
+   "type": "string",
+   "default": "We use your details only to review your application. See our <a href=\"/privacy-policy/\">privacy policy</a>."
+  },
+  "h3": {
+   "type": "string",
+   "default": "Application submitted"
+  },
+  "p_2": {
+   "type": "string",
+   "default": "Thanks for applying for <span data-role-out=\"\"></span>. We'll reply to <span data-email-out=\"\"></span> if there's a fit."
+  },
+  "button": {
+   "type": "string",
+   "default": "Submit another application"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "intro": {
+   "type": "html",
+   "label": "Intro"
+  },
+  "label": {
+   "type": "html",
+   "label": "Label"
+  },
+  "label_2": {
+   "type": "html",
+   "label": "Label 2"
+  },
+  "label_3": {
+   "type": "html",
+   "label": "Label 3"
+  },
+  "err": {
+   "type": "html",
+   "label": "Err"
+  },
+  "label_4": {
+   "type": "html",
+   "label": "Label 4"
+  },
+  "label_5": {
+   "type": "html",
+   "label": "Label 5"
+  },
+  "label_6": {
+   "type": "html",
+   "label": "Label 6"
+  },
+  "label_7": {
+   "type": "html",
+   "label": "Label 7"
+  },
+  "textarea_placeholder": {
+   "type": "text",
+   "label": "Textarea placeholder"
+  },
+  "btn_primary": {
+   "type": "html",
+   "label": "Button text"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "h3": {
+   "type": "html",
+   "label": "Title"
+  },
+  "p_2": {
+   "type": "html",
+   "label": "Text 2"
+  },
+  "button": {
+   "type": "html",
+   "label": "Button text"
+  }
+ }
+}

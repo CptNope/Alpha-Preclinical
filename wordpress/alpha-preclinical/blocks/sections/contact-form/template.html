@@ -1,0 +1,57 @@
+<div class="wrap main">
+  <section class="form" id="form" aria-labelledby="form-h">
+    <h2 id="form-h">{{&h2}}</h2>
+    <p class="sub">{{&sub}}</p>
+
+    
+      <form data-demo-form novalidate>
+        <div class="fields">
+          <div class="field"><label for="fn">{{&label}}</label><input id="fn" name="first_name" autocomplete="given-name"></div>
+          <div class="field"><label for="ln">{{&label_2}}</label><input id="ln" name="last_name" autocomplete="family-name"></div>
+          <div class="field"><label for="co">{{&label_3}}</label><input id="co" name="company" autocomplete="organization"></div>
+          <div class="field"><label for="po">{{&label_4}}</label><input id="po" name="position" autocomplete="organization-title"></div>
+          <div class="field"><label for="em">{{&label_5}}</label><input id="em" name="email" type="email" autocomplete="email" required aria-invalid="false" aria-describedby="em-err"><span class="err" hidden id="em-err">{{&err}}</span></div>
+          <div class="field"><label for="ph">{{&label_6}}</label><input id="ph" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field full"><label for="ty">{{&label_7}}</label>
+            <select id="ty" name="study_type">
+              <option>A study quote</option>
+              <option>PK/PD</option>
+              <option>Gene therapy</option>
+              <option>Autoimmune disease</option>
+              <option>Metabolic disease</option>
+              <option>Inflammation and fibrosis</option>
+              <option>Tumor models</option>
+              <option>IVIS imaging, surgery or lab services</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field full"><label for="msg">{{&label_8}}</label><textarea id="msg" name="message" placeholder="{{textarea_placeholder}}"></textarea></div>
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">{{&btn_primary}}</button>
+          <p>{{&p}}</p>
+        </div>
+      </form>
+    
+    
+      <div class="done" role="status" data-done hidden>
+        <h3>{{&h3}}</h3>
+        <p>{{&p_2}}</p>
+        <button type="button" data-reset>{{&button}}</button>
+      </div>
+    
+  </section>
+
+  <aside class="info" aria-labelledby="info-h">
+    <h2 class="sr-only" id="info-h">{{&sr_only}}</h2>
+    <div class="card">
+      <div><h3>{{&h3_2}}</h3><a class="big" href="{{@big_url}}">{{&big}}</a></div>
+      <div><h3>{{&h3_3}}</h3><address class="big">{{&big_2}}</address></div>
+      <div><h3>{{&h3_4}}</h3><p>{{&p_3}}</p></div>
+    </div>
+    <figure class="building">
+      <img src="{{@img_img}}" alt="{{img_alt}}">
+      <figcaption>{{&figcaption}}</figcaption>
+    </figure>
+  </aside>
+</div>

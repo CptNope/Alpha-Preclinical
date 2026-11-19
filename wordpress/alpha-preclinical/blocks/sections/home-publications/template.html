@@ -1,0 +1,15 @@
+<section class="sec pubs-sec" id="publications" aria-labelledby="pub-h">
+  <div class="wrap">
+    <div class="pubs-top">
+      <p class="pub-big" aria-hidden="true"><span data-count="{{span_data_count}}">{{&span}}</span></p>
+      <div>
+        <h2 id="pub-h">{{&h2}}</h2>
+        <p class="intro">{{&intro}}</p>
+        <a class="btn btn-primary" href="{{@btn_primary_url}}">{{&btn_primary}}</a>
+      </div>
+    </div>
+    <ol class="paper-cols">
+      {{#paper_col_items}}<li class="paper-col"><p class="jr">{{&jr}}</p><h3>{{&h3}}</h3><p class="by">{{&by}}</p><p class="area">{{&area}}</p></li>{{/paper_col_items}}
+    </ol>
+  </div>
+</section>

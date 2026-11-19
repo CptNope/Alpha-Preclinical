@@ -1,0 +1,54 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/article-summary-2",
+ "title": "Article summary 2",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: blog post.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "In short"
+  },
+  "li_items": {
+   "type": "array",
+   "default": [
+    {
+     "li": "Screen formulations and doses in wild-type animals, then prove efficacy in a disease model."
+    },
+    {
+     "li": "Build a protein time course into every study: it sets the dosing interval."
+    },
+    {
+     "li": "Pair protein levels with an endpoint a clinician would recognize, and compare against the standard of care."
+    }
+   ]
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "li_items": {
+   "type": "items",
+   "label": "List item (list)",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  }
+ }
+}

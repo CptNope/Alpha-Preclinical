@@ -1,0 +1,15 @@
+<section class="sec" aria-labelledby="m-h">
+  <div class="wrap split">
+    <div>
+      <h2 id="m-h">{{&h2}}</h2>
+      <p class="note">{{&note}}</p>
+    </div>
+    <table>
+      <thead><tr>{{#th_items}}<th scope="col">{{&th}}</th>{{/th_items}}</tr></thead>
+      <tbody>
+        {{#tr_items}}<tr>{{#td_items}}<td>{{&td}}</td>{{/td_items}}<td><div class="chips">{{&chips}}</div></td></tr>
+        {{/tr_items}}
+      </tbody>
+    </table>
+  </div>
+</section>

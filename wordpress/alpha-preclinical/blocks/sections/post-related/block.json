@@ -1,0 +1,75 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/post-related",
+ "title": "Post related",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: blog post, blog post, blog post, blog post, blog post, blog post.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Keep reading"
+  },
+  "post_items": {
+   "type": "array",
+   "default": [
+    {
+     "post_url": "/blog/how-to-scope-in-vivo-efficacy-study/",
+     "tag": "Study design",
+     "h3": "How to scope your first in vivo efficacy study",
+     "p": "Barak Yahalom, DVM, 3 min read"
+    },
+    {
+     "post_url": "/blog/caliper-vs-ivis-tumor-burden/",
+     "tag": "Tumor models",
+     "h3": "Caliper or IVIS? Choosing how to measure tumor burden",
+     "p": "Barak Yahalom, DVM, 3 min read"
+    },
+    {
+     "post_url": "/blog/diet-induced-vs-genetic-type-2-diabetes-models/",
+     "tag": "Metabolic disease",
+     "h3": "Diet-induced versus genetic models of type 2 diabetes",
+     "p": "Joan Flanagan, PhD, 3 min read"
+    }
+   ]
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "post_items": {
+   "type": "items",
+   "label": "Post (list)",
+   "fields": {
+    "post_url": {
+     "type": "url",
+     "label": "Post link"
+    },
+    "tag": {
+     "type": "html",
+     "label": "Topic tag"
+    },
+    "h3": {
+     "type": "html",
+     "label": "Title"
+    },
+    "p": {
+     "type": "html",
+     "label": "Text"
+    }
+   }
+  }
+ }
+}

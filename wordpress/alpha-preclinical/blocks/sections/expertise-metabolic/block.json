@@ -1,0 +1,224 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/expertise-metabolic",
+ "title": "Expertise: metabolic",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Expertise.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Metabolic disease"
+  },
+  "desc": {
+   "type": "string",
+   "default": "Metabolic diseases disrupt how cells process or transport proteins, carbohydrates and lipids. Our team draws on years of diabetes research and close ties with specialists in the field to evaluate metabolic drug candidates thoroughly."
+  },
+  "img_img": {
+   "type": "string",
+   "default": "assets/img/team/joan-flanagan.jpg"
+  },
+  "div": {
+   "type": "string",
+   "default": "<small>Led by</small><b><a href=\"/team/#joan-flanagan\">Joan Flanagan, PhD</a></b>"
+  },
+  "area_cta_url": {
+   "type": "string",
+   "default": "/contact/?study=Metabolic%20disease#form"
+  },
+  "area_cta": {
+   "type": "string",
+   "default": "Plan your metabolic study"
+  },
+  "img_img_2": {
+   "type": "string",
+   "default": "assets/img/blog/diet-vs-genetic-t2d-hero-1200.jpg"
+  },
+  "img_width": {
+   "type": "string",
+   "default": "1200"
+  },
+  "img_height": {
+   "type": "string",
+   "default": "675"
+  },
+  "th_items": {
+   "type": "array",
+   "default": [
+    {
+     "th": "Disease"
+    },
+    {
+     "th": "Models"
+    }
+   ]
+  },
+  "tr_items": {
+   "type": "array",
+   "default": [
+    {
+     "td_items": [
+      {
+       "td": "Obesity"
+      },
+      {
+       "td": "Diet-induced obesity (DIO) rodents, ob/ob mice"
+      }
+     ]
+    },
+    {
+     "td_items": [
+      {
+       "td": "Type 2 diabetes"
+      },
+      {
+       "td": "db/db mice and ZDF rats, including wound healing studies"
+      }
+     ]
+    },
+    {
+     "td_items": [
+      {
+       "td": "Fatty liver disease"
+      },
+      {
+       "td": "NAFLD and NASH models"
+      }
+     ]
+    },
+    {
+     "td_items": [
+      {
+       "td": "Lipid disorders"
+      },
+      {
+       "td": "High-fat diet-induced dyslipidemia and hypercholesterolemia"
+      }
+     ]
+    }
+   ]
+  },
+  "h3": {
+   "type": "string",
+   "default": "Related research by our scientists"
+  },
+  "li_items": {
+   "type": "array",
+   "default": [
+    {
+     "li": "<a aria-label=\"The BBZDR/Wor Rat Model for Investigating the Complications of Type 2 Diabetes Mellitus (PDF, opens in new tab)\" href=\"https://www.alphapreclinical.com/_files/ugd/095141_bd1413ed7182424aab63ad6f1a938f40.pdf\" rel=\"noopener\" target=\"_blank\">The BBZDR/Wor Rat Model for Investigating the Complications of Type 2 Diabetes Mellitus</a><span>Tirabassi RS, Flanagan JF, et al.</span>"
+    },
+    {
+     "li": "<a aria-label=\"The C57BL/6NCrl-lb Mouse: A New Model for Metabolic Syndrome (PDF, opens in new tab)\" href=\"https://www.alphapreclinical.com/_files/ugd/095141_4f715cbd371b4461961a30800e5b069d.pdf\" rel=\"noopener\" target=\"_blank\">The C57BL/6NCrl-lb Mouse: A New Model for Metabolic Syndrome</a><span>Owens DR, … Flanagan J</span>"
+    },
+    {
+     "li": "<a aria-label=\"Antidiabetic effect of novel modulating peptides of G-protein-coupled kinase in experimental models of diabetes (PDF, opens in new tab)\" href=\"https://www.alphapreclinical.com/_files/ugd/095141_53c8193dbdb64ad6836bf1fbcf2efa18.pdf\" rel=\"noopener\" target=\"_blank\">Antidiabetic effect of novel modulating peptides of G-protein-coupled kinase in experimental models of diabetes</a><span>Leshem O, … Yahalom B, et al.</span>"
+    }
+   ]
+  },
+  "h3_2": {
+   "type": "string",
+   "default": "Read more on the blog"
+  },
+  "li": {
+   "type": "string",
+   "default": "<a href=\"/blog/diet-induced-vs-genetic-type-2-diabetes-models/\">Diet-induced versus genetic models of type 2 diabetes</a>"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "desc": {
+   "type": "html",
+   "label": "Desc"
+  },
+  "img_img": {
+   "type": "image",
+   "label": "Img image"
+  },
+  "div": {
+   "type": "html",
+   "label": "Content"
+  },
+  "area_cta_url": {
+   "type": "url",
+   "label": "Area cta link"
+  },
+  "area_cta": {
+   "type": "html",
+   "label": "Area cta"
+  },
+  "img_img_2": {
+   "type": "image",
+   "label": "Img image 2"
+  },
+  "img_width": {
+   "type": "text",
+   "label": "Img image width"
+  },
+  "img_height": {
+   "type": "text",
+   "label": "Img image height"
+  },
+  "th_items": {
+   "type": "items",
+   "label": "Column heading (list)",
+   "fields": {
+    "th": {
+     "type": "html",
+     "label": "Column heading"
+    }
+   }
+  },
+  "tr_items": {
+   "type": "items",
+   "label": "Tr (list)",
+   "fields": {
+    "td_items": {
+     "type": "items",
+     "label": "Cell (list)",
+     "fields": {
+      "td": {
+       "type": "html",
+       "label": "Cell"
+      }
+     }
+    }
+   }
+  },
+  "h3": {
+   "type": "html",
+   "label": "Title"
+  },
+  "li_items": {
+   "type": "items",
+   "label": "List item (list)",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "h3_2": {
+   "type": "html",
+   "label": "Title 2"
+  },
+  "li": {
+   "type": "html",
+   "label": "List item"
+  }
+ }
+}

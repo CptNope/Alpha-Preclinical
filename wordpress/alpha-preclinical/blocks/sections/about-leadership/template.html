@@ -1,0 +1,11 @@
+<section class="sec sec-mist" aria-labelledby="lead-h">
+  <div class="wrap">
+    <h2 class="h2" id="lead-h">{{&h2}}</h2>
+    <p class="lead-p">{{&lead_p}}</p>
+    <div class="leaders">
+      {{#leader_items}}<a class="leader" href="{{@leader_url}}"><div class="face"><img src="{{@img_img}}" alt="{{img_alt}}"></div><div>{{&div}}</div></a>
+      {{/leader_items}}
+    </div>
+    <p style="margin-top:32px">{{&p}}</p>
+  </div>
+</section>

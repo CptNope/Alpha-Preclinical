@@ -1,0 +1,89 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/about-story",
+ "title": "About: story",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: About.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Why we started Alpha"
+  },
+  "p_items": {
+   "type": "array",
+   "default": [
+    {
+     "p": "Drug developers are under pressure to reach the clinic faster and spend less getting there. Outsourcing preclinical work should help, but too often it means handing a program to a queue."
+    },
+    {
+     "p": "We built Alpha to work differently. Every client gets a personal, scientist-to-scientist relationship: we help design the study, run it carefully, and tell you plainly what we're seeing as it happens."
+    },
+    {
+     "p": "Our goal is to be a strategic partner to the teams we work with, delivering well-executed, cost-effective studies on a timeline that keeps their drug development and research programs moving."
+    }
+   ]
+  },
+  "div_items": {
+   "type": "array",
+   "default": [
+    {
+     "dt": "2020",
+     "dd": "Founded in Worcester, Massachusetts, as a US-owned company"
+    },
+    {
+     "dt": "20+ yrs",
+     "dd": "Average research experience of our scientists, from academia to large pharma"
+    },
+    {
+     "dt": "15+ yrs",
+     "dd": "Average industry experience of our technical staff"
+    },
+    {
+     "dt": "16",
+     "dd": "<a href=\"/publications/\">Peer-reviewed publications</a> from our scientists and collaborators"
+    }
+   ]
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "p_items": {
+   "type": "items",
+   "label": "Text (list)",
+   "fields": {
+    "p": {
+     "type": "html",
+     "label": "Text"
+    }
+   }
+  },
+  "div_items": {
+   "type": "items",
+   "label": "Content (list)",
+   "fields": {
+    "dt": {
+     "type": "html",
+     "label": "Term"
+    },
+    "dd": {
+     "type": "html",
+     "label": "Value"
+    }
+   }
+  }
+ }
+}

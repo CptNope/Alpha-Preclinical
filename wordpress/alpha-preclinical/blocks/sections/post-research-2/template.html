@@ -1,0 +1,11 @@
+<section class="research" aria-labelledby="res-h">
+  <div class="wrap">
+    <h2 id="res-h">{{&h2}}</h2>
+    <p class="sub">{{&sub}}</p>
+    <ul class="papers">
+      {{#paper_items}}<li class="paper"><p class="jr">{{&jr}}</p><h3>{{&h3}}</h3><p class="by">{{&by}}</p></li>
+      {{/paper_items}}
+    </ul>
+    <a class="all" href="{{@all_url}}">{{&all}}</a>
+  </div>
+</section>

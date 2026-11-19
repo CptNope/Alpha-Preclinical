@@ -1,0 +1,73 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/careers-why",
+ "title": "Careers: why",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Careers.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Why people work here"
+  },
+  "intro": {
+   "type": "string",
+   "default": "At a small CRO, you see every study from protocol to report, and the people leading the company work alongside you."
+  },
+  "perk_items": {
+   "type": "array",
+   "default": [
+    {
+     "h3": "Work-life balance",
+     "p": "Schedules planned around studies and around your life, with a team that covers for each other."
+    },
+    {
+     "h3": "Professional development",
+     "p": "Hands-on training from colleagues with 15 to 20+ years in preclinical research, across in vivo, surgical and in vitro work."
+    },
+    {
+     "h3": "Collaboration",
+     "p": "Scientists and technicians work side by side, and you'll talk with clients about the science, not just run protocols."
+    },
+    {
+     "h3": "Community service",
+     "p": "Our leaders serve on local science education and industry boards, and we encourage the team to get involved too."
+    }
+   ]
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "intro": {
+   "type": "html",
+   "label": "Intro"
+  },
+  "perk_items": {
+   "type": "items",
+   "label": "Perk (list)",
+   "fields": {
+    "h3": {
+     "type": "html",
+     "label": "Title"
+    },
+    "p": {
+     "type": "html",
+     "label": "Text"
+    }
+   }
+  }
+ }
+}

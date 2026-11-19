@@ -23,6 +23,7 @@ function alpha_meta_fields() {
 		'publication' => array(
 			'authors'       => array( 'string', __( 'Authors (comma separated, as cited)', 'alpha-preclinical' ) ),
 			'alpha_authors' => array( 'string', __( 'Alpha authors (comma separated, as they appear in Authors)', 'alpha-preclinical' ) ),
+			'authors_short' => array( 'string', __( 'Authors, short form for homepage cards (e.g. Mordes JP, Flanagan JF; optional)', 'alpha-preclinical' ) ),
 			'journal'       => array( 'string', __( 'Journal', 'alpha-preclinical' ) ),
 			'volume'        => array( 'string', __( 'Volume', 'alpha-preclinical' ) ),
 			'issue'         => array( 'string', __( 'Issue', 'alpha-preclinical' ) ),

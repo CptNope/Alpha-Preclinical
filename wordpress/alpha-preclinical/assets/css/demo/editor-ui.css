@@ -1,0 +1,8 @@
+/* Sidebar UI for section blocks. */
+.alpha-help { color: #50575e; font-size: 12px; margin: 0 0 12px; }
+.alpha-items { border-top: 1px solid #e0e0e0; padding-top: 12px; margin-top: 4px; }
+.alpha-items__label { font-weight: 600; margin: 0 0 8px; }
+.alpha-items .alpha-item { border: 1px solid #e0e0e0; border-radius: 4px; margin-bottom: 8px; }
+.alpha-items .alpha-item > .components-panel__body-title { margin: 0; }
+.alpha-code textarea { font-family: Menlo, Consolas, monospace; font-size: 11px; }
+.alpha-field-bound { margin: 0; }

@@ -1,0 +1,92 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/post-research-2",
+ "title": "Post research 2",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: blog post.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Related research from our team"
+  },
+  "sub": {
+   "type": "string",
+   "default": "Peer-reviewed papers on mRNA delivery and gene therapy co-authored by Alpha scientists and collaborators."
+  },
+  "paper_items": {
+   "type": "array",
+   "default": [
+    {
+     "jr": "Molecular Therapy, 2019",
+     "h3": "<a aria-label=\"Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy (PDF, opens in new tab)\" href=\"https://www.alphapreclinical.com/_files/ugd/095141_ab7b5981358e44b2b14ca12986013d89.pdf\" rel=\"noopener\" target=\"_blank\">Improved Efficacy in a Fabry Disease Model Using a Systemic mRNA Liver Depot System as Compared to Enzyme Replacement Therapy</a>",
+     "by": "DeRosa F, Smith L, Shen Y, Huang Y, Pan J, Xie H, <b>Yahalom B</b>, Heartlein MW"
+    },
+    {
+     "jr": "Gene Therapy, 2016",
+     "h3": "<a aria-label=\"Therapeutic Efficacy in a Hemophilia B Model Using a Biosynthetic mRNA Liver Depot System (PDF, opens in new tab)\" href=\"https://www.alphapreclinical.com/_files/ugd/095141_05f87e7d92a14f18baefc4e9164426de.pdf\" rel=\"noopener\" target=\"_blank\">Therapeutic Efficacy in a Hemophilia B Model Using a Biosynthetic mRNA Liver Depot System</a>",
+     "by": "DeRosa F, Guild B, Karve S, Smith L, Love K, Dorkin JR, Kauffman KJ, Zhang J, <b>Yahalom B</b>, Anderson DG, Heartlein MW"
+    },
+    {
+     "jr": "[Journal, year]",
+     "h3": "<a aria-label=\"Mechanistic model for improved performance of mRNA–LNPs formulated under turbulent mixing conditions (PDF, opens in new tab)\" href=\"https://www.alphapreclinical.com/_files/ugd/095141_c496028421e84020a381221536308767.pdf\" rel=\"noopener\" target=\"_blank\">Mechanistic model for improved performance of mRNA–LNPs formulated under turbulent mixing conditions</a>",
+     "by": "Mosesso R, Randall K, Vaidya A, Tang J, Northen T, Deliot A, Sun M, Goldman R, Lyons A, Liu L, Karve S, DeRosa F"
+    }
+   ]
+  },
+  "all_url": {
+   "type": "string",
+   "default": "/publications/"
+  },
+  "all": {
+   "type": "string",
+   "default": "All 16 publications"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "sub": {
+   "type": "html",
+   "label": "Intro"
+  },
+  "paper_items": {
+   "type": "items",
+   "label": "Paper (list)",
+   "fields": {
+    "jr": {
+     "type": "html",
+     "label": "Journal and year"
+    },
+    "h3": {
+     "type": "html",
+     "label": "Title"
+    },
+    "by": {
+     "type": "html",
+     "label": "Authors"
+    }
+   }
+  },
+  "all_url": {
+   "type": "url",
+   "label": "All link"
+  },
+  "all": {
+   "type": "html",
+   "label": "All"
+  }
+ }
+}

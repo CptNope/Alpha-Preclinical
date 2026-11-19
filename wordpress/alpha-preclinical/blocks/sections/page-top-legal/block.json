@@ -1,0 +1,78 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/page-top-legal",
+ "title": "Page header (legal page)",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Privacy policy, Terms of use, Accessibility.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "nav_aria_label": {
+   "type": "string",
+   "default": "Breadcrumb"
+  },
+  "li": {
+   "type": "string",
+   "default": "<a href=\"/\">Home</a>"
+  },
+  "li_2": {
+   "type": "string",
+   "default": "Privacy policy"
+  },
+  "h1": {
+   "type": "string",
+   "default": "Privacy policy"
+  },
+  "p": {
+   "type": "string",
+   "default": "How Alpha Preclinical collects, uses and protects information you share with us through this website."
+  },
+  "updated": {
+   "type": "string",
+   "default": "Last updated: [Date]"
+  },
+  "motion_toggle": {
+   "type": "string",
+   "default": "Pause animation"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "header",
+ "alphaFields": {
+  "nav_aria_label": {
+   "type": "text",
+   "label": "Nav screen reader label"
+  },
+  "li": {
+   "type": "html",
+   "label": "List item"
+  },
+  "li_2": {
+   "type": "html",
+   "label": "List item 2"
+  },
+  "h1": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "updated": {
+   "type": "html",
+   "label": "Updated"
+  },
+  "motion_toggle": {
+   "type": "html",
+   "label": "Animation button text"
+  }
+ }
+}

@@ -2,7 +2,32 @@
 
 The production build of the client-approved November 2026 design, as a full-site-editing block theme. **Requires WordPress 6.9+** (custom blocks are bound with the Block Bindings API, which supports custom-block attributes from 6.9) and PHP 7.4+.
 
-## How it's built
+## Pages are the approved design, section by section (v1.2)
+
+Every section of the approved static site (the repo root `*.html`) is a custom block in `blocks/sections/<name>/` that outputs **the design's exact markup**. The demo's own CSS and motion script are used unchanged, so pages look and animate exactly like the approved demo.
+
+| Piece | Where | What it does |
+| --- | --- | --- |
+| 50 page sections + 22 blog-article sections | `blocks/sections/*` | `template.html` is the design's markup with editable values as tokens; `block.json` lists one attribute per value and the field schema (`alphaFields`) for the editor. |
+| Renderer | `inc/sections.php` | Fills the template and escapes each value for where it lands (rich text through a small inline-HTML allowlist, links and images through `esc_url`, icons through an SVG filter). |
+| Page frame | `alpha/shell` in `templates/*.html` | Outputs the design's frame: skip link, `.ap` wrapper, the page's header section above `<main>`, the footer. |
+| Header row | `inc/templates/nav.html` | One shared logo, menu and quote button. Marks the current page the way the design does (`aria-current`, `in-section`). |
+| Styles | `assets/css/demo/` | `site.css` and one stylesheet per page design (`skins/*.css`), copied verbatim. Each page loads only its own, in the design's order (page styles, then `site.css`), so pages that styled the same class differently never collide. WordPress global and block-library styles are not loaded on these pages. |
+| Motion | `assets/js/demo-site.js` | The design's script: section reveals, count-ups, line drawing, header parallax, wave pause, menus, filters, accordions. The only change: the forms post to WordPress. |
+| Live data | `inc/section-data.php` | Publications (list, filters, homepage papers), open roles, team card titles, the blog list and post headers come from records, in the same markup. Team page names and titles use the Block Bindings API (`alpha/person`). |
+| Forms | `inc/section-forms.php` | The design's quote and careers forms post to `inc/forms.php` (nonce, honeypot, fill time, rate limit, saved inquiries) and show the design's confirmation panel. |
+| Editor | `assets/js/sections-editor.js` | Each section shows its live preview on the canvas; the sidebar lists every text, link and image, with add, remove, duplicate and reorder for repeated items. Fields filled from records say where to edit them. Article text in blog posts is normal paragraphs, headings and lists. |
+
+**Regenerating from the design.** After a design change in the static pages, run `python3 tools/export_wp.py` and then `python3 tools/build_sections.py`. The second step rebuilds the section blocks, skins, page and post seeds, the publications seed and the page templates. It needs Node with `@wordpress/blocks`, `@wordpress/block-library` and `global-jsdom` (set `ALPHA_NODE_MODULES` to their `node_modules`) to write blog article text as core blocks. Then re-import (Tools › Alpha Preclinical setup, with "Leave existing items untouched" off).
+
+**Checked against the design** (local WordPress 7.1, Chromium):
+
+- Every page and blog post renders the same markup as the demo, section by section. The only differences are the forms' hidden security fields and real post dates.
+- Every element has the same position, size and computed type at 1440 px and 390 px.
+- The motion script does the same thing on both: the same reveal targets, count-ups, line drawing and parallax values.
+- axe finds no WCAG 2.2 AA violations.
+
+## How the data and bindings fit together
 
 ```mermaid
 flowchart LR
@@ -38,7 +63,9 @@ flowchart LR
 - **Core blocks stay core** (headings, paragraphs, buttons, details): they're bound to the same sources, so editors keep the normal editing tools. A bound block whose value is empty is removed (a paper with no PMCID shows no "Free full text" button).
 - **No build step.** `assets/js/editor.js` uses the `wp.*` globals: it gives each alpha block a live server preview with sidebar controls generated from its attributes, registers the binding sources in the editor, and adds meta panels.
 
-### Custom blocks
+### Component blocks
+
+These predate the section blocks. They still work and are used by the secondary templates (archive and search) and in patterns; the designed pages use the section blocks above.
 
 | Block | What it is | Bindable attributes |
 | --- | --- | --- |

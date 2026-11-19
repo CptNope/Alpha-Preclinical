@@ -1,0 +1,78 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/article-author",
+ "title": "Article author",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: blog post, blog post, blog post, blog post, blog post, blog post….",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "img_img": {
+   "type": "string",
+   "default": "assets/img/team/gil-chacon.jpg"
+  },
+  "img_alt": {
+   "type": "string",
+   "default": "Gil Chacon"
+  },
+  "h2": {
+   "type": "string",
+   "default": "Gil Chacon"
+  },
+  "role": {
+   "type": "string",
+   "default": "In Vivo Studies, Surgical Support and Training, Alpha Preclinical"
+  },
+  "p": {
+   "type": "string",
+   "default": "Gil has nearly 20 years in preclinical research. He works on in vivo studies, provides technical and surgical support, trains staff and keeps facility operations running. Before Alpha, he was training and development coordinator at a preclinical CRO."
+  },
+  "creds": {
+   "type": "string",
+   "default": "<span>Nearly 20 years in preclinical research</span><span>Surgical and technical support</span><span>Staff training</span>"
+  },
+  "author_links": {
+   "type": "string",
+   "default": "<a class=\"more\" href=\"/team/#gil-chacon\">Full profile</a>"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "img_img": {
+   "type": "image",
+   "label": "Img image"
+  },
+  "img_alt": {
+   "type": "text",
+   "label": "Img image description (alt text)"
+  },
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "role": {
+   "type": "html",
+   "label": "Job title"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "creds": {
+   "type": "html",
+   "label": "Creds"
+  },
+  "author_links": {
+   "type": "html",
+   "label": "Author links"
+  }
+ }
+}

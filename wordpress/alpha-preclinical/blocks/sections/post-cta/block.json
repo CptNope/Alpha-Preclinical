@@ -1,0 +1,70 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/post-cta",
+ "title": "Post cta",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: blog post, blog post, blog post, blog post, blog post, blog post….",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Need continuous or brain-targeted dosing?"
+  },
+  "p": {
+   "type": "string",
+   "default": "Talk with Gil and the Alpha team about models, endpoints and timelines for your program."
+  },
+  "btn_light_url": {
+   "type": "string",
+   "default": "/contact/"
+  },
+  "btn_light": {
+   "type": "string",
+   "default": "Request a study quote"
+  },
+  "img_img": {
+   "type": "string",
+   "default": "assets/img/building-sign.jpg"
+  },
+  "img_alt": {
+   "type": "string",
+   "default": "Alpha Preclinical sign at 722 Plantation Street, Worcester"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "btn_light_url": {
+   "type": "url",
+   "label": "Button link"
+  },
+  "btn_light": {
+   "type": "html",
+   "label": "Button text"
+  },
+  "img_img": {
+   "type": "image",
+   "label": "Img image"
+  },
+  "img_alt": {
+   "type": "text",
+   "label": "Img image description (alt text)"
+  }
+ }
+}

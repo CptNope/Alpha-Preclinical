@@ -1,0 +1,94 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/article-table",
+ "title": "Article table",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: blog post.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "th_items": {
+   "type": "array",
+   "default": [
+    {
+     "th": "Model"
+    },
+    {
+     "th": "Question it answers"
+    }
+   ]
+  },
+  "tr_items": {
+   "type": "array",
+   "default": [
+    {
+     "td_items": [
+      {
+       "td": "Wild-type mice"
+      },
+      {
+       "td": "How much protein does a dose produce, and for how long?"
+      }
+     ]
+    },
+    {
+     "td_items": [
+      {
+       "td": "Knockout disease mice"
+      },
+      {
+       "td": "Does the protein correct the disease?"
+      }
+     ]
+    },
+    {
+     "td_items": [
+      {
+       "td": "Non-human primates"
+      },
+      {
+       "td": "Does expression translate to a larger species?"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "th_items": {
+   "type": "items",
+   "label": "Column heading (list)",
+   "fields": {
+    "th": {
+     "type": "html",
+     "label": "Column heading"
+    }
+   }
+  },
+  "tr_items": {
+   "type": "items",
+   "label": "Tr (list)",
+   "fields": {
+    "td_items": {
+     "type": "items",
+     "label": "Cell (list)",
+     "fields": {
+      "td": {
+       "type": "html",
+       "label": "Cell"
+      }
+     }
+    }
+   }
+  }
+ }
+}

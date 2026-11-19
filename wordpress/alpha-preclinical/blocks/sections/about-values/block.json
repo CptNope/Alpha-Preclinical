@@ -1,0 +1,73 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/about-values",
+ "title": "About: values",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: About.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "What working with us is like"
+  },
+  "val_items": {
+   "type": "array",
+   "default": [
+    {
+     "svg_icon": "<svg aria-hidden=\"true\" fill=\"none\" stroke=\"#1E58A0\" stroke-linecap=\"round\" stroke-width=\"1.8\" viewBox=\"0 0 56 56\"><circle cx=\"20\" cy=\"28\" r=\"13\"></circle><circle cx=\"36\" cy=\"28\" r=\"13\"></circle></svg>",
+     "h3": "Trust",
+     "p": "Trust is how our team works together and how we build long-term relationships with clients. We earn it through honest, open conversations about a shared goal: a successful program."
+    },
+    {
+     "svg_icon": "<svg aria-hidden=\"true\" fill=\"none\" stroke=\"#1E58A0\" stroke-linecap=\"round\" stroke-width=\"1.8\" viewBox=\"0 0 56 56\"><path d=\"M28 6v8M28 42v8M6 28h8M42 28h8\"></path><circle cx=\"28\" cy=\"28\" r=\"10\"></circle></svg>",
+     "h3": "Innovation",
+     "p": "Our scientists bring decades of experience across every part of preclinical research, and we apply it to new modalities and models, not just familiar ones."
+    },
+    {
+     "svg_icon": "<svg aria-hidden=\"true\" fill=\"none\" stroke=\"#1E58A0\" stroke-linecap=\"round\" stroke-width=\"1.8\" viewBox=\"0 0 56 56\"><path d=\"M6 28c6-10 14-15 22-15s16 5 22 15c-6 10-14 15-22 15S12 38 6 28Z\"></path><circle cx=\"28\" cy=\"28\" r=\"6\"></circle></svg>",
+     "h3": "Transparency",
+     "p": "You hear about operational and study details clearly and promptly, including the unexpected ones. Transparency is what makes trust possible."
+    },
+    {
+     "svg_icon": "<svg aria-hidden=\"true\" fill=\"none\" stroke=\"#1E58A0\" stroke-linecap=\"round\" stroke-width=\"1.8\" viewBox=\"0 0 56 56\"><path d=\"M28 47S9 36 9 22a10 10 0 0 1 19-4 10 10 0 0 1 19 4c0 14-19 25-19 25Z\"></path></svg>",
+     "h3": "Humane animal care",
+     "p": "High-quality data starts with well-cared-for animals. Our team is committed to humane care in every study we run."
+    }
+   ]
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "val_items": {
+   "type": "items",
+   "label": "Val (list)",
+   "fields": {
+    "svg_icon": {
+     "type": "svg",
+     "label": "Icon (SVG)"
+    },
+    "h3": {
+     "type": "html",
+     "label": "Title"
+    },
+    "p": {
+     "type": "html",
+     "label": "Text"
+    }
+   }
+  }
+ }
+}

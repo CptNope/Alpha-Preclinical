@@ -1,0 +1,298 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/careers-roles",
+ "title": "Careers: roles",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Careers.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Open roles"
+  },
+  "filters_aria_label": {
+   "type": "string",
+   "default": "Filter roles"
+  },
+  "button": {
+   "type": "string",
+   "default": "All"
+  },
+  "button_items": {
+   "type": "array",
+   "default": [
+    {
+     "button_data_filter": "In vivo",
+     "button": "In vivo"
+    },
+    {
+     "button_data_filter": "In vitro",
+     "button": "In vitro"
+    }
+   ]
+  },
+  "role_title": {
+   "type": "string",
+   "default": "Senior Research Technician, In Vivo"
+  },
+  "role_meta": {
+   "type": "string",
+   "default": "<span class=\"chip\">In vivo</span><span class=\"chip\">Full-time, on-site</span><span class=\"chip\">Worcester, MA</span>"
+  },
+  "ico": {
+   "type": "string",
+   "default": "−"
+  },
+  "p": {
+   "type": "string",
+   "default": "Contribute across the full lifecycle of contracted studies: execute client projects, perform in vivo procedures and support in vitro work alongside our scientists."
+  },
+  "btn_primary_url": {
+   "type": "string",
+   "default": "#apply"
+  },
+  "btn_primary": {
+   "type": "string",
+   "default": "Apply for this role"
+  },
+  "h4": {
+   "type": "string",
+   "default": "What we're looking for"
+  },
+  "li_items": {
+   "type": "array",
+   "default": [
+    {
+     "li": "Experience at a contract research organization"
+    },
+    {
+     "li": "Strong in vivo technical skills"
+    },
+    {
+     "li": "Self-motivated, organized and detail oriented"
+    }
+   ]
+  },
+  "role_items": {
+   "type": "array",
+   "default": [
+    {
+     "role_data_topic": "In vivo",
+     "role_btn_aria_controls": "role-1",
+     "role_title": "Scientist, In Vivo Study Director",
+     "role_meta": "<span class=\"chip\">In vivo</span><span class=\"chip\">Full-time, on-site</span><span class=\"chip\">Worcester, MA</span>",
+     "ico": "+",
+     "role_body_id": "role-1",
+     "p": "Lead contract research projects from start to finish: coordinate and manage studies, ensure effective execution, and interpret and report study data to clients.",
+     "btn_primary_url": "#apply",
+     "btn_primary_data_apply_role": "Scientist, In Vivo Study Director",
+     "btn_primary": "Apply for this role",
+     "h4": "What we're looking for",
+     "li_items_2": [
+      {
+       "li": "Experience at a contract research organization"
+      },
+      {
+       "li": "Study design, data interpretation and reporting experience"
+      },
+      {
+       "li": "Self-motivated, with clear client communication"
+      }
+     ]
+    },
+    {
+     "role_data_topic": "In vivo",
+     "role_btn_aria_controls": "role-2",
+     "role_title": "Research Associate, In Vivo",
+     "role_meta": "<span class=\"chip\">In vivo</span><span class=\"chip\">Full-time, on-site</span><span class=\"chip\">Worcester, MA</span>",
+     "ico": "+",
+     "role_body_id": "role-2",
+     "p": "Perform in vivo animal procedures, some in vitro laboratory work and facility operations, under the direct supervision of our study team.",
+     "btn_primary_url": "#apply",
+     "btn_primary_data_apply_role": "Research Associate, In Vivo",
+     "btn_primary": "Apply for this role",
+     "h4": "What we're looking for",
+     "li_items_2": [
+      {
+       "li": "CRO or other relevant animal research experience"
+      },
+      {
+       "li": "Willingness to learn new techniques"
+      },
+      {
+       "li": "Self-motivated and dependable"
+      }
+     ]
+    },
+    {
+     "role_data_topic": "In vitro",
+     "role_btn_aria_controls": "role-3",
+     "role_title": "Research Associate, In Vitro",
+     "role_meta": "<span class=\"chip\">In vitro</span><span class=\"chip\">Full-time, on-site</span><span class=\"chip\">Worcester, MA</span>",
+     "ico": "+",
+     "role_body_id": "role-3",
+     "p": "Perform in vitro laboratory procedures and support facility operations, under the supervision of our in vitro lead.",
+     "btn_primary_url": "#apply",
+     "btn_primary_data_apply_role": "Research Associate, In Vitro",
+     "btn_primary": "Apply for this role",
+     "h4": "What we're looking for",
+     "li_items_2": [
+      {
+       "li": "CRO or other relevant laboratory experience"
+      },
+      {
+       "li": "Familiarity with assays such as ELISA, flow cytometry or cell culture"
+      },
+      {
+       "li": "Self-motivated and detail oriented"
+      }
+     ]
+    }
+   ]
+  },
+  "none": {
+   "type": "string",
+   "default": "Don't see your role? Send your resume to <a href=\"mailto:info@alphapreclinical.com\">info@alphapreclinical.com</a> and tell us what you'd like to do."
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "filters_aria_label": {
+   "type": "text",
+   "label": "Filters screen reader label"
+  },
+  "button": {
+   "type": "html",
+   "label": "Button text"
+  },
+  "button_items": {
+   "type": "items",
+   "label": "Button (list)",
+   "fields": {
+    "button_data_filter": {
+     "type": "text",
+     "label": "Button filter value"
+    },
+    "button": {
+     "type": "html",
+     "label": "Button text"
+    }
+   }
+  },
+  "role_title": {
+   "type": "html",
+   "label": "Job title tooltip"
+  },
+  "role_meta": {
+   "type": "html",
+   "label": "Role meta"
+  },
+  "ico": {
+   "type": "html",
+   "label": "Ico"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "btn_primary_url": {
+   "type": "url",
+   "label": "Button link"
+  },
+  "btn_primary": {
+   "type": "html",
+   "label": "Button text"
+  },
+  "h4": {
+   "type": "html",
+   "label": "Subheading"
+  },
+  "li_items": {
+   "type": "items",
+   "label": "List item (list)",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "role_items": {
+   "type": "items",
+   "label": "Job title (list)",
+   "fields": {
+    "role_data_topic": {
+     "type": "text",
+     "label": "Job title filter topic"
+    },
+    "role_btn_aria_controls": {
+     "type": "text",
+     "label": "Role btn aria controls"
+    },
+    "role_title": {
+     "type": "html",
+     "label": "Job title tooltip"
+    },
+    "role_meta": {
+     "type": "html",
+     "label": "Role meta"
+    },
+    "ico": {
+     "type": "html",
+     "label": "Ico"
+    },
+    "role_body_id": {
+     "type": "text",
+     "label": "Role body id"
+    },
+    "p": {
+     "type": "html",
+     "label": "Text"
+    },
+    "btn_primary_url": {
+     "type": "url",
+     "label": "Button link"
+    },
+    "btn_primary_data_apply_role": {
+     "type": "text",
+     "label": "Btn primary data apply role"
+    },
+    "btn_primary": {
+     "type": "html",
+     "label": "Button text"
+    },
+    "h4": {
+     "type": "html",
+     "label": "Subheading"
+    },
+    "li_items_2": {
+     "type": "items",
+     "label": "List item (list) 2",
+     "fields": {
+      "li": {
+       "type": "html",
+       "label": "List item"
+      }
+     }
+    }
+   }
+  },
+  "none": {
+   "type": "html",
+   "label": "Note when nothing matches"
+  }
+ }
+}

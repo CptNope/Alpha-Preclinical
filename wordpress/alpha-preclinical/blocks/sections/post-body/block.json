@@ -1,0 +1,124 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/post-body",
+ "title": "Post body",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: blog post, blog post, blog post, blog post, blog post, blog post.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "toc_aria_label": {
+   "type": "string",
+   "default": "On this page"
+  },
+  "h2": {
+   "type": "string",
+   "default": "On this page"
+  },
+  "li_items": {
+   "type": "array",
+   "default": [
+    {
+     "li": "<a href=\"#how-an-osmotic-pump-works\">How an osmotic pump works</a>"
+    },
+    {
+     "li": "<a href=\"#when-continuous-dosing-is-the-better-choice\">When continuous dosing is the better choice</a>"
+    },
+    {
+     "li": "<a href=\"#subcutaneous-intraperitoneal-or-brain-delivery\">Subcutaneous, intraperitoneal or brain delivery</a>"
+    },
+    {
+     "li": "<a href=\"#five-details-that-decide-whether-pump-studies-wo\">Five details that decide whether pump studies work</a>"
+    },
+    {
+     "li": "<a href=\"#refs\">Sources</a>"
+    }
+   ]
+  },
+  "h2_2": {
+   "type": "string",
+   "default": "Share"
+  },
+  "a_url": {
+   "type": "string",
+   "default": "https://www.linkedin.com/sharing/share-offsite/"
+  },
+  "a_aria_label": {
+   "type": "string",
+   "default": "Share on LinkedIn (opens in new tab)"
+  },
+  "a": {
+   "type": "string",
+   "default": "LinkedIn"
+  },
+  "a_url_2": {
+   "type": "string",
+   "default": "mailto:"
+  },
+  "a_2": {
+   "type": "string",
+   "default": "Email"
+  },
+  "share_copy": {
+   "type": "string",
+   "default": "Copy link"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "toc_aria_label": {
+   "type": "text",
+   "label": "Toc screen reader label"
+  },
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "li_items": {
+   "type": "items",
+   "label": "List item (list)",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "h2_2": {
+   "type": "html",
+   "label": "Heading 2"
+  },
+  "a_url": {
+   "type": "url",
+   "label": "Link link"
+  },
+  "a_aria_label": {
+   "type": "text",
+   "label": "Link screen reader label"
+  },
+  "a": {
+   "type": "html",
+   "label": "Link text"
+  },
+  "a_url_2": {
+   "type": "url",
+   "label": "Link link 2"
+  },
+  "a_2": {
+   "type": "html",
+   "label": "Link text 2"
+  },
+  "share_copy": {
+   "type": "html",
+   "label": "Share copy"
+  }
+ }
+}

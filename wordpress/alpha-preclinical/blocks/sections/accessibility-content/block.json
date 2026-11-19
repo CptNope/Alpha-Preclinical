@@ -1,0 +1,261 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/accessibility-content",
+ "title": "Accessibility: content",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Accessibility.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "toc_aria_label": {
+   "type": "string",
+   "default": "On this page"
+  },
+  "h2": {
+   "type": "string",
+   "default": "On this page"
+  },
+  "li_items": {
+   "type": "array",
+   "default": [
+    {
+     "li": "<a href=\"#commitment\">Our commitment</a>"
+    },
+    {
+     "li": "<a href=\"#measures\">What we have done</a>"
+    },
+    {
+     "li": "<a href=\"#testing\">How we tested</a>"
+    },
+    {
+     "li": "<a href=\"#limitations\">Known limitations</a>"
+    },
+    {
+     "li": "<a href=\"#feedback\">Feedback and alternative formats</a>"
+    },
+    {
+     "li": "<a href=\"#technical\">Technical details</a>"
+    }
+   ]
+  },
+  "h2_2": {
+   "type": "string",
+   "default": "Our commitment"
+  },
+  "p": {
+   "type": "string",
+   "default": "We aim for this website to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA, published by the World Wide Web Consortium (W3C). These guidelines explain how to make web content usable by people with a wide range of disabilities, including visual, auditory, motor and cognitive disabilities."
+  },
+  "h2_3": {
+   "type": "string",
+   "default": "What we have done"
+  },
+  "p_2": {
+   "type": "string",
+   "default": "Accessibility was part of the design of this website from the start. Specifically, the site:"
+  },
+  "li_items_2": {
+   "type": "array",
+   "default": [
+    {
+     "li": "Uses text and background colors that meet WCAG AA contrast ratios"
+    },
+    {
+     "li": "Can be used with a keyboard alone, with a visible focus indicator and a \"Skip to content\" link on every page"
+    },
+    {
+     "li": "Uses semantic headings, landmarks and labeled form fields so screen readers can navigate it"
+    },
+    {
+     "li": "Describes meaningful images with alternative text"
+    },
+    {
+     "li": "Explains form errors in text and moves focus to the field that needs attention"
+    },
+    {
+     "li": "Announces filter results to screen readers"
+    },
+    {
+     "li": "Reflows to a single column down to 320 pixels wide without horizontal scrolling"
+    },
+    {
+     "li": "Lets you pause the wave animation at the top of every page, and starts it paused if your device is set to reduce motion"
+    }
+   ]
+  },
+  "h2_4": {
+   "type": "string",
+   "default": "How we tested"
+  },
+  "p_items": {
+   "type": "array",
+   "default": [
+    {
+     "p": "The site was evaluated against WCAG 2.1 AA using automated testing with axe-core on every page, plus manual checks of keyboard navigation, focus visibility, color contrast, text spacing, reflow at 320 pixels, touch target sizes and heading structure."
+    },
+    {
+     "p": "We plan to repeat this review whenever we make significant changes to the site, and at least once a year."
+    }
+   ]
+  },
+  "h2_5": {
+   "type": "string",
+   "default": "Known limitations"
+  },
+  "li_items_3": {
+   "type": "array",
+   "default": [
+    {
+     "li": "<b>Publication PDFs.</b> Some research papers we link to are hosted by journals or provided as PDFs we did not create, and may not be fully accessible. Email us and we will help you get the information in another format."
+    },
+    {
+     "li": "<b>Map image.</b> The map on our contact page is an image. Our full street address is always provided as text beside it."
+    }
+   ]
+  },
+  "h2_6": {
+   "type": "string",
+   "default": "Feedback and alternative formats"
+  },
+  "p_3": {
+   "type": "string",
+   "default": "If you have trouble using any part of this website, or need information in a different format, please contact us:"
+  },
+  "li_items_4": {
+   "type": "array",
+   "default": [
+    {
+     "li": "Email: <a href=\"mailto:info@alphapreclinical.com\">info@alphapreclinical.com</a>"
+    },
+    {
+     "li": "Mail: Alpha Preclinical LLC, 722 Plantation Street, Worcester, MA 01605"
+    }
+   ]
+  },
+  "p_4": {
+   "type": "string",
+   "default": "Please tell us the page address and the problem you found. We aim to respond within [number] business days."
+  },
+  "h2_7": {
+   "type": "string",
+   "default": "Technical details"
+  },
+  "p_5": {
+   "type": "string",
+   "default": "This website relies on HTML, CSS, WAI-ARIA and JavaScript to work with your browser and any assistive technology you use. Core content remains readable if JavaScript is turned off."
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "toc_aria_label": {
+   "type": "text",
+   "label": "Toc screen reader label"
+  },
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "li_items": {
+   "type": "items",
+   "label": "List item (list)",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "h2_2": {
+   "type": "html",
+   "label": "Heading 2"
+  },
+  "p": {
+   "type": "html",
+   "label": "Text"
+  },
+  "h2_3": {
+   "type": "html",
+   "label": "Heading 3"
+  },
+  "p_2": {
+   "type": "html",
+   "label": "Text 2"
+  },
+  "li_items_2": {
+   "type": "items",
+   "label": "List item (list) 2",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "h2_4": {
+   "type": "html",
+   "label": "Heading 4"
+  },
+  "p_items": {
+   "type": "items",
+   "label": "Text (list)",
+   "fields": {
+    "p": {
+     "type": "html",
+     "label": "Text"
+    }
+   }
+  },
+  "h2_5": {
+   "type": "html",
+   "label": "Heading 5"
+  },
+  "li_items_3": {
+   "type": "items",
+   "label": "List item (list) 3",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "h2_6": {
+   "type": "html",
+   "label": "Heading 6"
+  },
+  "p_3": {
+   "type": "html",
+   "label": "Text 3"
+  },
+  "li_items_4": {
+   "type": "items",
+   "label": "List item (list) 4",
+   "fields": {
+    "li": {
+     "type": "html",
+     "label": "List item"
+    }
+   }
+  },
+  "p_4": {
+   "type": "html",
+   "label": "Text 4"
+  },
+  "h2_7": {
+   "type": "html",
+   "label": "Heading 7"
+  },
+  "p_5": {
+   "type": "html",
+   "label": "Text 5"
+  }
+ }
+}

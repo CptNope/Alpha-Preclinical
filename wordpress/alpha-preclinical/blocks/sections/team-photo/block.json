@@ -1,0 +1,46 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/team-photo",
+ "title": "Team: photo",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: Team.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "img_img": {
+   "type": "string",
+   "default": "assets/img/team-group.jpg"
+  },
+  "img_alt": {
+   "type": "string",
+   "default": "The Alpha Preclinical team outside the Worcester facility"
+  },
+  "figcaption": {
+   "type": "string",
+   "default": "Left to right: Gil Chacon, Ashley Kolofsky, Barak Yahalom, Joan Flanagan and Cindy Hopper."
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "img_img": {
+   "type": "image",
+   "label": "Img image"
+  },
+  "img_alt": {
+   "type": "text",
+   "label": "Img image description (alt text)"
+  },
+  "figcaption": {
+   "type": "html",
+   "label": "Caption"
+  }
+ }
+}

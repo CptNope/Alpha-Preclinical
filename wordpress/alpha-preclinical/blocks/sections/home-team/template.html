@@ -1,0 +1,17 @@
+<section class="sec sec-mist" id="about" aria-labelledby="ppl-h">
+  <div class="wrap people">
+    <figure class="team-photo">
+      <img src="{{@img_img}}" alt="{{img_alt}}" loading="lazy" width="{{img_width}}" height="{{img_height}}">
+      <figcaption>
+        <h2 id="ppl-h">{{&h2}}</h2>
+        <p>{{&p}}</p>
+        <p class="more-links">{{&more_links}}</p>
+      </figcaption>
+    </figure>
+    <div class="team">
+      {{#member_items}}<a class="member" href="{{@member_url}}"><div class="face"><img src="{{@img_img}}" alt="{{img_alt}}"><img class="alt" src="{{@alt_img}}" alt=""></div><div>{{&div}}</div></a>
+      {{/member_items}}
+      <div class="team-cta" id="careers"><p>{{&p_2}}</p><a href="{{@a_url}}">{{&a}}</a></div>
+    </div>
+  </div>
+</section>

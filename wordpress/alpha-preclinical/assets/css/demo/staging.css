@@ -1,0 +1,62 @@
+/* Staging banner and the content review page (staging only). Tokens are the design's
+   colours; WordPress global styles are not loaded on design pages. */
+:root {
+	--wp--preset--color--navy: #1F2858; --wp--preset--color--abyss: #0F3360; --wp--preset--color--tide: #1E58A0;
+	--wp--preset--color--current: #4B98D2; --wp--preset--color--shallows: #88C6EE; --wp--preset--color--mist: #EEF5FB;
+	--wp--preset--color--line: #D3E0EE; --wp--preset--color--ink-muted: #4A5878; --wp--preset--color--ink-on-abyss: #B9CCE3;
+	--wp--preset--color--field-border: #7D8FAE; --wp--preset--color--error: #B3261E;
+	--wp--preset--font-family--display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+	--wp--preset--font-family--sans: "Figtree", "Helvetica Neue", Arial, sans-serif;
+	--wp--preset--font-size--lead: 20px; --wp--preset--font-size--display-l: 52px; --wp--preset--font-size--display-xl: 76px;
+	--wp--preset--spacing--4: clamp(16px, 4vw, 40px); --wp--preset--spacing--5: clamp(40px, 6vw, 72px); --wp--preset--spacing--6: clamp(72px, 10vw, 128px);
+	--wp--preset--shadow--menu: 0 24px 60px -24px rgba(11,39,71,0.55), 0 4px 14px -6px rgba(11,39,71,0.25);
+	--alpha-ease: cubic-bezier(.2, .7, .2, 1);
+	--alpha-navy: #1F2858; --alpha-abyss: #0F3360; --alpha-tide: #1E58A0; --alpha-current: #4B98D2; --alpha-shallows: #88C6EE;
+	--alpha-mist: #EEF5FB; --alpha-line: #D3E0EE; --alpha-muted: #4A5878; --alpha-on-abyss: #B9CCE3;
+}
+
+.alpha-staging-banner { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; line-height: 1.5; }
+.ap .alpha-review { font-size: 17px; }
+.ap .alpha-review :where(input, textarea, select, button) { font: inherit; }
+.alpha-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 28px; border: 0; border-radius: 999px; font: 600 16px/1.2 var(--wp--preset--font-family--sans); text-decoration: none; cursor: pointer; transition: background-color .2s ease, color .2s ease, box-shadow .2s ease; }
+.alpha-btn--primary { background: var(--alpha-tide); color: #fff; }
+.alpha-btn--primary:hover { background: var(--alpha-navy); color: #fff; }
+.alpha-btn--light { background: var(--alpha-shallows); color: var(--alpha-abyss); }
+.alpha-btn--light:hover { background: #fff; color: var(--alpha-abyss); }
+.alpha-btn--ghost-dark { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px rgba(185, 204, 227, .55); }
+.alpha-btn--ghost-dark:hover { color: #fff; box-shadow: inset 0 0 0 1.5px #fff; }
+.alpha-staging-banner { position: relative; z-index: 60; padding: 10px 20px; background: var(--alpha-shallows); color: var(--alpha-abyss); font-size: 14px; text-align: center; }
+.alpha-staging-banner a { color: var(--alpha-abyss); font-weight: 600; margin-left: 8px; }
+.alpha-review { padding-block: var(--wp--preset--spacing--5) var(--wp--preset--spacing--6); }
+.alpha-review__top { position: sticky; top: 0; z-index: 5; display: grid; gap: 14px; padding: 20px 0; background: #fff; border-bottom: 1.5px solid var(--alpha-line); }
+.alpha-review__hello { margin: 0; max-width: 46em; color: var(--alpha-muted); }
+.alpha-review__progress { display: flex; align-items: center; gap: 16px; }
+.alpha-review__bar { flex: 1; max-width: 420px; height: 10px; border-radius: 999px; background: var(--alpha-mist); overflow: hidden; }
+.alpha-review__bar span { display: block; height: 100%; background: var(--alpha-tide); border-radius: 999px; }
+.alpha-review__nav { display: flex; flex-wrap: wrap; gap: 8px; }
+.alpha-review__nav a { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1.5px solid var(--alpha-line); color: var(--alpha-navy); text-decoration: none; font-size: 15px; font-weight: 500; }
+.alpha-review__nav a:hover { border-color: var(--alpha-tide); color: var(--alpha-tide); }
+.alpha-review__nav small { color: var(--alpha-muted); }
+.alpha-review__sec { padding-top: var(--wp--preset--spacing--5); scroll-margin-top: 180px; }
+.alpha-review__sec h2 { font-size: clamp(28px, 3vw, 40px); margin: 0; }
+.alpha-review__intro { color: var(--alpha-muted); margin: 8px 0 20px; }
+.alpha-review__saved { padding: 12px 18px; border-radius: 10px; background: var(--alpha-mist); font-weight: 600; }
+.alpha-review__q { position: relative; padding: 22px 0 22px 22px; border-bottom: 1px solid var(--alpha-line); border-left: 4px solid var(--alpha-line); margin-bottom: 4px; }
+.alpha-review__q.is-done { border-left-color: var(--alpha-tide); }
+.alpha-review__q fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.alpha-review__q legend, .alpha-review__label { display: block; font: 600 18px/1.35 var(--wp--preset--font-family--display); letter-spacing: -.01em; margin-bottom: 6px; padding: 0; max-width: 46em; }
+.alpha-review__tag { display: inline-block; margin: 0 0 8px; padding: 2px 10px; border-radius: 999px; background: var(--alpha-mist); color: var(--alpha-tide); font-size: 12px; font-weight: 600; }
+.alpha-review__help, .alpha-review__meta { margin: 0 0 10px; font-size: 14px; color: var(--alpha-muted); max-width: 46em; }
+.alpha-review__meta { margin: 10px 0 0; }
+.alpha-review__link { margin: 0 0 10px; font-size: 14px; }
+.alpha-review__q :is(input[type="text"], input[type="email"], input[type="url"], select, textarea) { box-sizing: border-box; width: 100%; max-width: 640px; min-height: 48px; padding: 10px 14px; border-radius: 6px; border: 1.5px solid var(--wp--preset--color--field-border); background: #fff; color: var(--alpha-navy); font: 400 16px/1.4 var(--wp--preset--font-family--sans); }
+.alpha-review__q textarea { min-height: 90px; resize: vertical; }
+.alpha-review__q :is(input, select, textarea):focus { outline: none; border-color: var(--alpha-tide); box-shadow: 0 0 0 3px rgba(75, 152, 210, .35); }
+.alpha-review__opt { display: flex; align-items: center; gap: 10px; min-height: 40px; font-size: 16px; cursor: pointer; }
+.alpha-review__opt input { width: 20px; height: 20px; accent-color: var(--alpha-tide); }
+.alpha-review__notes-label { display: block; margin: 12px 0 6px; font-size: 14px; font-weight: 600; }
+.alpha-review__draft { margin: 0 0 12px; max-width: 720px; }
+.alpha-review__draft summary { cursor: pointer; font-weight: 600; color: var(--alpha-tide); min-height: 32px; }
+.alpha-review__draft-body { max-height: 420px; overflow: auto; padding: 16px 20px; margin-top: 8px; border-radius: 10px; background: var(--alpha-mist); font-size: 15px; }
+.alpha-review__files { font-size: 14px; }
+.alpha-review__actions { position: sticky; bottom: 0; margin: 0; padding: 16px 0; background: linear-gradient(transparent, #fff 30%); }

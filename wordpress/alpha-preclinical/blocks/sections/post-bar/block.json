@@ -1,0 +1,30 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/post-bar",
+ "title": "Post bar",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: blog post, blog post, blog post, blog post, blog post, blog post….",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "motion_toggle": {
+   "type": "string",
+   "default": "Pause animation"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "header",
+ "alphaFields": {
+  "motion_toggle": {
+   "type": "html",
+   "label": "Animation button text"
+  }
+ }
+}

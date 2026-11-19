@@ -1,0 +1,38 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "alpha/article-refs-2",
+ "title": "Article refs 2",
+ "category": "alpha-sections",
+ "description": "Section from the approved design, used on: blog post, blog post, blog post.",
+ "icon": "layout",
+ "textdomain": "alpha-preclinical",
+ "attributes": {
+  "h2": {
+   "type": "string",
+   "default": "Sources"
+  },
+  "li": {
+   "type": "string",
+   "default": "<a href=\"https://bmcmedimaging.biomedcentral.com/articles/10.1186/1471-2342-8-16\" rel=\"noopener\">caliper measurements overestimated subcutaneous tumor volume by 86% on average</a>"
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "className": false,
+  "reusable": false
+ },
+ "render": "file:./render.php",
+ "alphaRegion": "main",
+ "alphaFields": {
+  "h2": {
+   "type": "html",
+   "label": "Heading"
+  },
+  "li": {
+   "type": "html",
+   "label": "List item"
+  }
+ }
+}
