@@ -340,7 +340,7 @@ def convert(node, depth=0):
                     sect = 'is-style-section-mist'
                 elif set(cls) & {'area-deep', 'sec-deep', 'svc-split'}:
                     sect = 'is-style-section-abyss'
-                out.append(group(group(inner, align='wide', layout='constrained'),
+                out.append(group(group(inner, align='wide', layout='default'),
                                  cls=' '.join(filter(None, [sect, 'alpha-section'])), align='full', tag='section',
                                  anchor=c.get('id')))
             elif c.name == 'article' and 'svc' in cls:
@@ -355,7 +355,7 @@ def convert(node, depth=0):
                 cols = [('42%', left), ('58%', right)]
                 if 'flip' in cls:
                     cols.reverse()
-                out.append(group(columns(cols, 'alpha-area'), cls='alpha-area-wrap', anchor=c.get('id')))
+                out.append(group(columns(cols, 'alpha-area'), cls='alpha-area-wrap', anchor=c.get('id'), layout='default'))
             else:
                 # flatten wrappers with a single child, keep the rest as plain groups
                 kids = [k for k in c.children if isinstance(k, Tag) and k.name not in ('svg',)]
@@ -519,7 +519,7 @@ def cta(heading_='Have a study in mind?', text='Tell us the model, endpoints and
 
 def section(inner, style=None, anchor=None, extra=None):
     cls = ' '.join(filter(None, [f'is-style-section-{style}' if style else None, 'alpha-section', extra]))
-    return group(group(inner, align='wide'), cls=cls, align='full', tag='section', anchor=anchor)
+    return group(group(inner, align='wide', layout='default'), cls=cls, align='full', tag='section', anchor=anchor)
 
 
 def home_page():
@@ -534,12 +534,13 @@ def home_page():
             num = re.match(r'([\d.]+)(\D*)', dt.get_text(strip=True))
             stats.append(alpha('stat', {'value': num.group(1) if num else dt.get_text(strip=True), 'suffix': num.group(2) if num else '',
                                         'label': dd.get_text(' ', strip=True), 'size': 'l'}))
-    hero_btns = [btn_block(a) for a in hero.select('a') if is_button(a)]
+    hero_body = hero.select_one('.hero-body') or hero
+    hero_btns = [btn_block(a) for a in hero_body.select('a') if is_button(a)]
     hero_inner = columns([
         ('64%', heading(h1, 1, cls='alpha-hero__title') + '\n' + para(lead, 'is-style-lead') + '\n' + (buttons(hero_btns) if hero_btns else '')),
         ('36%', alpha('hero-alpha', {'maxWidth': 400})),
     ], 'alpha-hero__cols') + '\n' + group('\n'.join(stats), cls='alpha-hero__stats', layout='grid')
-    hero_block = group(group(hero_inner, align='wide') + '\n' + alpha('strata-band', {'variant': 'hero', 'align': 'full'}),
+    hero_block = group(group(hero_inner, align='wide', layout='default') + '\n' + alpha('strata-band', {'variant': 'hero', 'align': 'full'}),
                        cls='is-style-section-abyss alpha-hero', align='full', tag='header')
 
     # Expertise: heading column + list of the six areas (each a row linking to its section)
