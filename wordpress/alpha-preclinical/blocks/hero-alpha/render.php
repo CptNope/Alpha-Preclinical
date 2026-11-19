@@ -24,11 +24,11 @@ $alpha_wrap  = get_block_wrapper_attributes(
 		<g clip-path="url(#<?php echo esc_attr( $alpha_clip ); ?>)">
 			<rect x="0" y="0" width="108" height="130" style="fill:var(--wp--preset--color--mist)"></rect>
 			<g class="ap-a-lift"><g class="ap-a-rise">
-				<path class="ap-ab ap-ab1" d="M0 58 C13.5 51 40.5 65 54 58 S94.5 65 108 58 S148.5 65 162 58 S202.5 65 216 58 S256.5 65 270 58 S310.5 65 324 58 L324 140 L0 140 Z" style="fill:var(--wp--preset--color--shallows)"></path>
-				<path class="ap-ab ap-ab2" d="M0 72 C13.5 65 40.5 79 54 72 S94.5 79 108 72 S148.5 79 162 72 S202.5 79 216 72 S256.5 79 270 72 S310.5 79 324 72 L324 140 L0 140 Z" style="fill:var(--wp--preset--color--strata-2)"></path>
-				<path class="ap-ab ap-ab3" d="M0 86 C13.5 79 40.5 93 54 86 S94.5 93 108 86 S148.5 93 162 86 S202.5 93 216 86 S256.5 93 270 86 S310.5 93 324 86 L324 140 L0 140 Z" style="fill:var(--wp--preset--color--current)"></path>
-				<path class="ap-ab ap-ab4" d="M0 100 C13.5 93 40.5 107 54 100 S94.5 107 108 100 S148.5 107 162 100 S202.5 107 216 100 S256.5 107 270 100 S310.5 107 324 100 L324 140 L0 140 Z" style="fill:var(--wp--preset--color--strata-4)"></path>
-				<path class="ap-ab ap-ab5" d="M0 114 C13.5 108 40.5 120 54 114 S94.5 120 108 114 S148.5 120 162 114 S202.5 120 216 114 S256.5 120 270 114 S310.5 120 324 114 L324 140 L0 140 Z" style="fill:var(--wp--preset--color--tide)"></path>
+				<path class="ap-ab ap-ab1" d="M0 58 C13.5 51 40.5 65 54 58 S94.5 65 108 58 S148.5 65 162 58 S202.5 65 216 58 S256.5 65 270 58 S310.5 65 324 58 L324 200 L0 200 Z" style="fill:var(--wp--preset--color--shallows)"></path>
+				<path class="ap-ab ap-ab2" d="M0 72 C13.5 65 40.5 79 54 72 S94.5 79 108 72 S148.5 79 162 72 S202.5 79 216 72 S256.5 79 270 72 S310.5 79 324 72 L324 200 L0 200 Z" style="fill:var(--wp--preset--color--strata-2)"></path>
+				<path class="ap-ab ap-ab3" d="M0 86 C13.5 79 40.5 93 54 86 S94.5 93 108 86 S148.5 93 162 86 S202.5 93 216 86 S256.5 93 270 86 S310.5 93 324 86 L324 200 L0 200 Z" style="fill:var(--wp--preset--color--current)"></path>
+				<path class="ap-ab ap-ab4" d="M0 100 C13.5 93 40.5 107 54 100 S94.5 107 108 100 S148.5 107 162 100 S202.5 107 216 100 S256.5 107 270 100 S310.5 107 324 100 L324 200 L0 200 Z" style="fill:var(--wp--preset--color--strata-4)"></path>
+				<path class="ap-ab ap-ab5" d="M0 114 C13.5 108 40.5 120 54 114 S94.5 120 108 114 S148.5 120 162 114 S202.5 120 216 114 S256.5 120 270 114 S310.5 120 324 114 L324 200 L0 200 Z" style="fill:var(--wp--preset--color--tide)"></path>
 			</g></g>
 		</g>
 		<path class="ap-alpha-edge" d="<?php echo esc_attr( $alpha_shape ); ?>"></path>
