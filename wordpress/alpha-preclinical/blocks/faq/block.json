@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/faq",
+	"title": "FAQ",
+	"category": "alpha",
+	"icon": "editor-help",
+	"description": "A list of questions that open in place. Also prints FAQPage schema.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"schema": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"wide"
+		]
+	},
+	"render": "file:./render.php",
+	"allowedBlocks": [
+		"alpha/faq-item"
+	]
+}

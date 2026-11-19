@@ -1,0 +1,40 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/stat",
+	"title": "Stat",
+	"category": "alpha",
+	"icon": "performance",
+	"description": "A big number that counts up when it scrolls into view. The real number stays in the accessible label.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"value": {
+			"type": "string",
+			"default": "16"
+		},
+		"suffix": {
+			"type": "string",
+			"default": ""
+		},
+		"label": {
+			"type": "string",
+			"default": "peer-reviewed papers"
+		},
+		"size": {
+			"type": "string",
+			"enum": [
+				"m",
+				"l",
+				"xl"
+			],
+			"default": "m"
+		}
+	},
+	"supports": {
+		"html": false,
+		"color": {
+			"text": true
+		}
+	},
+	"render": "file:./render.php"
+}

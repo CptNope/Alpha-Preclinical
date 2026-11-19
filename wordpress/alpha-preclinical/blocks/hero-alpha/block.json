@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/hero-alpha",
+	"title": "Hero alpha",
+	"category": "alpha",
+	"icon": "superhero",
+	"description": "The logo alpha, enlarged, filled by five rising strata bands. Homepage hero only.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"maxWidth": {
+			"type": "number",
+			"default": 400
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"left",
+			"right",
+			"center"
+		]
+	},
+	"render": "file:./render.php"
+}

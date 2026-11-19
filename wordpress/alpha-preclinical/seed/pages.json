@@ -1,0 +1,119 @@
+[
+ {
+  "slug": "home",
+  "title": "Home",
+  "short_title": "Home",
+  "excerpt": "",
+  "template": "",
+  "menu_order": 0,
+  "parent": ""
+ },
+ {
+  "slug": "expertise",
+  "title": "Disease models and study expertise across six therapeutic areas",
+  "short_title": "Expertise",
+  "excerpt": "Validated rodent models and study designs for PK/PD, gene therapy, autoimmune and metabolic disease, inflammation and fibrosis, and oncology. Each area is led by a senior scientist who has published in it or run it for years.",
+  "template": "page-wide",
+  "menu_order": 1,
+  "parent": ""
+ },
+ {
+  "slug": "services",
+  "title": "Preclinical in vivo research, with every support service under one roof",
+  "short_title": "Services",
+  "excerpt": "From formulation and dosing to surgery, imaging and laboratory analysis, the work behind your study happens in our Worcester facility, run by the people who designed it.",
+  "template": "page-wide",
+  "menu_order": 2,
+  "parent": ""
+ },
+ {
+  "slug": "tumor-models",
+  "title": "Tumor models for in vivo oncology efficacy studies",
+  "short_title": "Tumor models",
+  "excerpt": "Syngeneic and xenograft models run by scientists who have designed oncology studies for decades, with tumor burden tracked by caliper and by bioluminescent IVIS imaging.",
+  "template": "page-wide",
+  "menu_order": 3,
+  "parent": ""
+ },
+ {
+  "slug": "about",
+  "title": "A preclinical partner built by people who've run the studies",
+  "short_title": "About",
+  "excerpt": "Alpha Preclinical is a US-owned discovery research company in Worcester, Massachusetts. We were founded in 2020 by scientists and technicians who spent decades in pharma, biotech and contract research.",
+  "template": "page-wide",
+  "menu_order": 5,
+  "parent": ""
+ },
+ {
+  "slug": "publications",
+  "title": "Peer-reviewed research from the Alpha team",
+  "short_title": "Publications",
+  "excerpt": "Sixteen papers from Alpha scientists and their collaborators on rodent disease models, mRNA delivery, anesthesia and gene regulation.",
+  "template": "page-wide",
+  "menu_order": 4,
+  "parent": ""
+ },
+ {
+  "slug": "team",
+  "title": "The people who run your studies",
+  "short_title": "Team",
+  "excerpt": "Every member of our founding team has worked in preclinical research for years before Alpha. When you call us, you talk to the people doing the work.",
+  "template": "page-wide",
+  "menu_order": 6,
+  "parent": ""
+ },
+ {
+  "slug": "careers",
+  "title": "Do research that helps new therapies reach the clinic",
+  "short_title": "Careers",
+  "excerpt": "Join a small, experienced team where your work shapes real drug development programs, and where you learn from scientists with decades in the field.",
+  "template": "page-wide",
+  "menu_order": 7,
+  "parent": ""
+ },
+ {
+  "slug": "contact",
+  "title": "Let's talk about your next study",
+  "short_title": "Contact",
+  "excerpt": "Tell us about your compound, target and timeline. A member of our scientific team will follow up to scope the study and prepare a design and quote.",
+  "template": "page-wide",
+  "menu_order": 8,
+  "parent": ""
+ },
+ {
+  "slug": "blog",
+  "title": "Notes from the vivarium",
+  "short_title": "Blog",
+  "excerpt": "Practical guidance on study design, model selection and preclinical readouts, written by the scientists who run Alpha's studies.",
+  "template": "",
+  "menu_order": 9,
+  "parent": ""
+ },
+ {
+  "slug": "privacy-policy",
+  "title": "Privacy policy",
+  "short_title": "Privacy policy",
+  "excerpt": "How Alpha Preclinical collects, uses and protects information you share with us through this website.",
+  "template": "page-legal",
+  "menu_order": 20,
+  "parent": ""
+ },
+ {
+  "slug": "terms",
+  "title": "Terms of use",
+  "short_title": "Terms of use",
+  "excerpt": "These terms govern your use of the Alpha Preclinical website. Please read them before using the site.",
+  "template": "page-legal",
+  "menu_order": 21,
+  "parent": ""
+ },
+ {
+  "slug": "accessibility",
+  "title": "Accessibility statement",
+  "short_title": "Accessibility",
+  "excerpt": "Alpha Preclinical wants everyone who visits this website, including people with disabilities, to find the information they need and contact us easily.",
+  "template": "page-legal",
+  "menu_order": 22,
+  "parent": ""
+ }
+]

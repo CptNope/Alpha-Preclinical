@@ -1,0 +1,41 @@
+<!-- wp:template-part {"slug":"header","area":"header","tagName":"div"} /-->
+
+<!-- wp:alpha/page-header {"align":"full","metadata":{"bindings":{"lead":{"source":"alpha/publication","args":{"key":"citation"}}}}} /-->
+
+<!-- wp:group {"tagName":"main","anchor":"main","style":{"spacing":{"padding":{"top":"var:preset|spacing|5","bottom":"var:preset|spacing|6"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" id="main" style="padding-top:var(--wp--preset--spacing--5);padding-bottom:var(--wp--preset--spacing--6)"><!-- wp:group {"className":"alpha-paper","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alpha-paper"><!-- wp:paragraph {"className":"alpha-paper__by","metadata":{"bindings":{"content":{"source":"alpha/publication","args":{"key":"authors"}}}}} -->
+<p class="alpha-paper__by"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"alpha-paper__ids","metadata":{"bindings":{"content":{"source":"alpha/publication","args":{"key":"ids"}}}}} -->
+<p class="alpha-paper__ids"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-excerpt /-->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"metadata":{"bindings":{"url":{"source":"alpha/publication","args":{"key":"pdf_url"}}}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#">Read PDF</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"className":"is-style-arrow","metadata":{"bindings":{"url":{"source":"alpha/publication","args":{"key":"pubmed_url"}}}}} -->
+<div class="wp-block-button is-style-arrow"><a class="wp-block-button__link wp-element-button" href="#">PubMed</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"className":"is-style-arrow","metadata":{"bindings":{"url":{"source":"alpha/publication","args":{"key":"pmc_url"}}}}} -->
+<div class="wp-block-button is-style-arrow"><a class="wp-block-button__link wp-element-button" href="#">Free full text</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-arrow"} -->
+<div class="wp-block-button is-style-arrow"><a class="wp-block-button__link wp-element-button" href="/publications/">All publications</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:alpha/cta-band {"heading":"Want the authors on your study?","text":"The scientists who wrote these papers design and run Alpha studies.","align":"full"} /-->
+
+<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"div"} /-->

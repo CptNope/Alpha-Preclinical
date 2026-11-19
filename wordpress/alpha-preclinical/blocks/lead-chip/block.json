@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/lead-chip",
+	"title": "Led by",
+	"category": "alpha",
+	"icon": "id",
+	"description": "Names the scientist (or two) who leads an area or service, with photo and profile link.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"members": {
+			"type": "string",
+			"default": ""
+		},
+		"label": {
+			"type": "string",
+			"default": "Led by"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"render": "file:./render.php"
+}

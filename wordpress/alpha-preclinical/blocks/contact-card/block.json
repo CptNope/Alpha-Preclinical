@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/contact-card",
+	"title": "Contact details",
+	"category": "alpha",
+	"icon": "location",
+	"description": "Email, address and (optionally) phone, from Settings > Alpha Preclinical unless bound or typed.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"email": {
+			"type": "string",
+			"default": ""
+		},
+		"address": {
+			"type": "string",
+			"default": ""
+		},
+		"phone": {
+			"type": "string",
+			"default": ""
+		},
+		"showCareers": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"render": "file:./render.php"
+}

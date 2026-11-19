@@ -1,0 +1,43 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/cta-band",
+	"title": "Quote band",
+	"category": "alpha",
+	"icon": "megaphone",
+	"description": "The closing deep-blue band with contour lines and the quote button. The only centred text in the system.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": "Have a study in mind?"
+		},
+		"text": {
+			"type": "string",
+			"default": "Tell us the model, endpoints and timeline. A scientist will reply with a plan and a quote."
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Request a study quote"
+		},
+		"buttonUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"secondaryText": {
+			"type": "string",
+			"default": "Talk to a scientist"
+		},
+		"secondaryUrl": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"full"
+		]
+	},
+	"render": "file:./render.php"
+}

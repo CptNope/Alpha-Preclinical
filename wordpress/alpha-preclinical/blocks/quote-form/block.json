@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/quote-form",
+	"title": "Quote form",
+	"category": "alpha",
+	"icon": "email",
+	"description": "The study quote form (or the job application form). Sends email to the inbox for the chosen study type. Nonce, honeypot and rate limit included.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"formType": {
+			"type": "string",
+			"enum": [
+				"quote",
+				"careers"
+			],
+			"default": "quote"
+		},
+		"submitText": {
+			"type": "string",
+			"default": "Send message"
+		},
+		"successHeading": {
+			"type": "string",
+			"default": "Message sent"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"wide"
+		]
+	},
+	"render": "file:./render.php"
+}

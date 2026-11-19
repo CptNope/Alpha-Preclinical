@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/contour",
+	"title": "Contour line",
+	"category": "alpha",
+	"icon": "minus",
+	"description": "One 1.5px wave line: the strata reduced to a section divider.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"tone": {
+			"type": "string",
+			"enum": [
+				"current",
+				"shallows"
+			],
+			"default": "current"
+		},
+		"draw": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"render": "file:./render.php"
+}

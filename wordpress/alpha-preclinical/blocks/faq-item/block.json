@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/faq-item",
+	"title": "FAQ question",
+	"category": "alpha",
+	"icon": "editor-help",
+	"description": "One question and its answer.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"question": {
+			"type": "string",
+			"default": ""
+		},
+		"answer": {
+			"type": "string",
+			"default": ""
+		},
+		"open": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"render": "file:./render.php",
+	"parent": [
+		"alpha/faq"
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/filter-chips",
+	"title": "Filter chips",
+	"category": "alpha",
+	"icon": "filter",
+	"description": "Pill toggles that filter the Query Loop right after them by term, without reloading. Results are announced.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"taxonomy": {
+			"type": "string",
+			"enum": [
+				"research_area",
+				"category",
+				"job_team"
+			],
+			"default": "research_area"
+		},
+		"allLabel": {
+			"type": "string",
+			"default": "All"
+		},
+		"showCounts": {
+			"type": "boolean",
+			"default": true
+		},
+		"label": {
+			"type": "string",
+			"default": "Filter by research area"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"wide"
+		]
+	},
+	"render": "file:./render.php"
+}

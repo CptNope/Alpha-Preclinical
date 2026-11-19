@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/meta-list",
+	"title": "Field list",
+	"category": "alpha",
+	"icon": "editor-ul",
+	"description": "A bulleted list from a multi-line field: a person's education or credentials, a role's requirements.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"source": {
+			"type": "string",
+			"enum": [
+				"person",
+				"job"
+			],
+			"default": "person"
+		},
+		"key": {
+			"type": "string",
+			"enum": [
+				"education",
+				"highlights",
+				"leads",
+				"requirements"
+			],
+			"default": "highlights"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"render": "file:./render.php",
+	"usesContext": [
+		"postId",
+		"postType"
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/breadcrumbs",
+	"title": "Breadcrumbs",
+	"category": "alpha",
+	"icon": "menu",
+	"description": "Home / parent / current page, with BreadcrumbList schema.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"current": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"render": "file:./render.php",
+	"usesContext": [
+		"postId",
+		"postType"
+	]
+}

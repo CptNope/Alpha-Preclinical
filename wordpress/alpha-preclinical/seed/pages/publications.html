@@ -1,0 +1,35 @@
+<!-- wp:group {"tagName":"section","align":"full","className":"alpha-section","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull alpha-section"><!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide"><!-- wp:alpha/filter-chips {"taxonomy":"research_area","label":"Filter by research area"} /-->
+<!-- wp:query {"queryId":878,"query":{"perPage":100,"pages":0,"offset":0,"postType":"publication","order":"asc","orderBy":"menu_order","author":"","search":"","exclude":[],"sticky":"","inherit":false},"className":"alpha-papers"} -->
+<div class="wp-block-query alpha-papers"><!-- wp:post-template -->
+<!-- wp:group {"className":"alpha-paper","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alpha-paper"><!-- wp:heading {"level":3,"metadata":{"bindings":{"content":{"source":"alpha/publication","args":{"key":"title_link"}}}},"className":"alpha-paper__title"} -->
+<h3 class="wp-block-heading alpha-paper__title">Paper title</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"alpha/publication","args":{"key":"authors"}}}},"className":"alpha-paper__by"} -->
+<p class="alpha-paper__by">Authors</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"alpha/publication","args":{"key":"citation"}}}},"className":"alpha-paper__cite"} -->
+<p class="alpha-paper__cite">Journal. Year;Vol(Issue):pages.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"alpha/publication","args":{"key":"ids"}}}},"className":"alpha-paper__ids"} -->
+<p class="alpha-paper__ids">DOI · PMID · PMCID</p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"metadata":{"bindings":{"url":{"source":"alpha/publication","args":{"key":"pdf_url"}}}},"className":"is-style-arrow"} -->
+<div class="wp-block-button is-style-arrow"><a class="wp-block-button__link wp-element-button" href="#">Read PDF</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"metadata":{"bindings":{"url":{"source":"alpha/publication","args":{"key":"pubmed_url"}}}},"className":"is-style-arrow"} -->
+<div class="wp-block-button is-style-arrow"><a class="wp-block-button__link wp-element-button" href="#">PubMed</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"metadata":{"bindings":{"url":{"source":"alpha/publication","args":{"key":"pmc_url"}}}},"className":"is-style-arrow"} -->
+<div class="wp-block-button is-style-arrow"><a class="wp-block-button__link wp-element-button" href="#">Free full text</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group -->
+<!-- /wp:post-template --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+<!-- wp:alpha/cta-band {"heading":"Want the authors on your study?","text":"The scientists who wrote these papers design and run Alpha studies.","buttonText":"Request a study quote","align":"full"} /-->

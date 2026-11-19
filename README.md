@@ -6,9 +6,11 @@ This repo holds three things:
 
 1. **A static preview site** (the HTML pages in the root) that runs on GitHub Pages, for client review.
 2. **The design source**: the design-canvas artboards, the design system, and the blog drafts written during the design session.
-3. **A starter `theme.json`** for the production build as a WordPress full-site-editing (FSE) block theme.
+3. **The production WordPress block theme** in [`wordpress/alpha-preclinical/`](wordpress/alpha-preclinical/), with the approved content ready to import. See [its README](wordpress/alpha-preclinical/README.md).
 
 **Live preview:** https://cptnope.github.io/Alpha-Preclinical/ (once GitHub Pages is serving `main`)
+
+**Project overview:** https://cptnope.github.io/Alpha-Preclinical/overview/ — one hub with a top bar linking the design system, the brand book (business cards, letterhead, email signature, LinkedIn templates), the example site and the open decisions. Rebuild it with `python3 tools/build_overview.py` after changing the design system or brand book.
 
 > [!IMPORTANT]
 > This is a **review build**, not the production site. Forms validate and confirm on screen but send nothing, publication PDFs are still served from the old site, and several items still need client confirmation (see [Open items](#open-items-before-launch)).
@@ -208,7 +210,7 @@ flowchart LR
     DS --> CV["canvas/<br/>14 .dc.html artboards + canvas.json"]
     DS --> SYS["design-system/<br/>tokens.json, README.md, cover"]
     R --> CT["content/blog-posts.md<br/>7 SEO blog drafts"]
-    R --> WP["wordpress/theme.json<br/>FSE starter"]
+    R --> WP["wordpress/alpha-preclinical/<br/>block theme"]
     R --> TL["tools/convert.py<br/>canvas → static HTML"]
     R --> TB["tools/build_posts.py<br/>drafts → post pages"]
     R --> DC["docs/<br/>accessibility audit + script"]
@@ -229,7 +231,11 @@ flowchart LR
 │   ├── canvas/                          # design-canvas source artboards (*.dc.html) + canvas.json
 │   └── design-system/                   # tokens.json, README.md (brand book), Cover preview
 ├── content/blog-posts.md                # all 7 blog drafts with SEO fields and sources
-├── wordpress/theme.json                 # token mapping for the FSE block theme
+├── wordpress/alpha-preclinical/         # production block theme (see its README)
+├── overview/                            # project hub: design system, brand book, site, decisions (generated)
+├── design/brand-book/                   # brand book pages + templates (.dc.html) and email-signature.html
+├── tools/build_overview.py              # builds overview/ from design/design-system and design/brand-book
+├── tools/export_wp.py                   # exports pages, papers, team, roles, posts as theme seed content
 ├── tools/convert.py                     # regenerates the HTML pages from design/canvas
 ├── tools/build_posts.py                 # builds the six other posts from content/blog-posts.md
 ├── tools/pdf_links.py                   # links paper titles to their PDFs
@@ -421,31 +427,18 @@ All paths are relative, so the site works under the `/Alpha-Preclinical/` subpat
 
 ## Moving to WordPress FSE
 
+The production theme is built: [`wordpress/alpha-preclinical/`](wordpress/alpha-preclinical/) (WordPress 6.9+). Every bespoke component is a dynamic `alpha/*` block whose content can be bound with the Block Bindings API; publications, team members and open roles are custom post types; site details live in **Settings › Alpha Preclinical**. The approved content imports with `wp alpha seed`. Full details, setup steps and test results are in the [theme README](wordpress/alpha-preclinical/README.md).
+
 ```mermaid
-flowchart TD
-    T["design-system/tokens.json"] --> TJ["wordpress/theme.json<br/>palette, fonts, sizes, spacing"]
+flowchart LR
+    A["Static site + canvas data<br/>+ content/blog-posts.md"] --> X["tools/export_wp.py"]
+    X --> S["theme seed/<br/>pages, papers, team, roles, posts"]
+    T["design-system/tokens.json"] --> TJ["theme.json + section styles"]
+    S --> I["wp alpha seed"]
     TJ --> TH["Block theme"]
-    P["Static pages"] --> PT["Block patterns<br/>one per section"]
-    PT --> TH
-    P --> TP["Templates & parts<br/>header, footer, single, archive, page"]
-    TP --> TH
-    BC["content/blog-posts.md"] --> PO["Posts with Rank Math / Yoast fields"]
-    PO --> TH
-    TH --> L["Launch on Cloudways"]
+    I --> TH
+    TH --> L["Staging on Cloudways → launch"]
 ```
-
-| Static piece | FSE equivalent |
-| --- | --- |
-| Header / footer (same on every page) | `parts/header.html`, `parts/footer.html` (Navigation block) |
-| Hero with strata | Block pattern: Cover or Group with inline SVG bands |
-| Expertise list with leads | Pattern + a relationship field from each service page to a Team member |
-| Publications | Custom post type `publication` (area taxonomy, authors, journal, year, DOI, PMID, PMCID, PDF) with a Query Loop |
-| Blog post | `single.html` template; author box from user profile; `Article` schema via SEO plugin |
-| Team profiles | Custom post type `team_member`; `Person` schema with `sameAs` (LinkedIn now; add ORCID and Google Scholar) |
-| Contact and careers forms | Gravity Forms or Fluent Forms; route study type to the right inbox |
-| Open roles | Custom post type `job` with `JobPosting` schema |
-
-`wordpress/theme.json` already maps the palette, both font families, the type scale, spacing scale and button style. Add the woff2 files to `assets/fonts/` in the theme (download Bricolage Grotesque and Figtree from Google Fonts and self-host them).
 
 ---
 
@@ -501,11 +494,13 @@ AXE_PATH=path/to/axe.min.js python3 docs/a11y-audit.py http://localhost:8766 aud
 ### Build tasks
 
 - [ ] Attorney review of the draft Privacy Policy and Terms of Use (bracketed items depend on the final analytics, form and hosting tools)
-- [ ] Response time for accessibility requests (Accessibility Statement)
+- [ ] Response time for accessibility requests: set it in Settings › Alpha Preclinical (the statement reads it through a binding)
 - [ ] Screen-reader pass with VoiceOver and NVDA on staging
-- [ ] Real form handling and spam protection
-- [ ] `JobPosting` schema (`Person` and `ScholarlyArticle` are done)
-- [ ] XML sitemap and redirects from old Wix URLs (`/experetise`, `/services`, `/about-us`, `/pk-pd`, …)
+- [x] Real form handling and spam protection (`alpha/quote-form`: nonce, honeypot, rate limit, routing by study type, saved Inquiries)
+- [ ] SMTP on Cloudways so form mail is delivered; set the quote inboxes and routing
+- [x] `JobPosting` schema on each role page (`Person`, `ScholarlyArticle`, `FAQPage`, `BreadcrumbList` too)
+- [x] Redirects from old Wix URLs and PDF links (`inc/redirects.php`, plus extras in settings)
+- [ ] Crawl the live Wix site for any old URLs not in the redirect map; XML sitemap from the SEO plugin
 
 ---
 

@@ -1,0 +1,15 @@
+/*
+Theme Name: Alpha Preclinical
+Theme URI: https://github.com/CptNope/Alpha-Preclinical
+Author: Jeremy Anderson Tech
+Author URI: https://jeremyanderson.tech
+Description: Block theme for Alpha Preclinical LLC, built from the client-approved November 2026 design. Bespoke components are dynamic alpha/* blocks whose content is bindable through the Block Bindings API; publications, team members and open roles are post types bound into Query Loops.
+Requires at least: 6.9
+Tested up to: 6.9
+Requires PHP: 7.4
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: alpha-preclinical
+Tags: block-patterns, full-site-editing, custom-colors, editor-style
+*/

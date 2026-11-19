@@ -1,0 +1,43 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alpha/page-header",
+	"title": "Page header",
+	"category": "alpha",
+	"icon": "heading",
+	"description": "Deep-blue page header: breadcrumbs, H1, lead and the drifting strata band. Leave the heading empty to use the page title.",
+	"textdomain": "alpha-preclinical",
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": ""
+		},
+		"lead": {
+			"type": "string",
+			"default": ""
+		},
+		"showBreadcrumbs": {
+			"type": "boolean",
+			"default": true
+		},
+		"variant": {
+			"type": "string",
+			"enum": [
+				"page",
+				"post"
+			],
+			"default": "page"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"full"
+		]
+	},
+	"render": "file:./render.php",
+	"usesContext": [
+		"postId",
+		"postType"
+	]
+}
